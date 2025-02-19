@@ -1,0 +1,37 @@
+{
+  "name": "Monad Testnet",
+  "logoURI": "https://raw.githubusercontent.com/compound-finance/token-list/main/assets/monad.svg",
+  "keywords": ["monad testnet"],
+  "timestamp": "2025-02-19T04:00:00.000+00:00",
+  "tokens": [
+    {
+      "chainId": 10143,
+      "address": "0x0F0BDEbF0F83cD1EE3974779Bcb7315f9808c714",
+      "name": "Molandak",
+      "symbol": "DAK",
+      "decimals": 18,
+      "logoURI": "https://imagedelivery.net/tWwhAahBw7afBzFUrX5mYQ/27759359-9374-4995-341c-b2636a432800/public"
+    },
+    {
+      "chainId": 10143,
+      "address": "0xE0590015A873bF326bd645c3E1266d4db41C4E6B",
+      "name": "Chog",
+      "symbol": "CHOG",
+      "decimals": 18,
+      "logoURI": "https://imagedelivery.net/tWwhAahBw7afBzFUrX5mYQ/5d1206c2-042c-4edc-9f8b-dcef2e9e8f00/public"
+    },
+    {
+      "chainId": 10143,
+      "address": "0xfe140e1dCe99Be9F4F15d657CD9b7BF622270C50",
+      "name": "Moyaki",
+      "symbol": "YAKI",
+      "decimals": 18,
+      "logoURI": "https://imagedelivery.net/tWwhAahBw7afBzFUrX5mYQ/6679b698-a845-412b-504b-23463a3e1900/public"
+    }
+  ],
+  "version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  }
+}

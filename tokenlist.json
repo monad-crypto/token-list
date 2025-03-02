@@ -2,7 +2,7 @@
   "name": "Monad Testnet",
   "logoURI": "https://raw.githubusercontent.com/monad-developers/token-list/refs/heads/main/assets/monad.svg",
   "keywords": ["monad testnet"],
-  "timestamp": "2025-02-19T04:00:00.000+00:00",
+  "timestamp": "2025-03-02T04:00:00.000+00:00",
   "tokens": [
     {
       "chainId": 10143,
@@ -62,15 +62,23 @@
     },
     {
       "chainId": 10143,
-      "address": "0x369CD1E20Fa7ea1F8e6dc0759709bA0bD978abE7",
+      "address": "0x5387C85A4965769f6B0Df430638a1388493486F1",
       "name": "Wrapped SOL",
       "symbol": "SOL",
       "decimals": 9,
       "logoURI": "https://imagedelivery.net/cBNDGgkrsEA-b_ixIp9SkQ/sol.png/public"
+    },
+    {
+      "chainId": 10143,
+      "address": "0x760AfE86e5de5fa0Ee542fc7B7B713e1c5425701",
+      "name": "Wrapped Monad",
+      "symbol": "WMON",
+      "decimals": 18,
+      "logoURI": "https://imagedelivery.net/cBNDGgkrsEA-b_ixIp9SkQ/I_t8rg_V_400x400.jpg/public"
     }
   ],
   "version": {
-    "major": 1,
+    "major": 2,
     "minor": 0,
     "patch": 0
   }

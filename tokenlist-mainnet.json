@@ -1,6 +1,6 @@
 {
   "name": "Monad Mainnet",
-  "logoURI": "https://raw.githubusercontent.com/monad-developers/token-list/refs/heads/main/assets/monad.svg",
+  "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/assets/monad.svg",
   "keywords": ["monad mainnet"],
   "timestamp": "2025-09-22T04:00:00.000+00:00",
   "tokens": [
@@ -10,7 +10,7 @@
       "name": "Wrapped MON",
       "symbol": "WMON",
       "decimals": 18,
-      "logoURI": "https://raw.githubusercontent.com/monad-developers/token-list/refs/heads/main/assets/monad.svg"
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/assets/monad.svg"
     },
     {
       "chainId": 143,

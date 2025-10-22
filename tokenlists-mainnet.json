@@ -1,0 +1,29 @@
+{
+  "name": "Monad Mainnet",
+  "logoURI": "https://raw.githubusercontent.com/monad-developers/token-list/refs/heads/main/assets/monad.svg",
+  "keywords": ["monad mainnet"],
+  "timestamp": "2025-09-22T04:00:00.000+00:00",
+  "tokens": [
+    {
+      "chainId": 143,
+      "address": "0x3bd359C1119dA7Da1D913D1C4D2B7c461115433A",
+      "name": "Wrapped MON",
+      "symbol": "WMON",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/monad-developers/token-list/refs/heads/main/assets/monad.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0x754704Bc059F8C67012fEd69BC8A327a5aafb603",
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "decimals": 6,
+      "logoURI": "https://imagedelivery.net/cBNDGgkrsEA-b_ixIp9SkQ/usdc.png/public"
+    }
+  ],
+  "version": {
+    "major": 0,
+    "minor": 0,
+    "patch": 1
+  }
+}

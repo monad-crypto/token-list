@@ -27,7 +27,15 @@
       "symbol": "AUSD",
       "decimals": 6,
       "logoURI": "https://imagedelivery.net/cBNDGgkrsEA-b_ixIp9SkQ/ausd.jpg/public"
-    }
+    },
+    {
+      "chainId": 143,
+      "address": "0xea17E5a9efEBf1477dB45082d67010E2245217f1",
+      "name": "Wrapped SOL",
+      "symbol": "WSOL",
+      "decimals": 9,
+      "logoURI": "https://assets.coingecko.com/coins/images/54252/standard/solana.jpg?1738911214"
+    },
   ],
   "version": {
     "major": 0,

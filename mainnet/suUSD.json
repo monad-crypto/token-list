@@ -1,0 +1,8 @@
+{
+  "chainId": 143,
+  "address": "0x8BF591Eae535f93a242D5A954d3Cde648b48A5A8",
+  "name": "Sumerian USD",
+  "symbol": "suUSD",
+  "decimals": 18,
+  "logoURI": "https://github.com/meterio/token-list/blob/master/data/suUSD/logo.png"
+}

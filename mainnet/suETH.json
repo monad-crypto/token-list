@@ -1,0 +1,8 @@
+{
+  "chainId": 143,
+  "address": "0x1c22531AA9747d76fFF8F0A43b37954ca67d28e0",
+  "name": "Sumerian ETH",
+  "symbol": "suETH",
+  "decimals": 18,
+  "logoURI": "https://github.com/meterio/token-list/blob/master/data/suETH/logo.png"
+}

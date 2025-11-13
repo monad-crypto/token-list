@@ -7,29 +7,34 @@ Validate token JSON files in the `mainnet/` folder.
 Checks for required fields: `chainId`, `address`, `name`, `symbol`, `decimals`, and `logoURI`.
 """
 
-import json5
 import os
 import sys
+
+import json5
 import requests
 
 REQUIRED_FIELDS = ["chainId", "address", "name", "symbol", "decimals", "logoURI"]
 
+
 def is_valid_address(address: str) -> bool:
     """Check if an address is a valid Ethereum address."""
-    return address.startswith("0x") and len(address) == 42 and \
-        all(c in "0123456789ABCDEFabcdef" for c in address[2:])
+    return (
+        address.startswith("0x")
+        and len(address) == 42
+        and all(c in "0123456789ABCDEFabcdef" for c in address[2:])
+    )
+
 
 def is_url_image(image_url: str):
     image_formats = ("image/png", "image/jpeg", "image/jpg", "image/svg+xml")
     r = requests.head(image_url)
-    if r.headers["content-type"] in image_formats:
-        return True
-    return False
+    return r.headers["content-type"] in image_formats
+
 
 def is_valid_file(filepath: str) -> bool:
     """Validate one JSON metadata file."""
     try:
-        with open(filepath, "r", encoding="utf-8") as f:
+        with open(filepath, encoding="utf-8") as f:
             data = json5.load(f)
     except Exception as e:
         print(f"❌ Error reading {filepath}: {e}")
@@ -44,7 +49,7 @@ def is_valid_file(filepath: str) -> bool:
         return False
 
     if data.get("chainId", int) != 143:
-        print(f"❌ Invalid chainId.")
+        print("❌ Invalid chainId.")
         return False
 
     address = data.get("address", str)
@@ -56,21 +61,24 @@ def is_valid_file(filepath: str) -> bool:
     if not is_url_image(logo_uri):
         print(f"❌ {logo_uri} is not an image.")
         return False
-    
+
     decimals = data.get("decimals", int)
     if decimals < 6 or decimals > 36:
-        print(f"❌ Invalid decimals.")
+        print("❌ Invalid decimals.")
         return False
 
     return True
 
+
 def main():
     base_dir = os.path.join(os.path.dirname(__file__), "..", "mainnet")
     if not os.path.isdir(base_dir):
-        print(f"❌ mainnet directory not found.")
+        print("❌ mainnet directory not found.")
         sys.exit(1)
 
-    json_files = [f for f in sorted(os.listdir(base_dir)) if f.endswith(".json") or f.endswith(".jsonc")]
+    json_files = [
+        f for f in sorted(os.listdir(base_dir)) if f.endswith(".json") or f.endswith(".jsonc")
+    ]
     if not json_files:
         print("⚠️ No JSON files found in mainnet/")
         sys.exit(0)
@@ -83,6 +91,7 @@ def main():
             print(f"✅ {filename} is valid.")
         else:
             print(f"❌ {filename} is invalid.")
+
 
 if __name__ == "__main__":
     main()

@@ -4,5 +4,5 @@
   "name": "Sumerian USD",
   "symbol": "suUSD",
   "decimals": 18,
-  "logoURI": "https://github.com/meterio/token-list/blob/master/data/suUSD/logo.png"
+  "logoURI": "https://raw.githubusercontent.com/meterio/token-list/master/data/suUSD/logo.png"
 }

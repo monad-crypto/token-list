@@ -4,7 +4,7 @@
     "keywords": [
         "monad mainnet"
     ],
-    "timestamp": "2025-11-12T22:30:16.325787+00:00",
+    "timestamp": "2025-11-13T10:34:22.463665+00:00",
     "tokens": [
         {
             "chainId": 143,
@@ -60,7 +60,7 @@
             "name": "XAUt0",
             "symbol": "XAUt0",
             "decimals": 6,
-            "logoURI": "https://2643670903-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FF5GPxxTVvxSOw6uc4du5%2Fuploads%2FgIRNIYzszpMXn5CC6XCn%2FXAUt0%20Logo.zip?alt=media&token=8f446296-aa91-4038-a889-68710a9fe63a"
+            "logoURI": "https://resources.cryptocompare.com/asset-management/20126/1751464669093.png"
         }
     ],
     "version": {

@@ -8,3 +8,21 @@ Links to the latest Monad token lists:
 - [Monad Testnet Token List](https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/tokenlist-testnet.json)
 
 This list serves as a resource for token issuers to submit token metadata for convenience and interoperability across ecosystem protocols, apps and interfaces. Inclusion of a token in this list does not imply endorsement, verification, or approval. No due diligence or verification is performed on token issuers or associated projects. It is imperative to conduct your own research before engaging with any token.
+
+## Setup
+
+1. Install dependencies:
+
+```bash
+uv sync
+```
+
+2. Configure environment variables:
+
+```bash
+cp .env.example .env
+```
+
+## Adding a New Token
+
+For detailed instructions on how to add a new token to this repository, please see [CONTRIBUTING.md](CONTRIBUTING.md).

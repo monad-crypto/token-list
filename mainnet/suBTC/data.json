@@ -3,6 +3,5 @@
   "address": "0xe85411C030fB32A9D8b14Bbbc6CB19417391F711",
   "name": "Sumerian BTC",
   "symbol": "suBTC",
-  "decimals": 18,
-  "logoURI": "https://raw.githubusercontent.com/meterio/token-list/master/data/suBTC/logo.png"
+  "decimals": 18
 }

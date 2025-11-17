@@ -1,8 +1,0 @@
-{
-  "chainId": 143,
-  "address": "0x3bd359C1119dA7Da1D913D1C4D2B7c461115433A",
-  "name": "Wrapped MON",
-  "symbol": "WMON",
-  "decimals": 18,
-  "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/assets/monad.svg"
-}

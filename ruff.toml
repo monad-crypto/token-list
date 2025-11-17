@@ -16,9 +16,11 @@ select = [
     "B",     # flake8-bugbear
     "C4",    # flake8-comprehensions
     "SIM",   # flake8-simplify
+    "PIE",   # flake8-pie
     "PT",    # flake8-pytest-style
     "RET",   # flake8-return
     "ARG",   # flake8-unused-arguments
+    "PTH",   # flake8-use-pathlib
     "ERA",   # eradicate (commented-out code)
     "PL",    # pylint
     "PERF",  # perflint

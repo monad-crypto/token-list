@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [main, master]
   pull_request:
-    branches: [ main, master ]
+    branches: [main, master]
 
 jobs:
   python-lint:
@@ -12,48 +12,70 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v5
+      - name: Checkout code
+        uses: actions/checkout@v5
 
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.10'
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
 
-    - name: Install uv
-      uses: astral-sh/setup-uv@v4
-      with:
-        enable-cache: true
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          enable-cache: true
 
-    - name: Install dependencies
-      run: uv sync --all-groups
+      - name: Install dependencies
+        run: uv sync --all-groups
 
-    - name: Run ruff check
-      run: uv run ruff check .
+      - name: Run ruff check
+        run: uv run ruff check .
 
-    - name: Run ruff format check
-      run: uv run ruff format --check .
+      - name: Run ruff format check
+        run: uv run ruff format --check .
+
+  json-format-check:
+    name: JSON Format Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Install jq
+        run: sudo apt-get install -y jq
+
+      - name: Validate and check formatting
+        run: |
+          bad_files=0
+          for f in $(find ./mainnet -type f -name "*.json"); do
+            if ! diff <(jq --indent 2 . "$f") "$f" > /dev/null; then
+              echo "✖ Improperly formatted: $f"
+              bad_files=1
+            fi
+          done
+          exit $bad_files
 
   validate-tokens:
     name: Validate Token Files
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v5
+      - name: Checkout code
+        uses: actions/checkout@v5
 
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.10'
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
 
-    - name: Install uv
-      uses: astral-sh/setup-uv@v4
-      with:
-        enable-cache: true
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          enable-cache: true
 
-    - name: Install dependencies
-      run: uv sync
+      - name: Install dependencies
+        run: uv sync
 
-    - name: Run validation script
-      run: uv run python scripts/validate_tokens.py
+      - name: Run validation script
+        run: uv run python scripts/validate_tokens.py

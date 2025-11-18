@@ -1,8 +1,7 @@
 {
-    "chainId": 143,
-    "address": "0x1ce060D47A0Fd08B0869748FD7eccF151F4eC5d1",
-    "name": "ShMonad",
-    "symbol": "shMON",
-    "decimals": 18
-  }
-  
+  "chainId": 143,
+  "address": "0x1ce060D47A0Fd08B0869748FD7eccF151F4eC5d1",
+  "name": "ShMonad",
+  "symbol": "shMON",
+  "decimals": 18
+}

@@ -3,5 +3,8 @@
   "address": "0x0000000000000000000000000000000000000000",
   "name": "Monad",
   "symbol": "MON",
-  "decimals": 18
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "monad"
+  }
 }

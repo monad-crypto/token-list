@@ -3,5 +3,8 @@
   "address": "0xea17E5a9efEBf1477dB45082d67010E2245217f1",
   "name": "Wrapped SOL",
   "symbol": "SOL",
-  "decimals": 9
+  "decimals": 9,
+  "extensions": {
+    "coinGeckoId": "wrapped-solana"
+  }
 }

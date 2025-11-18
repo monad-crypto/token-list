@@ -14,6 +14,9 @@ import json5
 
 DATA_DIR = "mainnet"
 REQUIRED_FIELDS = ["chainId", "address", "name", "symbol", "decimals"]
+ALLOWED_EXTENSIONS = {
+    "coinGeckoId": str,
+}
 EXPECTED_CHAIN_ID = 143
 MIN_DECIMALS = 6
 MAX_DECIMALS = 36
@@ -109,6 +112,25 @@ def validate_token_data(data: dict[str, Any], token_dir_name: str) -> list[str]:
         errors.append(
             f"Invalid decimals: must be an integer between {MIN_DECIMALS} and {MAX_DECIMALS}"
         )
+
+    # Validate extensions (optional)
+    if "extensions" in data:
+        extensions = data.get("extensions")
+        if not isinstance(extensions, dict):
+            errors.append("Invalid extensions: must be a dictionary")
+        else:
+            allowed_tags = ", ".join(ALLOWED_EXTENSIONS.keys())
+            for tag, value in extensions.items():
+                if tag in ALLOWED_EXTENSIONS:
+                    expected_type = ALLOWED_EXTENSIONS[tag]
+                    if not isinstance(value, expected_type):
+                        type_name = expected_type.__name__
+                        errors.append(
+                            f"Invalid type for extension '{tag}': expected {type_name}, "
+                            f"got {type(value).__name__}"
+                        )
+                else:
+                    errors.append(f"Invalid extension tag: {tag}. Allowed tags are: {allowed_tags}")
 
     return errors
 

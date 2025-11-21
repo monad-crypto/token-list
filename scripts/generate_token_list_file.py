@@ -241,7 +241,7 @@ def write_token_list(token_list: dict[str, Any], output_path: Path) -> None:
             json5.dump(
                 token_list,
                 f,
-                indent=4,
+                indent=2,
                 quote_keys=True,
                 trailing_commas=False,
             )

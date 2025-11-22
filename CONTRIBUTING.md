@@ -41,7 +41,7 @@ uv sync
 
 ### 3. Configure Environment
 
-Create a `.env` file in the root directory with your Monad RPC URL:
+Create a `.env` file in the root directory with your Monad RPC URL if you don't want to use the default RPC:
 
 ```bash
 echo "MONAD_RPC_URL=https://your-monad-rpc-endpoint" > .env
@@ -55,10 +55,13 @@ Use the `add_token.py` script to automatically fetch token information from the 
 
 ```bash
 # With token address as argument
-uv run --env-file=.env python scripts/add_token.py 0xYourTokenAddress
+uv run python scripts/add_token.py 0xYourTokenAddress
 
 # Or run interactively (you'll be prompted for the address)
-uv run --env-file=.env python scripts/add_token.py
+uv run python scripts/add_token.py
+
+# With token address as argument and custom RPC
+uv run --env-file=.env python scripts/add_token.py 0xYourTokenAddress
 ```
 
 The script will generate a `data.json` file with the token metadata.

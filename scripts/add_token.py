@@ -15,7 +15,7 @@ from pathlib import Path
 from web3 import Web3
 
 CHAIN_ID = 143
-RPC_URL = os.environ.get("MONAD_RPC_URL")
+RPC_URL = os.environ.get("MONAD_RPC_URL", "https://rpc.monad.xyz")
 ERC20_ABI = [
     {
         "constant": True,

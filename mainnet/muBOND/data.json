@@ -1,0 +1,10 @@
+{
+  "chainId": 143,
+  "address": "0x336D414754967C6682B5A665C7DAF6F1409E63e8",
+  "name": "mu Bond",
+  "symbol": "muBOND",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "mu-digital-mubond"
+  }
+}

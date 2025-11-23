@@ -1,0 +1,10 @@
+{
+  "chainId": 143,
+  "address": "0x4917a5ec9fCb5e10f47CBB197aBe6aB63be81fE8",
+  "name": "Asian Dollar",
+  "symbol": "AZND",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "mu-digital-aznd"
+  }
+}

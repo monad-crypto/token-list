@@ -4,7 +4,7 @@
   "keywords": [
     "monad mainnet"
   ],
-  "timestamp": "2025-11-23T12:20:09.449236+00:00",
+  "timestamp": "2025-11-24T04:18:49.073273+00:00",
   "tokens": [
     {
       "chainId": 143,
@@ -12,7 +12,29 @@
       "name": "AUSD",
       "symbol": "AUSD",
       "decimals": 6,
+      "extensions": {
+        "coinGeckoId": "agora-dollar"
+      },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/AUSD/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0x4917a5ec9fCb5e10f47CBB197aBe6aB63be81fE8",
+      "name": "Asian Dollar",
+      "symbol": "AZND",
+      "decimals": 18,
+      "extensions": {
+        "coinGeckoId": "mu-digital-aznd"
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/AZND/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0xB0F70C0bD6FD87dbEb7C10dC692a2a6106817072",
+      "name": "Bitcoin",
+      "symbol": "BTC.b",
+      "decimals": 8,
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/BTC.b/logo.svg"
     },
     {
       "chainId": 143,
@@ -20,7 +42,37 @@
       "name": "Folks Finance",
       "symbol": "FOLKS",
       "decimals": 6,
+      "extensions": {
+        "coinGeckoId": "folks"
+      },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/FOLKS/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0xecAc9C5F704e954931349Da37F60E39f515c11c1",
+      "name": "Lombard Staked Bitcoin",
+      "symbol": "LBTC",
+      "decimals": 8,
+      "extensions": {
+        "coinGeckoId": "lombard-staked-btc"
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/LBTC/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0x91b81bfbe3A747230F0529Aa28d8b2Bc898E6D56",
+      "name": "LeverUp MON",
+      "symbol": "LVMON",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/LVMON/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0xFD44B35139Ae53FFF7d8F2A9869c503D987f00d1",
+      "name": "LeverUp USD",
+      "symbol": "LVUSD",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/LVUSD/logo.svg"
     },
     {
       "chainId": 143,
@@ -28,6 +80,9 @@
       "name": "Monad",
       "symbol": "MON",
       "decimals": 18,
+      "extensions": {
+        "coinGeckoId": "monad"
+      },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/MON/logo.svg"
     },
     {
@@ -44,6 +99,9 @@
       "name": "Wrapped SOL",
       "symbol": "SOL",
       "decimals": 9,
+      "extensions": {
+        "coinGeckoId": "wrapped-solana"
+      },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/SOL/logo.svg"
     },
     {
@@ -52,6 +110,9 @@
       "name": "USDC",
       "symbol": "USDC",
       "decimals": 6,
+      "extensions": {
+        "coinGeckoId": "usd-coin"
+      },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/USDC/logo.svg"
     },
     {
@@ -60,6 +121,9 @@
       "name": "USDT0",
       "symbol": "USDT0",
       "decimals": 6,
+      "extensions": {
+        "coinGeckoId": "usdt0"
+      },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/USDT0/logo.svg"
     },
     {
@@ -68,6 +132,9 @@
       "name": "Wrapped BTC",
       "symbol": "WBTC",
       "decimals": 8,
+      "extensions": {
+        "coinGeckoId": "wrapped-bitcoin"
+      },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/WBTC/logo.svg"
     },
     {
@@ -76,6 +143,9 @@
       "name": "Wrapped Ether",
       "symbol": "WETH",
       "decimals": 18,
+      "extensions": {
+        "coinGeckoId": "weth"
+      },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/WETH/logo.svg"
     },
     {
@@ -92,6 +162,9 @@
       "name": "XAUt0",
       "symbol": "XAUt0",
       "decimals": 6,
+      "extensions": {
+        "coinGeckoId": "tether-gold-tokens"
+      },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/XAUt0/logo.svg"
     },
     {
@@ -103,11 +176,40 @@
     },
     {
       "chainId": 143,
+      "address": "0x103222f020e98Bba0AD9809A011FDF8e6F067496",
+      "name": "earnAUSD",
+      "symbol": "earnAUSD",
+      "decimals": 6
+    },
+    {
+      "chainId": 143,
       "address": "0x8498312A6B3CbD158bf0c93AbdCF29E6e4F55081",
       "name": "gMON",
       "symbol": "gMON",
       "decimals": 18,
+      "extensions": {
+        "coinGeckoId": "magma-staked-monad"
+      },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/gMON/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0x1D4795A4670033f47f572b910553be0295077b51",
+      "name": "mcMON",
+      "symbol": "mcMON",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/mcMON/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0x336D414754967C6682B5A665C7DAF6F1409E63e8",
+      "name": "mu Bond",
+      "symbol": "muBOND",
+      "decimals": 18,
+      "extensions": {
+        "coinGeckoId": "mu-digital-mubond"
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/muBOND/logo.svg"
     },
     {
       "chainId": 143,
@@ -155,12 +257,15 @@
       "name": "Wrapped liquid staked Ether 2.0",
       "symbol": "wstETH",
       "decimals": 18,
+      "extensions": {
+        "coinGeckoId": "wrapped-steth"
+      },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/wstETH/logo.svg"
     }
   ],
   "version": {
     "major": 2,
-    "minor": 3,
+    "minor": 9,
     "patch": 0
   }
 }

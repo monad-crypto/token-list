@@ -114,15 +114,25 @@ The `data.json` file contains the following fields:
   "address": "0xYourTokenAddress",
   "name": "Token Name",
   "symbol": "TKN",
-  "decimals": 18
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "token-id"
+  }
 }
 ```
+
+### Required Fields
 
 - `chainId`: Always `143` for Monad Mainnet
 - `address`: The token's contract address (checksummed)
 - `name`: The full name of the token (must match the on-chain `name()` value)
 - `symbol`: The token symbol (must match the on-chain `symbol()` value and directory name)
 - `decimals`: The number of decimal places the token uses (must match the on-chain `decimals()` value)
+
+### Optional Fields
+
+- `extensions`: Additional metadata about the token
+  - `coinGeckoId`: The CoinGecko API ID for the token (if listed on CoinGecko)
 
 ## Important Notes
 

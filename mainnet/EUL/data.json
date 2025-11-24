@@ -1,0 +1,10 @@
+{
+  "chainId": 143,
+  "address": "0xDef72Af3fc69E1Dd5a094f7DDa08Ba203CD0438B",
+  "name": "Euler",
+  "symbol": "EUL",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "euler"
+  }
+}

@@ -212,6 +212,13 @@
     },
     {
       "chainId": 143,
+      "address": "0xD793c04B87386A6bb84ee61D98e0065FdE7fdA5E",
+      "name": "sAUSD",
+      "symbol": "sAUSD",
+      "decimals": 6
+    },
+    {
+      "chainId": 143,
       "address": "0x8498312A6B3CbD158bf0c93AbdCF29E6e4F55081",
       "name": "gMON",
       "symbol": "gMON",

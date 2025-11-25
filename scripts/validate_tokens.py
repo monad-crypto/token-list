@@ -3,14 +3,24 @@
 
 This script validates token definitions to ensure they conform to
 the required schema and contain valid data for all required fields.
+It also validates that the token metadata matches on-chain data.
 """
 
+import argparse
 import re
 import sys
 from pathlib import Path
 from typing import Any
 
 import json5
+from utils.web3 import (
+    DEFAULT_RPC_URL,
+    fetch_token_decimals_with_retry,
+    fetch_token_name_with_retry,
+    fetch_token_symbol_with_retry,
+    get_web3_connection,
+)
+from web3 import Web3
 
 DATA_DIR = "mainnet"
 REQUIRED_FIELDS = ["chainId", "address", "name", "symbol", "decimals"]
@@ -20,6 +30,7 @@ ALLOWED_EXTENSIONS = {
 EXPECTED_CHAIN_ID = 143
 MIN_DECIMALS = 0
 MAX_DECIMALS = 36
+ZERO_ADDRESS = "0x0000000000000000000000000000000000000000"
 
 
 def get_data_directory() -> Path:
@@ -64,12 +75,17 @@ def is_valid_address(address: str) -> bool:
     return bool(re.match(r"^0x[0-9A-Fa-f]{40}$", address))
 
 
-def validate_token_data(data: dict[str, Any], token_dir_name: str) -> list[str]:
-    """Validate token data against required schema.
+def validate_token_data(
+    data: dict[str, Any],
+    token_dir_name: str,
+    web3: Web3,
+) -> list[str]:
+    """Validate token data against required schema and on-chain metadata.
 
     Args:
         data: The token data dictionary to validate.
-        token_name: Name of the token directory (should match symbol).
+        token_dir_name: Name of the token directory (should match symbol).
+        web3: Web3 instance for on-chain validation.
 
     Returns:
         list[str]: List of error messages. Empty list if validation passes.
@@ -132,14 +148,74 @@ def validate_token_data(data: dict[str, Any], token_dir_name: str) -> list[str]:
                 else:
                     errors.append(f"Invalid extension tag: {tag}. Allowed tags are: {allowed_tags}")
 
+    # Validate on-chain data
+    onchain_errors = validate_onchain_metadata(data, web3)
+    errors.extend(onchain_errors)
+
     return errors
 
 
-def validate_token_directory(dir_path: Path) -> tuple[bool, list[str]]:
+def validate_onchain_metadata(data: dict[str, Any], web3: Web3) -> list[str]:
+    """Validate token metadata against on-chain data.
+
+    Each field is fetched separately so that we don't retry calls that succeeded.
+
+    Args:
+        data: The token data dictionary to validate.
+        web3: Web3 instance connected to the chain.
+
+    Returns:
+        list[str]: List of error messages. Empty list if validation passes.
+    """
+    errors = []
+    address = data.get("address")
+
+    if not address:
+        return ["Cannot validate on-chain: address is missing"]
+
+    if address == ZERO_ADDRESS:
+        return []
+
+    # Fetch and validate name
+    try:
+        onchain_name = fetch_token_name_with_retry(web3, address)
+        if data.get("name") != onchain_name:
+            errors.append(f"Name mismatch: expected '{onchain_name}', got '{data.get('name')}'")
+    except Exception as e:
+        errors.append(f"Failed to fetch on-chain name: {e}")
+
+    # Fetch and validate symbol
+    try:
+        onchain_symbol = fetch_token_symbol_with_retry(web3, address)
+        if data.get("symbol") != onchain_symbol:
+            errors.append(
+                f"Symbol mismatch: expected '{onchain_symbol}', got '{data.get('symbol')}'"
+            )
+    except Exception as e:
+        errors.append(f"Failed to fetch on-chain symbol: {e}")
+
+    # Fetch and validate decimals
+    try:
+        onchain_decimals = fetch_token_decimals_with_retry(web3, address)
+        if data.get("decimals") != onchain_decimals:
+            errors.append(
+                f"Decimals mismatch: expected {onchain_decimals}, got {data.get('decimals')}"
+            )
+    except Exception as e:
+        errors.append(f"Failed to fetch on-chain decimals: {e}")
+
+    return errors
+
+
+def validate_token_directory(
+    dir_path: Path,
+    web3: Web3,
+) -> tuple[bool, list[str]]:
     """Validate a token directory and its data.json file.
 
     Args:
         dir_path: Path to the token directory.
+        web3: Web3 instance for on-chain validation.
 
     Returns:
         tuple[bool, list[str]]: (is_valid, error_messages)
@@ -158,7 +234,7 @@ def validate_token_directory(dir_path: Path) -> tuple[bool, list[str]]:
     except OSError as e:
         return False, [f"Cannot read data.json: {e}"]
 
-    errors = validate_token_data(data, token_name)
+    errors = validate_token_data(data, token_name, web3)
     return len(errors) == 0, errors
 
 
@@ -168,6 +244,17 @@ def main() -> int:
     Returns:
         int: Exit code (0 for success, 1 for failure).
     """
+    parser = argparse.ArgumentParser(
+        description="Validate token JSON files and on-chain metadata in the mainnet/ directory"
+    )
+    parser.add_argument(
+        "--rpc-url",
+        type=str,
+        help=f"Custom RPC URL (defaults to MONAD_RPC_URL env var or {DEFAULT_RPC_URL})",
+    )
+
+    args = parser.parse_args()
+
     try:
         data_dir = get_data_directory()
 
@@ -176,12 +263,19 @@ def main() -> int:
             print(f"No token directories found in {DATA_DIR}/")
             return 0
 
+        try:
+            web3 = get_web3_connection(args.rpc_url)
+        except ConnectionError as e:
+            print(f"Error: {e}")
+            print("Cannot proceed without RPC connection")
+            return 1
+
         print(f"Validating {len(token_dirs)} token(s)...\n")
 
         all_valid = True
         for dir_path in token_dirs:
             token_name = dir_path.name
-            is_valid, errors = validate_token_directory(dir_path)
+            is_valid, errors = validate_token_directory(dir_path, web3)
 
             if is_valid:
                 print(f"{token_name} is valid")
@@ -198,7 +292,7 @@ def main() -> int:
         print("\nValidation failed for one or more tokens")
         return 1
     except FileNotFoundError as e:
-        print(f"{e}")
+        print(f"Error: {e}")
         return 1
     except Exception as e:
         print(f"Unexpected error: {e}")

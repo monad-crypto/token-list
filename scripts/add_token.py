@@ -8,37 +8,14 @@ structure and data.json file.
 
 import argparse
 import json
-import os
 import sys
 from pathlib import Path
 
-from web3 import Web3
-
-CHAIN_ID = 143
-RPC_URL = os.environ.get("MONAD_RPC_URL", "https://rpc.monad.xyz")
-ERC20_ABI = [
-    {
-        "constant": True,
-        "inputs": [],
-        "name": "name",
-        "outputs": [{"name": "", "type": "string"}],
-        "type": "function",
-    },
-    {
-        "constant": True,
-        "inputs": [],
-        "name": "symbol",
-        "outputs": [{"name": "", "type": "string"}],
-        "type": "function",
-    },
-    {
-        "constant": True,
-        "inputs": [],
-        "name": "decimals",
-        "outputs": [{"name": "", "type": "uint8"}],
-        "type": "function",
-    },
-]
+from utils.web3 import (
+    fetch_token_data_with_retry,
+    get_web3_connection,
+    validate_address,
+)
 
 
 def get_mainnet_directory() -> Path:
@@ -57,55 +34,6 @@ def get_mainnet_directory() -> Path:
         raise FileNotFoundError(f"Mainnet directory not found: {mainnet_dir}")
 
     return mainnet_dir
-
-
-def validate_address(address: str) -> str:
-    """Validate and normalize an Ethereum address.
-
-    Args:
-        address: The address string to validate.
-
-    Returns:
-        str: Checksummed address.
-
-    Raises:
-        ValueError: If the address is invalid.
-    """
-    if not Web3.is_address(address):
-        raise ValueError(f"Invalid Ethereum address: {address}")
-
-    return Web3.to_checksum_address(address)
-
-
-def fetch_token_data(web3: Web3, address: str) -> dict:
-    """Fetch token data from the blockchain.
-
-    Args:
-        web3: Web3 instance connected to the chain.
-        address: Token contract address.
-
-    Returns:
-        dict: Token data containing name, symbol, and decimals.
-
-    Raises:
-        Exception: If fetching token data fails.
-    """
-    contract = web3.eth.contract(address=address, abi=ERC20_ABI)
-
-    try:
-        name = contract.functions.name().call()
-        symbol = contract.functions.symbol().call()
-        decimals = contract.functions.decimals().call()
-    except Exception as e:
-        raise Exception(f"Failed to fetch token data: {e}") from e
-
-    return {
-        "chainId": CHAIN_ID,
-        "address": address,
-        "name": name,
-        "symbol": symbol,
-        "decimals": decimals,
-    }
 
 
 def create_token_directory(mainnet_dir: Path, token_data: dict) -> Path:
@@ -167,15 +95,11 @@ def main() -> int:
         address = validate_address(address)
         print(f"Checksummed address: {address}")
 
-        web3 = Web3(Web3.HTTPProvider(RPC_URL))
-        if not web3.is_connected():
-            print("Error: Failed to connect to the RPC")
-            return 1
-
+        web3 = get_web3_connection()
         print("Connected successfully")
 
         print(f"\nFetching token data from {address}...")
-        token_data = fetch_token_data(web3, address)
+        token_data = fetch_token_data_with_retry(web3, address)
 
         print("\nToken found:")
         print(f"  Name: {token_data['name']}")
@@ -196,13 +120,7 @@ def main() -> int:
         )
 
         return 0
-    except ValueError as e:
-        print(f"Error: {e}")
-        return 1
-    except FileNotFoundError as e:
-        print(f"Error: {e}")
-        return 1
-    except FileExistsError as e:
+    except (ValueError, ConnectionError, FileNotFoundError, FileExistsError) as e:
         print(f"Error: {e}")
         return 1
     except Exception as e:

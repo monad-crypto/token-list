@@ -33,6 +33,7 @@ ignore = [
     "PLR0912",  # Too many branches
     "PLR0913",  # Too many arguments to function call
     "PLR2004",  # Magic value used in comparison
+    "PERF203",  # try-except in loop
 ]
 
 [lint.isort]

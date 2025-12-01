@@ -3,5 +3,8 @@
   "address": "0xA3227C5969757783154C60bF0bC1944180ed81B9",
   "name": "Kintsu Staked Monad",
   "symbol": "sMON",
-  "decimals": 18
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "kintsu-staked-monad"
+  }
 }

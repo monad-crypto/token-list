@@ -3,5 +3,8 @@
   "address": "0x111111d2bf19e43C34263401e0CAd979eD1cdb61",
   "name": "World Liberty Financial USD",
   "symbol": "USD1",
-  "decimals": 6
+  "decimals": 6,
+  "extensions": {
+    "coinGeckoId": "usd1-wlfi"
+  }
 }

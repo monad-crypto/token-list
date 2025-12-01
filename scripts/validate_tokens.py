@@ -77,14 +77,14 @@ def is_valid_address(address: str) -> bool:
 
 def validate_token_data(
     data: dict[str, Any],
-    token_dir_name: str,
+    token_dir_path: Path,
     web3: Web3,
 ) -> list[str]:
     """Validate token data against required schema and on-chain metadata.
 
     Args:
         data: The token data dictionary to validate.
-        token_dir_name: Name of the token directory (should match symbol).
+        token_dir_path: Path to the token directory.
         web3: Web3 instance for on-chain validation.
 
     Returns:
@@ -117,9 +117,9 @@ def validate_token_data(
     symbol = data.get("symbol")
     if not isinstance(symbol, str) or not symbol.strip():
         errors.append("Invalid symbol: must be a non-empty string")
-    elif symbol != token_dir_name:
+    elif symbol != token_dir_path.name:
         errors.append(
-            f"Symbol mismatch: folder name is '{token_dir_name}' but symbol is '{symbol}'"
+            f"Symbol mismatch: folder name is '{token_dir_path.name}' but symbol is '{symbol}'"
         )
 
     # Validate decimals
@@ -128,6 +128,12 @@ def validate_token_data(
         errors.append(
             f"Invalid decimals: must be an integer between {MIN_DECIMALS} and {MAX_DECIMALS}"
         )
+
+    # Validate logo
+    svg_logo_path = token_dir_path / "logo.svg"
+    png_logo_path = token_dir_path / "logo.png"
+    if not svg_logo_path.exists() and not png_logo_path.exists():
+        errors.append("Logo file not found")
 
     # Validate extensions (optional)
     if "extensions" in data:
@@ -220,11 +226,10 @@ def validate_token_directory(
     Returns:
         tuple[bool, list[str]]: (is_valid, error_messages)
     """
-    token_name = dir_path.name
     data_file = dir_path / "data.json"
 
     if not data_file.exists():
-        return False, [f"data.json not found in {token_name}/ directory"]
+        return False, [f"data.json not found in {dir_path.name}/ directory"]
 
     try:
         with data_file.open(mode="r", encoding="utf-8") as f:
@@ -234,7 +239,7 @@ def validate_token_directory(
     except OSError as e:
         return False, [f"Cannot read data.json: {e}"]
 
-    errors = validate_token_data(data, token_name, web3)
+    errors = validate_token_data(data, dir_path, web3)
     return len(errors) == 0, errors
 
 

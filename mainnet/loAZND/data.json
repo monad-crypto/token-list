@@ -1,0 +1,10 @@
+{
+  "chainId": 143,
+  "address": "0x9c82eB49B51F7Dc61e22Ff347931CA32aDc6cd90",
+  "name": "Locked AZND",
+  "symbol": "loAZND",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "mu-digital-locked-aznd"
+  }
+}

@@ -9,10 +9,12 @@ It also validates that the token metadata matches on-chain data.
 import argparse
 import re
 import sys
+import xml.etree.ElementTree as ET
 from pathlib import Path
-from typing import Any
+from typing import Any, Optional
 
 import json5
+from PIL import Image
 from utils.web3 import (
     DEFAULT_RPC_URL,
     fetch_token_decimals_with_retry,
@@ -39,6 +41,7 @@ VALID_BRIDGE_PROTOCOLS = {
 EXPECTED_CHAIN_ID = 143
 MIN_DECIMALS = 0
 MAX_DECIMALS = 36
+MIN_LOGO_SIZE = 200
 ZERO_ADDRESS = "0x0000000000000000000000000000000000000000"
 
 
@@ -130,6 +133,85 @@ def validate_bridge_info(bridge_info: dict[str, Any]) -> list[str]:
     return errors
 
 
+def get_svg_dimensions(svg_path: Path) -> tuple[Optional[int], Optional[int]]:
+    """Extract width and height from an SVG file.
+
+    Args:
+        svg_path: Path to the SVG file.
+
+    Returns:
+        tuple[Optional[int], Optional[int]]: (width, height) in pixels, or (None, None) if not
+        found.
+    """
+    try:
+        tree = ET.parse(svg_path)
+        root = tree.getroot()
+
+        width_str = root.get("width")
+        height_str = root.get("height")
+
+        if width_str and height_str:
+            width = int(re.sub(r"[^0-9.]", "", width_str).split(".")[0])
+            height = int(re.sub(r"[^0-9.]", "", height_str).split(".")[0])
+            return width, height
+
+        return None, None
+    except Exception:
+        return None, None
+
+
+def validate_logo_dimensions(token_dir_path: Path) -> list[str]:
+    """Validate logo file dimensions.
+
+    Args:
+        token_dir_path: Path to the token directory.
+
+    Returns:
+        list[str]: List of error messages. Empty list if validation passes.
+    """
+    errors = []
+    svg_logo_path = token_dir_path / "logo.svg"
+    png_logo_path = token_dir_path / "logo.png"
+
+    logo_path = None
+    if svg_logo_path.exists():
+        logo_path = svg_logo_path
+    elif png_logo_path.exists():
+        logo_path = png_logo_path
+    else:
+        return ["Logo file not found"]
+
+    try:
+        if logo_path.suffix == ".svg":
+            width, height = get_svg_dimensions(logo_path)
+            if width is None or height is None:
+                errors.append(
+                    "Could not extract dimensions from SVG. "
+                    "Ensure the SVG has width/height attributes or a viewBox."
+                )
+                return errors
+        elif logo_path.suffix == ".png":
+            with Image.open(logo_path) as img:
+                width, height = img.size
+        else:
+            errors.append(f"Unsupported logo format: {logo_path.suffix}")
+            return errors
+
+        # Check if square
+        if width != height:
+            errors.append(f"Logo must be square: current dimensions are {width}x{height}px")
+        # Check minimum size
+        elif width < MIN_LOGO_SIZE:
+            errors.append(
+                f"Logo dimensions must be at least {MIN_LOGO_SIZE}x{MIN_LOGO_SIZE}px: "
+                f"current dimensions are {width}x{height}px"
+            )
+    except Exception as e:
+        errors.append(f"Failed to validate logo dimensions: {e}")
+
+    return errors
+
+
 def validate_token_data(
     data: dict[str, Any],
     token_dir_path: Path,
@@ -184,11 +266,9 @@ def validate_token_data(
             f"Invalid decimals: must be an integer between {MIN_DECIMALS} and {MAX_DECIMALS}"
         )
 
-    # Validate logo
-    svg_logo_path = token_dir_path / "logo.svg"
-    png_logo_path = token_dir_path / "logo.png"
-    if not svg_logo_path.exists() and not png_logo_path.exists():
-        errors.append("Logo file not found")
+    # Validate logo dimensions
+    logo_errors = validate_logo_dimensions(token_dir_path)
+    errors.extend(logo_errors)
 
     # Validate extensions (optional)
     if "extensions" in data:

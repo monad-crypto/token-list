@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
     "json5>=0.12.1",
+    "pillow>=11.0.0",
     "pyjson5>=2.0.0",
     "requests>=2.32.5",
     "web3>=7.6.0",

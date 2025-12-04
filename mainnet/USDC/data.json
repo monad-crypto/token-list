@@ -5,6 +5,9 @@
   "symbol": "USDC",
   "decimals": 6,
   "extensions": {
-    "coinGeckoId": "usd-coin"
+    "coinGeckoId": "usd-coin",
+    "bridgeInfo": {
+      "protocol": "Circle CCTP"
+    }
   }
 }

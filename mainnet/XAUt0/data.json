@@ -5,6 +5,9 @@
   "symbol": "XAUt0",
   "decimals": 6,
   "extensions": {
-    "coinGeckoId": "tether-gold-tokens"
+    "coinGeckoId": "tether-gold-tokens",
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT"
+    }
   }
 }

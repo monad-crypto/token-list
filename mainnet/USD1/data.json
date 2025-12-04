@@ -5,6 +5,9 @@
   "symbol": "USD1",
   "decimals": 6,
   "extensions": {
-    "coinGeckoId": "usd1-wlfi"
+    "coinGeckoId": "usd1-wlfi",
+    "bridgeInfo": {
+      "protocol": "Chainlink CCIP"
+    }
   }
 }

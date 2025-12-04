@@ -5,6 +5,9 @@
   "symbol": "USDT0",
   "decimals": 6,
   "extensions": {
-    "coinGeckoId": "usdt0"
+    "coinGeckoId": "usdt0",
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT"
+    }
   }
 }

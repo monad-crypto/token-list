@@ -5,6 +5,9 @@
   "symbol": "wstETH",
   "decimals": 18,
   "extensions": {
-    "coinGeckoId": "wrapped-steth"
+    "coinGeckoId": "wrapped-steth",
+    "bridgeInfo": {
+      "protocol": "Chainlink CCIP"
+    }
   }
 }

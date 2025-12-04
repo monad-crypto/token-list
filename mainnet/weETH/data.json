@@ -5,6 +5,9 @@
   "symbol": "weETH",
   "decimals": 18,
   "extensions": {
-    "coinGeckoId": "wrapped-eeth"
+    "coinGeckoId": "wrapped-eeth",
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT"
+    }
   }
 }

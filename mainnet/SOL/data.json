@@ -5,6 +5,9 @@
   "symbol": "SOL",
   "decimals": 9,
   "extensions": {
-    "coinGeckoId": "wrapped-solana"
+    "coinGeckoId": "wrapped-solana",
+    "bridgeInfo": {
+      "protocol": "Wormhole"
+    }
   }
 }

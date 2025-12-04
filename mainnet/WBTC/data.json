@@ -5,6 +5,9 @@
   "symbol": "WBTC",
   "decimals": 8,
   "extensions": {
-    "coinGeckoId": "wrapped-bitcoin"
+    "coinGeckoId": "wrapped-bitcoin",
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT"
+    }
   }
 }

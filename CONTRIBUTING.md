@@ -118,7 +118,8 @@ The `data.json` file contains the following fields:
   "extensions": {
     "coinGeckoId": "token-id",
     "bridgeInfo": {
-      "protocol": "bridge-protocol"
+      "protocol": "bridge-protocol",
+      "bridgeAddress": "0xTokenBridgeAddress"
     }
   }
 }

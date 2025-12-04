@@ -7,7 +7,8 @@
   "extensions": {
     "coinGeckoId": "usdt0",
     "bridgeInfo": {
-      "protocol": "LayerZero OFT"
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0x9151434b16b9763660705744891fA906F660EcC5"
     }
   }
 }

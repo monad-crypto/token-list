@@ -7,7 +7,8 @@
   "extensions": {
     "coinGeckoId": "usd1-wlfi",
     "bridgeInfo": {
-      "protocol": "Chainlink CCIP"
+      "protocol": "Chainlink CCIP",
+      "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
     }
   }
 }

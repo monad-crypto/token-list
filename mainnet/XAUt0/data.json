@@ -7,7 +7,8 @@
   "extensions": {
     "coinGeckoId": "tether-gold-tokens",
     "bridgeInfo": {
-      "protocol": "LayerZero OFT"
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0x21cAef8A43163Eea865baeE23b9C2E327696A3bf"
     }
   }
 }

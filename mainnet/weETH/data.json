@@ -7,7 +7,8 @@
   "extensions": {
     "coinGeckoId": "wrapped-eeth",
     "bridgeInfo": {
-      "protocol": "LayerZero OFT"
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0xA3D68b74bF0528fdD07263c60d6488749044914b"
     }
   }
 }

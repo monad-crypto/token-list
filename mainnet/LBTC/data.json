@@ -5,6 +5,10 @@
   "symbol": "LBTC",
   "decimals": 8,
   "extensions": {
-    "coinGeckoId": "lombard-staked-btc"
+    "coinGeckoId": "lombard-staked-btc",
+    "bridgeInfo": {
+      "protocol": "Chainlink CCIP",
+      "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+    }
   }
 }

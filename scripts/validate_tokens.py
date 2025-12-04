@@ -93,7 +93,7 @@ def validate_bridge_info(bridge_info: dict[str, Any]) -> list[str]:
         list[str]: List of error messages. Empty list if validation passes.
     """
     errors = []
-    allowed_fields = {"protocol"}
+    allowed_fields = {"protocol", "bridgeAddress"}
     actual_fields = set(bridge_info.keys())
 
     unknown_fields = actual_fields - allowed_fields
@@ -113,6 +113,18 @@ def validate_bridge_info(bridge_info: dict[str, Any]) -> list[str]:
             errors.append(
                 f"Invalid bridgeInfo.protocol: '{protocol}'. Must be one of: {valid_protocols}"
             )
+
+    if "bridgeAddress" not in bridge_info:
+        errors.append("Missing required field 'bridgeAddress' in bridgeInfo")
+    else:
+        bridge_address = bridge_info["bridgeAddress"]
+        if not isinstance(bridge_address, str):
+            errors.append(
+                "Invalid type for bridgeInfo.bridgeAddress: expected str, "
+                f"got {type(bridge_address).__name__}"
+            )
+        elif not is_valid_address(bridge_address):
+            errors.append(f"Invalid bridgeInfo.bridgeAddress address: {bridge_address}")
 
     return errors
 

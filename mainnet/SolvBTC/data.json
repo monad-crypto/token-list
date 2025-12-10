@@ -1,0 +1,14 @@
+{
+  "chainId": 143,
+  "address": "0xaE4EFbc7736f963982aACb17EFA37fCBAb924cB3",
+  "name": "Solv BTC",
+  "symbol": "SolvBTC",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "solv-btc",
+    "bridgeInfo": {
+      "protocol": "Chainlink CCIP",
+      "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+    }
+  }
+}

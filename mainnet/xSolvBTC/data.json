@@ -1,0 +1,14 @@
+{
+  "chainId": 143,
+  "address": "0xc99F5c922DAE05B6e2ff83463ce705eF7C91F077",
+  "name": "xSolvBTC",
+  "symbol": "xSolvBTC",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "solv-protocol-solvbtc-bbn",
+    "bridgeInfo": {
+      "protocol": "Chainlink CCIP",
+      "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+    }
+  }
+}

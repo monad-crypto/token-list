@@ -1,0 +1,14 @@
+{
+  "chainId": 143,
+  "address": "0x4809010926aec940b550D34a46A52739f996D75D",
+  "name": "Wrapped Savings rUSD",
+  "symbol": "wsrUSD",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "wrapped-savings-rusd",
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0x4809010926aec940b550D34a46A52739f996D75D"
+    }
+  }
+}

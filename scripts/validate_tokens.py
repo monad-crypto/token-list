@@ -31,6 +31,7 @@ ALLOWED_EXTENSIONS = {
 VALID_BRIDGE_PROTOCOLS = {
     "Chainlink CCIP",
     "Circle CCTP",
+    "Hyperlane Warp Route",
     "LayerZero OFT",
     "Wormhole",
     "Wormhole NTT",

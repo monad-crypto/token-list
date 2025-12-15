@@ -1,0 +1,10 @@
+{
+  "chainId": 143,
+  "address": "0xF59D81cd43f620E722E07f9Cb3f6E41B031017a3",
+  "name": "PancakeSwap Token",
+  "symbol": "CAKE",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "pancakeswap-token"
+  }
+}

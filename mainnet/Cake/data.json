@@ -5,6 +5,11 @@
   "symbol": "Cake",
   "decimals": 18,
   "extensions": {
-    "coinGeckoId": "pancakeswap-token"
+    "coinGeckoId": "pancakeswap-token",
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0xF59D81cd43f620E722E07f9Cb3f6E41B031017a3"
+    }
+
   }
 }

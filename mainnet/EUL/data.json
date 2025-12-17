@@ -5,6 +5,10 @@
   "symbol": "EUL",
   "decimals": 18,
   "extensions": {
-    "coinGeckoId": "euler"
+    "coinGeckoId": "euler",
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0x831257BFa5478111d2327e08c4068ec37Ac14B81"
+    }
   }
 }

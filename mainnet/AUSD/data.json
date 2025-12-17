@@ -5,6 +5,10 @@
   "symbol": "AUSD",
   "decimals": 6,
   "extensions": {
-    "coinGeckoId": "agora-dollar"
+    "coinGeckoId": "agora-dollar",
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0x9CaB7Ede13dc56652E44D2404E969C212f22689b"
+    }
   }
 }

@@ -3,5 +3,8 @@
   "address": "0x8BF591Eae535f93a242D5A954d3Cde648b48A5A8",
   "name": "Sumerian USD",
   "symbol": "suUSD",
-  "decimals": 18
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "sumer-money-suusd"
+  }
 }

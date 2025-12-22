@@ -3,5 +3,8 @@
   "address": "0x103222f020e98Bba0AD9809A011FDF8e6F067496",
   "name": "earnAUSD",
   "symbol": "earnAUSD",
-  "decimals": 6
+  "decimals": 6,
+  "extensions": {
+    "coinGeckoId": "earnausd"
+  }
 }

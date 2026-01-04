@@ -480,6 +480,14 @@
     },
     {
       "chainId": 143,
+      "address": "0x4Ec99D1Dc5a54D60055998F4cC05DEf4c1De94c5",
+      "name": "MonApe",
+      "symbol": "APE",
+      "decimals": 18,
+      "logoURI":"https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/APE/logo.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x4809010926aec940b550D34a46A52739f996D75D",
       "name": "Wrapped Savings rUSD",
       "symbol": "wsrUSD",

@@ -1,0 +1,14 @@
+{
+  "chainId": 143,
+  "address": "0xb37476cB1F6111cC682b107B747b8652f90B0984",
+  "name": "Yuzu Protection Pool",
+  "symbol": "yzPP",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "yuzu-protection-pool",
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0xb37476cB1F6111cC682b107B747b8652f90B0984"
+    }
+  }
+}

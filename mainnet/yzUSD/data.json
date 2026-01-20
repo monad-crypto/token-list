@@ -1,0 +1,14 @@
+{
+  "chainId": 143,
+  "address": "0x9dcB0D17eDDE04D27F387c89fECb78654C373858",
+  "name": "Yuzu USD",
+  "symbol": "yzUSD",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "yuzu-usd",
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0x9dcB0D17eDDE04D27F387c89fECb78654C373858"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "chainId": 143,
+  "address": "0x484be0540aD49f351eaa04eeB35dF0f937D4E73f",
+  "name": "Staked Yuzu USD",
+  "symbol": "syzUSD",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "staked-yuzu-usd",
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0x484be0540aD49f351eaa04eeB35dF0f937D4E73f"
+    }
+  }
+}

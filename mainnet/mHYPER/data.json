@@ -1,0 +1,14 @@
+{
+  "chainId": 143,
+  "address": "0xd90F6bFEd23fFDE40106FC4498DD2e9EDB95E4e7",
+  "name": "Midas Hyperithm",
+  "symbol": "mHYPER",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "midas-mhyper",
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0x08BC5Ef2E2Afe697614bf3A9eaA71dcBb577f2Df"
+    }
+  }
+}

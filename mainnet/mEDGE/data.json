@@ -1,0 +1,10 @@
+{
+  "chainId": 143,
+  "address": "0x1c8eE940B654bFCeD403f2A44C1603d5be0F50Fa",
+  "name": "Midas mEDGE",
+  "symbol": "mEDGE",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "midas-medge"
+  }
+}

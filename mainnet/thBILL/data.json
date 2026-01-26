@@ -1,0 +1,14 @@
+{
+  "chainId": 143,
+  "address": "0xfDD22Ce6D1F66bc0Ec89b20BF16CcB6670F55A5a",
+  "name": "thBILL",
+  "symbol": "thBILL",
+  "decimals": 6,
+  "extensions": {
+    "coinGeckoId": "theo-short-duration-us-treasury-fund",
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0xfDD22Ce6D1F66bc0Ec89b20BF16CcB6670F55A5a"
+    }
+  }
+}

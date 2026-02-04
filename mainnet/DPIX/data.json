@@ -1,0 +1,9 @@
+{
+  "chainId": 143,
+  "address": "0x0ee8044f27174f47B86785De4728EDdc267fcF39",
+  "name": "DragonPix",
+  "symbol": "DPIX",
+  "decimals": 18,
+  "extensions": {
+  }
+}

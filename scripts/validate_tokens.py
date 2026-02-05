@@ -162,7 +162,7 @@ def validate_cross_chain_addresses(cross_chain: dict[str, Any]) -> list[str]:
 
     for chain_id, chain_data in cross_chain.items():
         # Validate chain ID format
-        if not chain_id in KNOWN_CHAIN_IDS:
+        if chain_id not in KNOWN_CHAIN_IDS:
             errors.append(
                 f"Invalid chain ID '{chain_id}' in crossChainAddresses. "
             )

@@ -41,7 +41,9 @@ KNOWN_CHAIN_IDS = {
     "10",  # Optimism
     "56",  # BNB Chain
     "137",  # Polygon
+    "999",  # HyperEVM
     "8453",  # Base
+    "9745",  # Plasma
     "42161",  # Arbitrum One
     "43114",  # Avalanche C-Chain
 }

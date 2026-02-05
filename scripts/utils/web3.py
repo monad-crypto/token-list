@@ -21,7 +21,9 @@ CHAIN_RPC_URLS = {
     "10": os.environ.get("OPTIMISM_RPC_URL", "https://mainnet.optimism.io"),
     "56": os.environ.get("BSC_RPC_URL", "https://bsc-dataseed.binance.org"),
     "137": os.environ.get("POLYGON_RPC_URL", "https://polygon-rpc.com"),
+    "999": os.environ.get("HYPEREVM_RPC_URL", "https://rpc.hyperliquid.xyz/evm"),
     "8453": os.environ.get("BASE_RPC_URL", "https://mainnet.base.org"),
+    "9745": os.environ.get("PLASMA_RPC_URL", "https://rpc.plasma.to"),
     "42161": os.environ.get("ARBITRUM_RPC_URL", "https://arb1.arbitrum.io/rpc"),
     "43114": os.environ.get("AVALANCHE_RPC_URL", "https://api.avax.network/ext/bc/C/rpc"),
 }
@@ -31,7 +33,9 @@ CHAIN_NAMES = {
     "10": "Optimism",
     "56": "BNB Chain",
     "137": "Polygon",
+    "999": "HyperEVM",
     "8453": "Base",
+    "9745": "Plasma",
     "42161": "Arbitrum One",
     "43114": "Avalanche",
 }

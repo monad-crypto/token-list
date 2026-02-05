@@ -13,6 +13,9 @@
     "crossChainAddresses": {
       "1": {
         "address": "0x6DFF69eb720986E98Bb3E8b26cb9E02Ec1a35D12"
+      },
+      "9745": {
+        "address": "0xC8A8DF9B210243c55D31c73090F06787aD0A1Bf6"
       }
     }
   }

@@ -171,7 +171,9 @@ If your token exists on other chains, you can include those addresses to help wi
 | `10`               | Optimism          |
 | `56`               | BNB Chain         |
 | `137`              | Polygon           |
+| `999`              | HyperEVM          |
 | `8453`             | Base              |
+| `9745`             | Plasma            |
 | `42161`            | Arbitrum One      |
 | `43114`            | Avalanche C-Chain |
 

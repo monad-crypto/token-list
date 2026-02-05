@@ -9,6 +9,20 @@
     "bridgeInfo": {
       "protocol": "LayerZero OFT",
       "bridgeAddress": "0x9151434b16b9763660705744891fA906F660EcC5"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+        "symbol": "USDT"
+      },
+      "10": {
+        "address": "0x01bFF41798a0BcF287b996046Ca68b395DbC1071",
+        "symbol": "USD₮0"
+      },
+      "42161": {
+        "address": "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9",
+        "symbol": "USD₮0"
+      }
     }
   }
 }

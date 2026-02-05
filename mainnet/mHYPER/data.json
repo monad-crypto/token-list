@@ -9,6 +9,11 @@
     "bridgeInfo": {
       "protocol": "LayerZero OFT",
       "bridgeAddress": "0x08BC5Ef2E2Afe697614bf3A9eaA71dcBb577f2Df"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0x9b5528528656DBC094765E2abB79F293c21191B9"
+      }
     }
   }
 }

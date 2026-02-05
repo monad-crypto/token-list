@@ -5,6 +5,15 @@
   "symbol": "earnAUSD",
   "decimals": 6,
   "extensions": {
-    "coinGeckoId": "earnausd"
+    "coinGeckoId": "earnausd",
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0x103222f020e98Bba0AD9809A011FDF8e6F067496"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0xa6916b65c5e3fEdf46c0a2F59bff776e872C8992"
+      }
+    }
   }
 }

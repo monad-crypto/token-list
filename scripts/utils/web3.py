@@ -14,6 +14,27 @@ from web3.exceptions import Web3Exception
 CHAIN_ID = 143
 DEFAULT_RPC_URL = "https://rpc.monad.xyz"
 RPC_URL = os.environ.get("MONAD_RPC_URL", DEFAULT_RPC_URL)
+
+# Chain RPC configuration with environment variable overrides
+CHAIN_RPC_URLS = {
+    "1": os.environ.get("ETH_RPC_URL", "https://ethereum-rpc.publicnode.com"),
+    "10": os.environ.get("OPTIMISM_RPC_URL", "https://mainnet.optimism.io"),
+    "56": os.environ.get("BSC_RPC_URL", "https://bsc-dataseed.binance.org"),
+    "137": os.environ.get("POLYGON_RPC_URL", "https://polygon-rpc.com"),
+    "8453": os.environ.get("BASE_RPC_URL", "https://mainnet.base.org"),
+    "42161": os.environ.get("ARBITRUM_RPC_URL", "https://arb1.arbitrum.io/rpc"),
+    "43114": os.environ.get("AVALANCHE_RPC_URL", "https://api.avax.network/ext/bc/C/rpc"),
+}
+
+CHAIN_NAMES = {
+    "1": "Ethereum",
+    "10": "Optimism",
+    "56": "BNB Chain",
+    "137": "Polygon",
+    "8453": "Base",
+    "42161": "Arbitrum One",
+    "43114": "Avalanche",
+}
 ERC20_ABI = [
     {
         "constant": True,
@@ -102,6 +123,29 @@ def get_web3_connection(rpc_url: Optional[str] = None) -> Web3:
         raise ConnectionError(f"Failed to connect to RPC at {url}")
 
     return web3
+
+
+def get_web3_connection_for_chain(chain_id: str) -> Optional[Web3]:
+    """Get a Web3 connection for a specific chain.
+
+    Args:
+        chain_id: The chain ID as a string (e.g., "1" for Ethereum).
+
+    Returns:
+        Web3: Connected Web3 instance, or None if chain is not supported
+              or connection fails.
+    """
+    if chain_id not in CHAIN_RPC_URLS:
+        return None
+
+    rpc_url = CHAIN_RPC_URLS[chain_id]
+    try:
+        web3 = Web3(Web3.HTTPProvider(rpc_url))
+        if not web3.is_connected():
+            return None
+        return web3
+    except Exception:
+        return None
 
 
 def validate_address(address: str) -> str:

@@ -138,6 +138,50 @@ The `data.json` file contains the following fields:
 - `extensions`: Additional metadata about the token
   - `coinGeckoId`: The CoinGecko API ID for the token (if listed on CoinGecko)
   - `bridgeInfo`: Bridge information for bridged tokens
+  - `crossChainAddresses`: Token addresses on other chains (see below)
+
+### Cross-Chain Addresses
+
+If your token exists on other chains, you can include those addresses to help with cross-chain token identification and bridging:
+
+```json
+{
+  "extensions": {
+    "crossChainAddresses": {
+      "1": {
+        "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+      },
+      "56": {
+        "address": "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
+        "decimals": 18
+      },
+      "8453": {
+        "address": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      }
+    }
+  }
+}
+```
+
+**Chain ID Reference:**
+
+| Supported Chain ID | Network           |
+| ------------------ | ----------------- |
+| `1`                | Ethereum Mainnet  |
+| `10`               | Optimism          |
+| `56`               | BNB Chain         |
+| `137`              | Polygon           |
+| `8453`             | Base              |
+| `42161`            | Arbitrum One      |
+| `43114`            | Avalanche C-Chain |
+
+**Fields per chain entry:**
+
+- `address` (required): The token contract address on that chain
+- `symbol` (optional): Expected symbol on this chain if it differs from the Monad token's symbol
+- `decimals` (optional): Expected decimals on this chain if they differ from the Monad token's decimals
+
+**Overrides:** Some tokens have different metadata across chains. Use `symbol` or `decimals` overrides when the cross-chain token's on-chain values differ from the Monad token.
 
 ## Important Notes
 

@@ -9,6 +9,16 @@
     "bridgeInfo": {
       "protocol": "Chainlink CCIP",
       "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0x8d0D000Ee44948FC98c9B98A4FA4921476f08B0d",
+        "decimals": 18
+      },
+      "56": {
+        "address": "0x8d0D000Ee44948FC98c9B98A4FA4921476f08B0d",
+        "decimals": 18
+      }
     }
   }
 }

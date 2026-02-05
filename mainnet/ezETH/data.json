@@ -9,6 +9,20 @@
     "bridgeInfo": {
       "protocol": "Hyperlane Warp Route",
       "bridgeAddress": "0x7A911b0bD4F067FB8DAFF734A78E7A72865100d8"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0xbf5495Efe5DB9ce00f80364C8B423567e58d2110"
+      },
+      "56": {
+        "address": "0x2416092f143378750bb29b79eD961ab195CcEea5"
+      },
+      "8453": {
+        "address": "0x2416092f143378750bb29b79eD961ab195CcEea5"
+      },
+      "42161": {
+        "address": "0x2416092f143378750bb29b79eD961ab195CcEea5"
+      }
     }
   }
 }

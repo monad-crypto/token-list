@@ -3,5 +3,16 @@
   "address": "0x0c65A0BC65a5D819235B71F554D210D3F80E0852",
   "name": "aPriori Monad LST",
   "symbol": "aprMON",
-  "decimals": 18
+  "decimals": 18,
+  "extensions": {
+    "bridgeInfo": {
+      "protocol": "Chainlink CCIP",
+      "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0x93783ccd94763e11B9a57394e63Ddd9CeedaD925"
+      }
+    }
+  }
 }

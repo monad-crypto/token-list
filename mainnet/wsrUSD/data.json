@@ -9,6 +9,23 @@
     "bridgeInfo": {
       "protocol": "LayerZero OFT",
       "bridgeAddress": "0x4809010926aec940b550D34a46A52739f996D75D"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0xd3fD63209FA2D55B07A0f6db36C2f43900be3094"
+      },
+      "56": {
+        "address": "0x4809010926aec940b550D34a46A52739f996D75D"
+      },
+      "8453": {
+        "address": "0x62344be8CA1c339B46274a4017dd87AF436900B1"
+      },
+      "42161": {
+        "address": "0x4809010926aec940b550D34a46A52739f996D75D"
+      },
+      "43114": {
+        "address": "0x4809010926aec940b550D34a46A52739f996D75D"
+      }
     }
   }
 }

@@ -5,9 +5,18 @@
   "symbol": "BTC.b",
   "decimals": 8,
   "extensions": {
+    "coinGeckoId": "bitcoin-avalanche-bridged-btc-b",
     "bridgeInfo": {
       "protocol": "Chainlink CCIP",
       "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0xB0F70C0bD6FD87dbEb7C10dC692a2a6106817072"
+      },
+      "43114": {
+        "address": "0x152b9d0FdC40C096757F570A51E494bd4b943E50"
+      }
     }
   }
 }

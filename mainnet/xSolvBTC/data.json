@@ -9,6 +9,26 @@
     "bridgeInfo": {
       "protocol": "Chainlink CCIP",
       "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0xd9D920AA40f578ab794426F5C90F6C731D159DEf"
+      },
+      "56": {
+        "address": "0x1346b618dC92810EC74163e4c27004c921D446a5"
+      },
+      "137": {
+        "address": "0xc99F5c922DAE05B6e2ff83463ce705eF7C91F077"
+      },
+      "8453": {
+        "address": "0xC26C9099BD3789107888c35bb41178079B282561"
+      },
+      "42161": {
+        "address": "0x346c574C56e1A4aAa8dc88Cda8F7EB12b39947aB"
+      },
+      "43114": {
+        "address": "0xCC0966D8418d412c599A6421b760a847eB169A8c"
+      }
     }
   }
 }

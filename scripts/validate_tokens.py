@@ -10,17 +10,21 @@ import argparse
 import re
 import sys
 import xml.etree.ElementTree as ET
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Any, Optional
 
 import json5
 from PIL import Image
 from utils.web3 import (
+    CHAIN_NAMES,
+    CHAIN_RPC_URLS,
     DEFAULT_RPC_URL,
     fetch_token_decimals_with_retry,
     fetch_token_name_with_retry,
     fetch_token_symbol_with_retry,
     get_web3_connection,
+    get_web3_connection_for_chain,
 )
 from web3 import Web3
 
@@ -29,6 +33,17 @@ REQUIRED_FIELDS = ["chainId", "address", "name", "symbol", "decimals"]
 ALLOWED_EXTENSIONS = {
     "coinGeckoId": str,
     "bridgeInfo": dict,
+    "crossChainAddresses": dict,
+}
+# Known chain IDs for cross-chain address validation
+KNOWN_CHAIN_IDS = {
+    "1",       # Ethereum Mainnet
+    "10",      # Optimism
+    "56",      # BNB Chain
+    "137",     # Polygon
+    "8453",    # Base
+    "42161",   # Arbitrum One
+    "43114",   # Avalanche C-Chain
 }
 VALID_BRIDGE_PROTOCOLS = {
     "Chainlink CCIP",
@@ -133,6 +148,183 @@ def validate_bridge_info(bridge_info: dict[str, Any]) -> list[str]:
     return errors
 
 
+def validate_cross_chain_addresses(cross_chain: dict[str, Any]) -> list[str]:
+    """Validate the crossChainAddresses extension.
+
+    Args:
+        cross_chain: The crossChainAddresses dictionary to validate.
+
+    Returns:
+        list[str]: List of error messages. Empty list if validation passes.
+    """
+    errors = []
+    allowed_fields = {"address", "symbol", "decimals"}
+
+    for chain_id, chain_data in cross_chain.items():
+        # Validate chain ID format
+        if not chain_id in KNOWN_CHAIN_IDS:
+            errors.append(
+                f"Invalid chain ID '{chain_id}' in crossChainAddresses. "
+            )
+            continue
+
+        if not isinstance(chain_data, dict):
+            errors.append(
+                f"Invalid type for crossChainAddresses[{chain_id}]: "
+                f"expected dict, got {type(chain_data).__name__}"
+            )
+            continue
+
+        # Check for required address field
+        if "address" not in chain_data:
+            errors.append(
+                f"Missing required field 'address' in crossChainAddresses[{chain_id}]"
+            )
+        else:
+            address = chain_data["address"]
+            # For EVM chains, validate address format
+            if not is_valid_address(address):
+                errors.append(
+                    f"Invalid address in crossChainAddresses[{chain_id}]: {address}"
+                )
+
+        # Validate optional symbol field type
+        if "symbol" in chain_data:
+            symbol = chain_data["symbol"]
+            if not isinstance(symbol, str) or not symbol.strip():
+                errors.append(
+                    f"Invalid symbol in crossChainAddresses[{chain_id}]: "
+                    "must be a non-empty string"
+                )
+
+        # Validate optional decimals field type
+        if "decimals" in chain_data:
+            decimals = chain_data["decimals"]
+            if not isinstance(decimals, int) or not (MIN_DECIMALS <= decimals <= MAX_DECIMALS):
+                errors.append(
+                    f"Invalid decimals in crossChainAddresses[{chain_id}]: "
+                    f"must be an integer between {MIN_DECIMALS} and {MAX_DECIMALS}"
+                )
+
+        # Check for unknown fields
+        actual_fields = set(chain_data.keys())
+        unknown_fields = actual_fields - allowed_fields
+        if unknown_fields:
+            errors.append(
+                f"Unknown fields in crossChainAddresses[{chain_id}]: "
+                f"{', '.join(unknown_fields)}"
+            )
+
+    return errors
+
+
+def validate_single_cross_chain_address(
+    chain_id: str,
+    address: str,
+    expected_symbol: str,
+    expected_decimals: int,
+) -> tuple[list[str], list[str]]:
+    """Validate a single cross-chain address against expected metadata.
+
+    Args:
+        chain_id: The chain ID as a string.
+        address: The token address on the remote chain.
+        expected_symbol: Expected token symbol.
+        expected_decimals: Expected decimals.
+
+    Returns:
+        tuple[list[str], list[str]]: (errors, warnings)
+    """
+    errors = []
+    warnings = []
+    chain_name = CHAIN_NAMES.get(chain_id, f"Chain {chain_id}")
+
+    web3 = get_web3_connection_for_chain(chain_id)
+    if web3 is None:
+        warnings.append(f"Could not connect to {chain_name} RPC")
+        return errors, warnings
+
+    # Fetch and validate symbol
+    try:
+        actual_symbol = fetch_token_symbol_with_retry(web3, address)
+        if actual_symbol != expected_symbol:
+            errors.append(
+                f"Cross-chain symbol mismatch on {chain_name}: "
+                f"expected '{expected_symbol}', got '{actual_symbol}'"
+            )
+    except Exception as e:
+        warnings.append(f"Failed to fetch symbol from {chain_name}: {e}")
+        return errors, warnings
+
+    # Fetch and validate decimals
+    try:
+        actual_decimals = fetch_token_decimals_with_retry(web3, address)
+        if actual_decimals != expected_decimals:
+            errors.append(
+                f"Cross-chain decimals mismatch on {chain_name}: "
+                f"expected {expected_decimals}, got {actual_decimals}"
+            )
+    except Exception as e:
+        warnings.append(f"Failed to fetch decimals from {chain_name}: {e}")
+
+    return errors, warnings
+
+
+def validate_cross_chain_metadata(
+    data: dict[str, Any],
+    max_workers: int = 4,
+) -> tuple[list[str], list[str]]:
+    """Validate cross-chain addresses have matching metadata.
+
+    Args:
+        data: The token data dictionary.
+        max_workers: Maximum number of parallel workers for RPC calls.
+
+    Returns:
+        tuple[list[str], list[str]]: (errors, warnings)
+    """
+    errors = []
+    warnings = []
+
+    extensions = data.get("extensions", {})
+    cross_chain = extensions.get("crossChainAddresses", {})
+
+    if not cross_chain:
+        return errors, warnings
+
+    monad_symbol = data.get("symbol")
+    monad_decimals = data.get("decimals")
+
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        futures = {}
+        for chain_id, chain_data in cross_chain.items():
+            if chain_id not in CHAIN_RPC_URLS:
+                continue
+            address = chain_data.get("address")
+            if not address:
+                continue
+
+            # Use override symbol/decimals if specified, otherwise use Monad token's values
+            expected_symbol = chain_data.get("symbol", monad_symbol)
+            expected_decimals = chain_data.get("decimals", monad_decimals)
+
+            future = executor.submit(
+                validate_single_cross_chain_address,
+                chain_id,
+                address,
+                expected_symbol,
+                expected_decimals,
+            )
+            futures[future] = chain_id
+
+        for future in as_completed(futures):
+            chain_errors, chain_warnings = future.result()
+            errors.extend(chain_errors)
+            warnings.extend(chain_warnings)
+
+    return errors, warnings
+
+
 def get_svg_dimensions(svg_path: Path) -> tuple[Optional[int], Optional[int]]:
     """Extract width and height from an SVG file.
 
@@ -216,18 +408,22 @@ def validate_token_data(
     data: dict[str, Any],
     token_dir_path: Path,
     web3: Web3,
-) -> list[str]:
+    validate_cross_chain: bool = False,
+) -> tuple[list[str], list[str]]:
     """Validate token data against required schema and on-chain metadata.
 
     Args:
         data: The token data dictionary to validate.
         token_dir_path: Path to the token directory.
         web3: Web3 instance for on-chain validation.
+        validate_cross_chain: If True, validate cross-chain addresses against
+            on-chain metadata on other chains.
 
     Returns:
-        list[str]: List of error messages. Empty list if validation passes.
+        tuple[list[str], list[str]]: (errors, warnings)
     """
     errors = []
+    warnings = []
 
     # Check for required fields
     missing_fields = [field for field in REQUIRED_FIELDS if field not in data]
@@ -289,6 +485,9 @@ def validate_token_data(
                     elif tag == "bridgeInfo":
                         bridge_errors = validate_bridge_info(value)
                         errors.extend(bridge_errors)
+                    elif tag == "crossChainAddresses":
+                        cross_chain_errors = validate_cross_chain_addresses(value)
+                        errors.extend(cross_chain_errors)
                 else:
                     errors.append(f"Invalid extension tag: {tag}. Allowed tags are: {allowed_tags}")
 
@@ -296,7 +495,15 @@ def validate_token_data(
     onchain_errors = validate_onchain_metadata(data, web3)
     errors.extend(onchain_errors)
 
-    return errors
+    # Cross-chain metadata validation (optional)
+    if validate_cross_chain and "extensions" in data:
+        extensions = data.get("extensions", {})
+        if "crossChainAddresses" in extensions:
+            cc_errors, cc_warnings = validate_cross_chain_metadata(data)
+            errors.extend(cc_errors)
+            warnings.extend(cc_warnings)
+
+    return errors, warnings
 
 
 def validate_onchain_metadata(data: dict[str, Any], web3: Web3) -> list[str]:
@@ -354,31 +561,34 @@ def validate_onchain_metadata(data: dict[str, Any], web3: Web3) -> list[str]:
 def validate_token_directory(
     dir_path: Path,
     web3: Web3,
-) -> tuple[bool, list[str]]:
+    validate_cross_chain: bool = False,
+) -> tuple[bool, list[str], list[str]]:
     """Validate a token directory and its data.json file.
 
     Args:
         dir_path: Path to the token directory.
         web3: Web3 instance for on-chain validation.
+        validate_cross_chain: If True, validate cross-chain addresses against
+            on-chain metadata on other chains.
 
     Returns:
-        tuple[bool, list[str]]: (is_valid, error_messages)
+        tuple[bool, list[str], list[str]]: (is_valid, errors, warnings)
     """
     data_file = dir_path / "data.json"
 
     if not data_file.exists():
-        return False, [f"data.json not found in {dir_path.name}/ directory"]
+        return False, [f"data.json not found in {dir_path.name}/ directory"], []
 
     try:
         with data_file.open(mode="r", encoding="utf-8") as f:
             data = json5.load(f)
     except ValueError as e:
-        return False, [f"Invalid JSON5 in data.json: {e}"]
+        return False, [f"Invalid JSON5 in data.json: {e}"], []
     except OSError as e:
-        return False, [f"Cannot read data.json: {e}"]
+        return False, [f"Cannot read data.json: {e}"], []
 
-    errors = validate_token_data(data, dir_path, web3)
-    return len(errors) == 0, errors
+    errors, warnings = validate_token_data(data, dir_path, web3, validate_cross_chain)
+    return len(errors) == 0, errors, warnings
 
 
 def main() -> int:
@@ -394,6 +604,11 @@ def main() -> int:
         "--rpc-url",
         type=str,
         help=f"Custom RPC URL (defaults to MONAD_RPC_URL env var or {DEFAULT_RPC_URL})",
+    )
+    parser.add_argument(
+        "--validate-cross-chain",
+        action="store_true",
+        help="Enable cross-chain address validation (slower, requires external RPC access)",
     )
 
     args = parser.parse_args()
@@ -413,19 +628,31 @@ def main() -> int:
             print("Cannot proceed without RPC connection")
             return 1
 
-        print(f"Validating {len(token_dirs)} token(s)...\n")
+        print(f"Validating {len(token_dirs)} token(s)...")
+        if args.validate_cross_chain:
+            print("Cross-chain validation enabled\n")
+        else:
+            print()
 
         all_valid = True
         for dir_path in token_dirs:
             token_name = dir_path.name
-            is_valid, errors = validate_token_directory(dir_path, web3)
+            is_valid, errors, warnings = validate_token_directory(
+                dir_path, web3, args.validate_cross_chain
+            )
 
-            if is_valid:
+            if is_valid and not warnings:
                 print(f"{token_name} is valid")
+            elif is_valid and warnings:
+                print(f"{token_name} is valid (with warnings):")
+                for warning in warnings:
+                    print(f"   [WARN] {warning}")
             else:
                 print(f"{token_name} is invalid:")
                 for error in errors:
                     print(f"   - {error}")
+                for warning in warnings:
+                    print(f"   [WARN] {warning}")
                 all_valid = False
 
         if all_valid:

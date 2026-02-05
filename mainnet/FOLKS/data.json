@@ -5,6 +5,30 @@
   "symbol": "FOLKS",
   "decimals": 6,
   "extensions": {
-    "coinGeckoId": "folks"
+    "coinGeckoId": "folks",
+    "bridgeInfo": {
+      "protocol": "Wormhole NTT",
+      "bridgeAddress": "0x93FE94Ad887a1B04DBFf1f736bfcD1698D4cfF66"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0xFF7F8F301F7A706E3CfD3D2275f5dc0b9EE8009B"
+      },
+      "56": {
+        "address": "0xFF7F8F301F7A706E3CfD3D2275f5dc0b9EE8009B"
+      },
+      "137": {
+        "address": "0xFF7F8F301F7A706E3CfD3D2275f5dc0b9EE8009B"
+      },
+      "8453": {
+        "address": "0xFF7F8F301F7A706E3CfD3D2275f5dc0b9EE8009B"
+      },
+      "42161": {
+        "address": "0xFF7F8F301F7A706E3CfD3D2275f5dc0b9EE8009B"
+      },
+      "43114": {
+        "address": "0xFF7F8F301F7A706E3CfD3D2275f5dc0b9EE8009B"
+      }
+    }
   }
 }

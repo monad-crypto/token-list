@@ -9,6 +9,11 @@
     "bridgeInfo": {
       "protocol": "Wormhole NTT",
       "bridgeAddress": "0x92957b3D0CaB3eA7110fEd1ccc4eF564981a59Fc"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+      }
     }
   }
 }

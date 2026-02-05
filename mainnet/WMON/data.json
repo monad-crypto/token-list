@@ -5,6 +5,15 @@
   "symbol": "WMON",
   "decimals": 18,
   "extensions": {
-    "coinGeckoId": "wrapped-monad"
+    "coinGeckoId": "wrapped-monad",
+    "bridgeInfo": {
+      "protocol": "Wormhole NTT",
+      "bridgeAddress": "0xFEA937F7124E19124671f1685671d3f04a9Af4E4"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0x6917037F8944201b2648198a89906Edf863B9517"
+      }
+    }
   }
 }

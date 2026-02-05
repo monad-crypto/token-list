@@ -78,4 +78,4 @@ jobs:
         run: uv sync
 
       - name: Run validation script
-        run: uv run python scripts/validate_tokens.py
+        run: uv run python scripts/validate_tokens.py --validate-cross-chain

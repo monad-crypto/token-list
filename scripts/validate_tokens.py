@@ -404,6 +404,42 @@ def validate_logo_dimensions(token_dir_path: Path) -> list[str]:
     return errors
 
 
+def validate_extensions(extensions: Any) -> list[str]:
+    """Validate the extensions field of token data.
+
+    Args:
+        extensions: The extensions value to validate.
+
+    Returns:
+        list[str]: List of error messages. Empty list if validation passes.
+    """
+    errors = []
+
+    if not isinstance(extensions, dict):
+        return ["Invalid extensions: must be a dictionary"]
+
+    allowed_tags = ", ".join(ALLOWED_EXTENSIONS.keys())
+    for tag, value in extensions.items():
+        if tag in ALLOWED_EXTENSIONS:
+            expected_type = ALLOWED_EXTENSIONS[tag]
+            if not isinstance(value, expected_type):
+                type_name = expected_type.__name__
+                errors.append(
+                    f"Invalid type for extension '{tag}': expected {type_name}, "
+                    f"got {type(value).__name__}"
+                )
+            elif tag == "bridgeInfo":
+                bridge_errors = validate_bridge_info(value)
+                errors.extend(bridge_errors)
+            elif tag == "crossChainAddresses":
+                cross_chain_errors = validate_cross_chain_addresses(value)
+                errors.extend(cross_chain_errors)
+        else:
+            errors.append(f"Invalid extension tag: {tag}. Allowed tags are: {allowed_tags}")
+
+    return errors
+
+
 def validate_token_data(
     data: dict[str, Any],
     token_dir_path: Path,
@@ -468,28 +504,8 @@ def validate_token_data(
 
     # Validate extensions (optional)
     if "extensions" in data:
-        extensions = data.get("extensions")
-        if not isinstance(extensions, dict):
-            errors.append("Invalid extensions: must be a dictionary")
-        else:
-            allowed_tags = ", ".join(ALLOWED_EXTENSIONS.keys())
-            for tag, value in extensions.items():
-                if tag in ALLOWED_EXTENSIONS:
-                    expected_type = ALLOWED_EXTENSIONS[tag]
-                    if not isinstance(value, expected_type):
-                        type_name = expected_type.__name__
-                        errors.append(
-                            f"Invalid type for extension '{tag}': expected {type_name}, "
-                            f"got {type(value).__name__}"
-                        )
-                    elif tag == "bridgeInfo":
-                        bridge_errors = validate_bridge_info(value)
-                        errors.extend(bridge_errors)
-                    elif tag == "crossChainAddresses":
-                        cross_chain_errors = validate_cross_chain_addresses(value)
-                        errors.extend(cross_chain_errors)
-                else:
-                    errors.append(f"Invalid extension tag: {tag}. Allowed tags are: {allowed_tags}")
+        extension_errors = validate_extensions(data.get("extensions"))
+        errors.extend(extension_errors)
 
     # Validate on-chain data
     onchain_errors = validate_onchain_metadata(data, web3)

@@ -37,13 +37,13 @@ ALLOWED_EXTENSIONS = {
 }
 # Known chain IDs for cross-chain address validation
 KNOWN_CHAIN_IDS = {
-    "1",       # Ethereum Mainnet
-    "10",      # Optimism
-    "56",      # BNB Chain
-    "137",     # Polygon
-    "8453",    # Base
-    "42161",   # Arbitrum One
-    "43114",   # Avalanche C-Chain
+    "1",  # Ethereum Mainnet
+    "10",  # Optimism
+    "56",  # BNB Chain
+    "137",  # Polygon
+    "8453",  # Base
+    "42161",  # Arbitrum One
+    "43114",  # Avalanche C-Chain
 }
 VALID_BRIDGE_PROTOCOLS = {
     "Chainlink CCIP",
@@ -163,9 +163,7 @@ def validate_cross_chain_addresses(cross_chain: dict[str, Any]) -> list[str]:
     for chain_id, chain_data in cross_chain.items():
         # Validate chain ID format
         if chain_id not in KNOWN_CHAIN_IDS:
-            errors.append(
-                f"Invalid chain ID '{chain_id}' in crossChainAddresses. "
-            )
+            errors.append(f"Invalid chain ID '{chain_id}' in crossChainAddresses. ")
             continue
 
         if not isinstance(chain_data, dict):
@@ -177,24 +175,19 @@ def validate_cross_chain_addresses(cross_chain: dict[str, Any]) -> list[str]:
 
         # Check for required address field
         if "address" not in chain_data:
-            errors.append(
-                f"Missing required field 'address' in crossChainAddresses[{chain_id}]"
-            )
+            errors.append(f"Missing required field 'address' in crossChainAddresses[{chain_id}]")
         else:
             address = chain_data["address"]
             # For EVM chains, validate address format
             if not is_valid_address(address):
-                errors.append(
-                    f"Invalid address in crossChainAddresses[{chain_id}]: {address}"
-                )
+                errors.append(f"Invalid address in crossChainAddresses[{chain_id}]: {address}")
 
         # Validate optional symbol field type
         if "symbol" in chain_data:
             symbol = chain_data["symbol"]
             if not isinstance(symbol, str) or not symbol.strip():
                 errors.append(
-                    f"Invalid symbol in crossChainAddresses[{chain_id}]: "
-                    "must be a non-empty string"
+                    f"Invalid symbol in crossChainAddresses[{chain_id}]: must be a non-empty string"
                 )
 
         # Validate optional decimals field type
@@ -211,8 +204,7 @@ def validate_cross_chain_addresses(cross_chain: dict[str, Any]) -> list[str]:
         unknown_fields = actual_fields - allowed_fields
         if unknown_fields:
             errors.append(
-                f"Unknown fields in crossChainAddresses[{chain_id}]: "
-                f"{', '.join(unknown_fields)}"
+                f"Unknown fields in crossChainAddresses[{chain_id}]: {', '.join(unknown_fields)}"
             )
 
     return errors

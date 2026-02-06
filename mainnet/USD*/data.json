@@ -1,0 +1,13 @@
+{
+  "chainId": 143,
+  "address": "0x1808D4aA4D4a7cf66bb6515BF126edEfA2b018c1",
+  "name": "USD Star",
+  "symbol": "USD*",
+  "decimals": 6,
+  "extensions": {
+    "bridgeInfo": {
+      "protocol": "Wormhole NTT",
+      "bridgeAddress": "0xc3F3dDa544815a440633176c7598f5B97500793e"
+    }
+  }
+}

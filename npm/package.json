@@ -1,0 +1,91 @@
+{
+  "name": "@monad-crypto/token-list",
+  "version": "2.33.0",
+  "description": "Official Monad token list with full TypeScript types",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monad-crypto/token-list.git",
+    "directory": "npm"
+  },
+  "homepage": "https://github.com/monad-crypto/token-list/tree/main/npm#readme",
+  "bugs": {
+    "url": "https://github.com/monad-crypto/token-list/issues"
+  },
+  "keywords": [
+    "monad",
+    "token-list",
+    "erc20",
+    "crypto",
+    "ethereum"
+  ],
+  "type": "module",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    },
+    "./mainnet": {
+      "import": {
+        "types": "./dist/esm/mainnet.d.ts",
+        "default": "./dist/esm/mainnet.js"
+      },
+      "require": {
+        "types": "./dist/cjs/mainnet.d.ts",
+        "default": "./dist/cjs/mainnet.js"
+      }
+    },
+    "./testnet": {
+      "import": {
+        "types": "./dist/esm/testnet.d.ts",
+        "default": "./dist/esm/testnet.js"
+      },
+      "require": {
+        "types": "./dist/cjs/testnet.d.ts",
+        "default": "./dist/cjs/testnet.js"
+      }
+    },
+    "./types": {
+      "import": {
+        "types": "./dist/esm/types.d.ts",
+        "default": "./dist/esm/types.js"
+      },
+      "require": {
+        "types": "./dist/cjs/types.d.ts",
+        "default": "./dist/cjs/types.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "rm -rf dist",
+    "codegen": "node scripts/codegen.mjs",
+    "build:esm": "tsc -p tsconfig.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build": "pnpm run clean && pnpm run codegen && pnpm run build:esm && pnpm run build:cjs",
+    "prepublishOnly": "pnpm run build"
+  },
+  "devDependencies": {
+    "typescript": "~5.7.0"
+  },
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

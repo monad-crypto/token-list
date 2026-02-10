@@ -1,0 +1,75 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "tokenlist-mainnet.json"
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  release:
+    name: Release New Token List Version
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 #4.2.0
+        with:
+          version: 10
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 24.8
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install pnpm dependencies
+        working-directory: npm
+        run: pnpm install --frozen-lockfile
+
+      - name: Build package
+        working-directory: npm
+        run: pnpm run build
+
+      - name: Validate package contents
+        working-directory: npm
+        run: pnpm pack --dry-run 2>&1
+
+      - name: Check if version already published
+        id: check
+        working-directory: npm
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          CURRENT=$(npm view @monad-crypto/token-list version 2>/dev/null || echo "0.0.0")
+          if [ "$CURRENT" = "$VERSION" ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+            echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Publish to npm
+        if: steps.check.outputs.skip != 'true'
+        working-directory: npm
+        run: pnpm publish --no-git-checks
+
+      - name: Tag release
+        if: steps.check.outputs.skip != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.check.outputs.version }}
+          REPO: ${{ github.repository }}
+          SHA: ${{ github.sha }}
+        run: |
+          gh api "repos/${REPO}/git/refs" \
+            -f ref="refs/tags/v${VERSION}" \
+            -f sha="${SHA}"

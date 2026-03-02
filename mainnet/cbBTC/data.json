@@ -1,0 +1,19 @@
+{
+  "chainId": 143,
+  "address": "0xd18B7EC58Cdf4876f6AFebd3Ed1730e4Ce10414b",
+  "name": "Coinbase Wrapped BTC",
+  "symbol": "cbBTC",
+  "decimals": 8,
+  "extensions": {
+    "coinGeckoId": "coinbase-wrapped-btc",
+    "bridgeInfo": {
+      "protocol": "Chainlink CCIP",
+      "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+    },
+    "crossChainAddresses": {
+      "8453": {
+        "address": "0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf"
+      }
+    }
+  }
+}

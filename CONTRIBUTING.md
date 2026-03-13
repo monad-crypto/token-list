@@ -6,7 +6,7 @@ Thank you for your interest in contributing to the Monad Token List! This guide 
 
 Before you begin, make sure you have:
 
-- **Python 3.9 or higher** installed on your system
+- **Python 3.10 or higher** installed on your system
 - [**uv**](https://docs.astral.sh/uv/) (a Python package installer and resolver)
 - **Access to a Monad RPC endpoint**
 

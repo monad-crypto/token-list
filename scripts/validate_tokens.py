@@ -9,12 +9,12 @@ It also validates that the token metadata matches on-chain data.
 import argparse
 import re
 import sys
-import xml.etree.ElementTree as ET
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Any, Optional
 
 import json5
+from defusedxml import ElementTree
 from PIL import Image
 from utils.web3 import (
     CHAIN_NAMES,
@@ -331,7 +331,7 @@ def get_svg_dimensions(svg_path: Path) -> tuple[Optional[int], Optional[int]]:
         found.
     """
     try:
-        tree = ET.parse(svg_path)
+        tree = ElementTree.parse(svg_path)
         root = tree.getroot()
 
         width_str = root.get("width")

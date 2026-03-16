@@ -5,6 +5,7 @@ description = "Monad Token List"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+    "defusedxml>=0.7.1",
     "json5>=0.12.1",
     "pillow>=12.1.1",
     "pyjson5>=2.0.0",

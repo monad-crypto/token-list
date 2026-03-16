@@ -30,6 +30,7 @@ from web3 import Web3
 
 DATA_DIR = "mainnet"
 REQUIRED_FIELDS = ["chainId", "address", "name", "symbol", "decimals"]
+ALLOWED_TOP_LEVEL_FIELDS = set(REQUIRED_FIELDS) | {"extensions"}
 ALLOWED_EXTENSIONS = {
     "coinGeckoId": str,
     "bridgeInfo": dict,
@@ -456,11 +457,20 @@ def validate_token_data(
     errors = []
     warnings = []
 
+    # Check for unknown top-level fields
+    unknown_fields = set(data.keys()) - ALLOWED_TOP_LEVEL_FIELDS
+    if unknown_fields:
+        allowed = ", ".join(sorted(ALLOWED_TOP_LEVEL_FIELDS))
+        errors.append(
+            f"Unknown top-level field(s): {', '.join(sorted(unknown_fields))}. "
+            f"Allowed fields are: {allowed}"
+        )
+
     # Check for required fields
     missing_fields = [field for field in REQUIRED_FIELDS if field not in data]
     if missing_fields:
         errors.append(f"Missing required fields: {', '.join(missing_fields)}")
-        return errors
+        return errors, warnings
 
     # Validate chainId
     chain_id = data.get("chainId")

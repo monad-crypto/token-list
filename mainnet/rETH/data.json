@@ -1,0 +1,19 @@
+{
+  "chainId": 143,
+  "address": "0xC50f2e735eDd9dCD8Ccd41EcFE9894E679e3195f",
+  "name": "Rocket Pool ETH",
+  "symbol": "rETH",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "rocket-pool-eth",
+    "bridgeInfo": {
+      "protocol": "Chainlink CCIP",
+      "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0xae78736Cd615f374D3085123A210448E74Fc6393"
+      }
+    }
+  }
+}

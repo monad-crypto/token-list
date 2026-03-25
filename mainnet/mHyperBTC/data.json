@@ -1,0 +1,19 @@
+{
+  "chainId": 143,
+  "address": "0xF7Cf282eC810fDed974F99c0163E792f432892BC",
+  "name": "Midas Hyperithm BTC",
+  "symbol": "mHyperBTC",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "midas-hyperithm-btc",
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0xe9977b9B22Ed2C19DCd68D0403163EFcd45bF874"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0xC8495EAFf71D3A563b906295fCF2f685b1783085"
+      }
+    }
+  }
+}

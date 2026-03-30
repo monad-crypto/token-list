@@ -1,0 +1,10 @@
+{
+  "chainId": 143,
+  "address": "0xd691b0aFed67F96CEC28Ab6308Cbe5b2C103b7e9",
+  "name": "eBTC",
+  "symbol": "eBTC",
+  "decimals": 10,
+  "extensions": {
+    "coinGeckoId": "ebtc-2"
+  }
+}

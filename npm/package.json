@@ -1,7 +1,7 @@
 {
   "name": "@monad-crypto/token-list",
   "version": "2.34.0",
-  "description": "Official Monad token list with full TypeScript types",
+  "description": "Publicly maintained registry of tokens on Monad",
   "license": "MIT",
   "repository": {
     "type": "git",

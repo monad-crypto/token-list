@@ -4,7 +4,7 @@
   "keywords": [
     "monad mainnet"
   ],
-  "timestamp": "2026-03-27T14:40:58.203571+00:00",
+  "timestamp": "2026-04-01T09:06:19.099033+00:00",
   "tokens": [
     {
       "chainId": 143,
@@ -665,6 +665,17 @@
     },
     {
       "chainId": 143,
+      "address": "0xd691b0aFed67F96CEC28Ab6308Cbe5b2C103b7e9",
+      "name": "eBTC",
+      "symbol": "eBTC",
+      "decimals": 10,
+      "extensions": {
+        "coinGeckoId": "ebtc-2"
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/eBTC/logo.svg"
+    },
+    {
+      "chainId": 143,
       "address": "0x103222f020e98Bba0AD9809A011FDF8e6F067496",
       "name": "earnAUSD",
       "symbol": "earnAUSD",
@@ -1161,7 +1172,7 @@
   ],
   "version": {
     "major": 2,
-    "minor": 34,
+    "minor": 35,
     "patch": 0
   }
 }

@@ -4,91 +4,43 @@
   "keywords": [
     "monad testnet"
   ],
-  "timestamp": "2025-03-02T04:00:00.000+00:00",
+  "timestamp": "2026-04-02T12:00:00.000+00:00",
   "tokens": [
     {
       "chainId": 10143,
-      "address": "0x0F0BDEbF0F83cD1EE3974779Bcb7315f9808c714",
-      "name": "Molandak",
-      "symbol": "DAK",
+      "address": "0x0000000000000000000000000000000000000000",
+      "name": "Monad",
+      "symbol": "MON",
       "decimals": 18,
-      "logoURI": "https://imagedelivery.net/tWwhAahBw7afBzFUrX5mYQ/27759359-9374-4995-341c-b2636a432800/public"
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/MON/logo.svg"
     },
     {
       "chainId": 10143,
-      "address": "0xE0590015A873bF326bd645c3E1266d4db41C4E6B",
-      "name": "Chog",
-      "symbol": "CHOG",
-      "decimals": 18,
-      "logoURI": "https://imagedelivery.net/tWwhAahBw7afBzFUrX5mYQ/5d1206c2-042c-4edc-9f8b-dcef2e9e8f00/public"
-    },
-    {
-      "chainId": 10143,
-      "address": "0xfe140e1dCe99Be9F4F15d657CD9b7BF622270C50",
-      "name": "Moyaki",
-      "symbol": "YAKI",
-      "decimals": 18,
-      "logoURI": "https://imagedelivery.net/tWwhAahBw7afBzFUrX5mYQ/6679b698-a845-412b-504b-23463a3e1900/public"
-    },
-    {
-      "chainId": 10143,
-      "address": "0xf817257fed379853cDe0fa4F97AB987181B1E5Ea",
-      "name": "USD Coin",
+      "address": "0x534b2f3A21130d7a60830c2Df862319e593943A3",
+      "name": "USDC",
       "symbol": "USDC",
       "decimals": 6,
-      "logoURI": "https://imagedelivery.net/cBNDGgkrsEA-b_ixIp9SkQ/usdc.png/public"
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/USDC/logo.svg"
     },
     {
       "chainId": 10143,
-      "address": "0x88b8E2161DEDC77EF4ab7585569D2415a1C1055D",
-      "name": "Tether USD",
-      "symbol": "USDT",
-      "decimals": 6,
-      "logoURI": "https://imagedelivery.net/cBNDGgkrsEA-b_ixIp9SkQ/images.png/public"
-    },
-    {
-      "chainId": 10143,
-      "address": "0xcf5a6076cfa32686c0Df13aBaDa2b40dec133F1d",
-      "name": "Wrapped BTC",
-      "symbol": "WBTC",
-      "decimals": 8,
-      "logoURI": "https://imagedelivery.net/cBNDGgkrsEA-b_ixIp9SkQ/wbtc.png/public"
-    },
-    {
-      "chainId": 10143,
-      "address": "0xB5a30b0FDc5EA94A52fDc42e3E9760Cb8449Fb37",
-      "name": "Wrapped ETH",
+      "address": "0x45477f4709771331db81944A5E20eF95Bc7BA2D7",
+      "name": "Wrapped Ether",
       "symbol": "WETH",
       "decimals": 18,
-      "logoURI": "https://imagedelivery.net/cBNDGgkrsEA-b_ixIp9SkQ/weth.jpg/public"
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/WETH/logo.svg"
     },
     {
       "chainId": 10143,
-      "address": "0x5387C85A4965769f6B0Df430638a1388493486F1",
-      "name": "Wrapped SOL",
-      "symbol": "SOL",
-      "decimals": 9,
-      "logoURI": "https://imagedelivery.net/cBNDGgkrsEA-b_ixIp9SkQ/sol.png/public"
-    },
-    {
-      "chainId": 10143,
-      "address": "0x760AfE86e5de5fa0Ee542fc7B7B713e1c5425701",
-      "name": "Wrapped Monad",
+      "address": "0xFb8bf4c1CC7a94c73D209a149eA2AbEa852BC541",
+      "name": "Wrapped MON",
       "symbol": "WMON",
       "decimals": 18,
-      "logoURI": "https://imagedelivery.net/cBNDGgkrsEA-b_ixIp9SkQ/I_t8rg_V_400x400.jpg/public"
-    },
-    {
-      "chainId": 10143,
-      "address": "0x090972399c8DFfFa24690b7a21B6C48630d8703d",
-      "name": "Folks Finance",
-      "symbol": "FOLKS",
-      "decimals": 6,
-      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/FOLKS/logo.svg"
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/WMON/logo.svg"
     }
   ],
   "version": {
-    "major": 2,
+    "major": 3,
     "minor": 0,
     "patch": 0
   }

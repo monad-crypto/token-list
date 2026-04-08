@@ -1,0 +1,25 @@
+{
+  "chainId": 143,
+  "address": "0xD7aCB868F97F8286D5d3A0Fd5Ef112a8a72eCD90",
+  "name": "Lorenzo Wrapped Bitcoin",
+  "symbol": "enzoBTC",
+  "decimals": 8,
+  "extensions": {
+    "coinGeckoId": "lorenzo-wrapped-bitcoin",
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0xaa0D222436152050501E91DC07A45b1112f8b60f"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0x6A9A65B84843F5fD4aC9a0471C4fc11AFfFBce4a"
+      },
+      "56": {
+        "address": "0x6A9A65B84843F5fD4aC9a0471C4fc11AFfFBce4a"
+      },
+      "8453": {
+        "address": "0x6A9A65B84843F5fD4aC9a0471C4fc11AFfFBce4a"
+      }
+    }
+  }
+}

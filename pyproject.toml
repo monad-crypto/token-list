@@ -5,12 +5,13 @@ description = "Monad Token List"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+    "aiohttp>=3.13.5",
     "defusedxml>=0.7.1",
     "json5>=0.12.1",
     "pillow>=12.1.1",
     "pyjson5>=2.0.0",
-    "requests>=2.32.5",
-    "web3>=7.6.0",
+    "requests>=2.33.0",
+    "web3>=7.15.0",
 ]
 
 [dependency-groups]

@@ -11,7 +11,7 @@ import re
 import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any
 
 import json5
 from defusedxml import ElementTree
@@ -20,9 +20,12 @@ from utils.web3 import (
     CHAIN_NAMES,
     CHAIN_RPC_URLS,
     DEFAULT_RPC_URL,
+    fetch_hyperlane_wrapped_token_with_retry,
+    fetch_oft_bridge_token_with_retry,
     fetch_token_decimals_with_retry,
     fetch_token_name_with_retry,
     fetch_token_symbol_with_retry,
+    fetch_wormhole_chain_id_with_retry,
     get_web3_connection,
     get_web3_connection_for_chain,
 )
@@ -57,7 +60,12 @@ VALID_BRIDGE_PROTOCOLS = {
     "Wormhole",
     "Wormhole NTT",
 }
+EXPECTED_BRIDGE_ADDRESSES = {
+    "Chainlink CCIP": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB",
+    "Circle CCTP": "0x28b5a0e9C621a5BadaA536219b3a228C8168cf5d",
+}
 EXPECTED_CHAIN_ID = 143
+WORMHOLE_MONAD_CHAIN_ID = 48
 MIN_DECIMALS = 0
 MAX_DECIMALS = 36
 MIN_LOGO_SIZE = 200
@@ -148,6 +156,13 @@ def validate_bridge_info(bridge_info: dict[str, Any]) -> list[str]:
             )
         elif not is_valid_address(bridge_address):
             errors.append(f"Invalid bridgeInfo.bridgeAddress address: {bridge_address}")
+        elif protocol in EXPECTED_BRIDGE_ADDRESSES:
+            expected_address = EXPECTED_BRIDGE_ADDRESSES[protocol]
+            if bridge_address != expected_address:
+                errors.append(
+                    f"Invalid bridgeInfo.bridgeAddress for {protocol}: "
+                    f"expected {expected_address}, got {bridge_address}"
+                )
 
     return errors
 
@@ -321,14 +336,14 @@ def validate_cross_chain_metadata(
     return errors, warnings
 
 
-def get_svg_dimensions(svg_path: Path) -> tuple[Optional[int], Optional[int]]:
+def get_svg_dimensions(svg_path: Path) -> tuple[int | None, int | None]:
     """Extract width and height from an SVG file.
 
     Args:
         svg_path: Path to the SVG file.
 
     Returns:
-        tuple[Optional[int], Optional[int]]: (width, height) in pixels, or (None, None) if not
+        tuple[int | None, int | None]: (width, height) in pixels, or (None, None) if not
         found.
     """
     try:
@@ -516,6 +531,10 @@ def validate_token_data(
     onchain_errors = validate_onchain_metadata(data, web3)
     errors.extend(onchain_errors)
 
+    # Validate bridge on-chain data
+    bridge_errors = validate_bridge_onchain(data, web3)
+    errors.extend(bridge_errors)
+
     # Cross-chain metadata validation (optional)
     if validate_cross_chain and "extensions" in data:
         extensions = data.get("extensions", {})
@@ -525,6 +544,59 @@ def validate_token_data(
             warnings.extend(cc_warnings)
 
     return errors, warnings
+
+
+def validate_bridge_onchain(data: dict[str, Any], web3: Web3) -> list[str]:
+    """Validate bridge protocol specific on-chain requirements.
+
+    Args:
+        data: The token data dictionary.
+        web3: Web3 instance connected to the chain.
+
+    Returns:
+        list[str]: List of error messages. Empty list if validation passes.
+    """
+    errors = []
+    extensions = data.get("extensions", {})
+    bridge_info = extensions.get("bridgeInfo", {})
+
+    if not bridge_info:
+        return errors
+
+    protocol = bridge_info.get("protocol")
+    bridge_address = bridge_info.get("bridgeAddress")
+    token_address = data.get("address")
+
+    if not protocol or not bridge_address or not token_address:
+        return errors
+
+    try:
+        match protocol:
+            case "LayerZero OFT":
+                bridge_token = fetch_oft_bridge_token_with_retry(web3, bridge_address)
+                if bridge_token.lower() != token_address.lower():
+                    errors.append(
+                        f"OFT bridge token mismatch: expected '{token_address}', "
+                        f"got '{bridge_token}'"
+                    )
+            case "Wormhole NTT" | "Wormhole":
+                chain_id = fetch_wormhole_chain_id_with_retry(web3, bridge_address)
+                if chain_id != WORMHOLE_MONAD_CHAIN_ID:
+                    errors.append(
+                        f"Wormhole NTT chainId mismatch: expected {WORMHOLE_MONAD_CHAIN_ID}, "
+                        f"got {chain_id}"
+                    )
+            case "Hyperlane Warp Route":
+                wrapped_token = fetch_hyperlane_wrapped_token_with_retry(web3, bridge_address)
+                if wrapped_token.lower() != token_address.lower():
+                    errors.append(
+                        f"Hyperlane wrapped token mismatch: expected '{token_address}', "
+                        f"got '{wrapped_token}'"
+                    )
+    except Exception as e:
+        errors.append(f"Failed to validate {protocol} bridge on-chain: {e}")
+
+    return errors
 
 
 def validate_onchain_metadata(data: dict[str, Any], web3: Web3) -> list[str]:

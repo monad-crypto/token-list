@@ -12,7 +12,7 @@ Version numbers are automatically incremented based on changes:
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any
 
 import json5
 
@@ -113,14 +113,14 @@ def load_all_tokens(token_dirs: list[Path]) -> list[dict[str, Any]]:
     return [load_token_data(dir_path) for dir_path in token_dirs]
 
 
-def load_existing_token_list(output_path: Path) -> Optional[dict[str, Any]]:
+def load_existing_token_list(output_path: Path) -> dict[str, Any] | None:
     """Load existing token list if it exists.
 
     Args:
         output_path: Path to the existing token list file.
 
     Returns:
-        Optional[dict]: Existing token list or None if file doesn't exist.
+        dict[str, Any] | None: Existing token list or None if file doesn't exist.
     """
     if not output_path.exists():
         return None
@@ -134,7 +134,7 @@ def load_existing_token_list(output_path: Path) -> Optional[dict[str, Any]]:
 
 def compare_tokens(
     old_tokens: list[dict[str, Any]], new_tokens: list[dict[str, Any]]
-) -> tuple[Optional[str], Optional[str]]:
+) -> tuple[str | None, str | None]:
     """Compare old and new token lists to determine change type.
 
     Args:

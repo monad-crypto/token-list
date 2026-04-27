@@ -1,0 +1,21 @@
+{
+  "chainId": 143,
+  "address": "0x3fea1cb36D2C5523c062d0E060EAC253608b4DAf",
+  "name": "FinChain Dollar LP",
+  "symbol": "FUSDLP",
+  "decimals": 18,
+  "extensions": {
+    "bridgeInfo": {
+      "protocol": "Chainlink CCIP",
+      "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0x3fea1cb36D2C5523c062d0E060EAC253608b4DAf"
+      },
+      "43114": {
+        "address": "0x3fea1cb36D2C5523c062d0E060EAC253608b4DAf"
+      }
+    }
+  }
+}

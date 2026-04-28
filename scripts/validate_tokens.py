@@ -156,7 +156,8 @@ def validate_bridge_info(bridge_info: dict[str, Any]) -> list[str]:
             )
         elif not is_valid_address(bridge_address):
             errors.append(f"Invalid bridgeInfo.bridgeAddress address: {bridge_address}")
-        elif protocol in EXPECTED_BRIDGE_ADDRESSES:
+        elif "protocol" in bridge_info and bridge_info["protocol"] in EXPECTED_BRIDGE_ADDRESSES:
+            protocol = bridge_info["protocol"]
             expected_address = EXPECTED_BRIDGE_ADDRESSES[protocol]
             if bridge_address != expected_address:
                 errors.append(

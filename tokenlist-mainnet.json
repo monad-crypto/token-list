@@ -4,7 +4,7 @@
   "keywords": [
     "monad mainnet"
   ],
-  "timestamp": "2026-04-09T19:27:32.729782+00:00",
+  "timestamp": "2026-04-28T05:42:58.718423+00:00",
   "tokens": [
     {
       "chainId": 143,
@@ -185,6 +185,32 @@
         }
       },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/FOLKS/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0xCE6170EA245dC8D1f275A710a062b70f125F0110",
+      "name": "FXRP",
+      "symbol": "FXRP",
+      "decimals": 6,
+      "extensions": {
+        "coinGeckoId": "flare-bridged-xrp-flare",
+        "bridgeInfo": {
+          "protocol": "LayerZero OFT",
+          "bridgeAddress": "0xCE6170EA245dC8D1f275A710a062b70f125F0110"
+        },
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xCE6170EA245dC8D1f275A710a062b70f125F0110"
+          },
+          "999": {
+            "address": "0xd70659a6396285BF7214d7Ea9673184e7C72E07E"
+          },
+          "8453": {
+            "address": "0xCE6170EA245dC8D1f275A710a062b70f125F0110"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/FXRP/logo.svg"
     },
     {
       "chainId": 143,
@@ -1198,7 +1224,7 @@
   ],
   "version": {
     "major": 2,
-    "minor": 36,
+    "minor": 37,
     "patch": 0
   }
 }

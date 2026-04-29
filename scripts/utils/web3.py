@@ -91,6 +91,17 @@ HYPERLANE_WARP_ROUTE_ABI = [
     }
 ]
 
+CCTP_TOKEN_MINTER_V2_ADDRESS = "0xfd78EE919681417d192449715b2594ab58f5D002"
+CCTP_TOKEN_MINTER_V2_ABI = [
+    {
+        "inputs": [{"name": "token", "type": "address"}],
+        "name": "burnLimitsPerMessage",
+        "outputs": [{"name": "", "type": "uint256"}],
+        "stateMutability": "view",
+        "type": "function",
+    }
+]
+
 # Retry configuration
 DEFAULT_MAX_RETRIES = 3
 DEFAULT_RETRY_DELAY = 1.0  # seconds
@@ -426,4 +437,38 @@ def fetch_hyperlane_wrapped_token_with_retry(
         retry_delay,
         retry_backoff,
         "fetch wrapped token",
+    )
+
+
+def fetch_cctp_burn_limits_per_message_with_retry(
+    web3: Web3,
+    contract_address: str,
+    token_address: str,
+    max_retries: int = DEFAULT_MAX_RETRIES,
+    retry_delay: float = DEFAULT_RETRY_DELAY,
+    retry_backoff: float = DEFAULT_RETRY_BACKOFF,
+) -> int:
+    """Fetch burnLimitsPerMessage for a token from the CCTP minter contract.
+
+    Args:
+        web3: Web3 instance connected to the chain.
+        contract_address: CCTP minter contract address.
+        token_address: Token contract address to query.
+        max_retries: Maximum number of retry attempts.
+        retry_delay: Initial delay between retries in seconds.
+        retry_backoff: Multiplier for exponential backoff.
+
+    Returns:
+        int: burn limit per message for the token.
+
+    Raises:
+        Exception: If fetching the burn limit fails after all retries.
+    """
+    contract = web3.eth.contract(address=contract_address, abi=CCTP_TOKEN_MINTER_V2_ABI)
+    return _retry_with_backoff(
+        lambda: contract.functions.burnLimitsPerMessage(token_address).call(),
+        max_retries,
+        retry_delay,
+        retry_backoff,
+        "fetch CCTP burn limits per message",
     )

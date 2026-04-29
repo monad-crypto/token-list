@@ -21,6 +21,7 @@ from utils.web3 import (
     CHAIN_RPC_URLS,
     DEFAULT_RPC_URL,
     fetch_hyperlane_wrapped_token_with_retry,
+    fetch_cctp_burn_limits_per_message_with_retry,
     fetch_oft_bridge_token_with_retry,
     fetch_token_decimals_with_retry,
     fetch_token_name_with_retry,
@@ -64,6 +65,7 @@ EXPECTED_BRIDGE_ADDRESSES = {
     "Chainlink CCIP": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB",
     "Circle CCTP": "0x28b5a0e9C621a5BadaA536219b3a228C8168cf5d",
 }
+CCTP_TOKEN_MINTER_V2_ADDRESS = "0xfd78EE919681417d192449715b2594ab58f5D002"
 EXPECTED_CHAIN_ID = 143
 WORMHOLE_MONAD_CHAIN_ID = 48
 MIN_DECIMALS = 0
@@ -593,6 +595,17 @@ def validate_bridge_onchain(data: dict[str, Any], web3: Web3) -> list[str]:
                     errors.append(
                         f"Hyperlane wrapped token mismatch: expected '{token_address}', "
                         f"got '{wrapped_token}'"
+                    )
+            case "Circle CCTP":
+                burn_limit = fetch_cctp_burn_limits_per_message_with_retry(
+                    web3,
+                    CCTP_TOKEN_MINTER_V2_ADDRESS,
+                    token_address,
+                )
+                if burn_limit <= 0:
+                    errors.append(
+                        f"Circle CCTP token is not supported by the CCTP minter: "
+                        f"burnLimitsPerMessage returned {burn_limit}"
                     )
     except Exception as e:
         errors.append(f"Failed to validate {protocol} bridge on-chain: {e}")

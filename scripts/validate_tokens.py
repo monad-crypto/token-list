@@ -20,6 +20,7 @@ from utils.web3 import (
     CHAIN_NAMES,
     CHAIN_RPC_URLS,
     DEFAULT_RPC_URL,
+    fetch_ccip_token_config_with_retry,
     fetch_cctp_burn_limits_per_message_with_retry,
     fetch_hyperlane_wrapped_token_with_retry,
     fetch_oft_bridge_token_with_retry,
@@ -65,6 +66,7 @@ EXPECTED_BRIDGE_ADDRESSES = {
     "Chainlink CCIP": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB",
     "Circle CCTP": "0x28b5a0e9C621a5BadaA536219b3a228C8168cf5d",
 }
+CCIP_TOKEN_ADMIN_REGISTRY_ADDRESS = "0x11ACd984DD680363117B310f6ebdf78fD6c0195f"
 CCTP_TOKEN_MINTER_V2_ADDRESS = "0xfd78EE919681417d192449715b2594ab58f5D002"
 EXPECTED_CHAIN_ID = 143
 WORMHOLE_MONAD_CHAIN_ID = 48
@@ -606,6 +608,19 @@ def validate_bridge_onchain(data: dict[str, Any], web3: Web3) -> list[str]:
                     errors.append(
                         f"Circle CCTP token is not supported by the CCTP minter: "
                         f"burnLimitsPerMessage returned {burn_limit}"
+                    )
+            case "Chainlink CCIP":
+                administrator, pending_administrator, token_pool = (
+                    fetch_ccip_token_config_with_retry(web3, token_address)
+                )
+                if (
+                    administrator == ZERO_ADDRESS
+                    and pending_administrator == ZERO_ADDRESS
+                    and token_pool == ZERO_ADDRESS
+                ):
+                    errors.append(
+                        "Chainlink CCIP token is not supported by the admin registry: "
+                        "getTokenConfig returned all zero addresses"
                     )
     except Exception as e:
         errors.append(f"Failed to validate {protocol} bridge on-chain: {e}")

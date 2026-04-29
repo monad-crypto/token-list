@@ -102,6 +102,27 @@ CCTP_TOKEN_MINTER_V2_ABI = [
     }
 ]
 
+CCIP_TOKEN_ADMIN_REGISTRY_ADDRESS = "0x11ACd984DD680363117B310f6ebdf78fD6c0195f"
+CCIP_TOKEN_ADMIN_REGISTRY_ABI = [
+    {
+        "inputs": [{"name": "token", "type": "address"}],
+        "name": "getTokenConfig",
+        "outputs": [
+            {
+                "components": [
+                    {"name": "administrator", "type": "address"},
+                    {"name": "pendingAdministrator", "type": "address"},
+                    {"name": "tokenPool", "type": "address"},
+                ],
+                "name": "",
+                "type": "tuple",
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function",
+    }
+]
+
 # Retry configuration
 DEFAULT_MAX_RETRIES = 3
 DEFAULT_RETRY_DELAY = 1.0  # seconds
@@ -471,4 +492,39 @@ def fetch_cctp_burn_limits_per_message_with_retry(
         retry_delay,
         retry_backoff,
         "fetch CCTP burn limits per message",
+    )
+
+
+def fetch_ccip_token_config_with_retry(
+    web3: Web3,
+    token_address: str,
+    max_retries: int = DEFAULT_MAX_RETRIES,
+    retry_delay: float = DEFAULT_RETRY_DELAY,
+    retry_backoff: float = DEFAULT_RETRY_BACKOFF,
+) -> tuple[str, str, str]:
+    """Fetch CCIP token config from the admin registry with retry logic.
+
+    Args:
+        web3: Web3 instance connected to the chain.
+        token_address: Token contract address to query.
+        max_retries: Maximum number of retry attempts.
+        retry_delay: Initial delay between retries in seconds.
+        retry_backoff: Multiplier for exponential backoff.
+
+    Returns:
+        tuple[str, str, str]: (administrator, pendingAdministrator, tokenPool)
+
+    Raises:
+        Exception: If fetching the token config fails after all retries.
+    """
+    contract = web3.eth.contract(
+        address=CCIP_TOKEN_ADMIN_REGISTRY_ADDRESS,
+        abi=CCIP_TOKEN_ADMIN_REGISTRY_ABI,
+    )
+    return _retry_with_backoff(
+        lambda: contract.functions.getTokenConfig(token_address).call(),
+        max_retries,
+        retry_delay,
+        retry_backoff,
+        "fetch CCIP token config",
     )

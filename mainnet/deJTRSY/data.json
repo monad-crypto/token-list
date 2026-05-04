@@ -1,0 +1,20 @@
+{
+  "chainId": 143,
+  "address": "0x8DE0F3295B9e42b29E7617BAdA7C603277420451",
+  "name": "DeFi Janus Henderson Anemoy Treasury Fund Token",
+  "symbol": "deJTRSY",
+  "decimals": 18,
+  "extensions": {
+    "crossChainAddresses": {
+      "1": {
+        "address": "0xA6233014B9b7aaa74f38fa1977ffC7A89642dC72"
+      },
+      "42161": {
+        "address": "0xA6233014B9b7aaa74f38fa1977ffC7A89642dC72"
+      },
+      "43114": {
+        "address": "0xA6233014B9b7aaa74f38fa1977ffC7A89642dC72"
+      }
+    }
+  }
+}

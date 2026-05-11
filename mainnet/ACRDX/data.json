@@ -1,0 +1,18 @@
+{
+  "chainId": 143,
+  "address": "0x2FaBf1c784B8583d63C00c5c9C0377D8cf1a3245",
+  "name": "Anemoy Tokenized Apollo Diversified Credit Fund Token",
+  "symbol": "ACRDX",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "anemoy-tokenized-apollo-diversified-credit-fund",
+    "crossChainAddresses": {
+      "1": {
+        "address": "0x9477724Bb54AD5417de8Baff29e59DF3fB4DA74f"
+      },
+      "8453": {
+        "address": "0x9477724Bb54AD5417de8Baff29e59DF3fB4DA74f"
+      }
+    }
+  }
+}

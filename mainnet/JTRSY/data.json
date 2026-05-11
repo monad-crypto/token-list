@@ -1,0 +1,27 @@
+{
+  "chainId": 143,
+  "address": "0xC18e6f730896971a79D748E8deA61067A9Bc6040",
+  "name": "Janus Henderson Anemoy Treasury Fund Token",
+  "symbol": "JTRSY",
+  "decimals": 6,
+  "extensions": {
+    "coinGeckoId": "janus-henderson-anemoy-treasury-fund",
+    "crossChainAddresses": {
+      "1": {
+        "address": "0x8c213ee79581Ff4984583C6a801e5263418C4b86"
+      },
+      "56": {
+        "address": "0xa5d465251fBCc907f5Dd6bB2145488DFC6a2627b"
+      },
+      "8453": {
+        "address": "0x8c213ee79581Ff4984583C6a801e5263418C4b86"
+      },
+      "42161": {
+        "address": "0x8c213ee79581Ff4984583C6a801e5263418C4b86"
+      },
+      "43114": {
+        "address": "0xa5d465251fBCc907f5Dd6bB2145488DFC6a2627b"
+      }
+    }
+  }
+}

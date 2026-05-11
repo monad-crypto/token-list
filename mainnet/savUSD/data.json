@@ -1,0 +1,31 @@
+{
+  "chainId": 143,
+  "address": "0x9648dB94F1e6B19e7D755585542981F97dc806c6",
+  "name": "Staked avUSD",
+  "symbol": "savUSD",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "avant-staked-usd",
+    "bridgeInfo": {
+      "protocol": "Chainlink CCIP",
+      "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0xb8D89678E75a973E74698c976716308abB8a46A4"
+      },
+      "56": {
+        "address": "0x14063733875204b35D20D5Fc52C7B5569aD00335"
+      },
+      "9745": {
+        "address": "0xA29420057F3e3B9512D4786df135Da1674BD74D4"
+      },
+      "42161": {
+        "address": "0xA322e23a357cB7C596A7a834102B9d6d5b15da3e"
+      },
+      "43114": {
+        "address": "0x06d47F3fb376649c3A9Dafe069B3D6E35572219E"
+      }
+    }
+  }
+}

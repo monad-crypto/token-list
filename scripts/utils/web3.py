@@ -20,7 +20,7 @@ CHAIN_RPC_URLS = {
     "1": os.environ.get("ETH_RPC_URL", "https://ethereum-rpc.publicnode.com"),
     "10": os.environ.get("OPTIMISM_RPC_URL", "https://mainnet.optimism.io"),
     "56": os.environ.get("BSC_RPC_URL", "https://bsc-dataseed.binance.org"),
-    "137": os.environ.get("POLYGON_RPC_URL", "https://polygon-rpc.com"),
+    "137": os.environ.get("POLYGON_RPC_URL", "https://polygon-bor-rpc.publicnode.com"),
     "999": os.environ.get("HYPEREVM_RPC_URL", "https://rpc.hyperliquid.xyz/evm"),
     "8453": os.environ.get("BASE_RPC_URL", "https://mainnet.base.org"),
     "9745": os.environ.get("PLASMA_RPC_URL", "https://rpc.plasma.to"),

@@ -4,7 +4,7 @@
   "keywords": [
     "monad mainnet"
   ],
-  "timestamp": "2026-04-28T05:42:58.718423+00:00",
+  "timestamp": "2026-05-12T07:16:50.168362+00:00",
   "tokens": [
     {
       "chainId": 143,
@@ -942,6 +942,38 @@
     },
     {
       "chainId": 143,
+      "address": "0x9648dB94F1e6B19e7D755585542981F97dc806c6",
+      "name": "Staked avUSD",
+      "symbol": "savUSD",
+      "decimals": 18,
+      "extensions": {
+        "coinGeckoId": "avant-staked-usd",
+        "bridgeInfo": {
+          "protocol": "Chainlink CCIP",
+          "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+        },
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xb8D89678E75a973E74698c976716308abB8a46A4"
+          },
+          "56": {
+            "address": "0x14063733875204b35D20D5Fc52C7B5569aD00335"
+          },
+          "9745": {
+            "address": "0xA29420057F3e3B9512D4786df135Da1674BD74D4"
+          },
+          "42161": {
+            "address": "0xA322e23a357cB7C596A7a834102B9d6d5b15da3e"
+          },
+          "43114": {
+            "address": "0x06d47F3fb376649c3A9Dafe069B3D6E35572219E"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/savUSD/logo.svg"
+    },
+    {
+      "chainId": 143,
       "address": "0x1B68626dCa36c7fE922fD2d55E4f631d962dE19c",
       "name": "ShMonad",
       "symbol": "shMON",
@@ -1224,7 +1256,7 @@
   ],
   "version": {
     "major": 2,
-    "minor": 37,
+    "minor": 38,
     "patch": 0
   }
 }

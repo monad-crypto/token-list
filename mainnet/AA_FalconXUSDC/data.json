@@ -1,0 +1,18 @@
+{
+  "chainId": 143,
+  "address": "0x91D93DBd823221ea9E54fb3e447BD917CE41f2e8",
+  "name": "Pareto AA Tranche - FalconXUSDC",
+  "symbol": "AA_FalconXUSDC",
+  "decimals": 18,
+  "extensions": {
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0x91D93DBd823221ea9E54fb3e447BD917CE41f2e8"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0xC26A6Fa2C37b38E549a4a1807543801Db684f99C"
+      }
+    }
+  }
+}

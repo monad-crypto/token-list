@@ -4,7 +4,7 @@
   "keywords": [
     "monad mainnet"
   ],
-  "timestamp": "2026-05-12T07:16:50.168362+00:00",
+  "timestamp": "2026-05-14T08:38:09.856474+00:00",
   "tokens": [
     {
       "chainId": 143,
@@ -185,6 +185,28 @@
         }
       },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/FOLKS/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0x3fea1cb36D2C5523c062d0E060EAC253608b4DAf",
+      "name": "FinChain Dollar LP",
+      "symbol": "FUSDLP",
+      "decimals": 18,
+      "extensions": {
+        "bridgeInfo": {
+          "protocol": "Chainlink CCIP",
+          "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+        },
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x3fea1cb36D2C5523c062d0E060EAC253608b4DAf"
+          },
+          "43114": {
+            "address": "0x3fea1cb36D2C5523c062d0E060EAC253608b4DAf"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/FUSDLP/logo.svg"
     },
     {
       "chainId": 143,
@@ -1256,7 +1278,7 @@
   ],
   "version": {
     "major": 2,
-    "minor": 38,
+    "minor": 39,
     "patch": 0
   }
 }

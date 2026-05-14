@@ -28,6 +28,7 @@ from utils.web3 import (
     fetch_token_name_with_retry,
     fetch_token_symbol_with_retry,
     fetch_wormhole_chain_id_with_retry,
+    fetch_wormhole_ntt_token_with_retry,
     get_web3_connection,
     get_web3_connection_for_chain,
 )
@@ -65,9 +66,11 @@ VALID_BRIDGE_PROTOCOLS = {
 EXPECTED_BRIDGE_ADDRESSES = {
     "Chainlink CCIP": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB",
     "Circle CCTP": "0x28b5a0e9C621a5BadaA536219b3a228C8168cf5d",
+    "Wormhole": "0x0B2719cdA2F10595369e6673ceA3Ee2EDFa13BA7",
 }
 CCIP_TOKEN_ADMIN_REGISTRY_ADDRESS = "0x11ACd984DD680363117B310f6ebdf78fD6c0195f"
 CCTP_TOKEN_MINTER_V2_ADDRESS = "0xfd78EE919681417d192449715b2594ab58f5D002"
+WORMHOLE_MULTI_TOKEN_NTT_MANAGER_ADDRESS = "0x36878C6FCa7e0E8a88F90dc410CfBBcA5B695C95"
 EXPECTED_CHAIN_ID = 143
 WORMHOLE_MONAD_CHAIN_ID = 48
 MIN_DECIMALS = 0
@@ -584,12 +587,19 @@ def validate_bridge_onchain(data: dict[str, Any], web3: Web3) -> list[str]:
                         f"OFT bridge token mismatch: expected '{token_address}', "
                         f"got '{bridge_token}'"
                     )
-            case "Wormhole NTT" | "Wormhole":
+            case "Wormhole":
                 chain_id = fetch_wormhole_chain_id_with_retry(web3, bridge_address)
                 if chain_id != WORMHOLE_MONAD_CHAIN_ID:
                     errors.append(
                         f"Wormhole NTT chainId mismatch: expected {WORMHOLE_MONAD_CHAIN_ID}, "
                         f"got {chain_id}"
+                    )
+            case "Wormhole NTT" if bridge_address != WORMHOLE_MULTI_TOKEN_NTT_MANAGER_ADDRESS:
+                bridge_token = fetch_wormhole_ntt_token_with_retry(web3, bridge_address)
+                if bridge_token.lower() != token_address.lower():
+                    errors.append(
+                        f"Wormhole NTT token address mismatch: expected '{token_address}', "
+                        f"got '{bridge_token}'"
                     )
             case "Hyperlane Warp Route":
                 wrapped_token = fetch_hyperlane_wrapped_token_with_retry(web3, bridge_address)

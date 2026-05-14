@@ -8,7 +8,7 @@
     "coinGeckoId": "folks",
     "bridgeInfo": {
       "protocol": "Wormhole NTT",
-      "bridgeAddress": "0x93FE94Ad887a1B04DBFf1f736bfcD1698D4cfF66"
+      "bridgeAddress": "0xd15274c3910600a8246C86a198DE18618Cd47401"
     },
     "crossChainAddresses": {
       "1": {

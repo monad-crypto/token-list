@@ -81,6 +81,15 @@ WORMHOLE_ABI = [
         "type": "function",
     }
 ]
+WORMHOLE_NTT_MANAGER_ABI = [
+    {
+        "inputs": [],
+        "name": "token",
+        "outputs": [{"name": "", "type": "address"}],
+        "stateMutability": "view",
+        "type": "function",
+    }
+]
 HYPERLANE_WARP_ROUTE_ABI = [
     {
         "inputs": [],
@@ -394,6 +403,38 @@ def fetch_wormhole_chain_id_with_retry(
         retry_delay,
         retry_backoff,
         "fetch chainId",
+    )
+
+
+def fetch_wormhole_ntt_token_with_retry(
+    web3: Web3,
+    address: str,
+    max_retries: int = DEFAULT_MAX_RETRIES,
+    retry_delay: float = DEFAULT_RETRY_DELAY,
+    retry_backoff: float = DEFAULT_RETRY_BACKOFF,
+) -> str:
+    """Fetch token address from a Wormhole NTT bridge contract with retry logic.
+
+    Args:
+        web3: Web3 instance connected to the chain.
+        address: Contract address (should be checksummed).
+        max_retries: Maximum number of retry attempts.
+        retry_delay: Initial delay between retries in seconds.
+        retry_backoff: Multiplier for exponential backoff.
+
+    Returns:
+        str: token address
+
+    Raises:
+        Exception: If fetching the token fails after all retries.
+    """
+    contract = web3.eth.contract(address=address, abi=WORMHOLE_NTT_MANAGER_ABI)
+    return _retry_with_backoff(
+        lambda: contract.functions.token().call(),
+        max_retries,
+        retry_delay,
+        retry_backoff,
+        "fetch token",
     )
 
 

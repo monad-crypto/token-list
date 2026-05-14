@@ -8,7 +8,7 @@
     "coinGeckoId": "weth",
     "bridgeInfo": {
       "protocol": "Wormhole NTT",
-      "bridgeAddress": "0x92957b3D0CaB3eA7110fEd1ccc4eF564981a59Fc"
+      "bridgeAddress": "0x36878C6FCa7e0E8a88F90dc410CfBBcA5B695C95"
     },
     "crossChainAddresses": {
       "1": {

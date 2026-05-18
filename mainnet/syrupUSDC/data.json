@@ -1,0 +1,25 @@
+{
+  "chainId": 143,
+  "address": "0xaB6e5a0C3799d020c790D34F7B2C02639e238AF7",
+  "name": "Syrup USDC",
+  "symbol": "syrupUSDC",
+  "decimals": 6,
+  "extensions": {
+    "coinGeckoId": "syrupusdc",
+    "bridgeInfo": {
+      "protocol": "Chainlink CCIP",
+      "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0x80ac24aA929eaF5013f6436cdA2a7ba190f5Cc0b"
+      },
+      "8453": {
+        "address": "0x660975730059246A68521a3e2FBD4740173100f5"
+      },
+      "42161": {
+        "address": "0x41CA7586cC1311807B4605fBB748a3B8862b42b5"
+      }
+    }
+  }
+}

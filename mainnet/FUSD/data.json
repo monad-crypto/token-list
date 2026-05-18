@@ -1,0 +1,21 @@
+{
+  "chainId": 143,
+  "address": "0x9f6714C302ffe3c3bAFaf2Ccb44201fF64f6371C",
+  "name": "FinChain Dollar",
+  "symbol": "FUSD",
+  "decimals": 18,
+  "extensions": {
+    "bridgeInfo": {
+      "protocol": "Chainlink CCIP",
+      "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0x9f6714C302ffe3c3bAFaf2Ccb44201fF64f6371C"
+      },
+      "43114": {
+        "address": "0x9f6714C302ffe3c3bAFaf2Ccb44201fF64f6371C"
+      }
+    }
+  }
+}

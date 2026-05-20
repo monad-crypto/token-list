@@ -3,5 +3,8 @@
   "address": "0x1111B3DED9F1fE1801AD4ebeF8E2788183a24111",
   "name": "Newrails Euro",
   "symbol": "EURW",
-  "decimals": 6
+  "decimals": 6,
+  "extensions": {
+    "coinGeckoId": "newrails-euro"
+  }
 }

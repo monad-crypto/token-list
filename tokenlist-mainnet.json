@@ -4,8 +4,46 @@
   "keywords": [
     "monad mainnet"
   ],
-  "timestamp": "2026-05-14T08:38:09.856474+00:00",
+  "timestamp": "2026-05-21T13:26:24.692449+00:00",
   "tokens": [
+    {
+      "chainId": 143,
+      "address": "0x91D93DBd823221ea9E54fb3e447BD917CE41f2e8",
+      "name": "Pareto AA Tranche - FalconXUSDC",
+      "symbol": "AA_FalconXUSDC",
+      "decimals": 18,
+      "extensions": {
+        "bridgeInfo": {
+          "protocol": "LayerZero OFT",
+          "bridgeAddress": "0x91D93DBd823221ea9E54fb3e447BD917CE41f2e8"
+        },
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xC26A6Fa2C37b38E549a4a1807543801Db684f99C"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/AA_FalconXUSDC/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0x2FaBf1c784B8583d63C00c5c9C0377D8cf1a3245",
+      "name": "Anemoy Tokenized Apollo Diversified Credit Fund Token",
+      "symbol": "ACRDX",
+      "decimals": 18,
+      "extensions": {
+        "coinGeckoId": "anemoy-tokenized-apollo-diversified-credit-fund",
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x9477724Bb54AD5417de8Baff29e59DF3fB4DA74f"
+          },
+          "8453": {
+            "address": "0x9477724Bb54AD5417de8Baff29e59DF3fB4DA74f"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/ACRDX/logo.svg"
+    },
     {
       "chainId": 143,
       "address": "0x00000000eFE302BEAA2b3e6e1b18d08D69a9012a",
@@ -153,6 +191,17 @@
     },
     {
       "chainId": 143,
+      "address": "0x1111B3DED9F1fE1801AD4ebeF8E2788183a24111",
+      "name": "Newrails Euro",
+      "symbol": "EURW",
+      "decimals": 6,
+      "extensions": {
+        "coinGeckoId": "newrails-euro"
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/EURW/logo.svg"
+    },
+    {
+      "chainId": 143,
       "address": "0xFF7F8F301F7A706E3CfD3D2275f5dc0b9EE8009B",
       "name": "Folks Finance",
       "symbol": "FOLKS",
@@ -161,7 +210,7 @@
         "coinGeckoId": "folks",
         "bridgeInfo": {
           "protocol": "Wormhole NTT",
-          "bridgeAddress": "0x93FE94Ad887a1B04DBFf1f736bfcD1698D4cfF66"
+          "bridgeAddress": "0xd15274c3910600a8246C86a198DE18618Cd47401"
         },
         "crossChainAddresses": {
           "1": {
@@ -185,6 +234,28 @@
         }
       },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/FOLKS/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0x9f6714C302ffe3c3bAFaf2Ccb44201fF64f6371C",
+      "name": "FinChain Dollar",
+      "symbol": "FUSD",
+      "decimals": 18,
+      "extensions": {
+        "bridgeInfo": {
+          "protocol": "Chainlink CCIP",
+          "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+        },
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x9f6714C302ffe3c3bAFaf2Ccb44201fF64f6371C"
+          },
+          "43114": {
+            "address": "0x9f6714C302ffe3c3bAFaf2Ccb44201fF64f6371C"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/FUSD/logo.svg"
     },
     {
       "chainId": 143,
@@ -264,6 +335,59 @@
         "coinGeckoId": "idrx"
       },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/IDRX/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0xAD48F183E586e92A591A610397ebf534609DF797",
+      "name": "Janus Henderson Anemoy AAA CLO Fund Token",
+      "symbol": "JAAA",
+      "decimals": 6,
+      "extensions": {
+        "coinGeckoId": "janus-henderson-anemoy-aaa-clo-fund",
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x5a0F93D040De44e78F251b03c43be9CF317Dcf64"
+          },
+          "56": {
+            "address": "0x58F93d6b1EF2F44eC379Cb975657C132CBeD3B6b"
+          },
+          "8453": {
+            "address": "0x5a0F93D040De44e78F251b03c43be9CF317Dcf64"
+          },
+          "42161": {
+            "address": "0x58F93d6b1EF2F44eC379Cb975657C132CBeD3B6b"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/JAAA/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0xC18e6f730896971a79D748E8deA61067A9Bc6040",
+      "name": "Janus Henderson Anemoy Treasury Fund Token",
+      "symbol": "JTRSY",
+      "decimals": 6,
+      "extensions": {
+        "coinGeckoId": "janus-henderson-anemoy-treasury-fund",
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x8c213ee79581Ff4984583C6a801e5263418C4b86"
+          },
+          "56": {
+            "address": "0xa5d465251fBCc907f5Dd6bB2145488DFC6a2627b"
+          },
+          "8453": {
+            "address": "0x8c213ee79581Ff4984583C6a801e5263418C4b86"
+          },
+          "42161": {
+            "address": "0x8c213ee79581Ff4984583C6a801e5263418C4b86"
+          },
+          "43114": {
+            "address": "0xa5d465251fBCc907f5Dd6bB2145488DFC6a2627b"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/JTRSY/logo.svg"
     },
     {
       "chainId": 143,
@@ -416,7 +540,7 @@
       "extensions": {
         "bridgeInfo": {
           "protocol": "Wormhole NTT",
-          "bridgeAddress": "0xc3F3dDa544815a440633176c7598f5B97500793e"
+          "bridgeAddress": "0x6b838B5eED0Ef683d4Cc5c5aEb7e57272aAF7c2c"
         }
       },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/USD*/logo.svg"
@@ -590,7 +714,7 @@
         "coinGeckoId": "weth",
         "bridgeInfo": {
           "protocol": "Wormhole NTT",
-          "bridgeAddress": "0x92957b3D0CaB3eA7110fEd1ccc4eF564981a59Fc"
+          "bridgeAddress": "0x36878C6FCa7e0E8a88F90dc410CfBBcA5B695C95"
         },
         "crossChainAddresses": {
           "1": {
@@ -610,7 +734,7 @@
         "coinGeckoId": "wrapped-monad",
         "bridgeInfo": {
           "protocol": "Wormhole NTT",
-          "bridgeAddress": "0xFEA937F7124E19124671f1685671d3f04a9Af4E4"
+          "bridgeAddress": "0x36878C6FCa7e0E8a88F90dc410CfBBcA5B695C95"
         },
         "crossChainAddresses": {
           "1": {
@@ -710,6 +834,52 @@
         }
       },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/cbBTC/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0x5F8a1C74C112865BD05dbe4752C7608332719062",
+      "name": "DeFi Janus Henderson Anemoy AAA CLO Fund Token",
+      "symbol": "deJAAA",
+      "decimals": 18,
+      "extensions": {
+        "coinGeckoId": "defi-janus-henderson-anemoy-aaa-clo-fund",
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xAAA0008C8CF3A7Dca931adaF04336A5D808C82Cc"
+          },
+          "8453": {
+            "address": "0xAAA0008C8CF3A7Dca931adaF04336A5D808C82Cc"
+          },
+          "42161": {
+            "address": "0xAAA0008C8CF3A7Dca931adaF04336A5D808C82Cc"
+          },
+          "43114": {
+            "address": "0xAAA0008C8CF3A7Dca931adaF04336A5D808C82Cc"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/deJAAA/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0x8DE0F3295B9e42b29E7617BAdA7C603277420451",
+      "name": "DeFi Janus Henderson Anemoy Treasury Fund Token",
+      "symbol": "deJTRSY",
+      "decimals": 18,
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xA6233014B9b7aaa74f38fa1977ffC7A89642dC72"
+          },
+          "42161": {
+            "address": "0xA6233014B9b7aaa74f38fa1977ffC7A89642dC72"
+          },
+          "43114": {
+            "address": "0xA6233014B9b7aaa74f38fa1977ffC7A89642dC72"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/deJTRSY/logo.svg"
     },
     {
       "chainId": 143,
@@ -1037,6 +1207,32 @@
     },
     {
       "chainId": 143,
+      "address": "0xaB6e5a0C3799d020c790D34F7B2C02639e238AF7",
+      "name": "Syrup USDC",
+      "symbol": "syrupUSDC",
+      "decimals": 6,
+      "extensions": {
+        "coinGeckoId": "syrupusdc",
+        "bridgeInfo": {
+          "protocol": "Chainlink CCIP",
+          "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+        },
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x80ac24aA929eaF5013f6436cdA2a7ba190f5Cc0b"
+          },
+          "8453": {
+            "address": "0x660975730059246A68521a3e2FBD4740173100f5"
+          },
+          "42161": {
+            "address": "0x41CA7586cC1311807B4605fBB748a3B8862b42b5"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/syrupUSDC/logo.svg"
+    },
+    {
+      "chainId": 143,
       "address": "0x484be0540aD49f351eaa04eeB35dF0f937D4E73f",
       "name": "Staked Yuzu USD",
       "symbol": "syzUSD",
@@ -1254,6 +1450,17 @@
     },
     {
       "chainId": 143,
+      "address": "0xc9ea90692757831d98Ac629F2A0140E02b80A7DA",
+      "name": "Yuzu Prime",
+      "symbol": "yzPrime",
+      "decimals": 18,
+      "extensions": {
+        "coinGeckoId": "yuzu-prime"
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/yzPrime/logo.svg"
+    },
+    {
+      "chainId": 143,
       "address": "0x9dcB0D17eDDE04D27F387c89fECb78654C373858",
       "name": "Yuzu USD",
       "symbol": "yzUSD",
@@ -1278,7 +1485,7 @@
   ],
   "version": {
     "major": 2,
-    "minor": 39,
+    "minor": 40,
     "patch": 0
   }
 }

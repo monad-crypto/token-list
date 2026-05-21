@@ -1,0 +1,10 @@
+{
+  "chainId": 143,
+  "address": "0xc9ea90692757831d98Ac629F2A0140E02b80A7DA",
+  "name": "Yuzu Prime",
+  "symbol": "yzPrime",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "yuzu-prime"
+  }
+}

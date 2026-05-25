@@ -16,6 +16,7 @@ from typing import Any
 import json5
 from defusedxml import ElementTree
 from PIL import Image
+from utils.coingecko import COINGECKO_FREE_DELAY_SECONDS, CoinGeckoValidator
 from utils.web3 import (
     CHAIN_NAMES,
     CHAIN_RPC_URLS,
@@ -463,6 +464,7 @@ def validate_token_data(
     data: dict[str, Any],
     token_dir_path: Path,
     web3: Web3,
+    coingecko_validator: CoinGeckoValidator,
     validate_cross_chain: bool = False,
 ) -> tuple[list[str], list[str]]:
     """Validate token data against required schema and on-chain metadata.
@@ -471,6 +473,8 @@ def validate_token_data(
         data: The token data dictionary to validate.
         token_dir_path: Path to the token directory.
         web3: Web3 instance for on-chain validation.
+        coingecko_validator: CoinGeckoValidator used to verify the
+            coinGeckoId extension against the CoinGecko API.
         validate_cross_chain: If True, validate cross-chain addresses against
             on-chain metadata on other chains.
 
@@ -534,6 +538,15 @@ def validate_token_data(
     if "extensions" in data:
         extension_errors = validate_extensions(data.get("extensions"))
         errors.extend(extension_errors)
+
+    # Validate coinGeckoId against CoinGecko API
+    extensions = data.get("extensions")
+    if isinstance(extensions, dict):
+        coin_gecko_id = extensions.get("coinGeckoId")
+        if isinstance(coin_gecko_id, str):
+            cg_errors, cg_warnings = coingecko_validator.validate(coin_gecko_id)
+            errors.extend(cg_errors)
+            warnings.extend(cg_warnings)
 
     # Validate on-chain data
     onchain_errors = validate_onchain_metadata(data, web3)
@@ -693,6 +706,7 @@ def validate_onchain_metadata(data: dict[str, Any], web3: Web3) -> list[str]:
 def validate_token_directory(
     dir_path: Path,
     web3: Web3,
+    coingecko_validator: CoinGeckoValidator,
     validate_cross_chain: bool = False,
 ) -> tuple[bool, list[str], list[str]]:
     """Validate a token directory and its data.json file.
@@ -700,6 +714,8 @@ def validate_token_directory(
     Args:
         dir_path: Path to the token directory.
         web3: Web3 instance for on-chain validation.
+        coingecko_validator: CoinGeckoValidator used to verify the
+            coinGeckoId extension against the CoinGecko API.
         validate_cross_chain: If True, validate cross-chain addresses against
             on-chain metadata on other chains.
 
@@ -719,7 +735,9 @@ def validate_token_directory(
     except OSError as e:
         return False, [f"Cannot read data.json: {e}"], []
 
-    errors, warnings = validate_token_data(data, dir_path, web3, validate_cross_chain)
+    errors, warnings = validate_token_data(
+        data, dir_path, web3, coingecko_validator, validate_cross_chain
+    )
     return len(errors) == 0, errors, warnings
 
 
@@ -760,17 +778,24 @@ def main() -> int:
             print("Cannot proceed without RPC connection")
             return 1
 
+        coingecko_validator = CoinGeckoValidator()
+
         print(f"Validating {len(token_dirs)} token(s)...")
         if args.validate_cross_chain:
-            print("Cross-chain validation enabled\n")
-        else:
-            print()
+            print("Cross-chain validation enabled")
+        if not coingecko_validator.is_pro:
+            rate_per_minute = 60 / COINGECKO_FREE_DELAY_SECONDS
+            print(
+                f"Throttling CoinGecko requests to ~{rate_per_minute:.0f}/min. "
+                "Set COINGECKO_API_KEY (Pro) to disable throttling."
+            )
+        print()
 
         all_valid = True
         for dir_path in token_dirs:
             token_name = dir_path.name
             is_valid, errors, warnings = validate_token_directory(
-                dir_path, web3, args.validate_cross_chain
+                dir_path, web3, coingecko_validator, args.validate_cross_chain
             )
 
             if is_valid and not warnings:

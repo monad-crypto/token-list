@@ -77,6 +77,9 @@ jobs:
         run: uv sync
 
       - name: Run validation script
+        env:
+          COINGECKO_API_KEY: ${{ secrets.COINGECKO_API_KEY }}
+          COINGECKO_DEMO_API_KEY: ${{ secrets.COINGECKO_DEMO_API_KEY }}
         run: uv run python scripts/validate_tokens.py --validate-cross-chain
 
   npm-build:

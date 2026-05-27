@@ -1,0 +1,22 @@
+{
+  "chainId": 143,
+  "address": "0x46080F31351A6568f44575E3EFfDE7f0C86867f9",
+  "name": "Etherfuse GILTS",
+  "symbol": "GILTS",
+  "decimals": 6,
+  "extensions": {
+    "coinGeckoId": "etherfuse-gilts",
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0x46080F31351A6568f44575E3EFfDE7f0C86867f9"
+    },
+    "crossChainAddresses": {
+      "137": {
+        "address": "0x46080F31351A6568f44575E3EFfDE7f0C86867f9"
+      },
+      "8453": {
+        "address": "0x0ff2CBAfcCAe23A704d954B43910e864291fd03A"
+      }
+    }
+  }
+}

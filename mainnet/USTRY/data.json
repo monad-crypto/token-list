@@ -1,0 +1,21 @@
+{
+  "chainId": 143,
+  "address": "0x7ceE47e7B7CD04CF984e8Dd86C42595B5771A9B2",
+  "name": "Etherfuse USTRY",
+  "symbol": "USTRY",
+  "decimals": 6,
+  "extensions": {
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0x7ceE47e7B7CD04CF984e8Dd86C42595B5771A9B2"
+    },
+    "crossChainAddresses": {
+      "137": {
+        "address": "0xc2C1f8Eb98C0468Be0232DD4166705d0Dea3Fe31"
+      },
+      "8453": {
+        "address": "0xc2C1f8Eb98C0468Be0232DD4166705d0Dea3Fe31"
+      }
+    }
+  }
+}

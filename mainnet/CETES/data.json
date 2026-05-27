@@ -1,0 +1,22 @@
+{
+  "chainId": 143,
+  "address": "0x834df4C1d8f51Be24322E39e4766697BE015512F",
+  "name": "Etherfuse CETES",
+  "symbol": "CETES",
+  "decimals": 6,
+  "extensions": {
+    "coinGeckoId": "cetes",
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0x834df4C1d8f51Be24322E39e4766697BE015512F"
+    },
+    "crossChainAddresses": {
+      "137": {
+        "address": "0x834df4C1d8f51Be24322E39e4766697BE015512F"
+      },
+      "8453": {
+        "address": "0x834df4C1d8f51Be24322E39e4766697BE015512F"
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "chainId": 143,
+  "address": "0x7A9990ffe3057EDC18558cA4C8804430fe917456",
+  "name": "Etherfuse TESOURO",
+  "symbol": "TESOURO",
+  "decimals": 6,
+  "extensions": {
+    "coinGeckoId": "etherfuse-tesouro",
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0x7A9990ffe3057EDC18558cA4C8804430fe917456"
+    },
+    "crossChainAddresses": {
+      "137": {
+        "address": "0xd574b191B5a00262Ff19953d3CE25543AB7C8098"
+      },
+      "8453": {
+        "address": "0x7ceE47e7B7CD04CF984e8Dd86C42595B5771A9B2"
+      }
+    }
+  }
+}

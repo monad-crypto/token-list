@@ -1,0 +1,22 @@
+{
+  "chainId": 143,
+  "address": "0xe9c082921dc3564e10196c5cc15dB1250AC7d5C6",
+  "name": "Etherfuse KTB",
+  "symbol": "KTB",
+  "decimals": 6,
+  "extensions": {
+    "coinGeckoId": "etherfuse-ktb",
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0xe9c082921dc3564e10196c5cc15dB1250AC7d5C6"
+    },
+    "crossChainAddresses": {
+      "137": {
+        "address": "0xe56CEe16B76903b3C8eB4Af3C06d1D2FAB320f95"
+      },
+      "8453": {
+        "address": "0x0f9B0468391CfA83160dAE6b693dF87df379bD06"
+      }
+    }
+  }
+}

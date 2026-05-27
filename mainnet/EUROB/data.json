@@ -1,0 +1,21 @@
+{
+  "chainId": 143,
+  "address": "0xC6221856E45ed806F8325a084bED3D69D32C526d",
+  "name": "Etherfuse EUROB",
+  "symbol": "EUROB",
+  "decimals": 6,
+  "extensions": {
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0xC6221856E45ed806F8325a084bED3D69D32C526d"
+    },
+    "crossChainAddresses": {
+      "137": {
+        "address": "0xC6221856E45ed806F8325a084bED3D69D32C526d"
+      },
+      "8453": {
+        "address": "0xC6221856E45ed806F8325a084bED3D69D32C526d"
+      }
+    }
+  }
+}

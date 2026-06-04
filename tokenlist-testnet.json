@@ -24,6 +24,14 @@
     },
     {
       "chainId": 10143,
+      "address": "0x5D74Ee80A8EBdcf23f5e254D16501Df0645744DE",
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "decimals": 18,
+      "logoURI": "https://i.imgur.com/I7qH5XA.png"
+    },
+    {
+      "chainId": 10143,
       "address": "0x45477f4709771331db81944A5E20eF95Bc7BA2D7",
       "name": "Wrapped Ether",
       "symbol": "WETH",

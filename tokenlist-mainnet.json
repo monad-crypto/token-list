@@ -4,7 +4,7 @@
   "keywords": [
     "monad mainnet"
   ],
-  "timestamp": "2026-05-21T13:26:24.692449+00:00",
+  "timestamp": "2026-06-08T13:18:47.743400+00:00",
   "tokens": [
     {
       "chainId": 143,
@@ -119,6 +119,29 @@
     },
     {
       "chainId": 143,
+      "address": "0x834df4C1d8f51Be24322E39e4766697BE015512F",
+      "name": "Etherfuse CETES",
+      "symbol": "CETES",
+      "decimals": 6,
+      "extensions": {
+        "coinGeckoId": "cetes",
+        "bridgeInfo": {
+          "protocol": "LayerZero OFT",
+          "bridgeAddress": "0x834df4C1d8f51Be24322E39e4766697BE015512F"
+        },
+        "crossChainAddresses": {
+          "137": {
+            "address": "0x834df4C1d8f51Be24322E39e4766697BE015512F"
+          },
+          "8453": {
+            "address": "0x834df4C1d8f51Be24322E39e4766697BE015512F"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/CETES/logo.png"
+    },
+    {
+      "chainId": 143,
       "address": "0xF59D81cd43f620E722E07f9Cb3f6E41B031017a3",
       "name": "PancakeSwap Token",
       "symbol": "Cake",
@@ -188,6 +211,28 @@
         }
       },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/EUL/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0xC6221856E45ed806F8325a084bED3D69D32C526d",
+      "name": "Etherfuse EUROB",
+      "symbol": "EUROB",
+      "decimals": 6,
+      "extensions": {
+        "bridgeInfo": {
+          "protocol": "LayerZero OFT",
+          "bridgeAddress": "0xC6221856E45ed806F8325a084bED3D69D32C526d"
+        },
+        "crossChainAddresses": {
+          "137": {
+            "address": "0xC6221856E45ed806F8325a084bED3D69D32C526d"
+          },
+          "8453": {
+            "address": "0xC6221856E45ed806F8325a084bED3D69D32C526d"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/EUROB/logo.png"
     },
     {
       "chainId": 143,
@@ -327,6 +372,29 @@
     },
     {
       "chainId": 143,
+      "address": "0x46080F31351A6568f44575E3EFfDE7f0C86867f9",
+      "name": "Etherfuse GILTS",
+      "symbol": "GILTS",
+      "decimals": 6,
+      "extensions": {
+        "coinGeckoId": "etherfuse-gilts",
+        "bridgeInfo": {
+          "protocol": "LayerZero OFT",
+          "bridgeAddress": "0x46080F31351A6568f44575E3EFfDE7f0C86867f9"
+        },
+        "crossChainAddresses": {
+          "137": {
+            "address": "0x46080F31351A6568f44575E3EFfDE7f0C86867f9"
+          },
+          "8453": {
+            "address": "0x0ff2CBAfcCAe23A704d954B43910e864291fd03A"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/GILTS/logo.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x18Bc5bcC660cf2B9cE3cd51a404aFe1a0cBD3C22",
       "name": "IDRX",
       "symbol": "IDRX",
@@ -388,6 +456,29 @@
         }
       },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/JTRSY/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0xe9c082921dc3564e10196c5cc15dB1250AC7d5C6",
+      "name": "Etherfuse KTB",
+      "symbol": "KTB",
+      "decimals": 6,
+      "extensions": {
+        "coinGeckoId": "etherfuse-ktb",
+        "bridgeInfo": {
+          "protocol": "LayerZero OFT",
+          "bridgeAddress": "0xe9c082921dc3564e10196c5cc15dB1250AC7d5C6"
+        },
+        "crossChainAddresses": {
+          "137": {
+            "address": "0xe56CEe16B76903b3C8eB4Af3C06d1D2FAB320f95"
+          },
+          "8453": {
+            "address": "0x0f9B0468391CfA83160dAE6b693dF87df379bD06"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/KTB/logo.png"
     },
     {
       "chainId": 143,
@@ -533,6 +624,29 @@
     },
     {
       "chainId": 143,
+      "address": "0x7A9990ffe3057EDC18558cA4C8804430fe917456",
+      "name": "Etherfuse TESOURO",
+      "symbol": "TESOURO",
+      "decimals": 6,
+      "extensions": {
+        "coinGeckoId": "etherfuse-tesouro",
+        "bridgeInfo": {
+          "protocol": "LayerZero OFT",
+          "bridgeAddress": "0x7A9990ffe3057EDC18558cA4C8804430fe917456"
+        },
+        "crossChainAddresses": {
+          "137": {
+            "address": "0xd574b191B5a00262Ff19953d3CE25543AB7C8098"
+          },
+          "8453": {
+            "address": "0x7ceE47e7B7CD04CF984e8Dd86C42595B5771A9B2"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/TESOURO/logo.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x1808D4aA4D4a7cf66bb6515BF126edEfA2b018c1",
       "name": "USD Star",
       "symbol": "USD*",
@@ -671,6 +785,28 @@
     },
     {
       "chainId": 143,
+      "address": "0x7ceE47e7B7CD04CF984e8Dd86C42595B5771A9B2",
+      "name": "Etherfuse USTRY",
+      "symbol": "USTRY",
+      "decimals": 6,
+      "extensions": {
+        "bridgeInfo": {
+          "protocol": "LayerZero OFT",
+          "bridgeAddress": "0x7ceE47e7B7CD04CF984e8Dd86C42595B5771A9B2"
+        },
+        "crossChainAddresses": {
+          "137": {
+            "address": "0xc2C1f8Eb98C0468Be0232DD4166705d0Dea3Fe31"
+          },
+          "8453": {
+            "address": "0xc2C1f8Eb98C0468Be0232DD4166705d0Dea3Fe31"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/USTRY/logo.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x0555E30da8f98308EdB960aa94C0Db47230d2B9c",
       "name": "Wrapped BTC",
       "symbol": "WBTC",
@@ -797,6 +933,14 @@
     },
     {
       "chainId": 143,
+      "address": "0xC6De1DC0B59682bE906E5BcA14E385E74EE88168",
+      "name": "Hyperithm Delta Neutral cbBTC Vault",
+      "symbol": "aHyperBTC",
+      "decimals": 8,
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/aHyperBTC/logo.svg"
+    },
+    {
+      "chainId": 143,
       "address": "0x0c65A0BC65a5D819235B71F554D210D3F80E0852",
       "name": "aPriori Monad LST",
       "symbol": "aprMON",
@@ -834,6 +978,24 @@
         }
       },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/cbBTC/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0x9E2679eABFF131b8b1b48fF7566140794E0eEdc4",
+      "name": "DeFi Anemoy Tokenized Diversified Credit Fund Token",
+      "symbol": "deCRDX",
+      "decimals": 18,
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x9E2679eABFF131b8b1b48fF7566140794E0eEdc4"
+          },
+          "10": {
+            "address": "0x9E2679eABFF131b8b1b48fF7566140794E0eEdc4"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/deCRDX/logo.svg"
     },
     {
       "chainId": 143,
@@ -1485,7 +1647,7 @@
   ],
   "version": {
     "major": 2,
-    "minor": 40,
+    "minor": 41,
     "patch": 0
   }
 }

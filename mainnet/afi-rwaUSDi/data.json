@@ -1,0 +1,17 @@
+{
+  "chainId": 143,
+  "address": "0xed5AA9b6eb62298492c7246FE724ee088A760155",
+  "name": "Artificial Financial Intelligence rwaUSDi",
+  "symbol": "afi-rwaUSDi",
+  "decimals": 18,
+  "extensions": {
+    "crossChainAddresses": {
+      "1": {
+        "address": "0xFEE3FBe137cDDcBc479D946EC09596e65e2F29D3"
+      },
+      "8453": {
+        "address": "0xed5AA9b6eb62298492c7246FE724ee088A760155"
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "chainId": 143,
+  "address": "0x650b616b46fF94000Eb115926aB8393B90788D76",
+  "name": "rwaUSDi",
+  "symbol": "rwaUSDi",
+  "decimals": 6,
+  "extensions": {
+    "crossChainAddresses": {
+      "1": {
+        "address": "0xA39986F96B80d04e8d7AeAaF47175F47C23FD0f4"
+      },
+      "8453": {
+        "address": "0xd74FB32112b1eF5b4C428Fead8dA8d85A0019009"
+      }
+    }
+  }
+}

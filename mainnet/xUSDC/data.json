@@ -1,0 +1,14 @@
+{
+  "chainId": 143,
+  "address": "0xd74FB32112b1eF5b4C428Fead8dA8d85A0019009",
+  "name": "xUSDC",
+  "symbol": "xUSDC",
+  "decimals": 6,
+  "extensions": {
+    "crossChainAddresses": {
+      "43114": {
+        "address": "0xCF0Eb4ac018C06a16ED5c63484823C7805e7599D"
+      }
+    }
+  }
+}

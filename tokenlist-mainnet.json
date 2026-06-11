@@ -4,7 +4,7 @@
   "keywords": [
     "monad mainnet"
   ],
-  "timestamp": "2026-06-08T13:18:47.743400+00:00",
+  "timestamp": "2026-06-11T15:56:04.363793+00:00",
   "tokens": [
     {
       "chainId": 143,
@@ -941,6 +941,24 @@
     },
     {
       "chainId": 143,
+      "address": "0xed5AA9b6eb62298492c7246FE724ee088A760155",
+      "name": "Artificial Financial Intelligence rwaUSDi",
+      "symbol": "afi-rwaUSDi",
+      "decimals": 18,
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xFEE3FBe137cDDcBc479D946EC09596e65e2F29D3"
+          },
+          "8453": {
+            "address": "0xed5AA9b6eb62298492c7246FE724ee088A760155"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/afi-rwaUSDi/logo.svg"
+    },
+    {
+      "chainId": 143,
       "address": "0x0c65A0BC65a5D819235B71F554D210D3F80E0852",
       "name": "aPriori Monad LST",
       "symbol": "aprMON",
@@ -1277,6 +1295,24 @@
     },
     {
       "chainId": 143,
+      "address": "0x650b616b46fF94000Eb115926aB8393B90788D76",
+      "name": "rwaUSDi",
+      "symbol": "rwaUSDi",
+      "decimals": 6,
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xA39986F96B80d04e8d7AeAaF47175F47C23FD0f4"
+          },
+          "8453": {
+            "address": "0xd74FB32112b1eF5b4C428Fead8dA8d85A0019009"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/rwaUSDi/logo.png"
+    },
+    {
+      "chainId": 143,
       "address": "0xD793c04B87386A6bb84ee61D98e0065FdE7fdA5E",
       "name": "sAUSD",
       "symbol": "sAUSD",
@@ -1592,6 +1628,21 @@
     },
     {
       "chainId": 143,
+      "address": "0xd74FB32112b1eF5b4C428Fead8dA8d85A0019009",
+      "name": "xUSDC",
+      "symbol": "xUSDC",
+      "decimals": 6,
+      "extensions": {
+        "crossChainAddresses": {
+          "43114": {
+            "address": "0xCF0Eb4ac018C06a16ED5c63484823C7805e7599D"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/xUSDC/logo.svg"
+    },
+    {
+      "chainId": 143,
       "address": "0xb37476cB1F6111cC682b107B747b8652f90B0984",
       "name": "Yuzu Protection Pool",
       "symbol": "yzPP",
@@ -1647,7 +1698,7 @@
   ],
   "version": {
     "major": 2,
-    "minor": 41,
+    "minor": 42,
     "patch": 0
   }
 }

@@ -1,0 +1,19 @@
+{
+  "chainId": 143,
+  "address": "0x22f6A6752800eAB67b84748FeFc3cC658384aF72",
+  "name": "Mento Japanese Yen",
+  "symbol": "JPYm",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "celo-japanese-yen",
+    "bridgeInfo": {
+      "protocol": "Wormhole NTT",
+      "bridgeAddress": "0x7431419FE761e7da37587245c55a35E5a356c91B"
+    },
+    "crossChainAddresses": {
+      "42220": {
+        "address": "0xc45eCF20f3CD864B32D9794d6f76814aE8892e20"
+      }
+    }
+  }
+}

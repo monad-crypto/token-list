@@ -1,0 +1,19 @@
+{
+  "chainId": 143,
+  "address": "0xF64e91fFEf7ef43aA314F0Bc2AC39f770797990C",
+  "name": "Mento Swiss Franc",
+  "symbol": "CHFm",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "cchf",
+    "bridgeInfo": {
+      "protocol": "Wormhole NTT",
+      "bridgeAddress": "0xbbFBE2791722E93f27c5cE80e3725c8DD8d09697"
+    },
+    "crossChainAddresses": {
+      "42220": {
+        "address": "0xb55a79F398E759E43C95b979163f30eC87Ee131D"
+      }
+    }
+  }
+}

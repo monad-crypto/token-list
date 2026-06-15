@@ -1,0 +1,34 @@
+{
+  "chainId": 143,
+  "address": "0x09D4214C03D01F49544C0448DBE3A27f768F2b34",
+  "name": "Reservoir Stablecoin",
+  "symbol": "rUSD",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "reservoir-rusd",
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0x09D4214C03D01F49544C0448DBE3A27f768F2b34"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0x09D4214C03D01F49544C0448DBE3A27f768F2b34"
+      },
+      "56": {
+        "address": "0x09D4214C03D01F49544C0448DBE3A27f768F2b34"
+      },
+      "999": {
+        "address": "0x866d66F64FB81461903E1e38d998E747EcF35E78"
+      },
+      "8453": {
+        "address": "0x09D4214C03D01F49544C0448DBE3A27f768F2b34"
+      },
+      "42161": {
+        "address": "0x09D4214C03D01F49544C0448DBE3A27f768F2b34"
+      },
+      "43114": {
+        "address": "0x09D4214C03D01F49544C0448DBE3A27f768F2b34"
+      }
+    }
+  }
+}

@@ -4,7 +4,7 @@
   "keywords": [
     "monad mainnet"
   ],
-  "timestamp": "2026-06-11T15:56:04.363793+00:00",
+  "timestamp": "2026-06-18T09:19:56.565436+00:00",
   "tokens": [
     {
       "chainId": 143,
@@ -139,6 +139,26 @@
         }
       },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/CETES/logo.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0xF64e91fFEf7ef43aA314F0Bc2AC39f770797990C",
+      "name": "Mento Swiss Franc",
+      "symbol": "CHFm",
+      "decimals": 18,
+      "extensions": {
+        "coinGeckoId": "cchf",
+        "bridgeInfo": {
+          "protocol": "Wormhole NTT",
+          "bridgeAddress": "0xbbFBE2791722E93f27c5cE80e3725c8DD8d09697"
+        },
+        "crossChainAddresses": {
+          "42220": {
+            "address": "0xb55a79F398E759E43C95b979163f30eC87Ee131D"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/CHFm/logo.svg"
     },
     {
       "chainId": 143,
@@ -428,6 +448,26 @@
         }
       },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/JAAA/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0x22f6A6752800eAB67b84748FeFc3cC658384aF72",
+      "name": "Mento Japanese Yen",
+      "symbol": "JPYm",
+      "decimals": 18,
+      "extensions": {
+        "coinGeckoId": "celo-japanese-yen",
+        "bridgeInfo": {
+          "protocol": "Wormhole NTT",
+          "bridgeAddress": "0x7431419FE761e7da37587245c55a35E5a356c91B"
+        },
+        "crossChainAddresses": {
+          "42220": {
+            "address": "0xc45eCF20f3CD864B32D9794d6f76814aE8892e20"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/JPYm/logo.svg"
     },
     {
       "chainId": 143,
@@ -1295,6 +1335,41 @@
     },
     {
       "chainId": 143,
+      "address": "0x09D4214C03D01F49544C0448DBE3A27f768F2b34",
+      "name": "Reservoir Stablecoin",
+      "symbol": "rUSD",
+      "decimals": 18,
+      "extensions": {
+        "coinGeckoId": "reservoir-rusd",
+        "bridgeInfo": {
+          "protocol": "LayerZero OFT",
+          "bridgeAddress": "0x09D4214C03D01F49544C0448DBE3A27f768F2b34"
+        },
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x09D4214C03D01F49544C0448DBE3A27f768F2b34"
+          },
+          "56": {
+            "address": "0x09D4214C03D01F49544C0448DBE3A27f768F2b34"
+          },
+          "999": {
+            "address": "0x866d66F64FB81461903E1e38d998E747EcF35E78"
+          },
+          "8453": {
+            "address": "0x09D4214C03D01F49544C0448DBE3A27f768F2b34"
+          },
+          "42161": {
+            "address": "0x09D4214C03D01F49544C0448DBE3A27f768F2b34"
+          },
+          "43114": {
+            "address": "0x09D4214C03D01F49544C0448DBE3A27f768F2b34"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/rUSD/logo.svg"
+    },
+    {
+      "chainId": 143,
       "address": "0x650b616b46fF94000Eb115926aB8393B90788D76",
       "name": "rwaUSDi",
       "symbol": "rwaUSDi",
@@ -1698,7 +1773,7 @@
   ],
   "version": {
     "major": 2,
-    "minor": 42,
+    "minor": 43,
     "patch": 0
   }
 }

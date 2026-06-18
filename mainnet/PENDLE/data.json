@@ -1,0 +1,34 @@
+{
+  "chainId": 143,
+  "address": "0x5E49E1f85813F2B65858860A3FA231b4186f2e0E",
+  "name": "Pendle",
+  "symbol": "PENDLE",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "pendle",
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0x5E49E1f85813F2B65858860A3FA231b4186f2e0E"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0x808507121B80c02388fAd14726482e061B8da827"
+      },
+      "10": {
+        "address": "0xBC7B1Ff1c6989f006a1185318eD4E7b5796e66E1"
+      },
+      "56": {
+        "address": "0xb3Ed0A426155B79B898849803E3B36552f7ED507"
+      },
+      "999": {
+        "address": "0xD6Eb81136884713E843936843E286FD2a85A205A"
+      },
+      "8453": {
+        "address": "0xA99F6e6785Da0F5d6fB42495Fe424BCE029Eeb3E"
+      },
+      "42161": {
+        "address": "0x0c880f6761F1af8d9Aa9C466984b80DAb9a8c9e8"
+      }
+    }
+  }
+}

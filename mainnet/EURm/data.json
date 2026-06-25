@@ -1,0 +1,19 @@
+{
+  "chainId": 143,
+  "address": "0x4D502d735B4C574B487Ed641ae87cEaE884731C7",
+  "name": "Mento Euro",
+  "symbol": "EURm",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "celo-euro",
+    "bridgeInfo": {
+      "protocol": "Wormhole NTT",
+      "bridgeAddress": "0x5F8a1e50F83f53951B89Fc73Ead80b27045C67fd"
+    },
+    "crossChainAddresses": {
+      "42220": {
+        "address": "0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73"
+      }
+    }
+  }
+}

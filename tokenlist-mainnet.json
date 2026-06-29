@@ -4,7 +4,7 @@
   "keywords": [
     "monad mainnet"
   ],
-  "timestamp": "2026-06-18T09:19:56.565436+00:00",
+  "timestamp": "2026-06-29T15:29:13.414847+00:00",
   "tokens": [
     {
       "chainId": 143,
@@ -264,6 +264,26 @@
         "coinGeckoId": "newrails-euro"
       },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/EURW/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0x4D502d735B4C574B487Ed641ae87cEaE884731C7",
+      "name": "Mento Euro",
+      "symbol": "EURm",
+      "decimals": 18,
+      "extensions": {
+        "coinGeckoId": "celo-euro",
+        "bridgeInfo": {
+          "protocol": "Wormhole NTT",
+          "bridgeAddress": "0x5F8a1e50F83f53951B89Fc73Ead80b27045C67fd"
+        },
+        "crossChainAddresses": {
+          "42220": {
+            "address": "0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/EURm/logo.svg"
     },
     {
       "chainId": 143,
@@ -563,6 +583,9 @@
       "name": "LeverUp MON",
       "symbol": "LVMON",
       "decimals": 18,
+      "extensions": {
+        "coinGeckoId": "leverup-mon"
+      },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/LVMON/logo.svg"
     },
     {
@@ -571,7 +594,43 @@
       "name": "LeverUp USD",
       "symbol": "LVUSD",
       "decimals": 18,
+      "extensions": {
+        "coinGeckoId": "leverup-usd"
+      },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/LVUSD/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0x866A2BF4E572CbcF37D5071A7a58503Bfb36be1b",
+      "name": "M by M0",
+      "symbol": "M",
+      "decimals": 6,
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x866A2BF4E572CbcF37D5071A7a58503Bfb36be1b"
+          },
+          "10": {
+            "address": "0x866A2BF4E572CbcF37D5071A7a58503Bfb36be1b"
+          },
+          "56": {
+            "address": "0x866A2BF4E572CbcF37D5071A7a58503Bfb36be1b"
+          },
+          "999": {
+            "address": "0x866A2BF4E572CbcF37D5071A7a58503Bfb36be1b"
+          },
+          "8453": {
+            "address": "0x866A2BF4E572CbcF37D5071A7a58503Bfb36be1b"
+          },
+          "9745": {
+            "address": "0x866A2BF4E572CbcF37D5071A7a58503Bfb36be1b"
+          },
+          "42161": {
+            "address": "0x866A2BF4E572CbcF37D5071A7a58503Bfb36be1b"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/M/logo.svg"
     },
     {
       "chainId": 143,
@@ -611,6 +670,41 @@
         }
       },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/NXPC/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0x5E49E1f85813F2B65858860A3FA231b4186f2e0E",
+      "name": "Pendle",
+      "symbol": "PENDLE",
+      "decimals": 18,
+      "extensions": {
+        "coinGeckoId": "pendle",
+        "bridgeInfo": {
+          "protocol": "LayerZero OFT",
+          "bridgeAddress": "0x5E49E1f85813F2B65858860A3FA231b4186f2e0E"
+        },
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x808507121B80c02388fAd14726482e061B8da827"
+          },
+          "10": {
+            "address": "0xBC7B1Ff1c6989f006a1185318eD4E7b5796e66E1"
+          },
+          "56": {
+            "address": "0xb3Ed0A426155B79B898849803E3B36552f7ED507"
+          },
+          "999": {
+            "address": "0xD6Eb81136884713E843936843E286FD2a85A205A"
+          },
+          "8453": {
+            "address": "0xA99F6e6785Da0F5d6fB42495Fe424BCE029Eeb3E"
+          },
+          "42161": {
+            "address": "0x0c880f6761F1af8d9Aa9C466984b80DAb9a8c9e8"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/PENDLE/logo.svg"
     },
     {
       "chainId": 143,
@@ -1270,6 +1364,22 @@
     },
     {
       "chainId": 143,
+      "address": "0xacA92E438df0B2401fF60dA7E4337B687a2435DA",
+      "name": "MetaMask USD",
+      "symbol": "mUSD",
+      "decimals": 6,
+      "extensions": {
+        "coinGeckoId": "metamask-usd",
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xacA92E438df0B2401fF60dA7E4337B687a2435DA"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/mUSD/logo.svg"
+    },
+    {
+      "chainId": 143,
       "address": "0x1D4795A4670033f47f572b910553be0295077b51",
       "name": "mcMON",
       "symbol": "mcMON",
@@ -1393,6 +1503,14 @@
       "symbol": "sAUSD",
       "decimals": 6,
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/sAUSD/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0x61b29EfEf2E6f866bA4AaeFDb87d2837C6a22b9c",
+      "name": "Staked LVMON",
+      "symbol": "sLVMON",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/sLVMON/logo.svg"
     },
     {
       "chainId": 143,
@@ -1560,6 +1678,40 @@
       "symbol": "vUSD",
       "decimals": 6,
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/vUSD/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0x437cc33344a0B27A429f795ff6B469C72698B291",
+      "name": "WrappedM by M0",
+      "symbol": "wM",
+      "decimals": 6,
+      "extensions": {
+        "coinGeckoId": "wrappedm-by-m0",
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x437cc33344a0B27A429f795ff6B469C72698B291"
+          },
+          "10": {
+            "address": "0x437cc33344a0B27A429f795ff6B469C72698B291"
+          },
+          "56": {
+            "address": "0x437cc33344a0B27A429f795ff6B469C72698B291"
+          },
+          "999": {
+            "address": "0x437cc33344a0B27A429f795ff6B469C72698B291"
+          },
+          "8453": {
+            "address": "0x437cc33344a0B27A429f795ff6B469C72698B291"
+          },
+          "9745": {
+            "address": "0x437cc33344a0B27A429f795ff6B469C72698B291"
+          },
+          "42161": {
+            "address": "0x437cc33344a0B27A429f795ff6B469C72698B291"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/wM/logo.svg"
     },
     {
       "chainId": 143,
@@ -1773,7 +1925,7 @@
   ],
   "version": {
     "major": 2,
-    "minor": 43,
+    "minor": 44,
     "patch": 0
   }
 }

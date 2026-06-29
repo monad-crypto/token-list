@@ -3,5 +3,8 @@
   "address": "0x91b81bfbe3A747230F0529Aa28d8b2Bc898E6D56",
   "name": "LeverUp MON",
   "symbol": "LVMON",
-  "decimals": 18
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "leverup-mon"
+  }
 }

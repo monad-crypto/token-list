@@ -1,0 +1,37 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#clip0_128_2)">
+    <mask id="mask0_128_2" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="256" height="256">
+      <circle cx="128" cy="128" r="128" fill="white" />
+    </mask>
+    <g mask="url(#mask0_128_2)">
+      <path d="M256 0H0V256H256V0Z" fill="black" />
+      <path d="M162.454 148.035H93.5466V187.819L128 207.711L162.454 187.819V148.035Z" fill="white" />
+      <path d="M128 207.711L162.453 187.819V148.035H128V207.711Z" fill="#383838" />
+      <path d="M128 207.711L162.453 187.819V148.035H128V207.711Z" fill="url(#paint0_linear_128_2)" />
+      <path d="M128 128.144L93.5466 148.036L128 167.928L162.454 148.036L128 128.144Z" fill="white" />
+      <path d="M128 48.5768L93.5466 68.4688L128 88.3601L162.454 68.4688L128 48.5768Z" fill="#DFDFDF" />
+      <path d="M128 48.5768L93.5466 68.4688L128 88.3601L162.454 68.4688L128 48.5768Z" fill="url(#paint1_linear_128_2)" fill-opacity="0.2" />
+      <path d="M128 128.145L196.907 88.361V167.929L162.454 187.821L162.453 148.037L128 167.929V128.145Z" fill="#1A1A1A" />
+      <path d="M127.999 128.145L59.0923 88.361V167.929L93.546 187.821V148.037L127.999 167.929V128.145Z" fill="#DFDFDF" />
+      <path d="M127.999 128.145L59.0923 88.361V167.929L93.546 187.821V148.037L127.999 167.929V128.145Z" fill="url(#paint2_linear_128_2)" fill-opacity="0.2" />
+      <path d="M93.546 68.4679L59.0923 88.3601L128 128.144L196.907 88.3601L162.453 68.4679L128 88.3593L93.546 68.4679Z" fill="white" />
+    </g>
+  </g>
+  <defs>
+    <linearGradient id="paint0_linear_128_2" x1="145.227" y1="148.035" x2="233.771" y2="213.376" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#000001" stop-opacity="0" />
+      <stop offset="1" stop-color="#000001" />
+    </linearGradient>
+    <linearGradient id="paint1_linear_128_2" x1="128" y1="48.5769" x2="167.995" y2="88.572" gradientUnits="userSpaceOnUse">
+      <stop stop-opacity="0" />
+      <stop offset="1" />
+    </linearGradient>
+    <linearGradient id="paint2_linear_128_2" x1="74.0302" y1="115.557" x2="127.999" y2="179.405" gradientUnits="userSpaceOnUse">
+      <stop stop-opacity="0" />
+      <stop offset="1" />
+    </linearGradient>
+    <clipPath id="clip0_128_2">
+      <rect width="256" height="256" fill="white" />
+    </clipPath>
+  </defs>
+</svg>

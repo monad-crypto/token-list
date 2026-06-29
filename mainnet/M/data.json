@@ -1,0 +1,32 @@
+{
+  "chainId": 143,
+  "address": "0x866A2BF4E572CbcF37D5071A7a58503Bfb36be1b",
+  "name": "M by M0",
+  "symbol": "M",
+  "decimals": 6,
+  "extensions": {
+    "crossChainAddresses": {
+      "1": {
+        "address": "0x866A2BF4E572CbcF37D5071A7a58503Bfb36be1b"
+      },
+      "10": {
+        "address": "0x866A2BF4E572CbcF37D5071A7a58503Bfb36be1b"
+      },
+      "56": {
+        "address": "0x866A2BF4E572CbcF37D5071A7a58503Bfb36be1b"
+      },
+      "999": {
+        "address": "0x866A2BF4E572CbcF37D5071A7a58503Bfb36be1b"
+      },
+      "8453": {
+        "address": "0x866A2BF4E572CbcF37D5071A7a58503Bfb36be1b"
+      },
+      "9745": {
+        "address": "0x866A2BF4E572CbcF37D5071A7a58503Bfb36be1b"
+      },
+      "42161": {
+        "address": "0x866A2BF4E572CbcF37D5071A7a58503Bfb36be1b"
+      }
+    }
+  }
+}

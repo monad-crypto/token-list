@@ -1,0 +1,33 @@
+{
+  "chainId": 143,
+  "address": "0x437cc33344a0B27A429f795ff6B469C72698B291",
+  "name": "WrappedM by M0",
+  "symbol": "wM",
+  "decimals": 6,
+  "extensions": {
+    "coinGeckoId": "wrappedm-by-m0",
+    "crossChainAddresses": {
+      "1": {
+        "address": "0x437cc33344a0B27A429f795ff6B469C72698B291"
+      },
+      "10": {
+        "address": "0x437cc33344a0B27A429f795ff6B469C72698B291"
+      },
+      "56": {
+        "address": "0x437cc33344a0B27A429f795ff6B469C72698B291"
+      },
+      "999": {
+        "address": "0x437cc33344a0B27A429f795ff6B469C72698B291"
+      },
+      "8453": {
+        "address": "0x437cc33344a0B27A429f795ff6B469C72698B291"
+      },
+      "9745": {
+        "address": "0x437cc33344a0B27A429f795ff6B469C72698B291"
+      },
+      "42161": {
+        "address": "0x437cc33344a0B27A429f795ff6B469C72698B291"
+      }
+    }
+  }
+}

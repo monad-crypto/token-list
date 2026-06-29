@@ -1,0 +1,40 @@
+{
+  "chainId": 143,
+  "address": "0x5d3a1Ff2b6BAb83b63cd9AD0787074081a52ef34",
+  "name": "USDe",
+  "symbol": "USDe",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "ethena-usde",
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0x5d3a1Ff2b6BAb83b63cd9AD0787074081a52ef34"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0x4c9EDD5852cd905f086C759E8383e09bff1E68B3"
+      },
+      "10": {
+        "address": "0x5d3a1Ff2b6BAb83b63cd9AD0787074081a52ef34"
+      },
+      "56": {
+        "address": "0x5d3a1Ff2b6BAb83b63cd9AD0787074081a52ef34"
+      },
+      "999": {
+        "address": "0x5d3a1Ff2b6BAb83b63cd9AD0787074081a52ef34"
+      },
+      "8453": {
+        "address": "0x5d3a1Ff2b6BAb83b63cd9AD0787074081a52ef34"
+      },
+      "9745": {
+        "address": "0x5d3a1Ff2b6BAb83b63cd9AD0787074081a52ef34"
+      },
+      "42161": {
+        "address": "0x5d3a1Ff2b6BAb83b63cd9AD0787074081a52ef34"
+      },
+      "43114": {
+        "address": "0x5d3a1Ff2b6BAb83b63cd9AD0787074081a52ef34"
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "chainId": 143,
+  "address": "0xfc421aD3C883Bf9E7C4f42dE845C4e4405799e73",
+  "name": "Gho Token",
+  "symbol": "GHO",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "gho",
+    "bridgeInfo": {
+      "protocol": "Chainlink CCIP",
+      "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0x40D16FC0246aD3160Ccc09B8D0D3A2cD28aE6C2f"
+      },
+      "8453": {
+        "address": "0x6Bb7a212910682DCFdbd5BCBb3e28FB4E8da10Ee"
+      },
+      "9745": {
+        "address": "0xb77E872A68C62CfC0dFb02C067Ecc3DA23B4bbf3"
+      },
+      "42161": {
+        "address": "0x7dfF72693f6A4149b17e7C6314655f6A9F7c8B33"
+      },
+      "43114": {
+        "address": "0xfc421aD3C883Bf9E7C4f42dE845C4e4405799e73"
+      }
+    }
+  }
+}

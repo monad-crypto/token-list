@@ -4,7 +4,7 @@
   "keywords": [
     "monad mainnet"
   ],
-  "timestamp": "2026-06-29T15:29:13.414847+00:00",
+  "timestamp": "2026-07-02T09:07:45.766885+00:00",
   "tokens": [
     {
       "chainId": 143,
@@ -199,6 +199,47 @@
         "coinGeckoId": "pixie-dust"
       },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/DUST/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0x58538e6A46E07434d7E7375Bc268D3cb839C0133",
+      "name": "ENA",
+      "symbol": "ENA",
+      "decimals": 18,
+      "extensions": {
+        "coinGeckoId": "ethena",
+        "bridgeInfo": {
+          "protocol": "LayerZero OFT",
+          "bridgeAddress": "0x58538e6A46E07434d7E7375Bc268D3cb839C0133"
+        },
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x57e114B691Db790C35207b2e685D4A43181e6061"
+          },
+          "10": {
+            "address": "0x58538e6A46E07434d7E7375Bc268D3cb839C0133"
+          },
+          "56": {
+            "address": "0x58538e6A46E07434d7E7375Bc268D3cb839C0133"
+          },
+          "999": {
+            "address": "0x58538e6A46E07434d7E7375Bc268D3cb839C0133"
+          },
+          "8453": {
+            "address": "0x58538e6A46E07434d7E7375Bc268D3cb839C0133"
+          },
+          "9745": {
+            "address": "0x58538e6A46E07434d7E7375Bc268D3cb839C0133"
+          },
+          "42161": {
+            "address": "0x58538e6A46E07434d7E7375Bc268D3cb839C0133"
+          },
+          "43114": {
+            "address": "0x58538e6A46E07434d7E7375Bc268D3cb839C0133"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/ENA/logo.svg"
     },
     {
       "chainId": 143,
@@ -409,6 +450,38 @@
         }
       },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/GBPm/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0xfc421aD3C883Bf9E7C4f42dE845C4e4405799e73",
+      "name": "Gho Token",
+      "symbol": "GHO",
+      "decimals": 18,
+      "extensions": {
+        "coinGeckoId": "gho",
+        "bridgeInfo": {
+          "protocol": "Chainlink CCIP",
+          "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+        },
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x40D16FC0246aD3160Ccc09B8D0D3A2cD28aE6C2f"
+          },
+          "8453": {
+            "address": "0x6Bb7a212910682DCFdbd5BCBb3e28FB4E8da10Ee"
+          },
+          "9745": {
+            "address": "0xb77E872A68C62CfC0dFb02C067Ecc3DA23B4bbf3"
+          },
+          "42161": {
+            "address": "0x7dfF72693f6A4149b17e7C6314655f6A9F7c8B33"
+          },
+          "43114": {
+            "address": "0xfc421aD3C883Bf9E7C4f42dE845C4e4405799e73"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/GHO/logo.svg"
     },
     {
       "chainId": 143,
@@ -899,6 +972,47 @@
     },
     {
       "chainId": 143,
+      "address": "0x5d3a1Ff2b6BAb83b63cd9AD0787074081a52ef34",
+      "name": "USDe",
+      "symbol": "USDe",
+      "decimals": 18,
+      "extensions": {
+        "coinGeckoId": "ethena-usde",
+        "bridgeInfo": {
+          "protocol": "LayerZero OFT",
+          "bridgeAddress": "0x5d3a1Ff2b6BAb83b63cd9AD0787074081a52ef34"
+        },
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x4c9EDD5852cd905f086C759E8383e09bff1E68B3"
+          },
+          "10": {
+            "address": "0x5d3a1Ff2b6BAb83b63cd9AD0787074081a52ef34"
+          },
+          "56": {
+            "address": "0x5d3a1Ff2b6BAb83b63cd9AD0787074081a52ef34"
+          },
+          "999": {
+            "address": "0x5d3a1Ff2b6BAb83b63cd9AD0787074081a52ef34"
+          },
+          "8453": {
+            "address": "0x5d3a1Ff2b6BAb83b63cd9AD0787074081a52ef34"
+          },
+          "9745": {
+            "address": "0x5d3a1Ff2b6BAb83b63cd9AD0787074081a52ef34"
+          },
+          "42161": {
+            "address": "0x5d3a1Ff2b6BAb83b63cd9AD0787074081a52ef34"
+          },
+          "43114": {
+            "address": "0x5d3a1Ff2b6BAb83b63cd9AD0787074081a52ef34"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/USDe/logo.svg"
+    },
+    {
+      "chainId": 143,
       "address": "0xBC69212B8E4d445b2307C9D32dD68E2A4Df00115",
       "name": "Mento Dollar",
       "symbol": "USDm",
@@ -1113,6 +1227,26 @@
     },
     {
       "chainId": 143,
+      "address": "0x0D9D741FE423Cd5419e4BCb6cB2FfA87AFa93bA4",
+      "name": "avUSD",
+      "symbol": "avUSD",
+      "decimals": 18,
+      "extensions": {
+        "coinGeckoId": "avant-usd",
+        "bridgeInfo": {
+          "protocol": "Chainlink CCIP",
+          "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+        },
+        "crossChainAddresses": {
+          "43114": {
+            "address": "0x24dE8771bC5DdB3362Db529Fc3358F2df3A0E346"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/avUSD/logo.svg"
+    },
+    {
+      "chainId": 143,
       "address": "0xd18B7EC58Cdf4876f6AFebd3Ed1730e4Ce10414b",
       "name": "Coinbase Wrapped BTC",
       "symbol": "cbBTC",
@@ -1134,7 +1268,7 @@
     {
       "chainId": 143,
       "address": "0x9E2679eABFF131b8b1b48fF7566140794E0eEdc4",
-      "name": "DeFi Anemoy Tokenized Diversified Credit Fund Token",
+      "name": "ACRDX deRWA",
       "symbol": "deCRDX",
       "decimals": 18,
       "extensions": {
@@ -1152,7 +1286,7 @@
     {
       "chainId": 143,
       "address": "0x5F8a1C74C112865BD05dbe4752C7608332719062",
-      "name": "DeFi Janus Henderson Anemoy AAA CLO Fund Token",
+      "name": "JAAA deRWA",
       "symbol": "deJAAA",
       "decimals": 18,
       "extensions": {
@@ -1177,7 +1311,7 @@
     {
       "chainId": 143,
       "address": "0x8DE0F3295B9e42b29E7617BAdA7C603277420451",
-      "name": "DeFi Janus Henderson Anemoy Treasury Fund Token",
+      "name": "JTRSY deRWA",
       "symbol": "deJTRSY",
       "decimals": 18,
       "extensions": {
@@ -1522,6 +1656,47 @@
         "coinGeckoId": "kintsu-staked-monad"
       },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/sMON/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0x211Cc4DD073734dA055fbF44a2b4667d5E5fE5d2",
+      "name": "Staked USDe",
+      "symbol": "sUSDe",
+      "decimals": 18,
+      "extensions": {
+        "coinGeckoId": "ethena-staked-usde",
+        "bridgeInfo": {
+          "protocol": "LayerZero OFT",
+          "bridgeAddress": "0x211Cc4DD073734dA055fbF44a2b4667d5E5fE5d2"
+        },
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x9D39A5DE30e57443BfF2A8307A4256c8797A3497"
+          },
+          "10": {
+            "address": "0x211Cc4DD073734dA055fbF44a2b4667d5E5fE5d2"
+          },
+          "56": {
+            "address": "0x211Cc4DD073734dA055fbF44a2b4667d5E5fE5d2"
+          },
+          "999": {
+            "address": "0x211Cc4DD073734dA055fbF44a2b4667d5E5fE5d2"
+          },
+          "8453": {
+            "address": "0x211Cc4DD073734dA055fbF44a2b4667d5E5fE5d2"
+          },
+          "9745": {
+            "address": "0x211Cc4DD073734dA055fbF44a2b4667d5E5fE5d2"
+          },
+          "42161": {
+            "address": "0x211Cc4DD073734dA055fbF44a2b4667d5E5fE5d2"
+          },
+          "43114": {
+            "address": "0x211Cc4DD073734dA055fbF44a2b4667d5E5fE5d2"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/sUSDe/logo.svg"
     },
     {
       "chainId": 143,
@@ -1925,7 +2100,7 @@
   ],
   "version": {
     "major": 2,
-    "minor": 44,
+    "minor": 45,
     "patch": 0
   }
 }

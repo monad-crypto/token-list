@@ -6,6 +6,10 @@
   "decimals": 6,
   "extensions": {
     "coinGeckoId": "wrappedm-by-m0",
+    "bridgeInfo": {
+      "protocol": "M0 Portal",
+      "bridgeAddress": "0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd"
+    },
     "crossChainAddresses": {
       "1": {
         "address": "0x437cc33344a0B27A429f795ff6B469C72698B291"

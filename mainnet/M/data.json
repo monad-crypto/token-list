@@ -5,6 +5,10 @@
   "symbol": "M",
   "decimals": 6,
   "extensions": {
+    "bridgeInfo": {
+      "protocol": "M0 Portal",
+      "bridgeAddress": "0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd"
+    },
     "crossChainAddresses": {
       "1": {
         "address": "0x866A2BF4E572CbcF37D5071A7a58503Bfb36be1b"

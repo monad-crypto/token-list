@@ -99,6 +99,15 @@ HYPERLANE_WARP_ROUTE_ABI = [
         "type": "function",
     }
 ]
+M0_M_TOKEN_ABI = [
+    {
+        "inputs": [],
+        "name": "mToken",
+        "outputs": [{"name": "", "type": "address"}],
+        "stateMutability": "view",
+        "type": "function",
+    }
+]
 
 CCTP_TOKEN_MINTER_V2_ADDRESS = "0xfd78EE919681417d192449715b2594ab58f5D002"
 CCTP_TOKEN_MINTER_V2_ABI = [
@@ -499,6 +508,40 @@ def fetch_hyperlane_wrapped_token_with_retry(
         retry_delay,
         retry_backoff,
         "fetch wrapped token",
+    )
+
+
+def fetch_m0_m_token_with_retry(
+    web3: Web3,
+    address: str,
+    max_retries: int = DEFAULT_MAX_RETRIES,
+    retry_delay: float = DEFAULT_RETRY_DELAY,
+    retry_backoff: float = DEFAULT_RETRY_BACKOFF,
+) -> str:
+    """Fetch the canonical $M token address by calling mToken() with retry logic.
+
+    Works for both an M0 Portal (returns the $M it bridges) and M extension tokens.
+
+    Args:
+        web3: Web3 instance connected to the chain.
+        address: M0 Portal or M extension contract address (should be checksummed).
+        max_retries: Maximum number of retry attempts.
+        retry_delay: Initial delay between retries in seconds.
+        retry_backoff: Multiplier for exponential backoff.
+
+    Returns:
+        str: The canonical $M token address.
+
+    Raises:
+        Exception: If fetching the M token fails after all retries.
+    """
+    contract = web3.eth.contract(address=address, abi=M0_M_TOKEN_ABI)
+    return _retry_with_backoff(
+        lambda: contract.functions.mToken().call(),
+        max_retries,
+        retry_delay,
+        retry_backoff,
+        "fetch M0 M token",
     )
 
 

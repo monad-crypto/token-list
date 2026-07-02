@@ -24,6 +24,7 @@ from utils.web3 import (
     fetch_ccip_token_config_with_retry,
     fetch_cctp_burn_limits_per_message_with_retry,
     fetch_hyperlane_wrapped_token_with_retry,
+    fetch_m0_m_token_with_retry,
     fetch_oft_bridge_token_with_retry,
     fetch_token_decimals_with_retry,
     fetch_token_name_with_retry,
@@ -61,12 +62,14 @@ VALID_BRIDGE_PROTOCOLS = {
     "Circle CCTP",
     "Hyperlane Warp Route",
     "LayerZero OFT",
+    "M0 Portal",
     "Wormhole",
     "Wormhole NTT",
 }
 EXPECTED_BRIDGE_ADDRESSES = {
     "Chainlink CCIP": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB",
     "Circle CCTP": "0x28b5a0e9C621a5BadaA536219b3a228C8168cf5d",
+    "M0 Portal": "0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd",
     "Wormhole": "0x0B2719cdA2F10595369e6673ceA3Ee2EDFa13BA7",
 }
 CCIP_TOKEN_ADMIN_REGISTRY_ADDRESS = "0x11ACd984DD680363117B310f6ebdf78fD6c0195f"
@@ -621,6 +624,15 @@ def validate_bridge_onchain(data: dict[str, Any], web3: Web3) -> list[str]:
                         f"Hyperlane wrapped token mismatch: expected '{token_address}', "
                         f"got '{wrapped_token}'"
                     )
+            case "M0 Portal":
+                portal_m_token = fetch_m0_m_token_with_retry(web3, bridge_address)
+                if token_address.lower() != portal_m_token.lower():
+                    extension_m_token = fetch_m0_m_token_with_retry(web3, token_address)
+                    if extension_m_token.lower() != portal_m_token.lower():
+                        errors.append(
+                            "M0 Portal token is not an extension of the portal's $M: "
+                            f"expected mToken '{portal_m_token}', got '{extension_m_token}'"
+                        )
             case "Circle CCTP":
                 burn_limit = fetch_cctp_burn_limits_per_message_with_retry(
                     web3,

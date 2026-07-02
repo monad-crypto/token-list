@@ -47,6 +47,7 @@ export type BridgeProtocol =
   | "Circle CCTP"
   | "Hyperlane Warp Route"
   | "LayerZero OFT"
+  | "M0 Portal"
   | "Wormhole"
   | "Wormhole NTT";
 

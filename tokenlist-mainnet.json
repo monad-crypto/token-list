@@ -4,7 +4,7 @@
   "keywords": [
     "monad mainnet"
   ],
-  "timestamp": "2026-07-02T09:07:45.766885+00:00",
+  "timestamp": "2026-07-02T15:44:07.215607+00:00",
   "tokens": [
     {
       "chainId": 143,
@@ -679,6 +679,10 @@
       "symbol": "M",
       "decimals": 6,
       "extensions": {
+        "bridgeInfo": {
+          "protocol": "M0 Portal",
+          "bridgeAddress": "0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd"
+        },
         "crossChainAddresses": {
           "1": {
             "address": "0x866A2BF4E572CbcF37D5071A7a58503Bfb36be1b"
@@ -1504,6 +1508,10 @@
       "decimals": 6,
       "extensions": {
         "coinGeckoId": "metamask-usd",
+        "bridgeInfo": {
+          "protocol": "M0 Portal",
+          "bridgeAddress": "0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd"
+        },
         "crossChainAddresses": {
           "1": {
             "address": "0xacA92E438df0B2401fF60dA7E4337B687a2435DA"
@@ -1862,6 +1870,10 @@
       "decimals": 6,
       "extensions": {
         "coinGeckoId": "wrappedm-by-m0",
+        "bridgeInfo": {
+          "protocol": "M0 Portal",
+          "bridgeAddress": "0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd"
+        },
         "crossChainAddresses": {
           "1": {
             "address": "0x437cc33344a0B27A429f795ff6B469C72698B291"
@@ -2101,6 +2113,6 @@
   "version": {
     "major": 2,
     "minor": 45,
-    "patch": 0
+    "patch": 1
   }
 }

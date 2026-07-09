@@ -5,7 +5,6 @@
   "symbol": "pufETH",
   "decimals": 18,
   "extensions": {
-    "coinGeckoId": "pufeth",
     "bridgeInfo": {
       "protocol": "LayerZero OFT",
       "bridgeAddress": "0x37D6382B6889cCeF8d6871A8b60E667115eDDBcF"

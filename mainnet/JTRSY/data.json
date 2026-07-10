@@ -1,7 +1,7 @@
 {
   "chainId": 143,
   "address": "0xC18e6f730896971a79D748E8deA61067A9Bc6040",
-  "name": "Janus Henderson Anemoy Treasury Fund Token",
+  "name": "Janus Henderson Treasury Fund",
   "symbol": "JTRSY",
   "decimals": 6,
   "extensions": {

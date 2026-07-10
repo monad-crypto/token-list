@@ -1,7 +1,7 @@
 {
   "chainId": 143,
   "address": "0xAD48F183E586e92A591A610397ebf534609DF797",
-  "name": "Janus Henderson Anemoy AAA CLO Fund Token",
+  "name": "Janus Henderson AAA CLO Fund",
   "symbol": "JAAA",
   "decimals": 6,
   "extensions": {

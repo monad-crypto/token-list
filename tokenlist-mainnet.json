@@ -4,7 +4,7 @@
   "keywords": [
     "monad mainnet"
   ],
-  "timestamp": "2026-07-02T15:44:07.215607+00:00",
+  "timestamp": "2026-07-11T03:39:56.579216+00:00",
   "tokens": [
     {
       "chainId": 143,
@@ -520,7 +520,7 @@
     {
       "chainId": 143,
       "address": "0xAD48F183E586e92A591A610397ebf534609DF797",
-      "name": "Janus Henderson Anemoy AAA CLO Fund Token",
+      "name": "Janus Henderson AAA CLO Fund",
       "symbol": "JAAA",
       "decimals": 6,
       "extensions": {
@@ -565,7 +565,7 @@
     {
       "chainId": 143,
       "address": "0xC18e6f730896971a79D748E8deA61067A9Bc6040",
-      "name": "Janus Henderson Anemoy Treasury Fund Token",
+      "name": "Janus Henderson Treasury Fund",
       "symbol": "JTRSY",
       "decimals": 6,
       "extensions": {
@@ -1546,7 +1546,6 @@
       "symbol": "pufETH",
       "decimals": 18,
       "extensions": {
-        "coinGeckoId": "pufeth",
         "bridgeInfo": {
           "protocol": "LayerZero OFT",
           "bridgeAddress": "0x37D6382B6889cCeF8d6871A8b60E667115eDDBcF"
@@ -2113,6 +2112,6 @@
   "version": {
     "major": 2,
     "minor": 45,
-    "patch": 1
+    "patch": 2
   }
 }

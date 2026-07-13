@@ -1,0 +1,22 @@
+{
+  "chainId": 143,
+  "address": "0x0Bb150DFa86EA5d7742F07FEfCD8E8edA81D64eF",
+  "name": "Saturn USD",
+  "symbol": "USDat",
+  "decimals": 6,
+  "extensions": {
+    "coinGeckoId": "saturn-dollar",
+    "bridgeInfo": {
+      "protocol": "Chainlink CCIP",
+      "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0x23238f20b894f29041f48D88eE91131C395Aaa71"
+      },
+      "56": {
+        "address": "0x0Bb150DFa86EA5d7742F07FEfCD8E8edA81D64eF"
+      }
+    }
+  }
+}

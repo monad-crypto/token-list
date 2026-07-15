@@ -1,0 +1,22 @@
+{
+  "chainId": 143,
+  "address": "0x9cd57D3685E6868caCaA8BDCaAf52CBdEBf4fA25",
+  "name": "Staked Saturn USD",
+  "symbol": "sUSDat",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "saturn-susdat",
+    "bridgeInfo": {
+      "protocol": "Chainlink CCIP",
+      "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0xD166337499E176bbC38a1FBd113Ab144e5bd2Df7"
+      },
+      "56": {
+        "address": "0x9cd57D3685E6868caCaA8BDCaAf52CBdEBf4fA25"
+      }
+    }
+  }
+}

@@ -4,7 +4,7 @@
   "keywords": [
     "monad mainnet"
   ],
-  "timestamp": "2026-07-02T15:44:07.215607+00:00",
+  "timestamp": "2026-07-16T00:25:17.089640+00:00",
   "tokens": [
     {
       "chainId": 143,
@@ -520,7 +520,7 @@
     {
       "chainId": 143,
       "address": "0xAD48F183E586e92A591A610397ebf534609DF797",
-      "name": "Janus Henderson Anemoy AAA CLO Fund Token",
+      "name": "Janus Henderson AAA CLO Fund",
       "symbol": "JAAA",
       "decimals": 6,
       "extensions": {
@@ -565,7 +565,7 @@
     {
       "chainId": 143,
       "address": "0xC18e6f730896971a79D748E8deA61067A9Bc6040",
-      "name": "Janus Henderson Anemoy Treasury Fund Token",
+      "name": "Janus Henderson Treasury Fund",
       "symbol": "JTRSY",
       "decimals": 6,
       "extensions": {
@@ -973,6 +973,29 @@
         }
       },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/USDT0/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0x0Bb150DFa86EA5d7742F07FEfCD8E8edA81D64eF",
+      "name": "Saturn USD",
+      "symbol": "USDat",
+      "decimals": 6,
+      "extensions": {
+        "coinGeckoId": "saturn-dollar",
+        "bridgeInfo": {
+          "protocol": "Chainlink CCIP",
+          "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+        },
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x23238f20b894f29041f48D88eE91131C395Aaa71"
+          },
+          "56": {
+            "address": "0x0Bb150DFa86EA5d7742F07FEfCD8E8edA81D64eF"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/USDat/logo.svg"
     },
     {
       "chainId": 143,
@@ -1440,6 +1463,14 @@
     },
     {
       "chainId": 143,
+      "address": "0xaD663aC84052b52BE4ed1b27BA416505e84a00Bf",
+      "name": "High Yield AUSD Vault",
+      "symbol": "hyAUSD",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/hyAUSD/logo.svg"
+    },
+    {
+      "chainId": 143,
       "address": "0x9c82eB49B51F7Dc61e22Ff347931CA32aDc6cd90",
       "name": "Locked AZND",
       "symbol": "loAZND",
@@ -1546,7 +1577,6 @@
       "symbol": "pufETH",
       "decimals": 18,
       "extensions": {
-        "coinGeckoId": "pufeth",
         "bridgeInfo": {
           "protocol": "LayerZero OFT",
           "bridgeAddress": "0x37D6382B6889cCeF8d6871A8b60E667115eDDBcF"
@@ -1664,6 +1694,29 @@
         "coinGeckoId": "kintsu-staked-monad"
       },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/sMON/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0x9cd57D3685E6868caCaA8BDCaAf52CBdEBf4fA25",
+      "name": "Staked Saturn USD",
+      "symbol": "sUSDat",
+      "decimals": 18,
+      "extensions": {
+        "coinGeckoId": "saturn-susdat",
+        "bridgeInfo": {
+          "protocol": "Chainlink CCIP",
+          "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+        },
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xD166337499E176bbC38a1FBd113Ab144e5bd2Df7"
+          },
+          "56": {
+            "address": "0x9cd57D3685E6868caCaA8BDCaAf52CBdEBf4fA25"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/sUSDat/logo.svg"
     },
     {
       "chainId": 143,
@@ -2112,7 +2165,7 @@
   ],
   "version": {
     "major": 2,
-    "minor": 45,
-    "patch": 1
+    "minor": 46,
+    "patch": 0
   }
 }

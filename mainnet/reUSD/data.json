@@ -1,0 +1,34 @@
+{
+  "chainId": 143,
+  "address": "0xD25f563e12FF616262F8c947feC108db934F8059",
+  "name": "Re Protocol reUSD",
+  "symbol": "reUSD",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "re-protocol-reusd",
+    "bridgeInfo": {
+      "protocol": "Chainlink CCIP",
+      "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0x5086bf358635B81D8C47C66d1C8b9E567Db70c72"
+      },
+      "56": {
+        "address": "0xbA9425EC55ee0E72216D18e0ad8BBbA2553bFb60"
+      },
+      "8453": {
+        "address": "0x7D214438D0F27AfCcC23B3d1e1a53906aCE5CFEa"
+      },
+      "9745": {
+        "address": "0xe08853433fDBC504240455e295B644E0F44c3B29"
+      },
+      "42161": {
+        "address": "0x76cE01F0Ef25AA66cC5F1E546a005e4A63B25609"
+      },
+      "43114": {
+        "address": "0x180aF87b47Bf272B2df59dccf2D76a6eaFa625Bf"
+      }
+    }
+  }
+}

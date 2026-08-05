@@ -4,7 +4,7 @@
   "keywords": [
     "monad mainnet"
   ],
-  "timestamp": "2026-07-16T00:25:17.089640+00:00",
+  "timestamp": "2026-08-05T08:46:55.546737+00:00",
   "tokens": [
     {
       "chainId": 143,
@@ -2135,7 +2135,16 @@
       "symbol": "yzPrime",
       "decimals": 18,
       "extensions": {
-        "coinGeckoId": "yuzu-prime"
+        "coinGeckoId": "yuzu-prime",
+        "bridgeInfo": {
+          "protocol": "Chainlink CCIP",
+          "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+        },
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xeA14a0f64412Af9a411A7e8543913376337c0E06"
+          }
+        }
       },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/yzPrime/logo.svg"
     },
@@ -2166,6 +2175,6 @@
   "version": {
     "major": 2,
     "minor": 46,
-    "patch": 0
+    "patch": 1
   }
 }

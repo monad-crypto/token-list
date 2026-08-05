@@ -5,6 +5,15 @@
   "symbol": "yzPrime",
   "decimals": 18,
   "extensions": {
-    "coinGeckoId": "yuzu-prime"
+    "coinGeckoId": "yuzu-prime",
+    "bridgeInfo": {
+      "protocol": "Chainlink CCIP",
+      "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0xeA14a0f64412Af9a411A7e8543913376337c0E06"
+      }
+    }
   }
 }

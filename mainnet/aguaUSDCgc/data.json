@@ -1,0 +1,18 @@
+{
+  "chainId": 143,
+  "address": "0x2ABc42250154752273a4560e875c858623F83ecC",
+  "name": "Agua Global Carry Vault",
+  "symbol": "aguaUSDCgc",
+  "decimals": 18,
+  "extensions": {
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0x2ABc42250154752273a4560e875c858623F83ecC"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0xa98b4A70E17e55045CDE4972B95Bc2E8CEC22a0F"
+      }
+    }
+  }
+}

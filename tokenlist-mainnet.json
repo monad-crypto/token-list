@@ -4,7 +4,7 @@
   "keywords": [
     "monad mainnet"
   ],
-  "timestamp": "2026-07-16T00:25:17.089640+00:00",
+  "timestamp": "2026-08-10T16:50:03.468901+00:00",
   "tokens": [
     {
       "chainId": 143,
@@ -1234,6 +1234,25 @@
     },
     {
       "chainId": 143,
+      "address": "0x2ABc42250154752273a4560e875c858623F83ecC",
+      "name": "Agua Global Carry Vault",
+      "symbol": "aguaUSDCgc",
+      "decimals": 18,
+      "extensions": {
+        "bridgeInfo": {
+          "protocol": "LayerZero OFT",
+          "bridgeAddress": "0x2ABc42250154752273a4560e875c858623F83ecC"
+        },
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xa98b4A70E17e55045CDE4972B95Bc2E8CEC22a0F"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/aguaUSDCgc/logo.svg"
+    },
+    {
+      "chainId": 143,
       "address": "0x0c65A0BC65a5D819235B71F554D210D3F80E0852",
       "name": "aPriori Monad LST",
       "symbol": "aprMON",
@@ -1452,6 +1471,14 @@
     },
     {
       "chainId": 143,
+      "address": "0x0143C3eF3a76Ed825Fd5201953f65b52aCEfD799",
+      "name": "K3 x Galaxy Lending",
+      "symbol": "gAUSD",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/gAUSD/logo.svg"
+    },
+    {
+      "chainId": 143,
       "address": "0x8498312A6B3CbD158bf0c93AbdCF29E6e4F55081",
       "name": "gMON",
       "symbol": "gMON",
@@ -1468,6 +1495,26 @@
       "symbol": "hyAUSD",
       "decimals": 6,
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/hyAUSD/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0x5ec32e3f2Cc925296DC37eDf3B2388868D5525C5",
+      "name": "jrUSDat",
+      "symbol": "jrUSDat",
+      "decimals": 18,
+      "extensions": {
+        "coinGeckoId": "strata-junior-usdat",
+        "bridgeInfo": {
+          "protocol": "LayerZero OFT",
+          "bridgeAddress": "0x5ec32e3f2Cc925296DC37eDf3B2388868D5525C5"
+        },
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x011e55d2b28306458e37Ca7E997C879BB25A455D"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/jrUSDat/logo.svg"
     },
     {
       "chainId": 143,
@@ -1652,6 +1699,41 @@
     },
     {
       "chainId": 143,
+      "address": "0xD25f563e12FF616262F8c947feC108db934F8059",
+      "name": "Re Protocol reUSD",
+      "symbol": "reUSD",
+      "decimals": 18,
+      "extensions": {
+        "coinGeckoId": "re-protocol-reusd",
+        "bridgeInfo": {
+          "protocol": "Chainlink CCIP",
+          "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+        },
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x5086bf358635B81D8C47C66d1C8b9E567Db70c72"
+          },
+          "56": {
+            "address": "0xbA9425EC55ee0E72216D18e0ad8BBbA2553bFb60"
+          },
+          "8453": {
+            "address": "0x7D214438D0F27AfCcC23B3d1e1a53906aCE5CFEa"
+          },
+          "9745": {
+            "address": "0xe08853433fDBC504240455e295B644E0F44c3B29"
+          },
+          "42161": {
+            "address": "0x76cE01F0Ef25AA66cC5F1E546a005e4A63B25609"
+          },
+          "43114": {
+            "address": "0x180aF87b47Bf272B2df59dccf2D76a6eaFa625Bf"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/reUSD/logo.svg"
+    },
+    {
+      "chainId": 143,
       "address": "0x650b616b46fF94000Eb115926aB8393B90788D76",
       "name": "rwaUSDi",
       "symbol": "rwaUSDi",
@@ -1801,6 +1883,26 @@
         "coinGeckoId": "shmonad"
       },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/shMON/logo.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x17B8F7373ECd556192AbFc85be314e5d4Fb6b3FA",
+      "name": "srUSDat",
+      "symbol": "srUSDat",
+      "decimals": 18,
+      "extensions": {
+        "coinGeckoId": "strata-senior-usdat",
+        "bridgeInfo": {
+          "protocol": "LayerZero OFT",
+          "bridgeAddress": "0x17B8F7373ECd556192AbFc85be314e5d4Fb6b3FA"
+        },
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xFaa9a0e1Db9E22AE3A20B2B58a68DC24D053d066"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/srUSDat/logo.svg"
     },
     {
       "chainId": 143,
@@ -2135,7 +2237,16 @@
       "symbol": "yzPrime",
       "decimals": 18,
       "extensions": {
-        "coinGeckoId": "yuzu-prime"
+        "coinGeckoId": "yuzu-prime",
+        "bridgeInfo": {
+          "protocol": "Chainlink CCIP",
+          "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+        },
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xeA14a0f64412Af9a411A7e8543913376337c0E06"
+          }
+        }
       },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/yzPrime/logo.svg"
     },
@@ -2165,7 +2276,7 @@
   ],
   "version": {
     "major": 2,
-    "minor": 46,
+    "minor": 47,
     "patch": 0
   }
 }

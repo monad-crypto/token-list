@@ -1,0 +1,19 @@
+{
+  "chainId": 143,
+  "address": "0x5ec32e3f2Cc925296DC37eDf3B2388868D5525C5",
+  "name": "jrUSDat",
+  "symbol": "jrUSDat",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "strata-junior-usdat",
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0x5ec32e3f2Cc925296DC37eDf3B2388868D5525C5"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0x011e55d2b28306458e37Ca7E997C879BB25A455D"
+      }
+    }
+  }
+}

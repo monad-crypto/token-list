@@ -1,0 +1,19 @@
+{
+  "chainId": 143,
+  "address": "0x17B8F7373ECd556192AbFc85be314e5d4Fb6b3FA",
+  "name": "srUSDat",
+  "symbol": "srUSDat",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "strata-senior-usdat",
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0x17B8F7373ECd556192AbFc85be314e5d4Fb6b3FA"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0xFaa9a0e1Db9E22AE3A20B2B58a68DC24D053d066"
+      }
+    }
+  }
+}

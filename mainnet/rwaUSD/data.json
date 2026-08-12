@@ -1,0 +1,17 @@
+{
+  "chainId": 143,
+  "address": "0x9aBb5aaAA4c63ABee1b6617843fd818c99C52c69",
+  "name": "Real World Asset USD",
+  "symbol": "rwaUSD",
+  "decimals": 18,
+  "extensions": {
+    "crossChainAddresses": {
+      "1": {
+        "address": "0x8Fcd23142047A3073ed332a0Ed07d1e8D2BD5177"
+      },
+      "8453": {
+        "address": "0x272Ec977f4575df41cD47b1b254954E1C7972789"
+      }
+    }
+  }
+}

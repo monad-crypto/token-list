@@ -11,6 +11,9 @@
       "bridgeAddress": "0xa4096343485a44c0F8d05AE6dA311c18D63e38bC"
     },
     "crossChainAddresses": {
+      "137": {
+        "address": "0xBC69212B8E4d445b2307C9D32dD68E2A4Df00115"
+      },
       "42220": {
         "address": "0x765DE816845861e75A25fCA122bb6898B8B1282a"
       }

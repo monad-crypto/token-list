@@ -5,6 +5,10 @@
   "symbol": "rwaUSDi",
   "decimals": 6,
   "extensions": {
+    "bridgeInfo": {
+      "protocol": "Chainlink CCIP",
+      "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+    },
     "crossChainAddresses": {
       "1": {
         "address": "0xA39986F96B80d04e8d7AeAaF47175F47C23FD0f4"

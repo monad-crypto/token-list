@@ -11,6 +11,12 @@
       "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
     },
     "crossChainAddresses": {
+      "1": {
+        "address": "0xf4c13D631450De6B12a19829E37c8e2826891dC4"
+      },
+      "8453": {
+        "address": "0x3af90FDA10fc6509DF55e959548B1ed3bc3cFa00"
+      },
       "43114": {
         "address": "0x24dE8771bC5DdB3362Db529Fc3358F2df3A0E346"
       }

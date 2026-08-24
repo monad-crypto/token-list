@@ -5,6 +5,10 @@
   "symbol": "rwaUSD",
   "decimals": 18,
   "extensions": {
+    "bridgeInfo": {
+      "protocol": "Chainlink CCIP",
+      "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+    },
     "crossChainAddresses": {
       "1": {
         "address": "0x8Fcd23142047A3073ed332a0Ed07d1e8D2BD5177"

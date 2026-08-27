@@ -1,0 +1,40 @@
+{
+  "chainId": 143,
+  "address": "0x29aCC7c504665A5EA95344796f784095f0cfcC58",
+  "name": "Wrapped Frax",
+  "symbol": "WFRAX",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "wrapped-frax",
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0x29aCC7c504665A5EA95344796f784095f0cfcC58"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0x04ACaF8D2865c0714F79da09645C13FD2888977f"
+      },
+      "10": {
+        "address": "0x64445f0aecC51E94aD52d8AC56b7190e764E561a"
+      },
+      "56": {
+        "address": "0x64445f0aecC51E94aD52d8AC56b7190e764E561a"
+      },
+      "137": {
+        "address": "0x64445f0aecC51E94aD52d8AC56b7190e764E561a"
+      },
+      "999": {
+        "address": "0x64445f0aecC51E94aD52d8AC56b7190e764E561a"
+      },
+      "8453": {
+        "address": "0x0CEAC003B0d2479BebeC9f4b2EBAd0a803759bbf"
+      },
+      "42161": {
+        "address": "0x64445f0aecC51E94aD52d8AC56b7190e764E561a"
+      },
+      "43114": {
+        "address": "0x64445f0aecC51E94aD52d8AC56b7190e764E561a"
+      }
+    }
+  }
+}

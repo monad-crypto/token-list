@@ -1,0 +1,40 @@
+{
+  "chainId": 143,
+  "address": "0x137643F7b2C189173867b3391f6629caB46F0F1a",
+  "name": "Staked Frax USD",
+  "symbol": "sfrxUSD",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "staked-frax-usd",
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0x137643F7b2C189173867b3391f6629caB46F0F1a"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0xcf62F905562626CfcDD2261162a51fd02Fc9c5b6"
+      },
+      "10": {
+        "address": "0x5Bff88cA1442c2496f7E475E9e7786383Bc070c0"
+      },
+      "56": {
+        "address": "0x5Bff88cA1442c2496f7E475E9e7786383Bc070c0"
+      },
+      "137": {
+        "address": "0x5Bff88cA1442c2496f7E475E9e7786383Bc070c0"
+      },
+      "999": {
+        "address": "0x5Bff88cA1442c2496f7E475E9e7786383Bc070c0"
+      },
+      "8453": {
+        "address": "0x91A3f8a8d7a881fBDfcfEcd7A2Dc92a46DCfa14e"
+      },
+      "42161": {
+        "address": "0x5Bff88cA1442c2496f7E475E9e7786383Bc070c0"
+      },
+      "43114": {
+        "address": "0x5Bff88cA1442c2496f7E475E9e7786383Bc070c0"
+      }
+    }
+  }
+}

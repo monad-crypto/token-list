@@ -1,0 +1,40 @@
+{
+  "chainId": 143,
+  "address": "0x288F9D76019469bfEb56BB77d86aFa2bF563B75B",
+  "name": "Frax Ether",
+  "symbol": "frxETH",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "frax-ether",
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0x288F9D76019469bfEb56BB77d86aFa2bF563B75B"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0x5E8422345238F34275888049021821E8E08CAa1f"
+      },
+      "10": {
+        "address": "0x43eDD7f3831b08FE70B7555ddD373C8bF65a9050"
+      },
+      "56": {
+        "address": "0x43eDD7f3831b08FE70B7555ddD373C8bF65a9050"
+      },
+      "137": {
+        "address": "0x43eDD7f3831b08FE70B7555ddD373C8bF65a9050"
+      },
+      "999": {
+        "address": "0x43eDD7f3831b08FE70B7555ddD373C8bF65a9050"
+      },
+      "8453": {
+        "address": "0x7eb8d1E4E2D0C8b9bEDA7a97b305cF49F3eeE8dA"
+      },
+      "42161": {
+        "address": "0x43eDD7f3831b08FE70B7555ddD373C8bF65a9050"
+      },
+      "43114": {
+        "address": "0x43eDD7f3831b08FE70B7555ddD373C8bF65a9050"
+      }
+    }
+  }
+}

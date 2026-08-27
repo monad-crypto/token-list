@@ -5,12 +5,15 @@
   "symbol": "NXPC",
   "decimals": 18,
   "extensions": {
-    "coinGeckoId": "nexpace",
+    "coinGeckoId": "bridged-nxpc",
     "bridgeInfo": {
       "protocol": "Chainlink CCIP",
       "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
     },
     "crossChainAddresses": {
+      "56": {
+        "address": "0xf2b51CC1850fEd939658317a22d73d3482767591"
+      },
       "43114": {
         "address": "0x5E0E90E268BC247Cc850c789A0DB0d5c7621fb59"
       }

@@ -5,7 +5,7 @@
   "symbol": "WETH",
   "decimals": 18,
   "extensions": {
-    "coinGeckoId": "weth",
+    "coinGeckoId": "wormhole-bridged-weth-monad",
     "bridgeInfo": {
       "protocol": "Wormhole NTT",
       "bridgeAddress": "0x36878C6FCa7e0E8a88F90dc410CfBBcA5B695C95"

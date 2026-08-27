@@ -1,0 +1,40 @@
+{
+  "chainId": 143,
+  "address": "0x58E3ee6accd124642dDB5d3f91928816Be8D8ed3",
+  "name": "Frax USD",
+  "symbol": "frxUSD",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "frax-usd",
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0x58E3ee6accd124642dDB5d3f91928816Be8D8ed3"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0xCAcd6fd266aF91b8AeD52aCCc382b4e165586E29"
+      },
+      "10": {
+        "address": "0x80Eede496655FB9047dd39d9f418d5483ED600df"
+      },
+      "56": {
+        "address": "0x80Eede496655FB9047dd39d9f418d5483ED600df"
+      },
+      "137": {
+        "address": "0x80Eede496655FB9047dd39d9f418d5483ED600df"
+      },
+      "999": {
+        "address": "0x80Eede496655FB9047dd39d9f418d5483ED600df"
+      },
+      "8453": {
+        "address": "0xe5020A6d073a794B6E7f05678707dE47986Fb0b6"
+      },
+      "42161": {
+        "address": "0x80Eede496655FB9047dd39d9f418d5483ED600df"
+      },
+      "43114": {
+        "address": "0x80Eede496655FB9047dd39d9f418d5483ED600df"
+      }
+    }
+  }
+}

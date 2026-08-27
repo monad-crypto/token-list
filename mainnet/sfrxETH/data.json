@@ -1,0 +1,40 @@
+{
+  "chainId": 143,
+  "address": "0x3B4cf37A3335F21c945a40088404c715525fCb29",
+  "name": "Staked Frax Ether",
+  "symbol": "sfrxETH",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "staked-frax-ether",
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0x3B4cf37A3335F21c945a40088404c715525fCb29"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0xac3E018457B222d93114458476f3E3416Abbe38F"
+      },
+      "10": {
+        "address": "0x3Ec3849C33291a9eF4c5dB86De593EB4A37fDe45"
+      },
+      "56": {
+        "address": "0x3Ec3849C33291a9eF4c5dB86De593EB4A37fDe45"
+      },
+      "137": {
+        "address": "0x3Ec3849C33291a9eF4c5dB86De593EB4A37fDe45"
+      },
+      "999": {
+        "address": "0x3Ec3849C33291a9eF4c5dB86De593EB4A37fDe45"
+      },
+      "8453": {
+        "address": "0x192e0C7Cc9B263D93fa6d472De47bBefe1Fb12bA"
+      },
+      "42161": {
+        "address": "0x3Ec3849C33291a9eF4c5dB86De593EB4A37fDe45"
+      },
+      "43114": {
+        "address": "0x3Ec3849C33291a9eF4c5dB86De593EB4A37fDe45"
+      }
+    }
+  }
+}

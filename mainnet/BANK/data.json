@@ -1,0 +1,22 @@
+{
+  "chainId": 143,
+  "address": "0x12666FaB1cD372CcaC4e2F80713Bbd2E4620Bc5a",
+  "name": "Lorenzo Governance Token",
+  "symbol": "BANK",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "lorenzo-protocol",
+    "bridgeInfo": {
+      "protocol": "Chainlink CCIP",
+      "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0x0ba12138c55A7828b3fA1F9ef002fABdCB8996ae"
+      },
+      "56": {
+        "address": "0x3AeE7602b612de36088F3ffEd8c8f10E86EbF2bF"
+      }
+    }
+  }
+}

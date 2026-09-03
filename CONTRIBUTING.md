@@ -94,6 +94,12 @@ Before submitting your changes, run the validation script to ensure everything i
 uv run python scripts/validate_tokens.py
 ```
 
+To validate only specific tokens, pass their symbols:
+
+```bash
+uv run python scripts/validate_tokens.py SYMBOL1 SYMBOL2
+```
+
 ### 7. Commit and Create Pull Request
 
 Once validation passes, commit your changes and create a pull request on GitHub with:

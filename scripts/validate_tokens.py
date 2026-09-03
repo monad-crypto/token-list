@@ -113,6 +113,30 @@ def get_token_dirs(data_dir: Path) -> list[Path]:
     return [f for f in sorted(data_dir.iterdir()) if f.is_dir()]
 
 
+def select_token_dirs(token_dirs: list[Path], requested: list[str]) -> list[Path]:
+    """Filter token directories down to the requested symbols.
+
+    Preserves the order tokens were requested in and drops duplicates.
+
+    Args:
+        token_dirs: All available token directories.
+        requested: Token symbols (directory names) to keep.
+
+    Returns:
+        list[Path]: The selected token directories.
+
+    Raises:
+        FileNotFoundError: If any requested token directory does not exist.
+    """
+    available_names = {token_dir.name: token_dir for token_dir in token_dirs}
+    missing = [name for name in requested if name not in available_names]
+
+    if missing:
+        raise FileNotFoundError(f"Token(s) not found in {DATA_DIR}/: {', '.join(missing)}")
+
+    return [available_names[name] for name in dict.fromkeys(requested)]
+
+
 def is_valid_address(address: str) -> bool:
     """Check if an address is a valid Ethereum address.
 
@@ -763,6 +787,12 @@ def main() -> int:
         description="Validate token JSON files and on-chain metadata in the mainnet/ directory"
     )
     parser.add_argument(
+        "tokens",
+        nargs="*",
+        metavar="TOKEN",
+        help="Token symbols (directory names) to validate; validates all tokens when omitted",
+    )
+    parser.add_argument(
         "--rpc-url",
         type=str,
         help=f"Custom RPC URL (defaults to MONAD_RPC_URL env var or {DEFAULT_RPC_URL})",
@@ -782,6 +812,9 @@ def main() -> int:
         if not token_dirs:
             print(f"No token directories found in {DATA_DIR}/")
             return 0
+
+        if args.tokens:
+            token_dirs = select_token_dirs(token_dirs, args.tokens)
 
         try:
             web3 = get_web3_connection(args.rpc_url)

@@ -1,0 +1,47 @@
+{
+  "chainId": 143,
+  "address": "0x76f257B1DDA5cC71bee4eF637Fbdde4C801310A9",
+  "name": "ChainLink Token",
+  "symbol": "LINK",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "chainlink",
+    "bridgeInfo": {
+      "protocol": "Chainlink CCIP",
+      "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0x514910771AF9Ca656af840dff83E8264EcF986CA"
+      },
+      "10": {
+        "address": "0x350a791Bfc2C21F9Ed5d10980Dad2e2638ffa7f6"
+      },
+      "56": {
+        "address": "0xF8A0BF9cF54Bb92F17374d9e9A321E6a111a51bD"
+      },
+      "137": {
+        "address": "0x53E0bca35eC356BD5ddDFebbD1Fc0fD03FaBad39"
+      },
+      "999": {
+        "address": "0x1AC2EE68b8d038C982C1E1f73F596927dd70De59"
+      },
+      "8453": {
+        "address": "0x88Fb150BDc53A65fe94Dea0c9BA0a6dAf8C6e196"
+      },
+      "9745": {
+        "address": "0x76a443768A5e3B8d1AED0105FC250877841Deb40"
+      },
+      "42161": {
+        "address": "0xf97f4df75117a78c1A5a0DBb814Af92458539FB4"
+      },
+      "42220": {
+        "address": "0xd07294e6E917e07dfDcee882dd1e2565085C2ae0"
+      },
+      "43114": {
+        "address": "0x5947BB275c521040051D82396192181b413227A3",
+        "symbol": "LINK.e"
+      }
+    }
+  }
+}

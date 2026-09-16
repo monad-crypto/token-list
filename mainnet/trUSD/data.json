@@ -1,0 +1,19 @@
+{
+  "chainId": 143,
+  "address": "0x770a579Ea200784723B31b8668b0773ba80393c9",
+  "name": "trUSD",
+  "symbol": "trUSD",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "tori-trusd",
+    "bridgeInfo": {
+      "protocol": "Chainlink CCIP",
+      "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0xd0580192E98eA6CEB9c7b6191Ed2E27560911697"
+      }
+    }
+  }
+}

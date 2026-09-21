@@ -4,7 +4,7 @@
   "keywords": [
     "monad mainnet"
   ],
-  "timestamp": "2026-08-27T15:43:39.544442+00:00",
+  "timestamp": "2026-09-21T14:49:25.052514+00:00",
   "tokens": [
     {
       "chainId": 143,
@@ -650,6 +650,54 @@
         }
       },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/LBTC/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0x76f257B1DDA5cC71bee4eF637Fbdde4C801310A9",
+      "name": "ChainLink Token",
+      "symbol": "LINK",
+      "decimals": 18,
+      "extensions": {
+        "coinGeckoId": "chainlink",
+        "bridgeInfo": {
+          "protocol": "Chainlink CCIP",
+          "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+        },
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x514910771AF9Ca656af840dff83E8264EcF986CA"
+          },
+          "10": {
+            "address": "0x350a791Bfc2C21F9Ed5d10980Dad2e2638ffa7f6"
+          },
+          "56": {
+            "address": "0xF8A0BF9cF54Bb92F17374d9e9A321E6a111a51bD"
+          },
+          "137": {
+            "address": "0x53E0bca35eC356BD5ddDFebbD1Fc0fD03FaBad39"
+          },
+          "999": {
+            "address": "0x1AC2EE68b8d038C982C1E1f73F596927dd70De59"
+          },
+          "8453": {
+            "address": "0x88Fb150BDc53A65fe94Dea0c9BA0a6dAf8C6e196"
+          },
+          "9745": {
+            "address": "0x76a443768A5e3B8d1AED0105FC250877841Deb40"
+          },
+          "42161": {
+            "address": "0xf97f4df75117a78c1A5a0DBb814Af92458539FB4"
+          },
+          "42220": {
+            "address": "0xd07294e6E917e07dfDcee882dd1e2565085C2ae0"
+          },
+          "43114": {
+            "address": "0x5947BB275c521040051D82396192181b413227A3",
+            "symbol": "LINK.e"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/LINK/logo.svg"
     },
     {
       "chainId": 143,
@@ -1458,6 +1506,7 @@
       "symbol": "deJTRSY",
       "decimals": 18,
       "extensions": {
+        "coinGeckoId": "jtrsy-derwa",
         "crossChainAddresses": {
           "1": {
             "address": "0xA6233014B9b7aaa74f38fa1977ffC7A89642dC72"
@@ -1762,6 +1811,22 @@
         }
       },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/mHyperBTC/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0x6CF55183eA297ba200Cf88419Bba156EBA2Ed206",
+      "name": "Midas Rockaway Market Neutral",
+      "symbol": "mROX",
+      "decimals": 18,
+      "extensions": {
+        "coinGeckoId": "midas-rockaway-market-neutral",
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x67E1F506B148d0Fc95a4E3fFb49068ceB6855c05"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/mROX/logo.svg"
     },
     {
       "chainId": 143,
@@ -2214,6 +2279,26 @@
     },
     {
       "chainId": 143,
+      "address": "0x683fb58ee77172626D5B49087DdAc71eF7825d20",
+      "name": "Staked trUSD",
+      "symbol": "strUSD",
+      "decimals": 18,
+      "extensions": {
+        "coinGeckoId": "tori-staked-trusd",
+        "bridgeInfo": {
+          "protocol": "Chainlink CCIP",
+          "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+        },
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x280839980a7eD0D7717F64125fE241012E5F5815"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/strUSD/logo.svg"
+    },
+    {
+      "chainId": 143,
       "address": "0xe85411C030fB32A9D8b14Bbbc6CB19417391F711",
       "name": "Sumerian BTC",
       "symbol": "suBTC",
@@ -2319,6 +2404,26 @@
         }
       },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/thBILL/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0x770a579Ea200784723B31b8668b0773ba80393c9",
+      "name": "trUSD",
+      "symbol": "trUSD",
+      "decimals": 18,
+      "extensions": {
+        "coinGeckoId": "tori-trusd",
+        "bridgeInfo": {
+          "protocol": "Chainlink CCIP",
+          "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+        },
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xd0580192E98eA6CEB9c7b6191Ed2E27560911697"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/trUSD/logo.svg"
     },
     {
       "chainId": 143,
@@ -2587,7 +2692,7 @@
   ],
   "version": {
     "major": 2,
-    "minor": 48,
+    "minor": 49,
     "patch": 0
   }
 }

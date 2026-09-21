@@ -1,0 +1,19 @@
+{
+  "chainId": 143,
+  "address": "0x683fb58ee77172626D5B49087DdAc71eF7825d20",
+  "name": "Staked trUSD",
+  "symbol": "strUSD",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "tori-staked-trusd",
+    "bridgeInfo": {
+      "protocol": "Chainlink CCIP",
+      "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0x280839980a7eD0D7717F64125fE241012E5F5815"
+      }
+    }
+  }
+}

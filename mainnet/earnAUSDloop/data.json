@@ -1,0 +1,13 @@
+{
+  "chainId": 143,
+  "address": "0xEA7e0955D410C5BA9dAc457539EF0FA53a1399Ed",
+  "name": "earnAUSD Loop",
+  "symbol": "earnAUSDloop",
+  "decimals": 6,
+  "extensions": {
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0xEA7e0955D410C5BA9dAc457539EF0FA53a1399Ed"
+    }
+  }
+}

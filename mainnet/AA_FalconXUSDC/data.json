@@ -5,6 +5,7 @@
   "symbol": "AA_FalconXUSDC",
   "decimals": 18,
   "extensions": {
+    "coinGeckoId": "pareto-aa-tranche-falconx-usdc",
     "bridgeInfo": {
       "protocol": "LayerZero OFT",
       "bridgeAddress": "0x91D93DBd823221ea9E54fb3e447BD917CE41f2e8"

@@ -1,0 +1,14 @@
+{
+  "chainId": 143,
+  "address": "0x9d753059f0aBDD90B197F3BE9d3cbC49bC01d31a",
+  "name": "Ember Zodiac Treasury Plus",
+  "symbol": "eTPLUS",
+  "decimals": 6,
+  "extensions": {
+    "crossChainAddresses": {
+      "1": {
+        "address": "0x518d3Fb6804B2BE9641f5712cff8C0F2b5F86afc"
+      }
+    }
+  }
+}

@@ -27,7 +27,7 @@ Work from the repository root. When `.env` exists (it normally does), prefix EVE
 uv run --env-file=.env python scripts/add_token.py <address>
 ```
 
-Creates `mainnet/<SYMBOL>/data.json` with on-chain `name`/`symbol`/`decimals` (chainId 143). If it fails with `FileExistsError`, the token already exists — stop and tell the user.
+Creates `mainnet/<SYMBOL>/data.json` with on-chain `name`/`symbol`/`decimals` (chainId 143). If it fails with `FileExistsError`, the token already exists — stop and tell the user. If the token is a tokenized stock or ETF (listed in `tokenlist-equities.json`, or issued by xStocks or Anchored, e.g. `AAPLx` or `aAAPL`), stop: tokenized equities are synced into a separate list by `scripts/sync_equities.py`, not added to `mainnet/`.
 
 ### 2. Detect the native bridge
 

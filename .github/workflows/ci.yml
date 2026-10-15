@@ -120,6 +120,32 @@ jobs:
         working-directory: npm
         run: pnpm install --frozen-lockfile
 
-      - name: Build package
+      - name: Build packages
         working-directory: npm
         run: pnpm run build
+
+  validate-equities:
+    name: Validate Equities Token List
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: "3.10"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@38f3f104447c67c051c4a08e39b64a148898af3a # v4.2.0
+        with:
+          enable-cache: true
+
+      - name: Install dependencies
+        run: uv sync
+
+      # The sync reads name, symbol and decimals on-chain when it writes the list, so
+      # CI checks only the structure.
+      - name: Run validation script
+        run: uv run python scripts/validate_equities.py --skip-onchain

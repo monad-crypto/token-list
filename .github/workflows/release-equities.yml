@@ -1,0 +1,28 @@
+name: Release Equities
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "tokenlist-equities.json"
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  release:
+    name: Release New Equities Token List Version
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+
+      - name: Build, publish and tag
+        uses: ./.github/actions/publish-npm-package
+        with:
+          package-directory: npm/equities
+          tag-prefix: equities-v

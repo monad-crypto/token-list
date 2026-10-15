@@ -17,10 +17,11 @@ import json5
 from defusedxml import ElementTree
 from PIL import Image
 from utils.coingecko import COINGECKO_FREE_DELAY_SECONDS, CoinGeckoValidator
+from utils.token_list import KNOWN_CROSS_CHAIN_IDS
 from utils.web3 import (
     CHAIN_NAMES,
     CHAIN_RPC_URLS,
-    DEFAULT_RPC_URL,
+    add_rpc_url_argument,
     fetch_ccip_token_config_with_retry,
     fetch_cctp_burn_limits_per_message_with_retry,
     fetch_hyperlane_wrapped_token_with_retry,
@@ -43,19 +44,6 @@ ALLOWED_EXTENSIONS = {
     "coinGeckoId": str,
     "bridgeInfo": dict,
     "crossChainAddresses": dict,
-}
-# Known chain IDs for cross-chain address validation
-KNOWN_CHAIN_IDS = {
-    "1",  # Ethereum Mainnet
-    "10",  # Optimism
-    "56",  # BNB Chain
-    "137",  # Polygon
-    "999",  # HyperEVM
-    "8453",  # Base
-    "9745",  # Plasma
-    "42161",  # Arbitrum One
-    "42220",  # Celo
-    "43114",  # Avalanche C-Chain
 }
 VALID_BRIDGE_PROTOCOLS = {
     "Chainlink CCIP",
@@ -217,7 +205,7 @@ def validate_cross_chain_addresses(cross_chain: dict[str, Any]) -> list[str]:
 
     for chain_id, chain_data in cross_chain.items():
         # Validate chain ID format
-        if chain_id not in KNOWN_CHAIN_IDS:
+        if chain_id not in KNOWN_CROSS_CHAIN_IDS:
             errors.append(f"Invalid chain ID '{chain_id}' in crossChainAddresses. ")
             continue
 
@@ -803,11 +791,7 @@ def main() -> int:
         metavar="TOKEN",
         help="Token symbols (directory names) to validate; validates all tokens when omitted",
     )
-    parser.add_argument(
-        "--rpc-url",
-        type=str,
-        help=f"Custom RPC URL (defaults to MONAD_RPC_URL env var or {DEFAULT_RPC_URL})",
-    )
+    add_rpc_url_argument(parser)
     parser.add_argument(
         "--validate-cross-chain",
         action="store_true",

@@ -1,0 +1,80 @@
+name: Publish npm package
+description: >-
+  Build an npm package under npm/, publish it unless its version is already on the
+  registry, and tag the release commit.
+
+# A composite action rather than a reusable workflow: npm trusted publishing
+# checks the workflow file that runs `npm publish`, and a composite action keeps
+# that the calling release workflow.
+
+inputs:
+  package-directory:
+    description: Package directory, e.g. npm/token-list
+    required: true
+  tag-prefix:
+    description: Prefix of the git tag created for a release, followed by the version
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Set up pnpm
+      uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 #4.2.0
+      with:
+        version: 10
+
+    - name: Set up Node.js
+      uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+      with:
+        node-version: 24.8
+        registry-url: "https://registry.npmjs.org"
+
+    # Checked first so a release with nothing new to publish skips the build.
+    - name: Check if version already published
+      id: check
+      shell: bash
+      working-directory: ${{ inputs.package-directory }}
+      run: |
+        NAME=$(node -p "require('./package.json').name")
+        VERSION=$(node -p "require('./package.json').version")
+        CURRENT=$(npm view "$NAME" version 2>/dev/null || echo "0.0.0")
+        if [ "$CURRENT" != "$VERSION" ]; then
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+        fi
+
+    - name: Install pnpm dependencies
+      if: steps.check.outputs.version != ''
+      shell: bash
+      working-directory: ${{ inputs.package-directory }}
+      run: pnpm install --frozen-lockfile
+
+    - name: Build package
+      if: steps.check.outputs.version != ''
+      shell: bash
+      working-directory: ${{ inputs.package-directory }}
+      run: pnpm run build
+
+    - name: Validate package contents
+      if: steps.check.outputs.version != ''
+      shell: bash
+      working-directory: ${{ inputs.package-directory }}
+      run: pnpm pack --dry-run 2>&1
+
+    - name: Publish to npm
+      if: steps.check.outputs.version != ''
+      shell: bash
+      working-directory: ${{ inputs.package-directory }}
+      run: pnpm publish --no-git-checks
+
+    - name: Tag release
+      if: steps.check.outputs.version != ''
+      shell: bash
+      env:
+        GH_TOKEN: ${{ github.token }}
+        TAG: ${{ inputs.tag-prefix }}${{ steps.check.outputs.version }}
+        REPO: ${{ github.repository }}
+        SHA: ${{ github.sha }}
+      run: |
+        gh api "repos/${REPO}/git/refs" \
+          -f ref="refs/tags/${TAG}" \
+          -f sha="${SHA}"

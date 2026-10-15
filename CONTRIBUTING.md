@@ -20,6 +20,8 @@ To be added to the Monad Token List, your token must meet the following requirem
 - **Logo file** (must provide a logo in SVG or PNG format)
 - **Directory naming** (the directory name must exactly match the token symbol)
 
+Tokenized equities (stocks and ETFs) are not added here: they are synced automatically into a separate list. See the Tokenized Equities section of the [README](README.md#tokenized-equities).
+
 ## Step-by-Step Guide
 
 ### 1. Fork and Clone the Repository

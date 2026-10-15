@@ -4,10 +4,14 @@ This module provides utilities for connecting to the blockchain and fetching
 ERC20 token metadata with retry logic.
 """
 
+import argparse
 import os
 import time
+from collections.abc import Callable
+from typing import TypedDict
 
 from web3 import Web3
+from web3.contract import Contract
 from web3.exceptions import Web3Exception
 
 CHAIN_ID = 143
@@ -146,6 +150,11 @@ DEFAULT_MAX_RETRIES = 3
 DEFAULT_RETRY_DELAY = 1.0  # seconds
 DEFAULT_RETRY_BACKOFF = 2.0  # exponential backoff multiplier
 
+# Batch configuration. Public RPCs silently rate-limit large JSON-RPC batches,
+# so batches stay small and are spaced out.
+DEFAULT_BATCH_SIZE = 5
+DEFAULT_BATCH_DELAY_SECONDS = 0.4
+
 
 def _retry_with_backoff(
     func,
@@ -184,6 +193,19 @@ def _retry_with_backoff(
     raise Exception(
         f"Failed to {operation_name} after {max_retries} attempts: {last_exception}"
     ) from last_exception
+
+
+def add_rpc_url_argument(parser: argparse.ArgumentParser) -> None:
+    """Add the --rpc-url option that get_web3_connection accepts.
+
+    Args:
+        parser: Parser of a script that connects to Monad; gains an --rpc-url option.
+    """
+    parser.add_argument(
+        "--rpc-url",
+        type=str,
+        help=f"Custom RPC URL (defaults to MONAD_RPC_URL env var or {DEFAULT_RPC_URL})",
+    )
 
 
 def get_web3_connection(rpc_url: str | None = None) -> Web3:
@@ -612,3 +634,95 @@ def fetch_ccip_token_config_with_retry(
         retry_backoff,
         "fetch CCIP token config",
     )
+
+
+class TokenMetadata(TypedDict):
+    """ERC20 metadata as read from the token contract."""
+
+    name: str
+    symbol: str
+    decimals: int
+
+
+def fetch_token_metadata_in_batches(
+    web3: Web3,
+    addresses: list[str],
+    on_progress: Callable[[int, int], None],
+) -> tuple[dict[str, TokenMetadata], dict[str, str]]:
+    """Fetch name, symbol and decimals for many tokens using batched RPC calls.
+
+    A batch that keeps failing is retried one token per batch, so one broken
+    contract does not fail its neighbours.
+
+    Args:
+        web3: Web3 instance connected to the chain.
+        addresses: Token contract addresses (should be checksummed).
+        on_progress: Called after each batch with (addresses done, total addresses).
+
+    Returns:
+        tuple[dict[str, TokenMetadata], dict[str, str]]: (metadata, errors). metadata
+        maps an address to its on-chain metadata; errors maps an address to the
+        reason its metadata could not be fetched.
+    """
+    erc20 = web3.eth.contract(abi=ERC20_ABI)
+    metadata: dict[str, TokenMetadata] = {}
+    errors: dict[str, str] = {}
+
+    for start in range(0, len(addresses), DEFAULT_BATCH_SIZE):
+        if start > 0:
+            time.sleep(DEFAULT_BATCH_DELAY_SECONDS)
+
+        batch_addresses = addresses[start : start + DEFAULT_BATCH_SIZE]
+
+        try:
+            metadata.update(_fetch_token_metadata_batch_with_retry(web3, erc20, batch_addresses))
+        except Exception:
+            for address in batch_addresses:
+                time.sleep(DEFAULT_BATCH_DELAY_SECONDS)
+                try:
+                    metadata.update(_fetch_token_metadata_batch_with_retry(web3, erc20, [address]))
+                except Exception as e:
+                    errors[address] = str(e)
+
+        on_progress(start + len(batch_addresses), len(addresses))
+
+    return metadata, errors
+
+
+def _fetch_token_metadata_batch_with_retry(
+    web3: Web3, erc20: type[Contract], addresses: list[str]
+) -> dict[str, TokenMetadata]:
+    return _retry_with_backoff(
+        lambda: _fetch_token_metadata_batch(web3, erc20, addresses),
+        DEFAULT_MAX_RETRIES,
+        DEFAULT_RETRY_DELAY,
+        DEFAULT_RETRY_BACKOFF,
+        "fetch token metadata batch",
+    )
+
+
+def _fetch_token_metadata_batch(
+    web3: Web3, erc20: type[Contract], addresses: list[str]
+) -> dict[str, TokenMetadata]:
+    with web3.batch_requests() as batch:
+        for address in addresses:
+            contract = erc20(address=Web3.to_checksum_address(address))
+            batch.add(contract.functions.name())
+            batch.add(contract.functions.symbol())
+            batch.add(contract.functions.decimals())
+        responses = batch.execute()
+
+    return {
+        address: _parse_token_metadata(*responses[3 * i : 3 * i + 3])
+        for i, address in enumerate(addresses)
+    }
+
+
+def _parse_token_metadata(name: object, symbol: object, decimals: object) -> TokenMetadata:
+    if not isinstance(name, str) or not isinstance(symbol, str) or not isinstance(decimals, int):
+        raise ValueError(
+            f"unexpected metadata types: name {type(name).__name__}, "
+            f"symbol {type(symbol).__name__}, decimals {type(decimals).__name__}"
+        )
+
+    return {"name": name, "symbol": symbol, "decimals": decimals}

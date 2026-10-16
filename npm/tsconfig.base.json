@@ -6,13 +6,10 @@
     "declaration": true,
     "declarationMap": false,
     "sourceMap": false,
-    "outDir": "dist/esm",
-    "rootDir": "src",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true
-  },
-  "include": ["src"]
+  }
 }

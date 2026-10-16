@@ -46,77 +46,28 @@ jobs:
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Sync npm/package.json version
+      - name: Sync npm/token-list/package.json version
         if: steps.changes.outputs.changed == 'true'
         id: version
         run: |
-          VERSION=$(node -p 'const d = JSON.parse(require("fs").readFileSync("tokenlist-mainnet.json", "utf8")); `${d.version.major}.${d.version.minor}.${d.version.patch}`')
-          node -e "const fs = require('fs'); const p = JSON.parse(fs.readFileSync('npm/package.json', 'utf8')); p.version = '$VERSION'; fs.writeFileSync('npm/package.json', JSON.stringify(p, null, 2) + '\n');"
-          echo "value=$VERSION" >> "$GITHUB_OUTPUT"
+          node npm/token-list/scripts/codegen.mjs
+          echo "value=$(node -p "require('./npm/token-list/package.json').version")" >> "$GITHUB_OUTPUT"
+
+      - name: Write PR body
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          VERSION: ${{ steps.version.outputs.value }}
+        run: |
+          echo "Automated publishing PR: updates \`tokenlist-mainnet.json\` to v${VERSION} and bumps \`npm/token-list/package.json\`." > pr-body.md
 
       - name: Create signed commit and open publishing PR
         if: steps.changes.outputs.changed == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-          VERSION: ${{ steps.version.outputs.value }}
-          REPO: ${{ github.repository }}
-        run: |
-          BRANCH="publish/v${VERSION}"
-
-          # Get the current tip of main
-          BASE_SHA=$(gh api "repos/${REPO}/git/refs/heads/main" --jq '.object.sha')
-
-          # Create branch from main HEAD, or force-update it if it already exists.
-          # Using PATCH instead of DELETE+create preserves any open PR and its review thread.
-          if gh api "repos/${REPO}/git/refs/heads/${BRANCH}" > /dev/null 2>&1; then
-            gh api "repos/${REPO}/git/refs/heads/${BRANCH}" -X PATCH \
-              -f sha="${BASE_SHA}" \
-              -F force=true
-          else
-            gh api "repos/${REPO}/git/refs" \
-              -f ref="refs/heads/${BRANCH}" \
-              -f sha="${BASE_SHA}"
-          fi
-
-          # Commit via GraphQL createCommitOnBranch — produces a verified/signed commit
-          TOKENLIST_CONTENT=$(base64 -w0 tokenlist-mainnet.json)
-          PKG_CONTENT=$(base64 -w0 npm/package.json)
-
-          jq -n \
-            --arg repo "$REPO" \
-            --arg branch "$BRANCH" \
-            --arg headline "Update token list to v${VERSION}" \
-            --arg expected_oid "$BASE_SHA" \
-            --arg tokenlist_content "$TOKENLIST_CONTENT" \
-            --arg pkg_content "$PKG_CONTENT" \
-            '{
-              query: "mutation($input: CreateCommitOnBranchInput!) { createCommitOnBranch(input: $input) { commit { oid } } }",
-              variables: {
-                input: {
-                  branch: {
-                    repositoryNameWithOwner: $repo,
-                    branchName: $branch
-                  },
-                  message: { headline: $headline },
-                  fileChanges: {
-                    additions: [
-                      { path: "tokenlist-mainnet.json", contents: $tokenlist_content },
-                      { path: "npm/package.json", contents: $pkg_content }
-                    ]
-                  },
-                  expectedHeadOid: $expected_oid
-                }
-              }
-            }' | gh api graphql --input -
-
-          # Open the publishing PR only if one doesn't already exist for this branch
-          EXISTING_PR=$(gh pr list --base main --head "${BRANCH}" --state open --json number --jq '.[0].number // empty')
-          if [ -z "$EXISTING_PR" ]; then
-            gh pr create \
-              --title "Publish token list v${VERSION}" \
-              --body "Automated publishing PR: updates \`tokenlist-mainnet.json\` to v${VERSION} and bumps \`npm/package.json\`." \
-              --base main \
-              --head "${BRANCH}"
-          else
-            echo "PR #${EXISTING_PR} already exists for ${BRANCH} - branch was updated"
-          fi
+        uses: ./.github/actions/open-signed-pr
+        with:
+          branch: publish/v${{ steps.version.outputs.value }}
+          commit-message: Update token list to v${{ steps.version.outputs.value }}
+          title: Publish token list v${{ steps.version.outputs.value }}
+          body-file: pr-body.md
+          files: |
+            tokenlist-mainnet.json
+            npm/token-list/package.json

@@ -190,8 +190,10 @@ __marimo__/
 .DS_Store
 
 # npm package build artifacts
-npm/src/mainnet.ts
-npm/src/testnet.ts
-npm/src/index.ts
-npm/dist/
+npm/token-list/src/mainnet.ts
+npm/token-list/src/testnet.ts
+npm/token-list/src/index.ts
+npm/equities/src/
+npm/*/dist/
 npm/node_modules/
+npm/*/node_modules/

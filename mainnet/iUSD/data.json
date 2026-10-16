@@ -1,0 +1,21 @@
+{
+  "chainId": 143,
+  "address": "0x127066E1982940c33fDC882D9c138296AB15F97f",
+  "name": "InfiniFi USD",
+  "symbol": "iUSD",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "infinifi-usd",
+    "crossChainAddresses": {
+      "1": {
+        "address": "0x48f9e38f3070AD8945DFEae3FA70987722E3D89c"
+      },
+      "56": {
+        "address": "0x60B14ec49874Af1BA471685cb11132101aeBdF09"
+      },
+      "42161": {
+        "address": "0x5D81113b4e6A34256aa08bC44D17Bf101E811afa"
+      }
+    }
+  }
+}

@@ -29,6 +29,14 @@ runs:
         node-version: 24.8
         registry-url: "https://registry.npmjs.org"
 
+    # A commit may update the token list without package.json (e.g. a local sync),
+    # so the version is taken from the list before checking the registry. Codegen
+    # uses only Node built-ins, so it runs before the dependency install.
+    - name: Sync package version with the token list
+      shell: bash
+      working-directory: ${{ inputs.package-directory }}
+      run: node scripts/codegen.mjs
+
     # Checked first so a release with nothing new to publish skips the build.
     - name: Check if version already published
       id: check

@@ -63,6 +63,12 @@ jobs:
           node npm/equities/scripts/codegen.mjs
           echo "value=$(node -p "require('./npm/equities/package.json').version")" >> "$GITHUB_OUTPUT"
 
+      # PRs opened with GITHUB_TOKEN do not trigger ci.yml, so the structural check
+      # runs here; a list that fails it never reaches a PR.
+      - name: Validate equities token list
+        if: steps.changes.outputs.changed == 'true'
+        run: uv run python scripts/validate_equities.py --skip-onchain
+
       - name: Write PR body
         if: steps.changes.outputs.changed == 'true'
         env:

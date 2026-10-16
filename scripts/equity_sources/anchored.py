@@ -6,6 +6,7 @@ is strict: any change to the page's shape fails the source instead of guessing.
 """
 
 import re
+from dataclasses import replace
 
 import requests
 from utils.equities import (
@@ -13,8 +14,10 @@ from utils.equities import (
     EquitySource,
     Listing,
     create_source_session,
+    print_onchain_progress,
 )
 from utils.token_list import CrossChainId
+from utils.web3 import CHAIN_NAMES, fetch_token_metadata_in_batches, get_web3_connection_for_chain
 from web3 import Web3
 
 ANCHORED_TOKENS_URL = "https://docs.anchored.finance/getting-started/anchored-tokens.md"
@@ -73,7 +76,8 @@ def build_logo_uri(symbol: str) -> str:
 def build_listing(symbol: str, address: str) -> Listing:
     """Build the listing for one row of the Anchored stock table.
 
-    Anchored deploys each token at the same address on every chain it supports.
+    Anchored deploys each token at the same address on every chain it supports;
+    keep_verified_cross_chain_addresses checks that claim on-chain.
 
     Args:
         symbol: The Anchored token symbol, e.g. aAAPL.
@@ -110,7 +114,9 @@ def find_missing_logos(session: requests.Session, listings: list[Listing]) -> li
     missing_symbols = []
 
     for listing in listings:
-        response = session.head(listing.logo_uri, timeout=SOURCE_HTTP_TIMEOUT_SECONDS)
+        response = session.head(
+            listing.logo_uri, timeout=SOURCE_HTTP_TIMEOUT_SECONDS, allow_redirects=True
+        )
 
         if response.status_code != 200:
             missing_symbols.append(listing.symbol)
@@ -118,16 +124,87 @@ def find_missing_logos(session: requests.Session, listings: list[Listing]) -> li
     return missing_symbols
 
 
+def find_deployed_addresses(chain_id: CrossChainId, listings: list[Listing]) -> set[str]:
+    """Return the listing addresses that hold a token with the listed symbol on a chain.
+
+    Comparing symbol() rather than only checking for code also catches an
+    unrelated contract at the same address.
+
+    Args:
+        chain_id: The chain to check.
+        listings: Listings whose address to look up on that chain.
+
+    Returns:
+        set[str]: Checksummed addresses whose contract reports the listing's symbol.
+
+    Raises:
+        RuntimeError: If the chain's RPC cannot be reached.
+    """
+    web3 = get_web3_connection_for_chain(chain_id)
+
+    if web3 is None:
+        raise RuntimeError(f"cannot connect to the {CHAIN_NAMES[chain_id]} RPC")
+
+    print(f"   - checking deployments on {CHAIN_NAMES[chain_id]}", flush=True)
+    metadata, _ = fetch_token_metadata_in_batches(
+        web3, [listing.address for listing in listings], print_onchain_progress
+    )
+
+    return {
+        listing.address
+        for listing in listings
+        if listing.address in metadata and metadata[listing.address]["symbol"] == listing.symbol
+    }
+
+
+def keep_verified_cross_chain_addresses(listings: list[Listing]) -> list[Listing]:
+    """Drop each cross-chain address that does not hold the listed token.
+
+    The only evidence for the cross-chain addresses is one sentence in the docs, and
+    they feed the CoinGecko match, so each one is checked on its chain.
+
+    Args:
+        listings: Listings carrying the addresses the docs claim.
+
+    Returns:
+        list[Listing]: The listings with only verified cross-chain addresses.
+
+    Raises:
+        RuntimeError: If a chain's RPC cannot be reached.
+    """
+    deployed_by_chain = {
+        chain_id: find_deployed_addresses(chain_id, listings) for chain_id in CROSS_CHAIN_IDS
+    }
+    verified_listings = []
+
+    for listing in listings:
+        verified_addresses = {
+            chain_id: address
+            for chain_id, address in listing.cross_chain_addresses.items()
+            if address in deployed_by_chain[chain_id]
+        }
+        missing_chains = sorted(set(listing.cross_chain_addresses) - set(verified_addresses))
+
+        if missing_chains:
+            chain_names = ", ".join(CHAIN_NAMES[chain_id] for chain_id in missing_chains)
+            print(f"   - {listing.symbol}: not deployed on {chain_names}, dropping those addresses")
+
+        verified_listings.append(replace(listing, cross_chain_addresses=verified_addresses))
+
+    return verified_listings
+
+
 def fetch_listings() -> list[Listing]:
     """Return every Anchored tokenized stock deployed on Monad.
 
     Returns:
         list[Listing]: One listing per stock in the docs table, each with a logo
-        that resolves.
+        that resolves and only the cross-chain addresses verified on-chain.
 
     Raises:
         requests.RequestException: If the docs or logos cannot be reached.
-        RuntimeError: If the docs page does not parse or a logo is missing.
+        RuntimeError: If the docs page does not parse, a logo is missing, or a
+            cross-chain RPC cannot be reached.
     """
     # One session reuses connections for the docs page and every logo check.
     with create_source_session() as session:
@@ -141,7 +218,7 @@ def fetch_listings() -> list[Listing]:
     if missing_logos:
         raise RuntimeError(f"Anchored logos missing for: {', '.join(missing_logos)}")
 
-    return listings
+    return keep_verified_cross_chain_addresses(listings)
 
 
 SOURCE = EquitySource(

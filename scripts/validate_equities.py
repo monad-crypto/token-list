@@ -195,13 +195,13 @@ def main() -> int:
     )
     args = parser.parse_args()
 
-    token_list = load_existing_token_list(EQUITIES_LIST_PATH)
-
-    if token_list is None:
-        print(f"{EQUITIES_LIST_FILE} is missing or not a JSON object")
-        return 1
-
     try:
+        token_list = load_existing_token_list(EQUITIES_LIST_PATH)
+
+        if token_list is None:
+            print(f"{EQUITIES_LIST_FILE} is missing")
+            return 1
+
         entries = read_object_list(token_list, "tokens")
         tags = token_list.get("tags", {})
 

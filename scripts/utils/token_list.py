@@ -61,24 +61,30 @@ def is_cross_chain_id(value: object) -> TypeGuard[CrossChainId]:
 def load_existing_token_list(output_path: Path) -> dict[str, object] | None:
     """Load existing token list if it exists.
 
+    A file that exists but does not parse is an error rather than a missing list:
+    treating it as missing would restart the version at INITIAL_VERSION.
+
     Args:
         output_path: Path to the existing token list file.
 
     Returns:
-        dict[str, object] | None: Existing token list, or None if the file doesn't
-        exist or is not a JSON object.
+        dict[str, object] | None: Existing token list, or None if the file doesn't exist.
+
+    Raises:
+        OSError: If the file exists but cannot be read.
+        ValueError: If the file is not valid JSON or not a JSON object.
     """
     if not output_path.exists():
         return None
 
-    try:
-        with output_path.open(mode="r", encoding="utf-8") as f:
+    with output_path.open(mode="r", encoding="utf-8") as f:
+        try:
             token_list = json.load(f)
-    except (OSError, ValueError):
-        return None
+        except json.JSONDecodeError as e:
+            raise ValueError(f"{output_path.name} is not valid JSON: {e}") from e
 
     if not isinstance(token_list, dict):
-        return None
+        raise ValueError(f"{output_path.name} is not a JSON object")
 
     return token_list
 
@@ -202,15 +208,15 @@ def compare_tokens(
     added_symbols = new_symbols - old_symbols
 
     if removed_symbols:
-        return ("major", f"Tokens removed: {', '.join(removed_symbols)}")
+        return ("major", f"Tokens removed: {', '.join(sorted(removed_symbols))}")
 
-    for symbol in kept_symbols:
+    for symbol in sorted(kept_symbols):
         old_address = old_tokens_by_symbol[symbol].get("address")
         if old_address != new_tokens_by_symbol[symbol].get("address"):
             return ("major", f"Token address changed: {symbol}")
 
     if added_symbols:
-        return ("minor", f"Tokens added: {', '.join(added_symbols)}")
+        return ("minor", f"Tokens added: {', '.join(sorted(added_symbols))}")
 
     for symbol in kept_symbols:
         if old_tokens_by_symbol[symbol] != new_tokens_by_symbol[symbol]:

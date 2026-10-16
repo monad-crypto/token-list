@@ -533,6 +533,37 @@ def fetch_hyperlane_wrapped_token_with_retry(
     )
 
 
+def fetch_code_with_retry(
+    web3: Web3,
+    address: str,
+    max_retries: int = DEFAULT_MAX_RETRIES,
+    retry_delay: float = DEFAULT_RETRY_DELAY,
+    retry_backoff: float = DEFAULT_RETRY_BACKOFF,
+) -> bytes:
+    """Fetch the contract code at an address with retry logic.
+
+    Args:
+        web3: Web3 instance connected to the chain.
+        address: Address to look up (should be checksummed).
+        max_retries: Maximum number of retry attempts.
+        retry_delay: Initial delay between retries in seconds.
+        retry_backoff: Multiplier for exponential backoff.
+
+    Returns:
+        bytes: The deployed bytecode; empty when no contract is at the address.
+
+    Raises:
+        Exception: If fetching the code fails after all retries.
+    """
+    return _retry_with_backoff(
+        lambda: web3.eth.get_code(address),
+        max_retries,
+        retry_delay,
+        retry_backoff,
+        "fetch code",
+    )
+
+
 def fetch_m0_m_token_with_retry(
     web3: Web3,
     address: str,

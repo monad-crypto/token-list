@@ -4,7 +4,7 @@
   "keywords": [
     "monad mainnet"
   ],
-  "timestamp": "2026-10-02T07:54:04.145003+00:00",
+  "timestamp": "2026-10-16T13:02:47.118000+00:00",
   "tokens": [
     {
       "chainId": 143,
@@ -13,6 +13,7 @@
       "symbol": "AA_FalconXUSDC",
       "decimals": 18,
       "extensions": {
+        "coinGeckoId": "pareto-aa-tranche-falconx-usdc",
         "bridgeInfo": {
           "protocol": "LayerZero OFT",
           "bridgeAddress": "0x91D93DBd823221ea9E54fb3e447BD917CE41f2e8"
@@ -1534,6 +1535,21 @@
     },
     {
       "chainId": 143,
+      "address": "0x9d753059f0aBDD90B197F3BE9d3cbC49bC01d31a",
+      "name": "Ember Zodiac Treasury Plus",
+      "symbol": "eTPLUS",
+      "decimals": 6,
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x518d3Fb6804B2BE9641f5712cff8C0F2b5F86afc"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/eTPLUS/logo.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x103222f020e98Bba0AD9809A011FDF8e6F067496",
       "name": "earnAUSD",
       "symbol": "earnAUSD",
@@ -1735,6 +1751,14 @@
         "coinGeckoId": "magma-staked-monad"
       },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/gMON/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0x06aB4F89B4abAeE213a8Cf64188DEa47e4AB11EB",
+      "name": "Holistic MON",
+      "symbol": "hMON",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/hMON/logo.svg"
     },
     {
       "chainId": 143,
@@ -2273,6 +2297,27 @@
     },
     {
       "chainId": 143,
+      "address": "0x5855e6B9b3cD6960FA3E751A87353c3e40401b9B",
+      "name": "InfiniFi Staked USD",
+      "symbol": "siUSD",
+      "decimals": 18,
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xDBDC1Ef57537E34680B898E1FEBD3D68c7389bCB"
+          },
+          "56": {
+            "address": "0x9Fa1202516916534Ade66962Ee91410d559f1C10"
+          },
+          "42161": {
+            "address": "0x51B0f6AED4a421f09D28A5eDe1DCF460BCB54d30"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/siUSD/logo.svg"
+    },
+    {
+      "chainId": 143,
       "address": "0x17B8F7373ECd556192AbFc85be314e5d4Fb6b3FA",
       "name": "srUSDat",
       "symbol": "srUSDat",
@@ -2706,7 +2751,7 @@
   ],
   "version": {
     "major": 2,
-    "minor": 49,
+    "minor": 50,
     "patch": 0
   }
 }

@@ -227,6 +227,24 @@ def ensure_symbols_match(listings: list[Listing], metadata: dict[str, TokenMetad
         raise RuntimeError("issuer and on-chain symbols disagree:\n" + "\n".join(symbol_mismatches))
 
 
+def ensure_no_duplicates(tokens: list[EquityToken]) -> None:
+    """Fail when one issuer lists the same symbol or address twice.
+
+    Args:
+        tokens: The issuer's freshly built tokens.
+
+    Raises:
+        RuntimeError: If any symbol or address appears more than once.
+    """
+    duplicate_errors = find_duplicate_errors(tokens)
+
+    if duplicate_errors:
+        raise RuntimeError(
+            "duplicates in the issuer's listings:\n"
+            + "\n".join(f"   - {error}" for error in duplicate_errors)
+        )
+
+
 def ensure_within_removal_limit(
     previous_tokens: list[EquityToken], tokens: list[EquityToken], max_removals: int
 ) -> None:
@@ -273,7 +291,7 @@ def build_source_tokens(
 
     Raises:
         RuntimeError: If metadata cannot be read, the issuer and the chain disagree
-            on a symbol, or too many tokens disappeared.
+            on a symbol, the issuer lists a token twice, or too many tokens disappeared.
         ValueError: If the issuer's source returns data of an unexpected shape.
         requests.RequestException: If the issuer's source cannot be reached.
     """
@@ -289,6 +307,7 @@ def build_source_tokens(
         )
         for listing in listings
     ]
+    ensure_no_duplicates(tokens)
     ensure_within_removal_limit(previous_tokens, tokens, max_removals)
 
     return tokens

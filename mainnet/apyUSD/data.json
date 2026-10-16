@@ -1,0 +1,25 @@
+{
+  "chainId": 143,
+  "address": "0xFD957D7E27D239da5455b82303b2F618f73a9C49",
+  "name": "apyUSD",
+  "symbol": "apyUSD",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "apyusd",
+    "bridgeInfo": {
+      "protocol": "Chainlink CCIP",
+      "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0x38EEb52F0771140d10c4E9A9a72349A329Fe8a6A"
+      },
+      "56": {
+        "address": "0xa14556f13516C53FF035858Ffd21E1625e7EADfd"
+      },
+      "8453": {
+        "address": "0x2c271ddF484aC0386d216eB7eB9Ff02D4Dc0F6AA"
+      }
+    }
+  }
+}

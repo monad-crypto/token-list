@@ -1,0 +1,25 @@
+{
+  "chainId": 143,
+  "address": "0x3D78455E22D5dd49709eC135A59CB1c5a87AC3C6",
+  "name": "apxUSD",
+  "symbol": "apxUSD",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "apxusd",
+    "bridgeInfo": {
+      "protocol": "Chainlink CCIP",
+      "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0x98A878b1Cd98131B271883B390f68D2c90674665"
+      },
+      "56": {
+        "address": "0x6b3788Fd6604BBF03c5378D24e57BB334BAAD4aF"
+      },
+      "8453": {
+        "address": "0xD993935E13851dd7517af10687EC7e5022127228"
+      }
+    }
+  }
+}

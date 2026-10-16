@@ -1,0 +1,20 @@
+{
+  "chainId": 143,
+  "address": "0x5855e6B9b3cD6960FA3E751A87353c3e40401b9B",
+  "name": "InfiniFi Staked USD",
+  "symbol": "siUSD",
+  "decimals": 18,
+  "extensions": {
+    "crossChainAddresses": {
+      "1": {
+        "address": "0xDBDC1Ef57537E34680B898E1FEBD3D68c7389bCB"
+      },
+      "56": {
+        "address": "0x9Fa1202516916534Ade66962Ee91410d559f1C10"
+      },
+      "42161": {
+        "address": "0x51B0f6AED4a421f09D28A5eDe1DCF460BCB54d30"
+      }
+    }
+  }
+}

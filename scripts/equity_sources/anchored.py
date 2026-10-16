@@ -17,7 +17,12 @@ from utils.equities import (
     print_onchain_progress,
 )
 from utils.token_list import CrossChainId
-from utils.web3 import CHAIN_NAMES, fetch_token_metadata_in_batches, get_web3_connection_for_chain
+from utils.web3 import (
+    CHAIN_NAMES,
+    fetch_code_with_retry,
+    fetch_token_metadata_in_batches,
+    get_web3_connection_for_chain,
+)
 from web3 import Web3
 
 ANCHORED_TOKENS_URL = "https://docs.anchored.finance/getting-started/anchored-tokens.md"
@@ -124,11 +129,30 @@ def find_missing_logos(session: requests.Session, listings: list[Listing]) -> li
     return missing_symbols
 
 
+def is_confirmed_absent(web3: Web3, address: str) -> bool:
+    """Return whether eth_getCode confirms there is no contract at an address.
+
+    Args:
+        web3: Web3 instance connected to the chain.
+        address: Checksummed address to look up.
+
+    Returns:
+        bool: True when the call succeeds with empty code; False when there is code
+        or the call fails, so an RPC failure never counts as proof of absence.
+    """
+    try:
+        return len(fetch_code_with_retry(web3, address)) == 0
+    except Exception:
+        return False
+
+
 def find_deployed_addresses(chain_id: CrossChainId, listings: list[Listing]) -> set[str]:
     """Return the listing addresses that hold a token with the listed symbol on a chain.
 
     Comparing symbol() rather than only checking for code also catches an
-    unrelated contract at the same address.
+    unrelated contract at the same address. An address counts as not deployed only
+    when its symbol is read and differs, or its metadata read fails and the
+    address has no code; anything else is unknown.
 
     Args:
         chain_id: The chain to check.
@@ -138,7 +162,8 @@ def find_deployed_addresses(chain_id: CrossChainId, listings: list[Listing]) -> 
         set[str]: Checksummed addresses whose contract reports the listing's symbol.
 
     Raises:
-        RuntimeError: If the chain's RPC cannot be reached.
+        RuntimeError: If the chain's RPC cannot be reached, or any address can be
+            neither confirmed nor ruled out, so the sync keeps the previous tokens.
     """
     web3 = get_web3_connection_for_chain(chain_id)
 
@@ -146,9 +171,23 @@ def find_deployed_addresses(chain_id: CrossChainId, listings: list[Listing]) -> 
         raise RuntimeError(f"cannot connect to the {CHAIN_NAMES[chain_id]} RPC")
 
     print(f"   - checking deployments on {CHAIN_NAMES[chain_id]}", flush=True)
-    metadata, _ = fetch_token_metadata_in_batches(
+    metadata, errors = fetch_token_metadata_in_batches(
         web3, [listing.address for listing in listings], print_onchain_progress
     )
+    unresolved_errors = {
+        address: error
+        for address, error in errors.items()
+        if not is_confirmed_absent(web3, address)
+    }
+
+    if unresolved_errors:
+        details = "\n".join(
+            f"   - {address}: {error}" for address, error in unresolved_errors.items()
+        )
+        raise RuntimeError(
+            f"cannot verify {len(unresolved_errors)} address(es) on "
+            f"{CHAIN_NAMES[chain_id]}:\n{details}"
+        )
 
     return {
         listing.address
@@ -170,7 +209,7 @@ def keep_verified_cross_chain_addresses(listings: list[Listing]) -> list[Listing
         list[Listing]: The listings with only verified cross-chain addresses.
 
     Raises:
-        RuntimeError: If a chain's RPC cannot be reached.
+        RuntimeError: If a chain's RPC cannot be reached or an address cannot be verified.
     """
     deployed_by_chain = {
         chain_id: find_deployed_addresses(chain_id, listings) for chain_id in CROSS_CHAIN_IDS
@@ -183,7 +222,11 @@ def keep_verified_cross_chain_addresses(listings: list[Listing]) -> list[Listing
             for chain_id, address in listing.cross_chain_addresses.items()
             if address in deployed_by_chain[chain_id]
         }
-        missing_chains = sorted(set(listing.cross_chain_addresses) - set(verified_addresses))
+        missing_chains = [
+            chain_id
+            for chain_id in listing.cross_chain_addresses
+            if chain_id not in verified_addresses
+        ]
 
         if missing_chains:
             chain_names = ", ".join(CHAIN_NAMES[chain_id] for chain_id in missing_chains)
@@ -204,7 +247,7 @@ def fetch_listings() -> list[Listing]:
     Raises:
         requests.RequestException: If the docs or logos cannot be reached.
         RuntimeError: If the docs page does not parse, a logo is missing, or a
-            cross-chain RPC cannot be reached.
+            cross-chain address cannot be verified.
     """
     # One session reuses connections for the docs page and every logo check.
     with create_source_session() as session:

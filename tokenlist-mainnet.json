@@ -4,7 +4,7 @@
   "keywords": [
     "monad mainnet"
   ],
-  "timestamp": "2026-10-02T07:54:04.145003+00:00",
+  "timestamp": "2026-10-16T13:04:03.436589+00:00",
   "tokens": [
     {
       "chainId": 143,
@@ -13,6 +13,7 @@
       "symbol": "AA_FalconXUSDC",
       "decimals": 18,
       "extensions": {
+        "coinGeckoId": "pareto-aa-tranche-falconx-usdc",
         "bridgeInfo": {
           "protocol": "LayerZero OFT",
           "bridgeAddress": "0x91D93DBd823221ea9E54fb3e447BD917CE41f2e8"
@@ -1412,6 +1413,58 @@
     },
     {
       "chainId": 143,
+      "address": "0x3D78455E22D5dd49709eC135A59CB1c5a87AC3C6",
+      "name": "apxUSD",
+      "symbol": "apxUSD",
+      "decimals": 18,
+      "extensions": {
+        "coinGeckoId": "apxusd",
+        "bridgeInfo": {
+          "protocol": "Chainlink CCIP",
+          "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+        },
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x98A878b1Cd98131B271883B390f68D2c90674665"
+          },
+          "56": {
+            "address": "0x6b3788Fd6604BBF03c5378D24e57BB334BAAD4aF"
+          },
+          "8453": {
+            "address": "0xD993935E13851dd7517af10687EC7e5022127228"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/apxUSD/logo.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0xFD957D7E27D239da5455b82303b2F618f73a9C49",
+      "name": "apyUSD",
+      "symbol": "apyUSD",
+      "decimals": 18,
+      "extensions": {
+        "coinGeckoId": "apyusd",
+        "bridgeInfo": {
+          "protocol": "Chainlink CCIP",
+          "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
+        },
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x38EEb52F0771140d10c4E9A9a72349A329Fe8a6A"
+          },
+          "56": {
+            "address": "0xa14556f13516C53FF035858Ffd21E1625e7EADfd"
+          },
+          "8453": {
+            "address": "0x2c271ddF484aC0386d216eB7eB9Ff02D4Dc0F6AA"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/apyUSD/logo.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x0D9D741FE423Cd5419e4BCb6cB2FfA87AFa93bA4",
       "name": "avUSD",
       "symbol": "avUSD",
@@ -1531,6 +1584,21 @@
         "coinGeckoId": "ebtc-2"
       },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/eBTC/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0x9d753059f0aBDD90B197F3BE9d3cbC49bC01d31a",
+      "name": "Ember Zodiac Treasury Plus",
+      "symbol": "eTPLUS",
+      "decimals": 6,
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x518d3Fb6804B2BE9641f5712cff8C0F2b5F86afc"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/eTPLUS/logo.png"
     },
     {
       "chainId": 143,
@@ -1738,11 +1806,41 @@
     },
     {
       "chainId": 143,
+      "address": "0x06aB4F89B4abAeE213a8Cf64188DEa47e4AB11EB",
+      "name": "Holistic MON",
+      "symbol": "hMON",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/hMON/logo.svg"
+    },
+    {
+      "chainId": 143,
       "address": "0xaD663aC84052b52BE4ed1b27BA416505e84a00Bf",
       "name": "High Yield AUSD Vault",
       "symbol": "hyAUSD",
       "decimals": 6,
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/hyAUSD/logo.svg"
+    },
+    {
+      "chainId": 143,
+      "address": "0x127066E1982940c33fDC882D9c138296AB15F97f",
+      "name": "InfiniFi USD",
+      "symbol": "iUSD",
+      "decimals": 18,
+      "extensions": {
+        "coinGeckoId": "infinifi-usd",
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x48f9e38f3070AD8945DFEae3FA70987722E3D89c"
+          },
+          "56": {
+            "address": "0x60B14ec49874Af1BA471685cb11132101aeBdF09"
+          },
+          "42161": {
+            "address": "0x5D81113b4e6A34256aa08bC44D17Bf101E811afa"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/iUSD/logo.svg"
     },
     {
       "chainId": 143,
@@ -2273,6 +2371,27 @@
     },
     {
       "chainId": 143,
+      "address": "0x5855e6B9b3cD6960FA3E751A87353c3e40401b9B",
+      "name": "InfiniFi Staked USD",
+      "symbol": "siUSD",
+      "decimals": 18,
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xDBDC1Ef57537E34680B898E1FEBD3D68c7389bCB"
+          },
+          "56": {
+            "address": "0x9Fa1202516916534Ade66962Ee91410d559f1C10"
+          },
+          "42161": {
+            "address": "0x51B0f6AED4a421f09D28A5eDe1DCF460BCB54d30"
+          }
+        }
+      },
+      "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/siUSD/logo.svg"
+    },
+    {
+      "chainId": 143,
       "address": "0x17B8F7373ECd556192AbFc85be314e5d4Fb6b3FA",
       "name": "srUSDat",
       "symbol": "srUSDat",
@@ -2706,7 +2825,7 @@
   ],
   "version": {
     "major": 2,
-    "minor": 49,
+    "minor": 50,
     "patch": 0
   }
 }

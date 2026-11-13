@@ -2,28 +2,82 @@ name: Release
 
 on:
   push:
-    branches:
-      - main
-    paths:
-      - "tokenlist-mainnet.json"
+    branches: [main]
 
-concurrency: ${{ github.workflow }}-${{ github.ref }}
+permissions: {}
 
-permissions:
-  contents: write
-  id-token: write
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
-  release:
-    name: Release New Token List Version
+  ci:
+    uses: ./.github/workflows/ci.yml
+    permissions:
+      contents: read
+    secrets: inherit
+
+  # Stages every package version not yet on the registry. Runs on every push to
+  # main and does nothing when there is nothing new.
+  publish:
+    needs: ci
     runs-on: ubuntu-latest
     environment: npm-publish
+    permissions:
+      contents: read
+      id-token: write
+    defaults:
+      run:
+        working-directory: npm
     steps:
-      - name: Checkout code
-        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
-
-      - name: Build, publish and tag
-        uses: ./.github/actions/publish-npm-package
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          package-directory: npm/token-list
-          tag-prefix: v
+          persist-credentials: false
+      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+        with:
+          version: 10
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+          package-manager-cache: false
+      - run: npm install -g npm@11.21.0
+      - run: pnpm install --frozen-lockfile
+      # Codegen inside the build sets each package.json version from its token
+      # list, so versions are read only after this step.
+      - run: pnpm build
+      - name: Stage unpublished versions
+        run: |
+          set -euo pipefail
+          # One package's failure (e.g. a version still awaiting approval) must not
+          # stop the others from staging, so failures are collected, not fatal.
+          fail=0
+          for pj in */package.json; do
+            name=$(jq -r .name "$pj"); version=$(jq -r .version "$pj")
+            [ "$(jq -r '.private // false' "$pj")" = "true" ] && continue
+            code=$(curl -s -o /dev/null -w '%{http_code}' \
+              "https://registry.npmjs.org/${name/\//%2F}/$version")
+            case "$code" in
+              200) echo "skip  $name@$version (already published)"; continue ;;
+              404) ;;
+              *)   echo "::error::registry returned $code for $name@$version"; fail=1; continue ;;
+            esac
+            tag=latest
+            case "$version" in *-*) pre="${version#*-}"; tag="${pre%%.*}" ;; esac
+            echo "stage $name@$version (tag: $tag)"
+            if output=$(cd "$(dirname "$pj")" && npm stage publish --provenance --tag "$tag" 2>&1); then
+              echo "$output"
+              continue
+            fi
+            echo "$output"
+            # A staged version is not public, so the registry check above cannot see
+            # it and every push until approval re-stages it. The registry rejects
+            # the duplicate with a conflict; anything else is a real failure.
+            if grep -q 'E409' <<<"$output"; then
+              echo "::notice::$name@$version is already staged and awaiting approval"
+              continue
+            fi
+            echo "::error::staging $name@$version failed"
+            fail=1
+          done
+          exit "$fail"

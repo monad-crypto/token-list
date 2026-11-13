@@ -1,0 +1,85 @@
+name: GitHub releases
+
+# Creates GitHub releases only for versions that are live on npm and were built
+# from main by release.yml. Holds no npm credential. Tag name: <package>@<version>.
+#
+# token-list versions up to 2.50.0 were tagged v<version> by the v1 workflow and
+# have no GitHub release. Those tags are verified as they are; a release created
+# now would carry today's date, not the version's.
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: github-releases
+  cancel-in-progress: false
+
+jobs:
+  releases:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0 # needs all commits and tags
+          persist-credentials: false
+      - name: Create missing releases and verify existing tags
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          REG=https://registry.npmjs.org
+          fail=0
+          for pj in npm/*/package.json; do
+            [ "$(jq -r '.private // false' "$pj")" = "true" ] && continue
+            name=$(jq -r .name "$pj"); enc="${name/\//%2F}"
+            if ! versions=$(curl -sf "$REG/$enc" | jq -r '.versions | keys[]'); then
+              echo "skip   $name: not on npm"; continue
+            fi
+            for v in $versions; do
+              tag="$name@$v"
+              if [ "$name" = "@monad-crypto/token-list" ] && git rev-parse -q --verify "refs/tags/v$v" >/dev/null; then
+                tag="v$v"
+              fi
+              if ! att=$(curl -sf "$REG/-/npm/v1/attestations/$enc@$v"); then
+                echo "skip   $tag: no provenance"; continue
+              fi
+              # read fails on empty input, which under set -e would end the whole run.
+              if ! IFS=$'\t' read -r repo ref path event sha < <(jq -r '
+                first(.attestations[] | select(.predicateType | contains("provenance")))
+                | .bundle.dsseEnvelope.payload | @base64d | fromjson | .predicate.buildDefinition
+                | [.externalParameters.workflow.repository, .externalParameters.workflow.ref,
+                   .externalParameters.workflow.path, .internalParameters.github.event_name,
+                   .resolvedDependencies[0].digest.gitCommit] | @tsv' <<<"$att"); then
+                echo "skip   $tag: attestations have no provenance"; continue
+              fi
+              if [ "$repo" != "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY" ] || [ "$ref" != "refs/heads/main" ] \
+                 || [ "$path" != ".github/workflows/release.yml" ] || [ "$event" != "push" ]; then
+                echo "skip   $tag: built by $path on $ref ($event)"; continue
+              fi
+              if tagged=$(git rev-list -n 1 "refs/tags/$tag" 2>/dev/null); then
+                if [ "$tagged" = "$sha" ]; then echo "ok     $tag"
+                else echo "::error::$tag points at $tagged, but npm built it from $sha"; fail=1; fi
+                continue
+              fi
+              # The packages have no CHANGELOG.md; the token list diff is the change record.
+              notes="Published to npm as \`$name@$v\`, built from $sha."
+              flags=(); case "$v" in *-*) flags+=(--prerelease) ;; esac
+              # All packages release into one repository; only stable token-list
+              # releases may take the Latest badge.
+              if [ "$name" != "@monad-crypto/token-list" ] || [[ "$v" == *-* ]]; then
+                flags+=(--latest=false)
+              fi
+              echo "create $tag -> $sha"
+              gh release create "$tag" --target "$sha" --title "$name@$v" \
+                --notes "$notes" "${flags[@]}"
+            done
+          done
+          exit "$fail"

@@ -82,7 +82,7 @@ jobs:
           VERSION: ${{ steps.version.outputs.value }}
         run: |
           {
-            echo "Automated sync from tokenized equity issuers: updates \`tokenlist-equities.json\` to v${VERSION} and bumps \`npm/equities/package.json\`. Merging publishes \`@monad-crypto/equities-token-list\`."
+            echo "Automated sync from tokenized equity issuers: updates \`tokenlist-equities.json\` to v${VERSION} and bumps \`npm/equities/package.json\`. Merging stages \`@monad-crypto/equities-token-list\` on npm for approval."
             echo
             echo '```'
             cat sync-output.txt

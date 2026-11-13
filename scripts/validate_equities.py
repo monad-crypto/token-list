@@ -11,8 +11,10 @@ import re
 import sys
 from collections.abc import Mapping
 from typing import Literal
+from urllib.parse import urlsplit
 
 import validate_tokens
+from equity_sources import SOURCES
 from utils.coingecko import COINGECKO_ID_PATTERN
 from utils.equities import (
     EQUITIES_LIST_FILE,
@@ -44,6 +46,9 @@ TAG_ID_PATTERN = re.compile(r"^\w{1,10}$")
 TAG_NAME_PATTERN = re.compile(r"^[ \w]{1,20}$")
 TAG_DESCRIPTION_PATTERN = re.compile(r"^[ \w.,:]{1,200}$")
 MAX_TAGS = 20
+# The issuer API supplies logoURIs, so a compromised API could otherwise point
+# logos at any host and learn the IP of every wallet that renders them.
+LOGO_HOSTS = {source.tag: source.logo_host for source in SOURCES}
 
 
 def check_token_entry(
@@ -100,8 +105,8 @@ def find_typed_token_errors(token: EquityToken, tag_ids: set[str]) -> list[str]:
     if not Web3.is_checksum_address(token["address"]):
         errors.append(f"address {token['address']} is not checksummed")
 
-    if not token["logoURI"].startswith("https://"):
-        errors.append("logoURI must be an https URL")
+    if not is_issuer_logo_uri(token["logoURI"], token["tags"]):
+        errors.append("logoURI must be a plain https URL on its issuer's logo host")
 
     if not token["tags"]:
         errors.append("needs an issuer tag")
@@ -113,6 +118,36 @@ def find_typed_token_errors(token: EquityToken, tag_ids: set[str]) -> list[str]:
         errors.append(f"coinGeckoId {coin_gecko_id!r} is not a CoinGecko ID")
 
     return errors
+
+
+def is_issuer_logo_uri(logo_uri: str, tags: list[str]) -> bool:
+    """Tell whether a logo URL is https on the logo host of one of the token's issuers.
+
+    Userinfo and explicit ports are rejected so the URL's host is the one it
+    appears to be.
+
+    Args:
+        logo_uri: The entry's logoURI.
+        tags: The entry's tags; issuer tags map to a logo host in LOGO_HOSTS.
+
+    Returns:
+        bool: True when the URL is https, has no userinfo or port, and its host
+        is an issuer's logo host.
+    """
+    try:
+        parts = urlsplit(logo_uri)
+        port = parts.port
+    except ValueError:
+        return False
+
+    allowed_hosts = {LOGO_HOSTS[tag] for tag in tags if tag in LOGO_HOSTS}
+
+    return (
+        parts.scheme == "https"
+        and parts.username is None
+        and port is None
+        and parts.hostname in allowed_hosts
+    )
 
 
 def find_token_metadata_mismatches(

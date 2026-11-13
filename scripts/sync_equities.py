@@ -270,11 +270,42 @@ def ensure_within_removal_limit(
         )
 
 
+def ensure_no_address_changes(
+    previous_tokens: list[EquityToken], tokens: list[EquityToken]
+) -> None:
+    """Fail when a listed symbol now points at a different contract.
+
+    Issuers do not redeploy listed tokens, so a moved address more likely means a
+    compromised or broken source, and the swap is what consumers would act on.
+
+    Args:
+        previous_tokens: The issuer's tokens in the current list.
+        tokens: The issuer's freshly built tokens.
+
+    Raises:
+        RuntimeError: If any symbol in both lists has a different address.
+    """
+    previous_addresses = {token["symbol"]: token["address"] for token in previous_tokens}
+    changes = [
+        f"{token['symbol']} {previous_addresses[token['symbol']]} -> {token['address']}"
+        for token in tokens
+        if token["symbol"] in previous_addresses
+        and previous_addresses[token["symbol"]] != token["address"]
+    ]
+
+    if changes:
+        raise RuntimeError(
+            f"refusing to change {len(changes)} token address(es): {', '.join(changes)}. "
+            "Re-run with --allow-address-changes after confirming the issuer redeployed."
+        )
+
+
 def build_source_tokens(
     source: EquitySource,
     web3: Web3,
     previous_tokens: list[EquityToken],
     max_removals: int,
+    allows_address_changes: bool,
     coin_gecko_index: CoinGeckoIndex,
 ) -> list[EquityToken]:
     """Build one issuer's verified token entries from its current listings.
@@ -284,6 +315,7 @@ def build_source_tokens(
         web3: Web3 instance connected to Monad.
         previous_tokens: This issuer's tokens in the current list.
         max_removals: Most tokens allowed to disappear in one sync.
+        allows_address_changes: Whether a listed symbol may move to a new address.
         coin_gecko_index: CoinGecko coin IDs keyed by (platform, lowercase address).
 
     Returns:
@@ -291,7 +323,8 @@ def build_source_tokens(
 
     Raises:
         RuntimeError: If metadata cannot be read, the issuer and the chain disagree
-            on a symbol, the issuer lists a token twice, or too many tokens disappeared.
+            on a symbol, the issuer lists a token twice, too many tokens disappeared,
+            or a listed symbol moved address without allows_address_changes.
         ValueError: If the issuer's source returns data of an unexpected shape.
         requests.RequestException: If the issuer's source cannot be reached.
     """
@@ -309,6 +342,9 @@ def build_source_tokens(
     ]
     ensure_no_duplicates(tokens)
     ensure_within_removal_limit(previous_tokens, tokens, max_removals)
+
+    if not allows_address_changes:
+        ensure_no_address_changes(previous_tokens, tokens)
 
     return tokens
 
@@ -329,6 +365,14 @@ def main() -> int:
             "Per issuer: fail the issuer if more tokens than this disappear in one sync, "
             f"which usually means a source problem rather than delistings "
             f"(default {DEFAULT_MAX_REMOVALS})"
+        ),
+    )
+    parser.add_argument(
+        "--allow-address-changes",
+        action="store_true",
+        help=(
+            "Accept a listed symbol moving to a new contract address; without it the "
+            "issuer fails, since a moved address usually means a bad source"
         ),
     )
     args = parser.parse_args()
@@ -354,7 +398,12 @@ def main() -> int:
 
             try:
                 source_tokens = build_source_tokens(
-                    source, web3, previous_tokens, args.max_removals, coin_gecko_index
+                    source,
+                    web3,
+                    previous_tokens,
+                    args.max_removals,
+                    args.allow_address_changes,
+                    coin_gecko_index,
                 )
                 print(f"   - {len(source_tokens)} token(s) on Monad")
             except (RuntimeError, ValueError, requests.RequestException) as e:

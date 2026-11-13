@@ -191,7 +191,9 @@ def compare_tokens(
 
     Returns:
         tuple[ChangeType, str] | None: (change_type, description), or None when
-        nothing changed. change_type is one of:
+        nothing changed. The description names every removed, re-addressed and
+        added symbol, because reviewers read it in place of the diff.
+        change_type is the highest of:
             - "major": Tokens removed or addresses changed
             - "minor": Tokens added
             - "patch": Other changes (metadata, logoURI, etc.)
@@ -203,26 +205,44 @@ def compare_tokens(
     new_tokens_by_symbol = index_tokens_by_symbol(new_tokens)
     old_symbols = set(old_tokens_by_symbol)
     new_symbols = set(new_tokens_by_symbol)
-    kept_symbols = old_symbols & new_symbols
-    removed_symbols = old_symbols - new_symbols
-    added_symbols = new_symbols - old_symbols
+    kept_symbols = sorted(old_symbols & new_symbols)
+    removed_symbols = sorted(old_symbols - new_symbols)
+    added_symbols = sorted(new_symbols - old_symbols)
+    readdressed_symbols = [
+        symbol
+        for symbol in kept_symbols
+        if old_tokens_by_symbol[symbol].get("address")
+        != new_tokens_by_symbol[symbol].get("address")
+    ]
+    metadata_updated_count = sum(
+        old_tokens_by_symbol[symbol] != new_tokens_by_symbol[symbol]
+        for symbol in kept_symbols
+        if symbol not in readdressed_symbols
+    )
+    descriptions: list[str] = []
 
     if removed_symbols:
-        return ("major", f"Tokens removed: {', '.join(sorted(removed_symbols))}")
+        descriptions.append(f"Tokens removed: {', '.join(removed_symbols)}")
 
-    for symbol in sorted(kept_symbols):
-        old_address = old_tokens_by_symbol[symbol].get("address")
-        if old_address != new_tokens_by_symbol[symbol].get("address"):
-            return ("major", f"Token address changed: {symbol}")
+    if readdressed_symbols:
+        descriptions.append(f"Token addresses changed: {', '.join(readdressed_symbols)}")
 
     if added_symbols:
-        return ("minor", f"Tokens added: {', '.join(sorted(added_symbols))}")
+        descriptions.append(f"Tokens added: {', '.join(added_symbols)}")
 
-    for symbol in kept_symbols:
-        if old_tokens_by_symbol[symbol] != new_tokens_by_symbol[symbol]:
-            return ("patch", "Token metadata updated")
+    if metadata_updated_count:
+        descriptions.append(f"Token metadata updated: {metadata_updated_count} token(s)")
 
-    return None
+    if not descriptions:
+        return None
+
+    if removed_symbols or readdressed_symbols:
+        return "major", "; ".join(descriptions)
+
+    if added_symbols:
+        return "minor", "; ".join(descriptions)
+
+    return "patch", "; ".join(descriptions)
 
 
 def increment_version(current_version: Version, change_type: ChangeType) -> Version:

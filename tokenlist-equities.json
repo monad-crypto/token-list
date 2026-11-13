@@ -17,8 +17,38 @@
       "description": "Tokenized stocks and ETFs issued by Anchored"
     }
   },
-  "timestamp": "2026-10-15T13:16:35.431610+00:00",
+  "timestamp": "2026-11-13T12:05:57.125511+00:00",
   "tokens": [
+    {
+      "chainId": 143,
+      "address": "0x40f73Ded22A642B3E5266f44124535898Db012f1",
+      "name": "Xetra-Gold xStock",
+      "symbol": "4GLDx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x40f73Ded22A642B3E5266f44124535898Db012f1"
+          },
+          "10": {
+            "address": "0x40f73Ded22A642B3E5266f44124535898Db012f1"
+          },
+          "56": {
+            "address": "0x40f73Ded22A642B3E5266f44124535898Db012f1"
+          },
+          "999": {
+            "address": "0x40f73Ded22A642B3E5266f44124535898Db012f1"
+          },
+          "42161": {
+            "address": "0x40f73Ded22A642B3E5266f44124535898Db012f1"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/4GLDx.png"
+    },
     {
       "chainId": 143,
       "address": "0xEc901b1779eac0BB26bb4D2908aD1674f3e9BEB7",
@@ -598,6 +628,36 @@
     },
     {
       "chainId": 143,
+      "address": "0x40720f2aD0998040C090482e00964A21EE335493",
+      "name": "ACS Actividades de Construccion y Servicios xStock",
+      "symbol": "ACS.ESx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x40720f2aD0998040C090482e00964A21EE335493"
+          },
+          "10": {
+            "address": "0x40720f2aD0998040C090482e00964A21EE335493"
+          },
+          "56": {
+            "address": "0x40720f2aD0998040C090482e00964A21EE335493"
+          },
+          "999": {
+            "address": "0x40720f2aD0998040C090482e00964A21EE335493"
+          },
+          "42161": {
+            "address": "0x40720f2aD0998040C090482e00964A21EE335493"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ACS.ESx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x4987F148D1e04917AED870ACFda296AbA6DCB2Ef",
       "name": "Koninklijke Ahold Delhaize xStock",
       "symbol": "AD.NLx",
@@ -1113,6 +1173,36 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/AEPx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x3b456CE70868653D3eB869FBA29D401E67387733",
+      "name": "The AES xStock",
+      "symbol": "AESx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x3b456CE70868653D3eB869FBA29D401E67387733"
+          },
+          "10": {
+            "address": "0x3b456CE70868653D3eB869FBA29D401E67387733"
+          },
+          "56": {
+            "address": "0x3b456CE70868653D3eB869FBA29D401E67387733"
+          },
+          "999": {
+            "address": "0x3b456CE70868653D3eB869FBA29D401E67387733"
+          },
+          "42161": {
+            "address": "0x3b456CE70868653D3eB869FBA29D401E67387733"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/AESx.png"
     },
     {
       "chainId": 143,
@@ -3028,6 +3118,36 @@
     },
     {
       "chainId": 143,
+      "address": "0x5703def00e728301FD88f827Bb5134a149987419",
+      "name": "ARK Blockchain & Fintech Innovation ETF xStock",
+      "symbol": "ARKFx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x5703def00e728301FD88f827Bb5134a149987419"
+          },
+          "10": {
+            "address": "0x5703def00e728301FD88f827Bb5134a149987419"
+          },
+          "56": {
+            "address": "0x5703def00e728301FD88f827Bb5134a149987419"
+          },
+          "999": {
+            "address": "0x5703def00e728301FD88f827Bb5134a149987419"
+          },
+          "42161": {
+            "address": "0x5703def00e728301FD88f827Bb5134a149987419"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ARKFx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x0B5409F293F78a290a7e8d63C70963e2c06D5e07",
       "name": "Aramark xStock",
       "symbol": "ARMKx",
@@ -3302,6 +3422,36 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ASMPTx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x8d587175C903735fEDd14f2FB0B3a9a8902eB7bA",
+      "name": "Ascendis Pharma A/S xStock",
+      "symbol": "ASNDx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x8d587175C903735fEDd14f2FB0B3a9a8902eB7bA"
+          },
+          "10": {
+            "address": "0x8d587175C903735fEDd14f2FB0B3a9a8902eB7bA"
+          },
+          "56": {
+            "address": "0x8d587175C903735fEDd14f2FB0B3a9a8902eB7bA"
+          },
+          "999": {
+            "address": "0x8d587175C903735fEDd14f2FB0B3a9a8902eB7bA"
+          },
+          "42161": {
+            "address": "0x8d587175C903735fEDd14f2FB0B3a9a8902eB7bA"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ASNDx.png"
     },
     {
       "chainId": 143,
@@ -4889,6 +5039,36 @@
     },
     {
       "chainId": 143,
+      "address": "0xDeDf549037c7E204aD90f2081F80B1c43FA40EF0",
+      "name": "Beiersdorf xStock",
+      "symbol": "BEIx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xDeDf549037c7E204aD90f2081F80B1c43FA40EF0"
+          },
+          "10": {
+            "address": "0xDeDf549037c7E204aD90f2081F80B1c43FA40EF0"
+          },
+          "56": {
+            "address": "0xDeDf549037c7E204aD90f2081F80B1c43FA40EF0"
+          },
+          "999": {
+            "address": "0xDeDf549037c7E204aD90f2081F80B1c43FA40EF0"
+          },
+          "42161": {
+            "address": "0xDeDf549037c7E204aD90f2081F80B1c43FA40EF0"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BEIx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0xb100ee83B2f3E591c84354db63850677925b704f",
       "name": "Franklin Templeton xStock",
       "symbol": "BENx",
@@ -5343,6 +5523,36 @@
     },
     {
       "chainId": 143,
+      "address": "0x3EcdF0F4490051bB5075c7ad8De6E03Bd3569754",
+      "name": "Birkenstock xStock",
+      "symbol": "BIRKx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x3EcdF0F4490051bB5075c7ad8De6E03Bd3569754"
+          },
+          "10": {
+            "address": "0x3EcdF0F4490051bB5075c7ad8De6E03Bd3569754"
+          },
+          "56": {
+            "address": "0x3EcdF0F4490051bB5075c7ad8De6E03Bd3569754"
+          },
+          "999": {
+            "address": "0x3EcdF0F4490051bB5075c7ad8De6E03Bd3569754"
+          },
+          "42161": {
+            "address": "0x3EcdF0F4490051bB5075c7ad8De6E03Bd3569754"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BIRKx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0xE1435b2f302edf42AE84a306a5e1948b270B6CCb",
       "name": "Volatility Shares 2x Bitcoin Strategy xStock",
       "symbol": "BITXx",
@@ -5769,6 +5979,36 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BNPx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0xa766E718Fd02d47Bb9AcC5206edc0880Ad5F521f",
+      "name": "Brenntag xStock",
+      "symbol": "BNR.DEx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xa766E718Fd02d47Bb9AcC5206edc0880Ad5F521f"
+          },
+          "10": {
+            "address": "0xa766E718Fd02d47Bb9AcC5206edc0880Ad5F521f"
+          },
+          "56": {
+            "address": "0xa766E718Fd02d47Bb9AcC5206edc0880Ad5F521f"
+          },
+          "999": {
+            "address": "0xa766E718Fd02d47Bb9AcC5206edc0880Ad5F521f"
+          },
+          "42161": {
+            "address": "0xa766E718Fd02d47Bb9AcC5206edc0880Ad5F521f"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BNR.DEx.png"
     },
     {
       "chainId": 143,
@@ -6536,6 +6776,36 @@
     },
     {
       "chainId": 143,
+      "address": "0x10105ef7361e716Fe070ddf274f887e9dAa177aF",
+      "name": "Breakwave Tanker Shipping xStock",
+      "symbol": "BWETx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x10105ef7361e716Fe070ddf274f887e9dAa177aF"
+          },
+          "10": {
+            "address": "0x10105ef7361e716Fe070ddf274f887e9dAa177aF"
+          },
+          "56": {
+            "address": "0x10105ef7361e716Fe070ddf274f887e9dAa177aF"
+          },
+          "999": {
+            "address": "0x10105ef7361e716Fe070ddf274f887e9dAa177aF"
+          },
+          "42161": {
+            "address": "0x10105ef7361e716Fe070ddf274f887e9dAa177aF"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BWETx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0xD66C91211925caF1DCF694ADb5FC9B13fFa92A0D",
       "name": "BWX Technologies xStock",
       "symbol": "BWXTx",
@@ -7142,6 +7412,66 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/CAVAx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0xf0FFca4C4D3dC1eA7a92eEA73aE5f3f817f1BD31",
+      "name": "Central Bancompany xStock",
+      "symbol": "CBCx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xf0FFca4C4D3dC1eA7a92eEA73aE5f3f817f1BD31"
+          },
+          "10": {
+            "address": "0xf0FFca4C4D3dC1eA7a92eEA73aE5f3f817f1BD31"
+          },
+          "56": {
+            "address": "0xf0FFca4C4D3dC1eA7a92eEA73aE5f3f817f1BD31"
+          },
+          "999": {
+            "address": "0xf0FFca4C4D3dC1eA7a92eEA73aE5f3f817f1BD31"
+          },
+          "42161": {
+            "address": "0xf0FFca4C4D3dC1eA7a92eEA73aE5f3f817f1BD31"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/CBCx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x553eb87208d83aa71883b747cFa72A953Ecba461",
+      "name": "Commerzbank xStock",
+      "symbol": "CBK.DEx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x553eb87208d83aa71883b747cFa72A953Ecba461"
+          },
+          "10": {
+            "address": "0x553eb87208d83aa71883b747cFa72A953Ecba461"
+          },
+          "56": {
+            "address": "0x553eb87208d83aa71883b747cFa72A953Ecba461"
+          },
+          "999": {
+            "address": "0x553eb87208d83aa71883b747cFa72A953Ecba461"
+          },
+          "42161": {
+            "address": "0x553eb87208d83aa71883b747cFa72A953Ecba461"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/CBK.DEx.png"
     },
     {
       "chainId": 143,
@@ -8888,6 +9218,36 @@
     },
     {
       "chainId": 143,
+      "address": "0x87ff1c34828eceEf77Da91dfDdAf67E6751F06e4",
+      "name": "CNH Industrial xStock",
+      "symbol": "CNHx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x87ff1c34828eceEf77Da91dfDdAf67E6751F06e4"
+          },
+          "10": {
+            "address": "0x87ff1c34828eceEf77Da91dfDdAf67E6751F06e4"
+          },
+          "56": {
+            "address": "0x87ff1c34828eceEf77Da91dfDdAf67E6751F06e4"
+          },
+          "999": {
+            "address": "0x87ff1c34828eceEf77Da91dfDdAf67E6751F06e4"
+          },
+          "42161": {
+            "address": "0x87ff1c34828eceEf77Da91dfDdAf67E6751F06e4"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/CNHx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0xA6E7941581264F8d5E06865E4ae54721357fBb6b",
       "name": "Core & Main xStock",
       "symbol": "CNMx",
@@ -9042,6 +9402,36 @@
     },
     {
       "chainId": 143,
+      "address": "0x1021fEd5A79Bf5F7d28EE9B8C039F4219ae49059",
+      "name": "Coca-Cola Consolidated xStock",
+      "symbol": "COKEx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x1021fEd5A79Bf5F7d28EE9B8C039F4219ae49059"
+          },
+          "10": {
+            "address": "0x1021fEd5A79Bf5F7d28EE9B8C039F4219ae49059"
+          },
+          "56": {
+            "address": "0x1021fEd5A79Bf5F7d28EE9B8C039F4219ae49059"
+          },
+          "999": {
+            "address": "0x1021fEd5A79Bf5F7d28EE9B8C039F4219ae49059"
+          },
+          "42161": {
+            "address": "0x1021fEd5A79Bf5F7d28EE9B8C039F4219ae49059"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/COKEx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0xE2bcEbAfBE0dD0De1845095ab5df7a9606302D19",
       "name": "Columbia Banking System xStock",
       "symbol": "COLBx",
@@ -9129,6 +9519,36 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/COLMx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0xEdCdeaae94A06940a1dAdc9E3127947F6faEf414",
+      "name": "Continental xStock",
+      "symbol": "CON.DEx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xEdCdeaae94A06940a1dAdc9E3127947F6faEf414"
+          },
+          "10": {
+            "address": "0xEdCdeaae94A06940a1dAdc9E3127947F6faEf414"
+          },
+          "56": {
+            "address": "0xEdCdeaae94A06940a1dAdc9E3127947F6faEf414"
+          },
+          "999": {
+            "address": "0xEdCdeaae94A06940a1dAdc9E3127947F6faEf414"
+          },
+          "42161": {
+            "address": "0xEdCdeaae94A06940a1dAdc9E3127947F6faEf414"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/CON.DEx.png"
     },
     {
       "chainId": 143,
@@ -9900,6 +10320,36 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/CRHx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x11c4FaAeDf60819BD3fe881808A00b7E6d223a4c",
+      "name": "Charles River Laboratories International xStock",
+      "symbol": "CRLx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x11c4FaAeDf60819BD3fe881808A00b7E6d223a4c"
+          },
+          "10": {
+            "address": "0x11c4FaAeDf60819BD3fe881808A00b7E6d223a4c"
+          },
+          "56": {
+            "address": "0x11c4FaAeDf60819BD3fe881808A00b7E6d223a4c"
+          },
+          "999": {
+            "address": "0x11c4FaAeDf60819BD3fe881808A00b7E6d223a4c"
+          },
+          "42161": {
+            "address": "0x11c4FaAeDf60819BD3fe881808A00b7E6d223a4c"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/CRLx.png"
     },
     {
       "chainId": 143,
@@ -10884,6 +11334,36 @@
     },
     {
       "chainId": 143,
+      "address": "0x1636D50d9b8403ba2FbE27F33669Ad15812EdCea",
+      "name": "Cypherpunk Technologies xStock",
+      "symbol": "CYPHx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x1636D50d9b8403ba2FbE27F33669Ad15812EdCea"
+          },
+          "10": {
+            "address": "0x1636D50d9b8403ba2FbE27F33669Ad15812EdCea"
+          },
+          "56": {
+            "address": "0x1636D50d9b8403ba2FbE27F33669Ad15812EdCea"
+          },
+          "999": {
+            "address": "0x1636D50d9b8403ba2FbE27F33669Ad15812EdCea"
+          },
+          "42161": {
+            "address": "0x1636D50d9b8403ba2FbE27F33669Ad15812EdCea"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/CYPHx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x2bFc10cCf40346AfED55B728155997f648AdFbeF",
       "name": "Caesars Entertainment xStock",
       "symbol": "CZRx",
@@ -11186,6 +11666,36 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/DCIx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0xEb7Ad92F600f138715a0c9a15dD46fe21011AD1d",
+      "name": "DDC Enterprise xStock",
+      "symbol": "DDCx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xEb7Ad92F600f138715a0c9a15dD46fe21011AD1d"
+          },
+          "10": {
+            "address": "0xEb7Ad92F600f138715a0c9a15dD46fe21011AD1d"
+          },
+          "56": {
+            "address": "0xEb7Ad92F600f138715a0c9a15dD46fe21011AD1d"
+          },
+          "999": {
+            "address": "0xEb7Ad92F600f138715a0c9a15dD46fe21011AD1d"
+          },
+          "42161": {
+            "address": "0xEb7Ad92F600f138715a0c9a15dD46fe21011AD1d"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/DDCx.png"
     },
     {
       "chainId": 143,
@@ -12044,6 +12554,36 @@
     },
     {
       "chainId": 143,
+      "address": "0x67a49BCe8a079f0d6689Fb46CdA879E931AEC472",
+      "name": "Amdocs xStock",
+      "symbol": "DOXx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x67a49BCe8a079f0d6689Fb46CdA879E931AEC472"
+          },
+          "10": {
+            "address": "0x67a49BCe8a079f0d6689Fb46CdA879E931AEC472"
+          },
+          "56": {
+            "address": "0x67a49BCe8a079f0d6689Fb46CdA879E931AEC472"
+          },
+          "999": {
+            "address": "0x67a49BCe8a079f0d6689Fb46CdA879E931AEC472"
+          },
+          "42161": {
+            "address": "0x67a49BCe8a079f0d6689Fb46CdA879E931AEC472"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/DOXx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0xF066661e666e4910882400f877908617AaA21161",
       "name": "Diploma xStock",
       "symbol": "DPLMx",
@@ -12715,6 +13255,36 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ECGx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0xDbBc7bEfda557bf82f93337a067401385f4967A0",
+      "name": "EchoStar xStock",
+      "symbol": "ECHOx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xDbBc7bEfda557bf82f93337a067401385f4967A0"
+          },
+          "10": {
+            "address": "0xDbBc7bEfda557bf82f93337a067401385f4967A0"
+          },
+          "56": {
+            "address": "0xDbBc7bEfda557bf82f93337a067401385f4967A0"
+          },
+          "999": {
+            "address": "0xDbBc7bEfda557bf82f93337a067401385f4967A0"
+          },
+          "42161": {
+            "address": "0xDbBc7bEfda557bf82f93337a067401385f4967A0"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ECHOx.png"
     },
     {
       "chainId": 143,
@@ -15653,6 +16223,36 @@
     },
     {
       "chainId": 143,
+      "address": "0x0bA07b66B03C9F7F4E22e13a3Fff1466D72622d3",
+      "name": "iShares Floating Rate Bond xStock",
+      "symbol": "FLOTx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x0bA07b66B03C9F7F4E22e13a3Fff1466D72622d3"
+          },
+          "10": {
+            "address": "0x0bA07b66B03C9F7F4E22e13a3Fff1466D72622d3"
+          },
+          "56": {
+            "address": "0x0bA07b66B03C9F7F4E22e13a3Fff1466D72622d3"
+          },
+          "999": {
+            "address": "0x0bA07b66B03C9F7F4E22e13a3Fff1466D72622d3"
+          },
+          "42161": {
+            "address": "0x0bA07b66B03C9F7F4E22e13a3Fff1466D72622d3"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/FLOTx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x16b8feF54489A0BEb2cf09F6F16e4Cd31aEE195a",
       "name": "Franklin U.S. Mid Cap Multi-Factor xStock",
       "symbol": "FLQMx",
@@ -15801,6 +16401,36 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/FLYx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x48f4f5b31E6CBa879d084b91AB5838cB25994F5E",
+      "name": "Fresenius Medical Care xStock",
+      "symbol": "FMEx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x48f4f5b31E6CBa879d084b91AB5838cB25994F5E"
+          },
+          "10": {
+            "address": "0x48f4f5b31E6CBa879d084b91AB5838cB25994F5E"
+          },
+          "56": {
+            "address": "0x48f4f5b31E6CBa879d084b91AB5838cB25994F5E"
+          },
+          "999": {
+            "address": "0x48f4f5b31E6CBa879d084b91AB5838cB25994F5E"
+          },
+          "42161": {
+            "address": "0x48f4f5b31E6CBa879d084b91AB5838cB25994F5E"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/FMEx.png"
     },
     {
       "chainId": 143,
@@ -15983,6 +16613,36 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/FOURx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x5d6cD48eAFD7547b56fFF2C43dE8a82dDEC1568f",
+      "name": "Fox xStock",
+      "symbol": "FOXAx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x5d6cD48eAFD7547b56fFF2C43dE8a82dDEC1568f"
+          },
+          "10": {
+            "address": "0x5d6cD48eAFD7547b56fFF2C43dE8a82dDEC1568f"
+          },
+          "56": {
+            "address": "0x5d6cD48eAFD7547b56fFF2C43dE8a82dDEC1568f"
+          },
+          "999": {
+            "address": "0x5d6cD48eAFD7547b56fFF2C43dE8a82dDEC1568f"
+          },
+          "42161": {
+            "address": "0x5d6cD48eAFD7547b56fFF2C43dE8a82dDEC1568f"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/FOXAx.png"
     },
     {
       "chainId": 143,
@@ -16531,6 +17191,66 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/G.ITx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x34524f4Cd52ce2C9ebaa3af328caE1454C8aDcB0",
+      "name": "GEA xStock",
+      "symbol": "G1Ax",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x34524f4Cd52ce2C9ebaa3af328caE1454C8aDcB0"
+          },
+          "10": {
+            "address": "0x34524f4Cd52ce2C9ebaa3af328caE1454C8aDcB0"
+          },
+          "56": {
+            "address": "0x34524f4Cd52ce2C9ebaa3af328caE1454C8aDcB0"
+          },
+          "999": {
+            "address": "0x34524f4Cd52ce2C9ebaa3af328caE1454C8aDcB0"
+          },
+          "42161": {
+            "address": "0x34524f4Cd52ce2C9ebaa3af328caE1454C8aDcB0"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/G1Ax.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x90745f31fa7B318629CeF8BaE45ad02CBA495fF1",
+      "name": "Scout24 xStock",
+      "symbol": "G24x",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x90745f31fa7B318629CeF8BaE45ad02CBA495fF1"
+          },
+          "10": {
+            "address": "0x90745f31fa7B318629CeF8BaE45ad02CBA495fF1"
+          },
+          "56": {
+            "address": "0x90745f31fa7B318629CeF8BaE45ad02CBA495fF1"
+          },
+          "999": {
+            "address": "0x90745f31fa7B318629CeF8BaE45ad02CBA495fF1"
+          },
+          "42161": {
+            "address": "0x90745f31fa7B318629CeF8BaE45ad02CBA495fF1"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/G24x.png"
     },
     {
       "chainId": 143,
@@ -17906,6 +18626,36 @@
     },
     {
       "chainId": 143,
+      "address": "0xE0Cf1C7203510bAC1242048C54cd77B114fB2CD0",
+      "name": "ZoomInfo Technologies xStock",
+      "symbol": "GTMx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xE0Cf1C7203510bAC1242048C54cd77B114fB2CD0"
+          },
+          "10": {
+            "address": "0xE0Cf1C7203510bAC1242048C54cd77B114fB2CD0"
+          },
+          "56": {
+            "address": "0xE0Cf1C7203510bAC1242048C54cd77B114fB2CD0"
+          },
+          "999": {
+            "address": "0xE0Cf1C7203510bAC1242048C54cd77B114fB2CD0"
+          },
+          "42161": {
+            "address": "0xE0Cf1C7203510bAC1242048C54cd77B114fB2CD0"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/GTMx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x7D72510babC131D74440392c0F249aAa2bEd3e7F",
       "name": "Guidewire Software xStock",
       "symbol": "GWREx",
@@ -18427,6 +19177,36 @@
     },
     {
       "chainId": 143,
+      "address": "0x7AA412AfE413513D05929f1d58958B1A81FB9E33",
+      "name": "Henkel xStock",
+      "symbol": "HEN3x",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x7AA412AfE413513D05929f1d58958B1A81FB9E33"
+          },
+          "10": {
+            "address": "0x7AA412AfE413513D05929f1d58958B1A81FB9E33"
+          },
+          "56": {
+            "address": "0x7AA412AfE413513D05929f1d58958B1A81FB9E33"
+          },
+          "999": {
+            "address": "0x7AA412AfE413513D05929f1d58958B1A81FB9E33"
+          },
+          "42161": {
+            "address": "0x7AA412AfE413513D05929f1d58958B1A81FB9E33"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/HEN3x.png"
+    },
+    {
+      "chainId": 143,
       "address": "0xa90abb1Ff7b9F8De4E7604AA129259244829624c",
       "name": "Howard Hughes xStock",
       "symbol": "HHHx",
@@ -18885,6 +19665,36 @@
     },
     {
       "chainId": 143,
+      "address": "0x0E87c9a509414B9a59e3fbcF237c6fD032C64224",
+      "name": "Hannover Rueck xStock",
+      "symbol": "HNR1x",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x0E87c9a509414B9a59e3fbcF237c6fD032C64224"
+          },
+          "10": {
+            "address": "0x0E87c9a509414B9a59e3fbcF237c6fD032C64224"
+          },
+          "56": {
+            "address": "0x0E87c9a509414B9a59e3fbcF237c6fD032C64224"
+          },
+          "999": {
+            "address": "0x0E87c9a509414B9a59e3fbcF237c6fD032C64224"
+          },
+          "42161": {
+            "address": "0x0E87c9a509414B9a59e3fbcF237c6fD032C64224"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/HNR1x.png"
+    },
+    {
+      "chainId": 143,
       "address": "0xF0D29dE80DF90602904BCafEa15f476C89656dd9",
       "name": "Harley-Davidson xStock",
       "symbol": "HOGx",
@@ -18912,6 +19722,36 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/HOGx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x8F40f6E6460c2bAA39081c77DEBA8272c962d7B0",
+      "name": "Honeywell Aerospace xStock",
+      "symbol": "HONAx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x8F40f6E6460c2bAA39081c77DEBA8272c962d7B0"
+          },
+          "10": {
+            "address": "0x8F40f6E6460c2bAA39081c77DEBA8272c962d7B0"
+          },
+          "56": {
+            "address": "0x8F40f6E6460c2bAA39081c77DEBA8272c962d7B0"
+          },
+          "999": {
+            "address": "0x8F40f6E6460c2bAA39081c77DEBA8272c962d7B0"
+          },
+          "42161": {
+            "address": "0x8F40f6E6460c2bAA39081c77DEBA8272c962d7B0"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/HONAx.png"
     },
     {
       "chainId": 143,
@@ -18974,6 +19814,36 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/HOODx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x97551cfa037D8572D7B86E671D036fD2d27e1351",
+      "name": "Hochtief xStock",
+      "symbol": "HOTx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x97551cfa037D8572D7B86E671D036fD2d27e1351"
+          },
+          "10": {
+            "address": "0x97551cfa037D8572D7B86E671D036fD2d27e1351"
+          },
+          "56": {
+            "address": "0x97551cfa037D8572D7B86E671D036fD2d27e1351"
+          },
+          "999": {
+            "address": "0x97551cfa037D8572D7B86E671D036fD2d27e1351"
+          },
+          "42161": {
+            "address": "0x97551cfa037D8572D7B86E671D036fD2d27e1351"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/HOTx.png"
     },
     {
       "chainId": 143,
@@ -21537,6 +22407,36 @@
     },
     {
       "chainId": 143,
+      "address": "0x9672Ed11C1086A5FD43ECB219388b2Bf9192450E",
+      "name": "Janus Henderson B-BBB CLO xStock",
+      "symbol": "JBBBx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x9672Ed11C1086A5FD43ECB219388b2Bf9192450E"
+          },
+          "10": {
+            "address": "0x9672Ed11C1086A5FD43ECB219388b2Bf9192450E"
+          },
+          "56": {
+            "address": "0x9672Ed11C1086A5FD43ECB219388b2Bf9192450E"
+          },
+          "999": {
+            "address": "0x9672Ed11C1086A5FD43ECB219388b2Bf9192450E"
+          },
+          "42161": {
+            "address": "0x9672Ed11C1086A5FD43ECB219388b2Bf9192450E"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/JBBBx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0xD62aE2C0FAd3D7eA3671514F0a8f0fCE31e0653e",
       "name": "JB Hunt Transport Services xStock",
       "symbol": "JBHTx",
@@ -21596,6 +22496,36 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/JBLx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x05B596d1c91412876b3f98Af306EBE952f428d2d",
+      "name": "JBS xStock",
+      "symbol": "JBSx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x05B596d1c91412876b3f98Af306EBE952f428d2d"
+          },
+          "10": {
+            "address": "0x05B596d1c91412876b3f98Af306EBE952f428d2d"
+          },
+          "56": {
+            "address": "0x05B596d1c91412876b3f98Af306EBE952f428d2d"
+          },
+          "999": {
+            "address": "0x05B596d1c91412876b3f98Af306EBE952f428d2d"
+          },
+          "42161": {
+            "address": "0x05B596d1c91412876b3f98Af306EBE952f428d2d"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/JBSx.png"
     },
     {
       "chainId": 143,
@@ -21779,6 +22709,36 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/JEFx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x48c7C676BDd486D1013837803bb8a090f82aADe5",
+      "name": "James Hardie Industries xStock",
+      "symbol": "JHXx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x48c7C676BDd486D1013837803bb8a090f82aADe5"
+          },
+          "10": {
+            "address": "0x48c7C676BDd486D1013837803bb8a090f82aADe5"
+          },
+          "56": {
+            "address": "0x48c7C676BDd486D1013837803bb8a090f82aADe5"
+          },
+          "999": {
+            "address": "0x48c7C676BDd486D1013837803bb8a090f82aADe5"
+          },
+          "42161": {
+            "address": "0x48c7C676BDd486D1013837803bb8a090f82aADe5"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/JHXx.png"
     },
     {
       "chainId": 143,
@@ -22818,6 +23778,36 @@
     },
     {
       "chainId": 143,
+      "address": "0xE40D97bb48B5A31E20fcBFFad6d6034c186a886a",
+      "name": "KraneShares China Technology & Semiconductor STAR 50 Index xStock",
+      "symbol": "KSTRx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xE40D97bb48B5A31E20fcBFFad6d6034c186a886a"
+          },
+          "10": {
+            "address": "0xE40D97bb48B5A31E20fcBFFad6d6034c186a886a"
+          },
+          "56": {
+            "address": "0xE40D97bb48B5A31E20fcBFFad6d6034c186a886a"
+          },
+          "999": {
+            "address": "0xE40D97bb48B5A31E20fcBFFad6d6034c186a886a"
+          },
+          "42161": {
+            "address": "0xE40D97bb48B5A31E20fcBFFad6d6034c186a886a"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/KSTRx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x2efC8E610632CF9c483BE6628f674a3D08d37a7f",
       "name": "Kratos Defense & Security Solutions xStock",
       "symbol": "KTOSx",
@@ -23455,6 +24445,36 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/LHXx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x63be1Cec41F32Ea952C2Df1E92da02AB302e2d11",
+      "name": "Labcorp xStock",
+      "symbol": "LHx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x63be1Cec41F32Ea952C2Df1E92da02AB302e2d11"
+          },
+          "10": {
+            "address": "0x63be1Cec41F32Ea952C2Df1E92da02AB302e2d11"
+          },
+          "56": {
+            "address": "0x63be1Cec41F32Ea952C2Df1E92da02AB302e2d11"
+          },
+          "999": {
+            "address": "0x63be1Cec41F32Ea952C2Df1E92da02AB302e2d11"
+          },
+          "42161": {
+            "address": "0x63be1Cec41F32Ea952C2Df1E92da02AB302e2d11"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/LHx.png"
     },
     {
       "chainId": 143,
@@ -25313,6 +26333,36 @@
     },
     {
       "chainId": 143,
+      "address": "0x561a48C0019219a620F60387D483A1F30EbF7ce9",
+      "name": "MiniMax xStock",
+      "symbol": "MINIMAXx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x561a48C0019219a620F60387D483A1F30EbF7ce9"
+          },
+          "10": {
+            "address": "0x561a48C0019219a620F60387D483A1F30EbF7ce9"
+          },
+          "56": {
+            "address": "0x561a48C0019219a620F60387D483A1F30EbF7ce9"
+          },
+          "999": {
+            "address": "0x561a48C0019219a620F60387D483A1F30EbF7ce9"
+          },
+          "42161": {
+            "address": "0x561a48C0019219a620F60387D483A1F30EbF7ce9"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/MINIMAXx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x8Fa39Ff32B316E2296630aA05BDD6A4a2e4b7598",
       "name": "Mixue xStock",
       "symbol": "MIXUx",
@@ -25769,6 +26819,36 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/MODx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x50994D4d66842D7351969B7eCC89a43cF0D6E108",
+      "name": "Molina Healthcare xStock",
+      "symbol": "MOHx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x50994D4d66842D7351969B7eCC89a43cF0D6E108"
+          },
+          "10": {
+            "address": "0x50994D4d66842D7351969B7eCC89a43cF0D6E108"
+          },
+          "56": {
+            "address": "0x50994D4d66842D7351969B7eCC89a43cF0D6E108"
+          },
+          "999": {
+            "address": "0x50994D4d66842D7351969B7eCC89a43cF0D6E108"
+          },
+          "42161": {
+            "address": "0x50994D4d66842D7351969B7eCC89a43cF0D6E108"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/MOHx.png"
     },
     {
       "chainId": 143,
@@ -26466,6 +27546,36 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/MSTRx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0xA9beED5e64BfA36BB7b83b39b3682e0D84E7ac21",
+      "name": "T-REX 2X Long MSTR Daily Target xStock",
+      "symbol": "MSTUx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xA9beED5e64BfA36BB7b83b39b3682e0D84E7ac21"
+          },
+          "10": {
+            "address": "0xA9beED5e64BfA36BB7b83b39b3682e0D84E7ac21"
+          },
+          "56": {
+            "address": "0xA9beED5e64BfA36BB7b83b39b3682e0D84E7ac21"
+          },
+          "999": {
+            "address": "0xA9beED5e64BfA36BB7b83b39b3682e0D84E7ac21"
+          },
+          "42161": {
+            "address": "0xA9beED5e64BfA36BB7b83b39b3682e0D84E7ac21"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/MSTUx.png"
     },
     {
       "chainId": 143,
@@ -27503,6 +28613,36 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/NG.GBx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x3c415bf38939aC7af638e9A243c02b19DB1Ea888",
+      "name": "NielsenIQ xStock",
+      "symbol": "NIQx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x3c415bf38939aC7af638e9A243c02b19DB1Ea888"
+          },
+          "10": {
+            "address": "0x3c415bf38939aC7af638e9A243c02b19DB1Ea888"
+          },
+          "56": {
+            "address": "0x3c415bf38939aC7af638e9A243c02b19DB1Ea888"
+          },
+          "999": {
+            "address": "0x3c415bf38939aC7af638e9A243c02b19DB1Ea888"
+          },
+          "42161": {
+            "address": "0x3c415bf38939aC7af638e9A243c02b19DB1Ea888"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/NIQx.png"
     },
     {
       "chainId": 143,
@@ -29035,6 +30175,36 @@
     },
     {
       "chainId": 143,
+      "address": "0x172f8acC1f9a771469491288eeaC1ac2Db9c31ee",
+      "name": "On xStock",
+      "symbol": "ONONx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x172f8acC1f9a771469491288eeaC1ac2Db9c31ee"
+          },
+          "10": {
+            "address": "0x172f8acC1f9a771469491288eeaC1ac2Db9c31ee"
+          },
+          "56": {
+            "address": "0x172f8acC1f9a771469491288eeaC1ac2Db9c31ee"
+          },
+          "999": {
+            "address": "0x172f8acC1f9a771469491288eeaC1ac2Db9c31ee"
+          },
+          "42161": {
+            "address": "0x172f8acC1f9a771469491288eeaC1ac2Db9c31ee"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ONONx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x2641f4565926C1692B057Cc2D6Ef7eE5EE7049dD",
       "name": "Onto Innovation xStock",
       "symbol": "ONTOx",
@@ -29552,6 +30722,36 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/Ox.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0xCF4456BFedd1950fF7b6fD120FDf7Ddd892093D2",
+      "name": "PGIM AAA CLO xStock",
+      "symbol": "PAAAx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xCF4456BFedd1950fF7b6fD120FDf7Ddd892093D2"
+          },
+          "10": {
+            "address": "0xCF4456BFedd1950fF7b6fD120FDf7Ddd892093D2"
+          },
+          "56": {
+            "address": "0xCF4456BFedd1950fF7b6fD120FDf7Ddd892093D2"
+          },
+          "999": {
+            "address": "0xCF4456BFedd1950fF7b6fD120FDf7Ddd892093D2"
+          },
+          "42161": {
+            "address": "0xCF4456BFedd1950fF7b6fD120FDf7Ddd892093D2"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/PAAAx.png"
     },
     {
       "chainId": 143,
@@ -31872,6 +33072,36 @@
     },
     {
       "chainId": 143,
+      "address": "0x3a3864eE8E9E3655D9709408f0104960065D6Aa2",
+      "name": "Qiagen xStock",
+      "symbol": "QIA.DEx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x3a3864eE8E9E3655D9709408f0104960065D6Aa2"
+          },
+          "10": {
+            "address": "0x3a3864eE8E9E3655D9709408f0104960065D6Aa2"
+          },
+          "56": {
+            "address": "0x3a3864eE8E9E3655D9709408f0104960065D6Aa2"
+          },
+          "999": {
+            "address": "0x3a3864eE8E9E3655D9709408f0104960065D6Aa2"
+          },
+          "42161": {
+            "address": "0x3a3864eE8E9E3655D9709408f0104960065D6Aa2"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/QIA.DEx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x6334eE942632969226c52379246857913CB03B81",
       "name": "Quantinuum xStock",
       "symbol": "QNTx",
@@ -32113,6 +33343,36 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/QUREx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0xC7a680F831b4A30f1A106b77dd4A7A436acbC64c",
+      "name": "QXO xStock",
+      "symbol": "QXOx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xC7a680F831b4A30f1A106b77dd4A7A436acbC64c"
+          },
+          "10": {
+            "address": "0xC7a680F831b4A30f1A106b77dd4A7A436acbC64c"
+          },
+          "56": {
+            "address": "0xC7a680F831b4A30f1A106b77dd4A7A436acbC64c"
+          },
+          "999": {
+            "address": "0xC7a680F831b4A30f1A106b77dd4A7A436acbC64c"
+          },
+          "42161": {
+            "address": "0xC7a680F831b4A30f1A106b77dd4A7A436acbC64c"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/QXOx.png"
     },
     {
       "chainId": 143,
@@ -34768,6 +36028,36 @@
     },
     {
       "chainId": 143,
+      "address": "0x1D62953fD56aad635f5cBd6b6F32Bf8cc104Ac3e",
+      "name": "Securitize xStock",
+      "symbol": "SECZx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x1D62953fD56aad635f5cBd6b6F32Bf8cc104Ac3e"
+          },
+          "10": {
+            "address": "0x1D62953fD56aad635f5cBd6b6F32Bf8cc104Ac3e"
+          },
+          "56": {
+            "address": "0x1D62953fD56aad635f5cBd6b6F32Bf8cc104Ac3e"
+          },
+          "999": {
+            "address": "0x1D62953fD56aad635f5cBd6b6F32Bf8cc104Ac3e"
+          },
+          "42161": {
+            "address": "0x1D62953fD56aad635f5cBd6b6F32Bf8cc104Ac3e"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SECZx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x095AeDA2e3A971AE4e283c557852cc1eee641547",
       "name": "SEI Investments xStock",
       "symbol": "SEICx",
@@ -36480,6 +37770,36 @@
     },
     {
       "chainId": 143,
+      "address": "0xacAEe9b6Dc7eb4105C02Ec4314bC6C02c30B9C6f",
+      "name": "Solventum xStock",
+      "symbol": "SOLVx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xacAEe9b6Dc7eb4105C02Ec4314bC6C02c30B9C6f"
+          },
+          "10": {
+            "address": "0xacAEe9b6Dc7eb4105C02Ec4314bC6C02c30B9C6f"
+          },
+          "56": {
+            "address": "0xacAEe9b6Dc7eb4105C02Ec4314bC6C02c30B9C6f"
+          },
+          "999": {
+            "address": "0xacAEe9b6Dc7eb4105C02Ec4314bC6C02c30B9C6f"
+          },
+          "42161": {
+            "address": "0xacAEe9b6Dc7eb4105C02Ec4314bC6C02c30B9C6f"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SOLVx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x8c06D627b8D57792803e3caED36F7Af2Ad883B01",
       "name": "Sony xStock",
       "symbol": "SONYx",
@@ -37120,6 +38440,36 @@
     },
     {
       "chainId": 143,
+      "address": "0x09A763D40712D83dEc7542d56ce5CC9559d8959D",
+      "name": "State Street Blackstone Senior Loan xStock",
+      "symbol": "SRLNx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x09A763D40712D83dEc7542d56ce5CC9559d8959D"
+          },
+          "10": {
+            "address": "0x09A763D40712D83dEc7542d56ce5CC9559d8959D"
+          },
+          "56": {
+            "address": "0x09A763D40712D83dEc7542d56ce5CC9559d8959D"
+          },
+          "999": {
+            "address": "0x09A763D40712D83dEc7542d56ce5CC9559d8959D"
+          },
+          "42161": {
+            "address": "0x09A763D40712D83dEc7542d56ce5CC9559d8959D"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SRLNx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x1A8c0420abad49f6c5A4c157693085b1D5194a8b",
       "name": "SouthState Bank xStock",
       "symbol": "SSBx",
@@ -37607,6 +38957,36 @@
     },
     {
       "chainId": 143,
+      "address": "0x1b81708910f0846d8f0Ef2fAADF01fF51af92eA3",
+      "name": "Sensata Technologies xStock",
+      "symbol": "STx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x1b81708910f0846d8f0Ef2fAADF01fF51af92eA3"
+          },
+          "10": {
+            "address": "0x1b81708910f0846d8f0Ef2fAADF01fF51af92eA3"
+          },
+          "56": {
+            "address": "0x1b81708910f0846d8f0Ef2fAADF01fF51af92eA3"
+          },
+          "999": {
+            "address": "0x1b81708910f0846d8f0Ef2fAADF01fF51af92eA3"
+          },
+          "42161": {
+            "address": "0x1b81708910f0846d8f0Ef2fAADF01fF51af92eA3"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/STx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x3c8D2F9Dff888A56985C33C8aab981F2130eea63",
       "name": "Schneider Electric xStock",
       "symbol": "SU.FRx",
@@ -37665,6 +39045,36 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SUIx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x38a3ebc1DFc3Ba21b690B920F3A32E7923fDA72e",
+      "name": "Sunbelt Rentals xStock",
+      "symbol": "SUNBx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x38a3ebc1DFc3Ba21b690B920F3A32E7923fDA72e"
+          },
+          "10": {
+            "address": "0x38a3ebc1DFc3Ba21b690B920F3A32E7923fDA72e"
+          },
+          "56": {
+            "address": "0x38a3ebc1DFc3Ba21b690B920F3A32E7923fDA72e"
+          },
+          "999": {
+            "address": "0x38a3ebc1DFc3Ba21b690B920F3A32E7923fDA72e"
+          },
+          "42161": {
+            "address": "0x38a3ebc1DFc3Ba21b690B920F3A32E7923fDA72e"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SUNBx.png"
     },
     {
       "chainId": 143,
@@ -37759,6 +39169,36 @@
     },
     {
       "chainId": 143,
+      "address": "0x95041954a009c52173AF2B086604A0A8921c0B82",
+      "name": "Skyworks Solutions xStock",
+      "symbol": "SWKSx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x95041954a009c52173AF2B086604A0A8921c0B82"
+          },
+          "10": {
+            "address": "0x95041954a009c52173AF2B086604A0A8921c0B82"
+          },
+          "56": {
+            "address": "0x95041954a009c52173AF2B086604A0A8921c0B82"
+          },
+          "999": {
+            "address": "0x95041954a009c52173AF2B086604A0A8921c0B82"
+          },
+          "42161": {
+            "address": "0x95041954a009c52173AF2B086604A0A8921c0B82"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SWKSx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x741DbF66898Cbcf7333b8304e3E107Bf431e661D",
       "name": "Stanley Black & Decker xStock",
       "symbol": "SWKx",
@@ -37848,6 +39288,36 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SWx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x17C2D07E4144D42CC12861f8B999465F560D48fa",
+      "name": "Symrise xStock",
+      "symbol": "SY1x",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x17C2D07E4144D42CC12861f8B999465F560D48fa"
+          },
+          "10": {
+            "address": "0x17C2D07E4144D42CC12861f8B999465F560D48fa"
+          },
+          "56": {
+            "address": "0x17C2D07E4144D42CC12861f8B999465F560D48fa"
+          },
+          "999": {
+            "address": "0x17C2D07E4144D42CC12861f8B999465F560D48fa"
+          },
+          "42161": {
+            "address": "0x17C2D07E4144D42CC12861f8B999465F560D48fa"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SY1x.png"
     },
     {
       "chainId": 143,
@@ -38250,6 +39720,36 @@
     },
     {
       "chainId": 143,
+      "address": "0x8B771821B8A7098e2153e3E2cbe650ae887Ad907",
+      "name": "Bio-Techne xStock",
+      "symbol": "TECHx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x8B771821B8A7098e2153e3E2cbe650ae887Ad907"
+          },
+          "10": {
+            "address": "0x8B771821B8A7098e2153e3E2cbe650ae887Ad907"
+          },
+          "56": {
+            "address": "0x8B771821B8A7098e2153e3E2cbe650ae887Ad907"
+          },
+          "999": {
+            "address": "0x8B771821B8A7098e2153e3E2cbe650ae887Ad907"
+          },
+          "42161": {
+            "address": "0x8B771821B8A7098e2153e3E2cbe650ae887Ad907"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/TECHx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0xBDc730fF7f103A91566C5fE08b407A9811589934",
       "name": "Telefonica xStock",
       "symbol": "TEFx",
@@ -38395,6 +39895,36 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/TFCx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x12a88942000422e13CaDF3FDaD90Dc13F2E3D508",
+      "name": "iShares Treasury Floating Rate Bond xStock",
+      "symbol": "TFLOx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x12a88942000422e13CaDF3FDaD90Dc13F2E3D508"
+          },
+          "10": {
+            "address": "0x12a88942000422e13CaDF3FDaD90Dc13F2E3D508"
+          },
+          "56": {
+            "address": "0x12a88942000422e13CaDF3FDaD90Dc13F2E3D508"
+          },
+          "999": {
+            "address": "0x12a88942000422e13CaDF3FDaD90Dc13F2E3D508"
+          },
+          "42161": {
+            "address": "0x12a88942000422e13CaDF3FDaD90Dc13F2E3D508"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/TFLOx.png"
     },
     {
       "chainId": 143,
@@ -38580,6 +40110,36 @@
     },
     {
       "chainId": 143,
+      "address": "0x36CC0BF9E6ec630347444DD78906b89DAdc8Af20",
+      "name": "Millicom International Cellular xStock",
+      "symbol": "TIGOx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x36CC0BF9E6ec630347444DD78906b89DAdc8Af20"
+          },
+          "10": {
+            "address": "0x36CC0BF9E6ec630347444DD78906b89DAdc8Af20"
+          },
+          "56": {
+            "address": "0x36CC0BF9E6ec630347444DD78906b89DAdc8Af20"
+          },
+          "999": {
+            "address": "0x36CC0BF9E6ec630347444DD78906b89DAdc8Af20"
+          },
+          "42161": {
+            "address": "0x36CC0BF9E6ec630347444DD78906b89DAdc8Af20"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/TIGOx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0xCF1f5bE54CfcF61A79A427C92835AC043266dECd",
       "name": "TJX Companies xStock",
       "symbol": "TJXx",
@@ -38699,6 +40259,36 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/TLNx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0xd066Eaac44d53EC47304048a33CdFA58C2015cd5",
+      "name": "iShares 20+ Year Treasury Bond xStock",
+      "symbol": "TLTx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xd066Eaac44d53EC47304048a33CdFA58C2015cd5"
+          },
+          "10": {
+            "address": "0xd066Eaac44d53EC47304048a33CdFA58C2015cd5"
+          },
+          "56": {
+            "address": "0xd066Eaac44d53EC47304048a33CdFA58C2015cd5"
+          },
+          "999": {
+            "address": "0xd066Eaac44d53EC47304048a33CdFA58C2015cd5"
+          },
+          "42161": {
+            "address": "0xd066Eaac44d53EC47304048a33CdFA58C2015cd5"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/TLTx.png"
     },
     {
       "chainId": 143,
@@ -40745,6 +42335,36 @@
     },
     {
       "chainId": 143,
+      "address": "0xF3340Cd56e0B2B123D10161b77d9d1cdEFE40269",
+      "name": "WisdomTree Floating Rate Treasury xStock",
+      "symbol": "USFRx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xF3340Cd56e0B2B123D10161b77d9d1cdEFE40269"
+          },
+          "10": {
+            "address": "0xF3340Cd56e0B2B123D10161b77d9d1cdEFE40269"
+          },
+          "56": {
+            "address": "0xF3340Cd56e0B2B123D10161b77d9d1cdEFE40269"
+          },
+          "999": {
+            "address": "0xF3340Cd56e0B2B123D10161b77d9d1cdEFE40269"
+          },
+          "42161": {
+            "address": "0xF3340Cd56e0B2B123D10161b77d9d1cdEFE40269"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/USFRx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0xc9E5A5dF9aeb1f36801A90e4179fb785B6566564",
       "name": "United States Oil Fund xStock",
       "symbol": "USOx",
@@ -42577,6 +44197,36 @@
     },
     {
       "chainId": 143,
+      "address": "0xa36d6541752Ea761357FFF9efcb22C70D1DD57F5",
+      "name": "Weatherford International xStock",
+      "symbol": "WFRDx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xa36d6541752Ea761357FFF9efcb22C70D1DD57F5"
+          },
+          "10": {
+            "address": "0xa36d6541752Ea761357FFF9efcb22C70D1DD57F5"
+          },
+          "56": {
+            "address": "0xa36d6541752Ea761357FFF9efcb22C70D1DD57F5"
+          },
+          "999": {
+            "address": "0xa36d6541752Ea761357FFF9efcb22C70D1DD57F5"
+          },
+          "42161": {
+            "address": "0xa36d6541752Ea761357FFF9efcb22C70D1DD57F5"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/WFRDx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x5855b24Ec03B9d0AE7D2ba0E4Ba3fA90e13e4Bc4",
       "name": "GeneDx xStock",
       "symbol": "WGSx",
@@ -44158,6 +45808,36 @@
     },
     {
       "chainId": 143,
+      "address": "0xdf301535A9999CB396Cd17Dad290a44f565e92A0",
+      "name": "Zalando xStock",
+      "symbol": "ZAL.DEx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xdf301535A9999CB396Cd17Dad290a44f565e92A0"
+          },
+          "10": {
+            "address": "0xdf301535A9999CB396Cd17Dad290a44f565e92A0"
+          },
+          "56": {
+            "address": "0xdf301535A9999CB396Cd17Dad290a44f565e92A0"
+          },
+          "999": {
+            "address": "0xdf301535A9999CB396Cd17Dad290a44f565e92A0"
+          },
+          "42161": {
+            "address": "0xdf301535A9999CB396Cd17Dad290a44f565e92A0"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ZAL.DEx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x004De17F31EeC9B7f601B662f234c6e484dA8F77",
       "name": "Zimmer Biomet xStock",
       "symbol": "ZBHx",
@@ -44339,6 +46019,36 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ZJGLDx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0xa7F494fAd7e6750EBC9cfa8eB4e2Ed1e279B1116",
+      "name": "Zhongji Innolight xStock",
+      "symbol": "ZJINNOx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xa7F494fAd7e6750EBC9cfa8eB4e2Ed1e279B1116"
+          },
+          "10": {
+            "address": "0xa7F494fAd7e6750EBC9cfa8eB4e2Ed1e279B1116"
+          },
+          "56": {
+            "address": "0xa7F494fAd7e6750EBC9cfa8eB4e2Ed1e279B1116"
+          },
+          "999": {
+            "address": "0xa7F494fAd7e6750EBC9cfa8eB4e2Ed1e279B1116"
+          },
+          "42161": {
+            "address": "0xa7F494fAd7e6750EBC9cfa8eB4e2Ed1e279B1116"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ZJINNOx.png"
     },
     {
       "chainId": 143,
@@ -46465,6 +48175,36 @@
     },
     {
       "chainId": 143,
+      "address": "0x377ECc79a645ABdd14e2CA9De3360E2DE1Ff62ce",
+      "name": "Wrapped Xetra-Gold xStock",
+      "symbol": "w4GLDx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x377ECc79a645ABdd14e2CA9De3360E2DE1Ff62ce"
+          },
+          "10": {
+            "address": "0x377ECc79a645ABdd14e2CA9De3360E2DE1Ff62ce"
+          },
+          "56": {
+            "address": "0x377ECc79a645ABdd14e2CA9De3360E2DE1Ff62ce"
+          },
+          "999": {
+            "address": "0x377ECc79a645ABdd14e2CA9De3360E2DE1Ff62ce"
+          },
+          "42161": {
+            "address": "0x377ECc79a645ABdd14e2CA9De3360E2DE1Ff62ce"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/4GLDx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0xCb9ee1Ca98b314a79c69491314Ec58f7c10cA964",
       "name": "Wrapped AIB xStock",
       "symbol": "wA5Gx",
@@ -46999,6 +48739,36 @@
     },
     {
       "chainId": 143,
+      "address": "0x69a25b855966d8485d7f6413D97fA8D028653fe2",
+      "name": "Wrapped ACS Actividades de Construccion y Servicios xStock",
+      "symbol": "wACS.ESx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x69a25b855966d8485d7f6413D97fA8D028653fe2"
+          },
+          "10": {
+            "address": "0x69a25b855966d8485d7f6413D97fA8D028653fe2"
+          },
+          "56": {
+            "address": "0x69a25b855966d8485d7f6413D97fA8D028653fe2"
+          },
+          "999": {
+            "address": "0x69a25b855966d8485d7f6413D97fA8D028653fe2"
+          },
+          "42161": {
+            "address": "0x69a25b855966d8485d7f6413D97fA8D028653fe2"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ACS.ESx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x85EBC8f22FfcD5b57CD1F0Ea1602Ae9916Bb2f29",
       "name": "Wrapped Koninklijke Ahold Delhaize xStock",
       "symbol": "wAD.NLx",
@@ -47470,6 +49240,33 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/AEPx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x846f300ab99e2d3Cd755e9F3acA1B10CEE1c9599",
+      "name": "Wrapped The AES xStock",
+      "symbol": "wAESx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x846f300ab99e2d3Cd755e9F3acA1B10CEE1c9599"
+          },
+          "10": {
+            "address": "0x846f300ab99e2d3Cd755e9F3acA1B10CEE1c9599"
+          },
+          "56": {
+            "address": "0x846f300ab99e2d3Cd755e9F3acA1B10CEE1c9599"
+          },
+          "42161": {
+            "address": "0x846f300ab99e2d3Cd755e9F3acA1B10CEE1c9599"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/AESx.png"
     },
     {
       "chainId": 143,
@@ -49195,6 +50992,33 @@
     },
     {
       "chainId": 143,
+      "address": "0x18e516631D74108BD0559DC3649034B267a99906",
+      "name": "Wrapped ARK Blockchain & Fintech Innovation ETF xStock",
+      "symbol": "wARKFx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x18e516631D74108BD0559DC3649034B267a99906"
+          },
+          "10": {
+            "address": "0x18e516631D74108BD0559DC3649034B267a99906"
+          },
+          "56": {
+            "address": "0x18e516631D74108BD0559DC3649034B267a99906"
+          },
+          "42161": {
+            "address": "0x18e516631D74108BD0559DC3649034B267a99906"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ARKFx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x4d4b69af52962A7581acaC385AE4e46f2C17AB8A",
       "name": "Wrapped Aramark xStock",
       "symbol": "wARMKx",
@@ -49441,6 +51265,33 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ASMPTx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x844C9B2fE5a3DaE0789928ac0F401Ccdf66Ec68d",
+      "name": "Wrapped Ascendis Pharma A/S xStock",
+      "symbol": "wASNDx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x844C9B2fE5a3DaE0789928ac0F401Ccdf66Ec68d"
+          },
+          "10": {
+            "address": "0x844C9B2fE5a3DaE0789928ac0F401Ccdf66Ec68d"
+          },
+          "56": {
+            "address": "0x844C9B2fE5a3DaE0789928ac0F401Ccdf66Ec68d"
+          },
+          "42161": {
+            "address": "0x844C9B2fE5a3DaE0789928ac0F401Ccdf66Ec68d"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ASNDx.png"
     },
     {
       "chainId": 143,
@@ -50890,6 +52741,36 @@
     },
     {
       "chainId": 143,
+      "address": "0x1a7BE0b157CD39e8A1b3d2622AC69d3Bb611f2fA",
+      "name": "Wrapped Beiersdorf xStock",
+      "symbol": "wBEIx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x1a7BE0b157CD39e8A1b3d2622AC69d3Bb611f2fA"
+          },
+          "10": {
+            "address": "0x1a7BE0b157CD39e8A1b3d2622AC69d3Bb611f2fA"
+          },
+          "56": {
+            "address": "0x1a7BE0b157CD39e8A1b3d2622AC69d3Bb611f2fA"
+          },
+          "999": {
+            "address": "0x1a7BE0b157CD39e8A1b3d2622AC69d3Bb611f2fA"
+          },
+          "42161": {
+            "address": "0x1a7BE0b157CD39e8A1b3d2622AC69d3Bb611f2fA"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BEIx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0xed52389C867C431EAa0F16a5EaFA27aC56445B2f",
       "name": "Wrapped Franklin Templeton xStock",
       "symbol": "wBENx",
@@ -51301,6 +53182,33 @@
     },
     {
       "chainId": 143,
+      "address": "0xA14e5F0037798F08b663DCab7E592B2041EA10b2",
+      "name": "Wrapped Birkenstock xStock",
+      "symbol": "wBIRKx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xA14e5F0037798F08b663DCab7E592B2041EA10b2"
+          },
+          "10": {
+            "address": "0xA14e5F0037798F08b663DCab7E592B2041EA10b2"
+          },
+          "56": {
+            "address": "0xA14e5F0037798F08b663DCab7E592B2041EA10b2"
+          },
+          "42161": {
+            "address": "0xA14e5F0037798F08b663DCab7E592B2041EA10b2"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BIRKx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0xa9CC014713606CD6F3218fA3B6A16D3930bbe74e",
       "name": "Wrapped Volatility Shares 2x Bitcoin Strategy xStock",
       "symbol": "wBITXx",
@@ -51689,6 +53597,36 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BNPx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0xE8a196Bd4D0095e4D220F0634185Ba8Cdc9E6D43",
+      "name": "Wrapped Brenntag xStock",
+      "symbol": "wBNR.DEx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xE8a196Bd4D0095e4D220F0634185Ba8Cdc9E6D43"
+          },
+          "10": {
+            "address": "0xE8a196Bd4D0095e4D220F0634185Ba8Cdc9E6D43"
+          },
+          "56": {
+            "address": "0xE8a196Bd4D0095e4D220F0634185Ba8Cdc9E6D43"
+          },
+          "999": {
+            "address": "0xE8a196Bd4D0095e4D220F0634185Ba8Cdc9E6D43"
+          },
+          "42161": {
+            "address": "0xE8a196Bd4D0095e4D220F0634185Ba8Cdc9E6D43"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BNR.DEx.png"
     },
     {
       "chainId": 143,
@@ -52394,6 +54332,33 @@
     },
     {
       "chainId": 143,
+      "address": "0xB0D71526E6affA936319e4D8Fd7B22DB4C825ce1",
+      "name": "Wrapped Breakwave Tanker Shipping xStock",
+      "symbol": "wBWETx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xB0D71526E6affA936319e4D8Fd7B22DB4C825ce1"
+          },
+          "10": {
+            "address": "0xB0D71526E6affA936319e4D8Fd7B22DB4C825ce1"
+          },
+          "56": {
+            "address": "0xB0D71526E6affA936319e4D8Fd7B22DB4C825ce1"
+          },
+          "42161": {
+            "address": "0xB0D71526E6affA936319e4D8Fd7B22DB4C825ce1"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BWETx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0xFA8889d83923e6BDC429e9Eed777B596DF6a1491",
       "name": "Wrapped BWX Technologies xStock",
       "symbol": "wBWXTx",
@@ -52940,6 +54905,63 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/CAVAx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0xE37542285dAcE8E470261216da5e97bCeb3e1f77",
+      "name": "Wrapped Central Bancompany xStock",
+      "symbol": "wCBCx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xE37542285dAcE8E470261216da5e97bCeb3e1f77"
+          },
+          "10": {
+            "address": "0xE37542285dAcE8E470261216da5e97bCeb3e1f77"
+          },
+          "56": {
+            "address": "0xE37542285dAcE8E470261216da5e97bCeb3e1f77"
+          },
+          "42161": {
+            "address": "0xE37542285dAcE8E470261216da5e97bCeb3e1f77"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/CBCx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x9B992d3ea7cbF45C0A2bB38DbDFb75E6822094bB",
+      "name": "Wrapped Commerzbank xStock",
+      "symbol": "wCBK.DEx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x9B992d3ea7cbF45C0A2bB38DbDFb75E6822094bB"
+          },
+          "10": {
+            "address": "0x9B992d3ea7cbF45C0A2bB38DbDFb75E6822094bB"
+          },
+          "56": {
+            "address": "0x9B992d3ea7cbF45C0A2bB38DbDFb75E6822094bB"
+          },
+          "999": {
+            "address": "0x9B992d3ea7cbF45C0A2bB38DbDFb75E6822094bB"
+          },
+          "42161": {
+            "address": "0x9B992d3ea7cbF45C0A2bB38DbDFb75E6822094bB"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/CBK.DEx.png"
     },
     {
       "chainId": 143,
@@ -54518,6 +56540,33 @@
     },
     {
       "chainId": 143,
+      "address": "0x94464B7cEEE027282a2Ec9d826873C5c4B62381b",
+      "name": "Wrapped CNH Industrial xStock",
+      "symbol": "wCNHx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x94464B7cEEE027282a2Ec9d826873C5c4B62381b"
+          },
+          "10": {
+            "address": "0x94464B7cEEE027282a2Ec9d826873C5c4B62381b"
+          },
+          "56": {
+            "address": "0x94464B7cEEE027282a2Ec9d826873C5c4B62381b"
+          },
+          "42161": {
+            "address": "0x94464B7cEEE027282a2Ec9d826873C5c4B62381b"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/CNHx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x29a06b9862F04CD31328C4186E9832b828283274",
       "name": "Wrapped Core & Main xStock",
       "symbol": "wCNMx",
@@ -54656,6 +56705,33 @@
     },
     {
       "chainId": 143,
+      "address": "0x6725209C29c8437128b172108fEC381b95B24C8e",
+      "name": "Wrapped Coca-Cola Consolidated xStock",
+      "symbol": "wCOKEx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x6725209C29c8437128b172108fEC381b95B24C8e"
+          },
+          "10": {
+            "address": "0x6725209C29c8437128b172108fEC381b95B24C8e"
+          },
+          "56": {
+            "address": "0x6725209C29c8437128b172108fEC381b95B24C8e"
+          },
+          "42161": {
+            "address": "0x6725209C29c8437128b172108fEC381b95B24C8e"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/COKEx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x1899a6FBEf8cf6553e4f91FcdAF447D6b37d6267",
       "name": "Wrapped Columbia Banking System xStock",
       "symbol": "wCOLBx",
@@ -54734,6 +56810,36 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/COLMx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0xbEdD1E8E40ECC94B12DA6f0070cB933f90B50e88",
+      "name": "Wrapped Continental xStock",
+      "symbol": "wCON.DEx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xbEdD1E8E40ECC94B12DA6f0070cB933f90B50e88"
+          },
+          "10": {
+            "address": "0xbEdD1E8E40ECC94B12DA6f0070cB933f90B50e88"
+          },
+          "56": {
+            "address": "0xbEdD1E8E40ECC94B12DA6f0070cB933f90B50e88"
+          },
+          "999": {
+            "address": "0xbEdD1E8E40ECC94B12DA6f0070cB933f90B50e88"
+          },
+          "42161": {
+            "address": "0xbEdD1E8E40ECC94B12DA6f0070cB933f90B50e88"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/CON.DEx.png"
     },
     {
       "chainId": 143,
@@ -55439,6 +57545,33 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/CRHx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0xC154b6f6D1a4e3BA4BB7bf98004269eE1d7563Ec",
+      "name": "Wrapped Charles River Laboratories International xStock",
+      "symbol": "wCRLx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xC154b6f6D1a4e3BA4BB7bf98004269eE1d7563Ec"
+          },
+          "10": {
+            "address": "0xC154b6f6D1a4e3BA4BB7bf98004269eE1d7563Ec"
+          },
+          "56": {
+            "address": "0xC154b6f6D1a4e3BA4BB7bf98004269eE1d7563Ec"
+          },
+          "42161": {
+            "address": "0xC154b6f6D1a4e3BA4BB7bf98004269eE1d7563Ec"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/CRLx.png"
     },
     {
       "chainId": 143,
@@ -56336,6 +58469,33 @@
     },
     {
       "chainId": 143,
+      "address": "0x94c72200Eae696769727f53eD245cBf14a1A1086",
+      "name": "Wrapped Cypherpunk Technologies xStock",
+      "symbol": "wCYPHx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x94c72200Eae696769727f53eD245cBf14a1A1086"
+          },
+          "10": {
+            "address": "0x94c72200Eae696769727f53eD245cBf14a1A1086"
+          },
+          "56": {
+            "address": "0x94c72200Eae696769727f53eD245cBf14a1A1086"
+          },
+          "42161": {
+            "address": "0x94c72200Eae696769727f53eD245cBf14a1A1086"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/CYPHx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0xbae24D806B0BE4010d0476975A3B7897C6B10C7b",
       "name": "Wrapped Caesars Entertainment xStock",
       "symbol": "wCZRx",
@@ -56609,6 +58769,33 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/DCIx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x3082667Fcc4F34889C8C5B5bB4578227E405F8A7",
+      "name": "Wrapped DDC Enterprise xStock",
+      "symbol": "wDDCx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x3082667Fcc4F34889C8C5B5bB4578227E405F8A7"
+          },
+          "10": {
+            "address": "0x3082667Fcc4F34889C8C5B5bB4578227E405F8A7"
+          },
+          "56": {
+            "address": "0x3082667Fcc4F34889C8C5B5bB4578227E405F8A7"
+          },
+          "42161": {
+            "address": "0x3082667Fcc4F34889C8C5B5bB4578227E405F8A7"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/DDCx.png"
     },
     {
       "chainId": 143,
@@ -57374,6 +59561,33 @@
     },
     {
       "chainId": 143,
+      "address": "0x209c660F0FF9504CbF3d09479b40a15Bd0d526ea",
+      "name": "Wrapped Amdocs xStock",
+      "symbol": "wDOXx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x209c660F0FF9504CbF3d09479b40a15Bd0d526ea"
+          },
+          "10": {
+            "address": "0x209c660F0FF9504CbF3d09479b40a15Bd0d526ea"
+          },
+          "56": {
+            "address": "0x209c660F0FF9504CbF3d09479b40a15Bd0d526ea"
+          },
+          "42161": {
+            "address": "0x209c660F0FF9504CbF3d09479b40a15Bd0d526ea"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/DOXx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x3A510888D263019795ea13BB793bD27b24Ae08A9",
       "name": "Wrapped Diploma xStock",
       "symbol": "wDPLMx",
@@ -57983,6 +60197,33 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ECGx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x462422d22678B6825754C542f5134FFA0CA1DAF4",
+      "name": "Wrapped EchoStar xStock",
+      "symbol": "wECHOx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x462422d22678B6825754C542f5134FFA0CA1DAF4"
+          },
+          "10": {
+            "address": "0x462422d22678B6825754C542f5134FFA0CA1DAF4"
+          },
+          "56": {
+            "address": "0x462422d22678B6825754C542f5134FFA0CA1DAF4"
+          },
+          "42161": {
+            "address": "0x462422d22678B6825754C542f5134FFA0CA1DAF4"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ECHOx.png"
     },
     {
       "chainId": 143,
@@ -60617,6 +62858,33 @@
     },
     {
       "chainId": 143,
+      "address": "0xcbb7dAC717783358AdE24557a9D1Bc75B1039f87",
+      "name": "Wrapped iShares Floating Rate Bond xStock",
+      "symbol": "wFLOTx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xcbb7dAC717783358AdE24557a9D1Bc75B1039f87"
+          },
+          "10": {
+            "address": "0xcbb7dAC717783358AdE24557a9D1Bc75B1039f87"
+          },
+          "56": {
+            "address": "0xcbb7dAC717783358AdE24557a9D1Bc75B1039f87"
+          },
+          "42161": {
+            "address": "0xcbb7dAC717783358AdE24557a9D1Bc75B1039f87"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/FLOTx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x539DdAAfe8396c4aA9824f95C3b3dC817d540caF",
       "name": "Wrapped Franklin U.S. Mid Cap Multi-Factor xStock",
       "symbol": "wFLQMx",
@@ -60749,6 +63017,36 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/FLYx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x0e6667645960216613368B1C839A50A3e12C466c",
+      "name": "Wrapped Fresenius Medical Care xStock",
+      "symbol": "wFMEx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x0e6667645960216613368B1C839A50A3e12C466c"
+          },
+          "10": {
+            "address": "0x0e6667645960216613368B1C839A50A3e12C466c"
+          },
+          "56": {
+            "address": "0x0e6667645960216613368B1C839A50A3e12C466c"
+          },
+          "999": {
+            "address": "0x0e6667645960216613368B1C839A50A3e12C466c"
+          },
+          "42161": {
+            "address": "0x0e6667645960216613368B1C839A50A3e12C466c"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/FMEx.png"
     },
     {
       "chainId": 143,
@@ -60911,6 +63209,33 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/FOURx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0xe5F81cE886fE131675003B79743354cc26c36Ec2",
+      "name": "Wrapped Fox xStock",
+      "symbol": "wFOXAx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xe5F81cE886fE131675003B79743354cc26c36Ec2"
+          },
+          "10": {
+            "address": "0xe5F81cE886fE131675003B79743354cc26c36Ec2"
+          },
+          "56": {
+            "address": "0xe5F81cE886fE131675003B79743354cc26c36Ec2"
+          },
+          "42161": {
+            "address": "0xe5F81cE886fE131675003B79743354cc26c36Ec2"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/FOXAx.png"
     },
     {
       "chainId": 143,
@@ -61406,6 +63731,66 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/G.ITx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x7fc8F905EDFffCB0D02f93CF9DF07d0209657347",
+      "name": "Wrapped GEA xStock",
+      "symbol": "wG1Ax",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x7fc8F905EDFffCB0D02f93CF9DF07d0209657347"
+          },
+          "10": {
+            "address": "0x7fc8F905EDFffCB0D02f93CF9DF07d0209657347"
+          },
+          "56": {
+            "address": "0x7fc8F905EDFffCB0D02f93CF9DF07d0209657347"
+          },
+          "999": {
+            "address": "0x7fc8F905EDFffCB0D02f93CF9DF07d0209657347"
+          },
+          "42161": {
+            "address": "0x7fc8F905EDFffCB0D02f93CF9DF07d0209657347"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/G1Ax.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x82cC0227d861Abb46480C5220069A0bbDF7f4239",
+      "name": "Wrapped Scout24 xStock",
+      "symbol": "wG24x",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x82cC0227d861Abb46480C5220069A0bbDF7f4239"
+          },
+          "10": {
+            "address": "0x82cC0227d861Abb46480C5220069A0bbDF7f4239"
+          },
+          "56": {
+            "address": "0x82cC0227d861Abb46480C5220069A0bbDF7f4239"
+          },
+          "999": {
+            "address": "0x82cC0227d861Abb46480C5220069A0bbDF7f4239"
+          },
+          "42161": {
+            "address": "0x82cC0227d861Abb46480C5220069A0bbDF7f4239"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/G24x.png"
     },
     {
       "chainId": 143,
@@ -62627,6 +65012,33 @@
     },
     {
       "chainId": 143,
+      "address": "0x97BDa73a92F2C08d3c54DdE47C16E6aD3A193bF8",
+      "name": "Wrapped ZoomInfo Technologies xStock",
+      "symbol": "wGTMx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x97BDa73a92F2C08d3c54DdE47C16E6aD3A193bF8"
+          },
+          "10": {
+            "address": "0x97BDa73a92F2C08d3c54DdE47C16E6aD3A193bF8"
+          },
+          "56": {
+            "address": "0x97BDa73a92F2C08d3c54DdE47C16E6aD3A193bF8"
+          },
+          "42161": {
+            "address": "0x97BDa73a92F2C08d3c54DdE47C16E6aD3A193bF8"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/GTMx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x1136AAd1C453A9851ED120c0Fd2AcfA05894184B",
       "name": "Wrapped Guidewire Software xStock",
       "symbol": "wGWREx",
@@ -63101,6 +65513,36 @@
     },
     {
       "chainId": 143,
+      "address": "0x0045F1ac94D1478317137238AFB64fE86437AEee",
+      "name": "Wrapped Henkel xStock",
+      "symbol": "wHEN3x",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x0045F1ac94D1478317137238AFB64fE86437AEee"
+          },
+          "10": {
+            "address": "0x0045F1ac94D1478317137238AFB64fE86437AEee"
+          },
+          "56": {
+            "address": "0x0045F1ac94D1478317137238AFB64fE86437AEee"
+          },
+          "999": {
+            "address": "0x0045F1ac94D1478317137238AFB64fE86437AEee"
+          },
+          "42161": {
+            "address": "0x0045F1ac94D1478317137238AFB64fE86437AEee"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/HEN3x.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x524Af2060a3261A4e25247aAD8321f46c0B40Df9",
       "name": "Wrapped Howard Hughes xStock",
       "symbol": "wHHHx",
@@ -63527,6 +65969,36 @@
     },
     {
       "chainId": 143,
+      "address": "0x30B5F5d630f77B232321fbD382783279228FAD9D",
+      "name": "Wrapped Hannover Rueck xStock",
+      "symbol": "wHNR1x",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x30B5F5d630f77B232321fbD382783279228FAD9D"
+          },
+          "10": {
+            "address": "0x30B5F5d630f77B232321fbD382783279228FAD9D"
+          },
+          "56": {
+            "address": "0x30B5F5d630f77B232321fbD382783279228FAD9D"
+          },
+          "999": {
+            "address": "0x30B5F5d630f77B232321fbD382783279228FAD9D"
+          },
+          "42161": {
+            "address": "0x30B5F5d630f77B232321fbD382783279228FAD9D"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/HNR1x.png"
+    },
+    {
+      "chainId": 143,
       "address": "0xFb693aEb7Bcd0cF48D6F7300E113130e51b74b99",
       "name": "Wrapped Harley-Davidson xStock",
       "symbol": "wHOGx",
@@ -63551,6 +66023,33 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/HOGx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x53049E7C595240407aF69c0Df69D0022dE036027",
+      "name": "Wrapped Honeywell Aerospace xStock",
+      "symbol": "wHONAx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x53049E7C595240407aF69c0Df69D0022dE036027"
+          },
+          "10": {
+            "address": "0x53049E7C595240407aF69c0Df69D0022dE036027"
+          },
+          "56": {
+            "address": "0x53049E7C595240407aF69c0Df69D0022dE036027"
+          },
+          "42161": {
+            "address": "0x53049E7C595240407aF69c0Df69D0022dE036027"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/HONAx.png"
     },
     {
       "chainId": 143,
@@ -63608,6 +66107,36 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/HOODx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0xf0739d81CEab8824258792e014f345DC2D5B6Dc2",
+      "name": "Wrapped Hochtief xStock",
+      "symbol": "wHOTx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xf0739d81CEab8824258792e014f345DC2D5B6Dc2"
+          },
+          "10": {
+            "address": "0xf0739d81CEab8824258792e014f345DC2D5B6Dc2"
+          },
+          "56": {
+            "address": "0xf0739d81CEab8824258792e014f345DC2D5B6Dc2"
+          },
+          "999": {
+            "address": "0xf0739d81CEab8824258792e014f345DC2D5B6Dc2"
+          },
+          "42161": {
+            "address": "0xf0739d81CEab8824258792e014f345DC2D5B6Dc2"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/HOTx.png"
     },
     {
       "chainId": 143,
@@ -65909,6 +68438,33 @@
     },
     {
       "chainId": 143,
+      "address": "0xb6dC4328173aA5eA082d1b51c02BdDE231589e97",
+      "name": "Wrapped Janus Henderson B-BBB CLO xStock",
+      "symbol": "wJBBBx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xb6dC4328173aA5eA082d1b51c02BdDE231589e97"
+          },
+          "10": {
+            "address": "0xb6dC4328173aA5eA082d1b51c02BdDE231589e97"
+          },
+          "56": {
+            "address": "0xb6dC4328173aA5eA082d1b51c02BdDE231589e97"
+          },
+          "42161": {
+            "address": "0xb6dC4328173aA5eA082d1b51c02BdDE231589e97"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/JBBBx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x5704Ae940149C107aaCAbAbc570a7C526Ad791d6",
       "name": "Wrapped JB Hunt Transport Services xStock",
       "symbol": "wJBHTx",
@@ -65960,6 +68516,33 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/JBLx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0xa6dEBc29F5E4FBc5d2604bEc9c05B11FABcE5aD0",
+      "name": "Wrapped JBS xStock",
+      "symbol": "wJBSx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xa6dEBc29F5E4FBc5d2604bEc9c05B11FABcE5aD0"
+          },
+          "10": {
+            "address": "0xa6dEBc29F5E4FBc5d2604bEc9c05B11FABcE5aD0"
+          },
+          "56": {
+            "address": "0xa6dEBc29F5E4FBc5d2604bEc9c05B11FABcE5aD0"
+          },
+          "42161": {
+            "address": "0xa6dEBc29F5E4FBc5d2604bEc9c05B11FABcE5aD0"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/JBSx.png"
     },
     {
       "chainId": 143,
@@ -66131,6 +68714,33 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/JEFx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0xE5e99AF1f8E717FAFDDC1268d6e8F3Cb22b59B3c",
+      "name": "Wrapped James Hardie Industries xStock",
+      "symbol": "wJHXx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xE5e99AF1f8E717FAFDDC1268d6e8F3Cb22b59B3c"
+          },
+          "10": {
+            "address": "0xE5e99AF1f8E717FAFDDC1268d6e8F3Cb22b59B3c"
+          },
+          "56": {
+            "address": "0xE5e99AF1f8E717FAFDDC1268d6e8F3Cb22b59B3c"
+          },
+          "42161": {
+            "address": "0xE5e99AF1f8E717FAFDDC1268d6e8F3Cb22b59B3c"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/JHXx.png"
     },
     {
       "chainId": 143,
@@ -67073,6 +69683,33 @@
     },
     {
       "chainId": 143,
+      "address": "0x9d68627F3105c83E453DabacD34cA47a36354d5a",
+      "name": "Wrapped KraneShares China Technology & Semiconductor STAR 50 Index xStock",
+      "symbol": "wKSTRx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x9d68627F3105c83E453DabacD34cA47a36354d5a"
+          },
+          "10": {
+            "address": "0x9d68627F3105c83E453DabacD34cA47a36354d5a"
+          },
+          "56": {
+            "address": "0x9d68627F3105c83E453DabacD34cA47a36354d5a"
+          },
+          "42161": {
+            "address": "0x9d68627F3105c83E453DabacD34cA47a36354d5a"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/KSTRx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0xFb68aD4d92ec950476A7B6dA7697Fd880909b2f0",
       "name": "Wrapped Kratos Defense & Security Solutions xStock",
       "symbol": "wKTOSx",
@@ -67652,6 +70289,33 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/LHXx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x4A91cD9aD6BAFe987a59f76965C29bab00eA68E2",
+      "name": "Wrapped Labcorp xStock",
+      "symbol": "wLHx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x4A91cD9aD6BAFe987a59f76965C29bab00eA68E2"
+          },
+          "10": {
+            "address": "0x4A91cD9aD6BAFe987a59f76965C29bab00eA68E2"
+          },
+          "56": {
+            "address": "0x4A91cD9aD6BAFe987a59f76965C29bab00eA68E2"
+          },
+          "42161": {
+            "address": "0x4A91cD9aD6BAFe987a59f76965C29bab00eA68E2"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/LHx.png"
     },
     {
       "chainId": 143,
@@ -69323,6 +71987,36 @@
     },
     {
       "chainId": 143,
+      "address": "0x6aA329b79fE8E4A74021BB6A33E5C778F00D10ff",
+      "name": "Wrapped MiniMax xStock",
+      "symbol": "wMINIMAXx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x6aA329b79fE8E4A74021BB6A33E5C778F00D10ff"
+          },
+          "10": {
+            "address": "0x6aA329b79fE8E4A74021BB6A33E5C778F00D10ff"
+          },
+          "56": {
+            "address": "0x6aA329b79fE8E4A74021BB6A33E5C778F00D10ff"
+          },
+          "999": {
+            "address": "0x6aA329b79fE8E4A74021BB6A33E5C778F00D10ff"
+          },
+          "42161": {
+            "address": "0x6aA329b79fE8E4A74021BB6A33E5C778F00D10ff"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/MINIMAXx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x1Bac76a12d8EccA6dBF4B0A146Da8870d50F04c9",
       "name": "Wrapped Mixue xStock",
       "symbol": "wMIXUx",
@@ -69743,6 +72437,33 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/MODx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x4A7473cD2C1C283F7a9E1CfC43830a367b3728d4",
+      "name": "Wrapped Molina Healthcare xStock",
+      "symbol": "wMOHx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x4A7473cD2C1C283F7a9E1CfC43830a367b3728d4"
+          },
+          "10": {
+            "address": "0x4A7473cD2C1C283F7a9E1CfC43830a367b3728d4"
+          },
+          "56": {
+            "address": "0x4A7473cD2C1C283F7a9E1CfC43830a367b3728d4"
+          },
+          "42161": {
+            "address": "0x4A7473cD2C1C283F7a9E1CfC43830a367b3728d4"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/MOHx.png"
     },
     {
       "chainId": 143,
@@ -70376,6 +73097,33 @@
     },
     {
       "chainId": 143,
+      "address": "0x66D1D4D71E868B171af9C9E9d31325BaaCCf5A38",
+      "name": "Wrapped T-REX 2X Long MSTR Daily Target xStock",
+      "symbol": "wMSTUx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x66D1D4D71E868B171af9C9E9d31325BaaCCf5A38"
+          },
+          "10": {
+            "address": "0x66D1D4D71E868B171af9C9E9d31325BaaCCf5A38"
+          },
+          "56": {
+            "address": "0x66D1D4D71E868B171af9C9E9d31325BaaCCf5A38"
+          },
+          "42161": {
+            "address": "0x66D1D4D71E868B171af9C9E9d31325BaaCCf5A38"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/MSTUx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x2874A11805783324C54562eDB1A641C5d1d077a5",
       "name": "Wrapped Morgan Stanley xStock",
       "symbol": "wMSx",
@@ -70801,6 +73549,7 @@
         "xstocks"
       ],
       "extensions": {
+        "coinGeckoId": "wrapped-micron-technology-xstock",
         "crossChainAddresses": {
           "1": {
             "address": "0xe2047ee3bdDb5C99ae428AB83df63f8730698e30"
@@ -71318,6 +74067,33 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/NG.GBx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x13A529A4557A48E5a166A3b40B8206a9dc81Ae6C",
+      "name": "Wrapped NielsenIQ xStock",
+      "symbol": "wNIQx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x13A529A4557A48E5a166A3b40B8206a9dc81Ae6C"
+          },
+          "10": {
+            "address": "0x13A529A4557A48E5a166A3b40B8206a9dc81Ae6C"
+          },
+          "56": {
+            "address": "0x13A529A4557A48E5a166A3b40B8206a9dc81Ae6C"
+          },
+          "42161": {
+            "address": "0x13A529A4557A48E5a166A3b40B8206a9dc81Ae6C"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/NIQx.png"
     },
     {
       "chainId": 143,
@@ -71959,6 +74735,7 @@
         "xstocks"
       ],
       "extensions": {
+        "coinGeckoId": "wrapped-nvidia-xstock",
         "crossChainAddresses": {
           "1": {
             "address": "0xa8ddb5Cd96b5222AFe198316E9A57CAA642850D5"
@@ -72692,6 +75469,33 @@
     },
     {
       "chainId": 143,
+      "address": "0x84C06819b79de1Fd8F1B215E11A5996Eb0e09298",
+      "name": "Wrapped On xStock",
+      "symbol": "wONONx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x84C06819b79de1Fd8F1B215E11A5996Eb0e09298"
+          },
+          "10": {
+            "address": "0x84C06819b79de1Fd8F1B215E11A5996Eb0e09298"
+          },
+          "56": {
+            "address": "0x84C06819b79de1Fd8F1B215E11A5996Eb0e09298"
+          },
+          "42161": {
+            "address": "0x84C06819b79de1Fd8F1B215E11A5996Eb0e09298"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ONONx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x644Db41a08f21fa322dDCA452563BeDfFD808537",
       "name": "Wrapped Onto Innovation xStock",
       "symbol": "wONTOx",
@@ -73157,6 +75961,33 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/Ox.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x23030847DBF1670b10d00caaE24d97f780351926",
+      "name": "Wrapped PGIM AAA CLO xStock",
+      "symbol": "wPAAAx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x23030847DBF1670b10d00caaE24d97f780351926"
+          },
+          "10": {
+            "address": "0x23030847DBF1670b10d00caaE24d97f780351926"
+          },
+          "56": {
+            "address": "0x23030847DBF1670b10d00caaE24d97f780351926"
+          },
+          "42161": {
+            "address": "0x23030847DBF1670b10d00caaE24d97f780351926"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/PAAAx.png"
     },
     {
       "chainId": 143,
@@ -75260,6 +78091,36 @@
     },
     {
       "chainId": 143,
+      "address": "0x6e11d6c6Cc8d02C87B2EB444909318D39C9FD6aD",
+      "name": "Wrapped Qiagen xStock",
+      "symbol": "wQIA.DEx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x6e11d6c6Cc8d02C87B2EB444909318D39C9FD6aD"
+          },
+          "10": {
+            "address": "0x6e11d6c6Cc8d02C87B2EB444909318D39C9FD6aD"
+          },
+          "56": {
+            "address": "0x6e11d6c6Cc8d02C87B2EB444909318D39C9FD6aD"
+          },
+          "999": {
+            "address": "0x6e11d6c6Cc8d02C87B2EB444909318D39C9FD6aD"
+          },
+          "42161": {
+            "address": "0x6e11d6c6Cc8d02C87B2EB444909318D39C9FD6aD"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/QIA.DEx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x323F05aAA449869135a21C2168DD1F1f6DB24FCc",
       "name": "Wrapped Quantinuum xStock",
       "symbol": "wQNTx",
@@ -75480,6 +78341,33 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/QUREx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0xDc3436782e028F89147dA4dCaB25b6fb222D6D11",
+      "name": "Wrapped QXO xStock",
+      "symbol": "wQXOx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xDc3436782e028F89147dA4dCaB25b6fb222D6D11"
+          },
+          "10": {
+            "address": "0xDc3436782e028F89147dA4dCaB25b6fb222D6D11"
+          },
+          "56": {
+            "address": "0xDc3436782e028F89147dA4dCaB25b6fb222D6D11"
+          },
+          "42161": {
+            "address": "0xDc3436782e028F89147dA4dCaB25b6fb222D6D11"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/QXOx.png"
     },
     {
       "chainId": 143,
@@ -77886,6 +80774,33 @@
     },
     {
       "chainId": 143,
+      "address": "0x584fdc430ec2209E8E831EEd255AE7e1C2E78FDa",
+      "name": "Wrapped Securitize xStock",
+      "symbol": "wSECZx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x584fdc430ec2209E8E831EEd255AE7e1C2E78FDa"
+          },
+          "10": {
+            "address": "0x584fdc430ec2209E8E831EEd255AE7e1C2E78FDa"
+          },
+          "56": {
+            "address": "0x584fdc430ec2209E8E831EEd255AE7e1C2E78FDa"
+          },
+          "42161": {
+            "address": "0x584fdc430ec2209E8E831EEd255AE7e1C2E78FDa"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SECZx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x7a0007bC802B004111d41157DE1F2b397F1cfB5a",
       "name": "Wrapped SEI Investments xStock",
       "symbol": "wSEICx",
@@ -78674,6 +81589,7 @@
         "xstocks"
       ],
       "extensions": {
+        "coinGeckoId": "wrapped-sk-hynix-xstock",
         "crossChainAddresses": {
           "1": {
             "address": "0x6215a58ed045d71F2561AaAbe54f4C885C522998"
@@ -78917,6 +81833,7 @@
         "xstocks"
       ],
       "extensions": {
+        "coinGeckoId": "wrapped-vaneck-semiconductor-etf-xstock",
         "crossChainAddresses": {
           "1": {
             "address": "0x23c4BDDea5e7E284fB4027c6050bC5E6f7FaE23f"
@@ -79458,6 +82375,33 @@
     },
     {
       "chainId": 143,
+      "address": "0x7793de5863429a6a3EfEE34790331e812B49Adb8",
+      "name": "Wrapped Solventum xStock",
+      "symbol": "wSOLVx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x7793de5863429a6a3EfEE34790331e812B49Adb8"
+          },
+          "10": {
+            "address": "0x7793de5863429a6a3EfEE34790331e812B49Adb8"
+          },
+          "56": {
+            "address": "0x7793de5863429a6a3EfEE34790331e812B49Adb8"
+          },
+          "42161": {
+            "address": "0x7793de5863429a6a3EfEE34790331e812B49Adb8"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SOLVx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x3d0e3a1FFFe47D9CB41ddb6171895a39738E96a9",
       "name": "Wrapped Sony xStock",
       "symbol": "wSONYx",
@@ -79709,6 +82653,7 @@
         "xstocks"
       ],
       "extensions": {
+        "coinGeckoId": "wrapped-spacex-xstock",
         "crossChainAddresses": {
           "1": {
             "address": "0x8e2eeD8b8B5E13Ea7BF38e50d7821d2C57309072"
@@ -80032,6 +82977,33 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SRG.ITx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0xF0Db42A3A3702f07cF405ccd60CD6953059FeB6C",
+      "name": "Wrapped State Street Blackstone Senior Loan xStock",
+      "symbol": "wSRLNx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xF0Db42A3A3702f07cF405ccd60CD6953059FeB6C"
+          },
+          "10": {
+            "address": "0xF0Db42A3A3702f07cF405ccd60CD6953059FeB6C"
+          },
+          "56": {
+            "address": "0xF0Db42A3A3702f07cF405ccd60CD6953059FeB6C"
+          },
+          "42161": {
+            "address": "0xF0Db42A3A3702f07cF405ccd60CD6953059FeB6C"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SRLNx.png"
     },
     {
       "chainId": 143,
@@ -80455,6 +83427,33 @@
     },
     {
       "chainId": 143,
+      "address": "0xCecd351AD42D6E8302D6FAb161537EbDB683E5d9",
+      "name": "Wrapped Sensata Technologies xStock",
+      "symbol": "wSTx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xCecd351AD42D6E8302D6FAb161537EbDB683E5d9"
+          },
+          "10": {
+            "address": "0xCecd351AD42D6E8302D6FAb161537EbDB683E5d9"
+          },
+          "56": {
+            "address": "0xCecd351AD42D6E8302D6FAb161537EbDB683E5d9"
+          },
+          "42161": {
+            "address": "0xCecd351AD42D6E8302D6FAb161537EbDB683E5d9"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/STx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0xe5D2E8a4B285C40660e6405C77898eAf6a6d8F59",
       "name": "Wrapped Schneider Electric xStock",
       "symbol": "wSU.FRx",
@@ -80509,6 +83508,33 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SUIx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0xd016F3F29eEFeD78E33755e048F1aF834c31FE7C",
+      "name": "Wrapped Sunbelt Rentals xStock",
+      "symbol": "wSUNBx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xd016F3F29eEFeD78E33755e048F1aF834c31FE7C"
+          },
+          "10": {
+            "address": "0xd016F3F29eEFeD78E33755e048F1aF834c31FE7C"
+          },
+          "56": {
+            "address": "0xd016F3F29eEFeD78E33755e048F1aF834c31FE7C"
+          },
+          "42161": {
+            "address": "0xd016F3F29eEFeD78E33755e048F1aF834c31FE7C"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SUNBx.png"
     },
     {
       "chainId": 143,
@@ -80599,6 +83625,33 @@
     },
     {
       "chainId": 143,
+      "address": "0x5145ca8D2eF57806ECCdC1e0d08fb0fd00a4BacF",
+      "name": "Wrapped Skyworks Solutions xStock",
+      "symbol": "wSWKSx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x5145ca8D2eF57806ECCdC1e0d08fb0fd00a4BacF"
+          },
+          "10": {
+            "address": "0x5145ca8D2eF57806ECCdC1e0d08fb0fd00a4BacF"
+          },
+          "56": {
+            "address": "0x5145ca8D2eF57806ECCdC1e0d08fb0fd00a4BacF"
+          },
+          "42161": {
+            "address": "0x5145ca8D2eF57806ECCdC1e0d08fb0fd00a4BacF"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SWKSx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x77b41117E9e28f74c5cD828636979bFA981763a3",
       "name": "Wrapped Stanley Black & Decker xStock",
       "symbol": "wSWKx",
@@ -80680,6 +83733,36 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SWx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0xbB461b2a3105108D4718C7536CF37181a904E96f",
+      "name": "Wrapped Symrise xStock",
+      "symbol": "wSY1x",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xbB461b2a3105108D4718C7536CF37181a904E96f"
+          },
+          "10": {
+            "address": "0xbB461b2a3105108D4718C7536CF37181a904E96f"
+          },
+          "56": {
+            "address": "0xbB461b2a3105108D4718C7536CF37181a904E96f"
+          },
+          "999": {
+            "address": "0xbB461b2a3105108D4718C7536CF37181a904E96f"
+          },
+          "42161": {
+            "address": "0xbB461b2a3105108D4718C7536CF37181a904E96f"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SY1x.png"
     },
     {
       "chainId": 143,
@@ -81046,6 +84129,33 @@
     },
     {
       "chainId": 143,
+      "address": "0x83449bE59E9D8D585bDBddB6e2CDE450DD3fcd2f",
+      "name": "Wrapped Bio-Techne xStock",
+      "symbol": "wTECHx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x83449bE59E9D8D585bDBddB6e2CDE450DD3fcd2f"
+          },
+          "10": {
+            "address": "0x83449bE59E9D8D585bDBddB6e2CDE450DD3fcd2f"
+          },
+          "56": {
+            "address": "0x83449bE59E9D8D585bDBddB6e2CDE450DD3fcd2f"
+          },
+          "42161": {
+            "address": "0x83449bE59E9D8D585bDBddB6e2CDE450DD3fcd2f"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/TECHx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0xb5aBEbfFd27C68d6A9b1865895233e30D0bA0787",
       "name": "Wrapped Telefonica xStock",
       "symbol": "wTEFx",
@@ -81178,6 +84288,33 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/TFCx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x80D9150cB3d260DfC577Cc174D8D0C7A765BdEDd",
+      "name": "Wrapped iShares Treasury Floating Rate Bond xStock",
+      "symbol": "wTFLOx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x80D9150cB3d260DfC577Cc174D8D0C7A765BdEDd"
+          },
+          "10": {
+            "address": "0x80D9150cB3d260DfC577Cc174D8D0C7A765BdEDd"
+          },
+          "56": {
+            "address": "0x80D9150cB3d260DfC577Cc174D8D0C7A765BdEDd"
+          },
+          "42161": {
+            "address": "0x80D9150cB3d260DfC577Cc174D8D0C7A765BdEDd"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/TFLOx.png"
     },
     {
       "chainId": 143,
@@ -81343,6 +84480,33 @@
     },
     {
       "chainId": 143,
+      "address": "0x41037FfA0305f555f1A5C9C6d27f1F73F00a1d67",
+      "name": "Wrapped Millicom International Cellular xStock",
+      "symbol": "wTIGOx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x41037FfA0305f555f1A5C9C6d27f1F73F00a1d67"
+          },
+          "10": {
+            "address": "0x41037FfA0305f555f1A5C9C6d27f1F73F00a1d67"
+          },
+          "56": {
+            "address": "0x41037FfA0305f555f1A5C9C6d27f1F73F00a1d67"
+          },
+          "42161": {
+            "address": "0x41037FfA0305f555f1A5C9C6d27f1F73F00a1d67"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/TIGOx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0xECe7438909f4202263Eba270A73eeAa1c80560d6",
       "name": "Wrapped TJX Companies xStock",
       "symbol": "wTJXx",
@@ -81448,6 +84612,33 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/TLNx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0xa57f2a4E1d2E28B6C2Fd477e255A511909AcdB5a",
+      "name": "Wrapped iShares 20+ Year Treasury Bond xStock",
+      "symbol": "wTLTx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xa57f2a4E1d2E28B6C2Fd477e255A511909AcdB5a"
+          },
+          "10": {
+            "address": "0xa57f2a4E1d2E28B6C2Fd477e255A511909AcdB5a"
+          },
+          "56": {
+            "address": "0xa57f2a4E1d2E28B6C2Fd477e255A511909AcdB5a"
+          },
+          "42161": {
+            "address": "0xa57f2a4E1d2E28B6C2Fd477e255A511909AcdB5a"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/TLTx.png"
     },
     {
       "chainId": 143,
@@ -82092,6 +85283,7 @@
         "xstocks"
       ],
       "extensions": {
+        "coinGeckoId": "wrapped-tesla-xstock",
         "crossChainAddresses": {
           "1": {
             "address": "0xc3FdBe3A68EE5dE461D30415a8165cf9Aefe1171"
@@ -83261,6 +86453,33 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/USFDx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x5d72F74AABbeFcdc5ae442f9cD96E457d40786E6",
+      "name": "Wrapped WisdomTree Floating Rate Treasury xStock",
+      "symbol": "wUSFRx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x5d72F74AABbeFcdc5ae442f9cD96E457d40786E6"
+          },
+          "10": {
+            "address": "0x5d72F74AABbeFcdc5ae442f9cD96E457d40786E6"
+          },
+          "56": {
+            "address": "0x5d72F74AABbeFcdc5ae442f9cD96E457d40786E6"
+          },
+          "42161": {
+            "address": "0x5d72F74AABbeFcdc5ae442f9cD96E457d40786E6"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/USFRx.png"
     },
     {
       "chainId": 143,
@@ -84920,6 +88139,33 @@
     },
     {
       "chainId": 143,
+      "address": "0x8AedC9c89480b5b23f2B2641AB9fC9865bb7Ae8F",
+      "name": "Wrapped Weatherford International xStock",
+      "symbol": "wWFRDx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x8AedC9c89480b5b23f2B2641AB9fC9865bb7Ae8F"
+          },
+          "10": {
+            "address": "0x8AedC9c89480b5b23f2B2641AB9fC9865bb7Ae8F"
+          },
+          "56": {
+            "address": "0x8AedC9c89480b5b23f2B2641AB9fC9865bb7Ae8F"
+          },
+          "42161": {
+            "address": "0x8AedC9c89480b5b23f2B2641AB9fC9865bb7Ae8F"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/WFRDx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0xf30Eb405BF02E8f7991D7519AdE59A91FB38d267",
       "name": "Wrapped GeneDx xStock",
       "symbol": "wWGSx",
@@ -86345,6 +89591,36 @@
     },
     {
       "chainId": 143,
+      "address": "0xfd0A6b5Ea035e1a0C5de1C681380a14dB919383b",
+      "name": "Wrapped Zalando xStock",
+      "symbol": "wZAL.DEx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xfd0A6b5Ea035e1a0C5de1C681380a14dB919383b"
+          },
+          "10": {
+            "address": "0xfd0A6b5Ea035e1a0C5de1C681380a14dB919383b"
+          },
+          "56": {
+            "address": "0xfd0A6b5Ea035e1a0C5de1C681380a14dB919383b"
+          },
+          "999": {
+            "address": "0xfd0A6b5Ea035e1a0C5de1C681380a14dB919383b"
+          },
+          "42161": {
+            "address": "0xfd0A6b5Ea035e1a0C5de1C681380a14dB919383b"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ZAL.DEx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0xBeA7Fa9Ab21C11b1cb84D0E37bf2FDb63F7AeA4A",
       "name": "Wrapped Zimmer Biomet xStock",
       "symbol": "wZBHx",
@@ -86510,6 +89786,36 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ZJGLDx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0xc579e7991fb32d2aAE8483B1ED42C5075CA5ca2c",
+      "name": "Wrapped Zhongji Innolight xStock",
+      "symbol": "wZJINNOx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xc579e7991fb32d2aAE8483B1ED42C5075CA5ca2c"
+          },
+          "10": {
+            "address": "0xc579e7991fb32d2aAE8483B1ED42C5075CA5ca2c"
+          },
+          "56": {
+            "address": "0xc579e7991fb32d2aAE8483B1ED42C5075CA5ca2c"
+          },
+          "999": {
+            "address": "0xc579e7991fb32d2aAE8483B1ED42C5075CA5ca2c"
+          },
+          "42161": {
+            "address": "0xc579e7991fb32d2aAE8483B1ED42C5075CA5ca2c"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ZJINNOx.png"
     },
     {
       "chainId": 143,

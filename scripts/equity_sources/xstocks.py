@@ -210,5 +210,6 @@ SOURCE = EquitySource(
     tag="xstocks",
     name="xStocks",
     description="Tokenized stocks and ETFs issued by Backed under the xStocks brand",
+    logo_host="xstocks-metadata.backed.fi",
     fetch_listings=fetch_listings,
 )

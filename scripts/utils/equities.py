@@ -55,6 +55,7 @@ class EquitySource:
             characters, at most 10).
         name: Display name of the tag.
         description: Description of the tag.
+        logo_host: The only host the issuer's logoURIs may point at.
         fetch_listings: Returns the issuer's current Monad tokens; raises on any problem
             with the source so the sync can keep the issuer's previous tokens.
     """
@@ -62,6 +63,7 @@ class EquitySource:
     tag: str
     name: str
     description: str
+    logo_host: str
     fetch_listings: Callable[[], list[Listing]]
 
 

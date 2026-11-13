@@ -26,7 +26,8 @@ from utils.web3 import (
 from web3 import Web3
 
 ANCHORED_TOKENS_URL = "https://docs.anchored.finance/getting-started/anchored-tokens.md"
-ANCHORED_LOGO_BASE_URL = "https://img.anchored.finance/logos"
+ANCHORED_LOGO_HOST = "img.anchored.finance"
+ANCHORED_LOGO_BASE_URL = f"https://{ANCHORED_LOGO_HOST}/logos"
 STOCKS_SECTION_PATTERN = re.compile(r"### Tokenized stocks(.*?)### Tokenized funds", re.DOTALL)
 STOCK_ROW_PATTERN = re.compile(r"<tr><td>(a[A-Za-z0-9.]+)</td><td>(0x[0-9a-fA-F]{40})</td></tr>")
 TABLE_ROW_MARKER = "<tr><td>"
@@ -268,5 +269,6 @@ SOURCE = EquitySource(
     tag="anchored",
     name="Anchored",
     description="Tokenized stocks and ETFs issued by Anchored",
+    logo_host=ANCHORED_LOGO_HOST,
     fetch_listings=fetch_listings,
 )

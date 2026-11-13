@@ -8,6 +8,10 @@ on:
       max_removals:
         description: "Abort if more tokens than this disappear in one sync (blank: script default)"
         required: false
+      allow_address_changes:
+        description: "Accept listed symbols moving to new addresses (only after confirming an issuer redeploy)"
+        type: boolean
+        default: false
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -43,9 +47,12 @@ jobs:
         continue-on-error: true
         env:
           MAX_REMOVALS: ${{ inputs.max_removals }}
+          ALLOW_ADDRESS_CHANGES: ${{ inputs.allow_address_changes && '--allow-address-changes' || '' }}
         run: |
           set -o pipefail
-          uv run python scripts/sync_equities.py ${MAX_REMOVALS:+--max-removals "$MAX_REMOVALS"} | tee sync-output.txt
+          uv run python scripts/sync_equities.py \
+            ${MAX_REMOVALS:+--max-removals "$MAX_REMOVALS"} \
+            ${ALLOW_ADDRESS_CHANGES} | tee sync-output.txt
 
       - name: Check for token list changes
         id: changes

@@ -1,7 +1,8 @@
-"""CoinGecko API utilities for verifying token IDs.
+"""CoinGecko API utilities for verifying and looking up token IDs.
 
 This module provides a small client that checks whether a given coinGeckoId
-exists on CoinGecko. It supports:
+exists on CoinGecko, and fetches the full coin list with contract addresses.
+It supports:
 
 - COINGECKO_API_KEY: Pro-tier key (routed to the Pro endpoint, no throttling).
 - COINGECKO_DEMO_API_KEY: Demo-tier key (routed to the public endpoint with
@@ -19,9 +20,13 @@ import os
 import re
 import time
 import urllib.parse
+from dataclasses import dataclass
 
 import requests
 from requests.exceptions import RequestException
+
+from utils.json_values import read_field
+from utils.token_list import CrossChainId
 
 COINGECKO_FREE_API_URL = "https://api.coingecko.com/api/v3"
 COINGECKO_PRO_API_URL = "https://pro-api.coingecko.com/api/v3"
@@ -33,7 +38,64 @@ COINGECKO_RETRY_BACKOFF = 2.0
 COINGECKO_429_FALLBACK_SECONDS = 60.0
 COINGECKO_429_MAX_SLEEP_SECONDS = 120.0
 
-_COINGECKO_ID_PATTERN = re.compile(r"^[a-z0-9][a-z0-9._-]*$")
+MONAD_COINGECKO_PLATFORM = "monad"
+# Typed as a full map so adding a CrossChainId fails type checks until its platform is set.
+CROSS_CHAIN_COINGECKO_PLATFORMS: dict[CrossChainId, str] = {
+    "1": "ethereum",
+    "10": "optimistic-ethereum",
+    "56": "binance-smart-chain",
+    "137": "polygon-pos",
+    "999": "hyperevm",
+    "8453": "base",
+    "9745": "plasma",
+    "42161": "arbitrum-one",
+    "42220": "celo",
+    "43114": "avalanche",
+}
+
+COINGECKO_ID_PATTERN = re.compile(r"^[a-z0-9][a-z0-9._-]*$")
+
+
+class CoinGeckoUnavailableError(RuntimeError):
+    """CoinGecko stayed unreachable, rate limited or failing for every attempt."""
+
+
+@dataclass(frozen=True)
+class CoinGeckoCoin:
+    """A CoinGecko coin and its contract addresses.
+
+    Attributes:
+        id: The coin's CoinGecko ID.
+        platforms: Contract address keyed by CoinGecko platform ID; platforms
+            without an address are left out.
+    """
+
+    id: str
+    platforms: dict[str, str]
+
+
+def parse_coin(value: object) -> CoinGeckoCoin:
+    """Narrow one decoded item of CoinGecko's /coins/list response.
+
+    Args:
+        value: The item as decoded from JSON.
+
+    Returns:
+        CoinGeckoCoin: The coin with the platforms that carry an address.
+
+    Raises:
+        ValueError: If the item lacks a string id or a platforms object.
+    """
+    platforms = read_field(value, "platforms", dict)
+
+    return CoinGeckoCoin(
+        id=read_field(value, "id", str),
+        platforms={
+            platform: address
+            for platform, address in platforms.items()
+            if isinstance(platform, str) and isinstance(address, str) and address
+        },
+    )
 
 
 def _parse_retry_after(header_value: str | None, default: float) -> float:
@@ -111,14 +173,13 @@ class CoinGeckoValidator:
         Returns:
             tuple[list[str], list[str]]: (errors, warnings).
         """
-        if not coin_gecko_id or not _COINGECKO_ID_PATTERN.match(coin_gecko_id):
+        if not coin_gecko_id or not COINGECKO_ID_PATTERN.match(coin_gecko_id):
             return [
                 f"Invalid coinGeckoId format '{coin_gecko_id}': "
                 "must be a non-empty lowercase id (letters, digits, '.', '_', '-')"
             ], []
 
         encoded_id = urllib.parse.quote(coin_gecko_id, safe="")
-        url = f"{self.base_url}/coins/{encoded_id}"
         params = {
             "localization": "false",
             "tickers": "false",
@@ -126,95 +187,110 @@ class CoinGeckoValidator:
             "community_data": "false",
             "developer_data": "false",
         }
-        headers = self._build_headers()
 
-        last_transient_msg: str | None = None
-        delay = COINGECKO_RETRY_DELAY_SECONDS
-        for attempt in range(COINGECKO_MAX_ATTEMPTS):
-            result, last_transient_msg, delay = self._attempt(
-                url, params, headers, coin_gecko_id, attempt, delay, last_transient_msg
-            )
-            if result is not None:
-                return result
-
-        return [], [
-            f"Failed to validate coinGeckoId '{coin_gecko_id}' after "
-            f"{COINGECKO_MAX_ATTEMPTS} attempts ({last_transient_msg})"
-        ]
-
-    def _attempt(
-        self,
-        url: str,
-        params: dict[str, str],
-        headers: dict[str, str],
-        coin_gecko_id: str,
-        attempt: int,
-        delay: float,
-        last_msg: str | None,
-    ) -> tuple[tuple[list[str], list[str]] | None, str | None, float]:
-        """Run one validate() attempt.
-
-        Returns a tuple (terminal_result, last_transient_msg, next_delay). If
-        terminal_result is None the caller should retry; otherwise it is the
-        (errors, warnings) to return.
-        """
-        self._wait_if_needed()
         try:
-            response = requests.get(
-                url, params=params, headers=headers, timeout=COINGECKO_REQUEST_TIMEOUT
-            )
-        except RequestException as e:
-            self._last_call_time = time.monotonic()
-            return None, f"network error: {e}", self._sleep_backoff(attempt, delay)
+            response = self._get_with_retries(f"{self.base_url}/coins/{encoded_id}", params)
+        except CoinGeckoUnavailableError as error:
+            return [], [f"Failed to validate coinGeckoId '{coin_gecko_id}': {error}"]
 
-        self._last_call_time = time.monotonic()
+        return self._interpret_validation_response(response, coin_gecko_id)
+
+    def fetch_coins_with_platforms(self) -> list[CoinGeckoCoin]:
+        """Fetch every coin CoinGecko lists, with its contract address per platform.
+
+        One request (about 4 MB) covers all coins, so this costs a single call of
+        the rate limit.
+
+        Returns:
+            list[CoinGeckoCoin]: Every coin, with the platforms that carry an address.
+
+        Raises:
+            requests.HTTPError: If CoinGecko answers with a non-retryable error.
+            CoinGeckoUnavailableError: If CoinGecko stays unreachable, rate limited
+                or failing after COINGECKO_MAX_ATTEMPTS attempts.
+            ValueError: If the response is not a list of coins.
+        """
+        response = self._get_with_retries(
+            f"{self.base_url}/coins/list", {"include_platform": "true"}
+        )
+        response.raise_for_status()
+        coins = response.json()
+
+        if not isinstance(coins, list):
+            raise ValueError("CoinGecko coin list is not a JSON array")
+
+        return [parse_coin(coin) for coin in coins]
+
+    def _get_with_retries(self, url: str, params: dict[str, str]) -> requests.Response:
+        """GET a CoinGecko URL, retrying network errors, 429 and 5xx with backoff.
+
+        Returns:
+            requests.Response: The first response that is not a transient failure.
+
+        Raises:
+            CoinGeckoUnavailableError: If every attempt fails transiently.
+        """
+        delay = COINGECKO_RETRY_DELAY_SECONDS
+        last_failure = ""
+
+        for attempt in range(COINGECKO_MAX_ATTEMPTS):
+            self._wait_if_needed()
+
+            try:
+                response = requests.get(
+                    url,
+                    params=params,
+                    headers=self._build_headers(),
+                    timeout=COINGECKO_REQUEST_TIMEOUT,
+                )
+            except RequestException as e:
+                self._last_call_time = time.monotonic()
+                last_failure = f"network error: {e}"
+                delay = self._sleep_backoff(attempt, delay)
+                continue
+
+            self._last_call_time = time.monotonic()
+
+            if response.status_code == 429:
+                last_failure = "HTTP 429"
+                self._sleep_for_429(attempt, response)
+                continue
+
+            if 500 <= response.status_code < 600:
+                last_failure = f"HTTP {response.status_code}"
+                delay = self._sleep_backoff(attempt, delay)
+                continue
+
+            return response
+
+        raise CoinGeckoUnavailableError(
+            f"unavailable after {COINGECKO_MAX_ATTEMPTS} attempts ({last_failure})"
+        )
+
+    def _interpret_validation_response(
+        self, response: requests.Response, coin_gecko_id: str
+    ) -> tuple[list[str], list[str]]:
+        """Turn a non-transient /coins/{id} response into (errors, warnings)."""
         status = response.status_code
 
         if status == 200:
             try:
                 data = response.json()
             except ValueError as e:
-                return None, f"invalid JSON: {e}", self._sleep_backoff(attempt, delay)
-            return ([], self._check_canonical_id(data, coin_gecko_id)), last_msg, delay
+                return [], [f"Failed to validate coinGeckoId '{coin_gecko_id}': invalid JSON: {e}"]
+
+            return [], self._check_canonical_id(data, coin_gecko_id)
 
         if status == 404:
-            return (
-                (
-                    [f"Invalid coinGeckoId '{coin_gecko_id}': not found on CoinGecko"],
-                    [],
-                ),
-                last_msg,
-                delay,
-            )
+            return [f"Invalid coinGeckoId '{coin_gecko_id}': not found on CoinGecko"], []
 
         if status in (401, 403):
-            return (
-                (
-                    [
-                        f"CoinGecko authentication failed (HTTP {status}) while validating "
-                        f"'{coin_gecko_id}'. Check COINGECKO_API_KEY / COINGECKO_DEMO_API_KEY."
-                    ],
-                    [],
-                ),
-                last_msg,
-                delay,
-            )
+            return [
+                f"CoinGecko authentication failed (HTTP {status}) while validating "
+                f"'{coin_gecko_id}'. Check COINGECKO_API_KEY / COINGECKO_DEMO_API_KEY."
+            ], []
 
-        if status == 429:
-            self._sleep_for_429(attempt, response)
-            return None, "HTTP 429", delay
-
-        if 500 <= status < 600:
-            return None, f"HTTP {status}", self._sleep_backoff(attempt, delay)
-
-        return (
-            (
-                [f"CoinGecko returned unexpected status {status} for '{coin_gecko_id}'"],
-                [],
-            ),
-            last_msg,
-            delay,
-        )
+        return [f"CoinGecko returned unexpected status {status} for '{coin_gecko_id}'"], []
 
     @staticmethod
     def _sleep_backoff(attempt: int, delay: float) -> float:

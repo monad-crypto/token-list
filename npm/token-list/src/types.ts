@@ -92,6 +92,8 @@ export interface Token<ChainId extends number = MonadChainId> {
   readonly symbol: string;
   readonly decimals: number;
   readonly logoURI: string;
+  /** IDs of tags defined in the list's `tags` map. */
+  readonly tags?: readonly string[];
   readonly extensions?: TokenExtensions;
 }
 
@@ -116,11 +118,19 @@ export interface Version {
 // Token list
 // ---------------------------------------------------------------------------
 
+/** A tag that tokens can reference by ID. */
+export interface TagDefinition {
+  readonly name: string;
+  readonly description: string;
+}
+
 /** Full token list structure. */
 export interface TokenList<T extends Token = Token> {
   readonly name: string;
   readonly logoURI: string;
   readonly keywords: readonly string[];
+  /** Tag definitions keyed by tag ID. */
+  readonly tags?: { readonly [tagId: string]: TagDefinition };
   readonly timestamp: string;
   readonly tokens: readonly T[];
   readonly version: Version;

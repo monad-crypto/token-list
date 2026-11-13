@@ -6,7 +6,15 @@ settings:
 
 importers:
 
-  .:
+  .: {}
+
+  equities:
+    devDependencies:
+      typescript:
+        specifier: ~5.7.0
+        version: 5.7.3
+
+  token-list:
     devDependencies:
       typescript:
         specifier: ~5.7.0

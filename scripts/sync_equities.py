@@ -34,6 +34,7 @@ from utils.equities import (
 )
 from utils.json_values import read_object_list
 from utils.token_list import (
+    CrossChainId,
     create_token_list,
     find_duplicate_errors,
     format_version,
@@ -43,6 +44,7 @@ from utils.token_list import (
 )
 from utils.web3 import (
     CHAIN_ID,
+    CHAIN_NAMES,
     TokenMetadata,
     add_rpc_url_argument,
     fetch_token_metadata_in_batches,
@@ -270,27 +272,77 @@ def ensure_within_removal_limit(
         )
 
 
+def read_cross_chain_addresses(token: EquityToken) -> dict[CrossChainId, str]:
+    """Return a token's cross-chain addresses keyed by chain ID.
+
+    Args:
+        token: An equities token entry.
+
+    Returns:
+        dict[CrossChainId, str]: Address per chain; empty when the token has none.
+    """
+    extensions = token.get("extensions", {})
+
+    return {
+        chain_id: entry["address"]
+        for chain_id, entry in extensions.get("crossChainAddresses", {}).items()
+    }
+
+
+def describe_address_changes(previous_token: EquityToken, token: EquityToken) -> list[str]:
+    """Describe each address of a token that differs from its previous entry.
+
+    A cross-chain address added or dropped is not a change: issuers deploy to new
+    chains, and Anchored drops chains its on-chain check cannot confirm.
+
+    Args:
+        previous_token: The token's entry in the current list.
+        token: The token's freshly built entry, with the same symbol.
+
+    Returns:
+        list[str]: One line per moved address, Monad first; empty when none moved.
+    """
+    symbol = token["symbol"]
+    changes = []
+
+    if previous_token["address"] != token["address"]:
+        changes.append(f"{symbol} {previous_token['address']} -> {token['address']}")
+
+    previous_cross_chain_addresses = read_cross_chain_addresses(previous_token)
+
+    for chain_id, address in read_cross_chain_addresses(token).items():
+        previous_address = previous_cross_chain_addresses.get(chain_id)
+
+        if previous_address is not None and previous_address != address:
+            changes.append(f"{symbol} on {CHAIN_NAMES[chain_id]} {previous_address} -> {address}")
+
+    return changes
+
+
 def ensure_no_address_changes(
     previous_tokens: list[EquityToken], tokens: list[EquityToken]
 ) -> None:
-    """Fail when a listed symbol now points at a different contract.
+    """Fail when a listed symbol now points at a different contract on any chain.
 
     Issuers do not redeploy listed tokens, so a moved address more likely means a
     compromised or broken source, and the swap is what consumers would act on.
+    Cross-chain addresses are covered too: the xStocks ones are published as the
+    API gives them and feed the CoinGecko match.
 
     Args:
         previous_tokens: The issuer's tokens in the current list.
         tokens: The issuer's freshly built tokens.
 
     Raises:
-        RuntimeError: If any symbol in both lists has a different address.
+        RuntimeError: If any symbol in both lists has a different Monad address, or a
+            different address on a chain both entries list.
     """
-    previous_addresses = {token["symbol"]: token["address"] for token in previous_tokens}
+    previous_tokens_by_symbol = {token["symbol"]: token for token in previous_tokens}
     changes = [
-        f"{token['symbol']} {previous_addresses[token['symbol']]} -> {token['address']}"
+        change
         for token in tokens
-        if token["symbol"] in previous_addresses
-        and previous_addresses[token["symbol"]] != token["address"]
+        if token["symbol"] in previous_tokens_by_symbol
+        for change in describe_address_changes(previous_tokens_by_symbol[token["symbol"]], token)
     ]
 
     if changes:
@@ -324,7 +376,7 @@ def build_source_tokens(
     Raises:
         RuntimeError: If metadata cannot be read, the issuer and the chain disagree
             on a symbol, the issuer lists a token twice, too many tokens disappeared,
-            or a listed symbol moved address without allows_address_changes.
+            or a listed symbol moved address on any chain without allows_address_changes.
         ValueError: If the issuer's source returns data of an unexpected shape.
         requests.RequestException: If the issuer's source cannot be reached.
     """
@@ -371,8 +423,9 @@ def main() -> int:
         "--allow-address-changes",
         action="store_true",
         help=(
-            "Accept a listed symbol moving to a new contract address; without it the "
-            "issuer fails, since a moved address usually means a bad source"
+            "Accept a listed symbol moving to a new contract address on Monad or another "
+            "chain; without it the issuer fails, since a moved address usually means a "
+            "bad source"
         ),
     )
     args = parser.parse_args()

@@ -9,7 +9,7 @@ on:
         description: "Abort if more tokens than this disappear in one sync (blank: script default)"
         required: false
       allow_address_changes:
-        description: "Accept listed symbols moving to new addresses (only after confirming an issuer redeploy)"
+        description: "Accept listed symbols moving to new addresses on Monad or another chain (only after confirming an issuer redeploy)"
         type: boolean
         default: false
 

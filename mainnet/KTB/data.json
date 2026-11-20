@@ -5,7 +5,6 @@
   "symbol": "KTB",
   "decimals": 6,
   "extensions": {
-    "coinGeckoId": "etherfuse-ktb",
     "bridgeInfo": {
       "protocol": "LayerZero OFT",
       "bridgeAddress": "0xe9c082921dc3564e10196c5cc15dB1250AC7d5C6"

@@ -5,7 +5,6 @@
   "symbol": "CHFm",
   "decimals": 18,
   "extensions": {
-    "coinGeckoId": "cchf",
     "bridgeInfo": {
       "protocol": "Wormhole NTT",
       "bridgeAddress": "0xbbFBE2791722E93f27c5cE80e3725c8DD8d09697"

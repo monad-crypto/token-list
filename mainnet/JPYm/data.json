@@ -5,7 +5,6 @@
   "symbol": "JPYm",
   "decimals": 18,
   "extensions": {
-    "coinGeckoId": "celo-japanese-yen",
     "bridgeInfo": {
       "protocol": "Wormhole NTT",
       "bridgeAddress": "0x7431419FE761e7da37587245c55a35E5a356c91B"

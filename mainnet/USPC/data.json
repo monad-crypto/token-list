@@ -1,0 +1,18 @@
+{
+  "chainId": 143,
+  "address": "0xdAFA800e2C60830cB8D2bd3C022C073e6EC8876E",
+  "name": "USPC",
+  "symbol": "USPC",
+  "decimals": 6,
+  "extensions": {
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0xf3E6FAE17564a95344295c428E13EaAEaD17E474"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0xbF4e3fbE8B60062A00C7a6B1D97d0d49c2971A19"
+      }
+    }
+  }
+}

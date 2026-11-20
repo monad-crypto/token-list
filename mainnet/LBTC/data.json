@@ -1,7 +1,7 @@
 {
   "chainId": 143,
   "address": "0xecAc9C5F704e954931349Da37F60E39f515c11c1",
-  "name": "Lombard Staked Bitcoin",
+  "name": "Lombard BTC",
   "symbol": "LBTC",
   "decimals": 8,
   "extensions": {

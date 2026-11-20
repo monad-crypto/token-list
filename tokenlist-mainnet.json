@@ -4,7 +4,7 @@
   "keywords": [
     "monad mainnet"
   ],
-  "timestamp": "2026-10-16T13:04:03.436589+00:00",
+  "timestamp": "2026-11-20T05:21:55.816242+00:00",
   "tokens": [
     {
       "chainId": 143,
@@ -626,7 +626,7 @@
     {
       "chainId": 143,
       "address": "0xecAc9C5F704e954931349Da37F60E39f515c11c1",
-      "name": "Lombard Staked Bitcoin",
+      "name": "Lombard BTC",
       "symbol": "LBTC",
       "decimals": 8,
       "extensions": {
@@ -2455,9 +2455,6 @@
       "name": "Sumerian USD",
       "symbol": "suUSD",
       "decimals": 18,
-      "extensions": {
-        "coinGeckoId": "sumer-money-suusd"
-      },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/suUSD/logo.png"
     },
     {
@@ -2826,6 +2823,6 @@
   "version": {
     "major": 2,
     "minor": 50,
-    "patch": 0
+    "patch": 1
   }
 }

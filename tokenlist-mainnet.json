@@ -4,7 +4,7 @@
   "keywords": [
     "monad mainnet"
   ],
-  "timestamp": "2026-10-16T13:04:03.436589+00:00",
+  "timestamp": "2026-11-23T15:20:59.054253+00:00",
   "tokens": [
     {
       "chainId": 143,
@@ -93,9 +93,6 @@
       "name": "Asian Dollar",
       "symbol": "AZND",
       "decimals": 18,
-      "extensions": {
-        "coinGeckoId": "mu-digital-aznd"
-      },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/AZND/logo.svg"
     },
     {
@@ -151,7 +148,6 @@
       "symbol": "CHFm",
       "decimals": 18,
       "extensions": {
-        "coinGeckoId": "cchf",
         "bridgeInfo": {
           "protocol": "Wormhole NTT",
           "bridgeAddress": "0xbbFBE2791722E93f27c5cE80e3725c8DD8d09697"
@@ -559,7 +555,6 @@
       "symbol": "JPYm",
       "decimals": 18,
       "extensions": {
-        "coinGeckoId": "celo-japanese-yen",
         "bridgeInfo": {
           "protocol": "Wormhole NTT",
           "bridgeAddress": "0x7431419FE761e7da37587245c55a35E5a356c91B"
@@ -607,7 +602,6 @@
       "symbol": "KTB",
       "decimals": 6,
       "extensions": {
-        "coinGeckoId": "etherfuse-ktb",
         "bridgeInfo": {
           "protocol": "LayerZero OFT",
           "bridgeAddress": "0xe9c082921dc3564e10196c5cc15dB1250AC7d5C6"
@@ -626,7 +620,7 @@
     {
       "chainId": 143,
       "address": "0xecAc9C5F704e954931349Da37F60E39f515c11c1",
-      "name": "Lombard Staked Bitcoin",
+      "name": "Lombard BTC",
       "symbol": "LBTC",
       "decimals": 8,
       "extensions": {
@@ -1868,9 +1862,6 @@
       "name": "Locked AZND",
       "symbol": "loAZND",
       "decimals": 18,
-      "extensions": {
-        "coinGeckoId": "mu-digital-locked-aznd"
-      },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/loAZND/logo.svg"
     },
     {
@@ -1974,9 +1965,6 @@
       "name": "mu Bond",
       "symbol": "muBOND",
       "decimals": 18,
-      "extensions": {
-        "coinGeckoId": "mu-digital-mubond"
-      },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/muBOND/logo.svg"
     },
     {
@@ -2248,7 +2236,6 @@
       "symbol": "savUSD",
       "decimals": 18,
       "extensions": {
-        "coinGeckoId": "avant-staked-usd",
         "bridgeInfo": {
           "protocol": "Chainlink CCIP",
           "bridgeAddress": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB"
@@ -2455,9 +2442,6 @@
       "name": "Sumerian USD",
       "symbol": "suUSD",
       "decimals": 18,
-      "extensions": {
-        "coinGeckoId": "sumer-money-suusd"
-      },
       "logoURI": "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/mainnet/suUSD/logo.png"
     },
     {
@@ -2493,7 +2477,6 @@
       "symbol": "syzUSD",
       "decimals": 18,
       "extensions": {
-        "coinGeckoId": "staked-yuzu-usd",
         "bridgeInfo": {
           "protocol": "LayerZero OFT",
           "bridgeAddress": "0x484be0540aD49f351eaa04eeB35dF0f937D4E73f"
@@ -2826,6 +2809,6 @@
   "version": {
     "major": 2,
     "minor": 50,
-    "patch": 0
+    "patch": 1
   }
 }

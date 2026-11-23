@@ -1,0 +1,14 @@
+{
+  "chainId": 143,
+  "address": "0x805710d7A631C03C5cC246DA55985Fef0919Fa59",
+  "name": "Townsquare Real Estate Investment Token",
+  "symbol": "townREIT",
+  "decimals": 18,
+  "extensions": {
+    "crossChainAddresses": {
+      "8453": {
+        "address": "0xd58d35857A202d041c3Cf943e07dB1e151bc4D58"
+      }
+    }
+  }
+}

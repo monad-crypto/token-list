@@ -17,7 +17,7 @@
       "description": "Tokenized stocks and ETFs issued by Anchored"
     }
   },
-  "timestamp": "2026-11-13T12:05:57.125511+00:00",
+  "timestamp": "2026-11-24T09:14:13.650304+00:00",
   "tokens": [
     {
       "chainId": 143,
@@ -2693,6 +2693,37 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ANTOx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x909369940f22dC1c143aC78753A33f41597138B1",
+      "name": "Anthropic xStock",
+      "symbol": "ANTx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "coinGeckoId": "anthropic-xstock",
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x909369940f22dC1c143aC78753A33f41597138B1"
+          },
+          "10": {
+            "address": "0x909369940f22dC1c143aC78753A33f41597138B1"
+          },
+          "56": {
+            "address": "0x909369940f22dC1c143aC78753A33f41597138B1"
+          },
+          "999": {
+            "address": "0x909369940f22dC1c143aC78753A33f41597138B1"
+          },
+          "42161": {
+            "address": "0x909369940f22dC1c143aC78753A33f41597138B1"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ANTx.png"
     },
     {
       "chainId": 143,
@@ -9684,7 +9715,6 @@
         "xstocks"
       ],
       "extensions": {
-        "coinGeckoId": "core-scientific-xstock",
         "crossChainAddresses": {
           "1": {
             "address": "0x51eD5b74A05F256DbD9Ebb4e4f68Bb41ba10160b"
@@ -20404,7 +20434,6 @@
         "xstocks"
       ],
       "extensions": {
-        "coinGeckoId": "hut-8-xstock",
         "crossChainAddresses": {
           "1": {
             "address": "0x560deb3D70Ac90064fF809349cDf9A771a06fd36"
@@ -20912,36 +20941,6 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/IEMGx.png"
-    },
-    {
-      "chainId": 143,
-      "address": "0xA61fC4916AE408E499B025217f7bF12f54Ef27b4",
-      "name": "Icahn Enterprises xStock",
-      "symbol": "IEPx",
-      "decimals": 18,
-      "tags": [
-        "xstocks"
-      ],
-      "extensions": {
-        "crossChainAddresses": {
-          "1": {
-            "address": "0xA61fC4916AE408E499B025217f7bF12f54Ef27b4"
-          },
-          "10": {
-            "address": "0xA61fC4916AE408E499B025217f7bF12f54Ef27b4"
-          },
-          "56": {
-            "address": "0xA61fC4916AE408E499B025217f7bF12f54Ef27b4"
-          },
-          "999": {
-            "address": "0xA61fC4916AE408E499B025217f7bF12f54Ef27b4"
-          },
-          "42161": {
-            "address": "0xA61fC4916AE408E499B025217f7bF12f54Ef27b4"
-          }
-        }
-      },
-      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/IEPx.png"
     },
     {
       "chainId": 143,
@@ -23664,7 +23663,6 @@
         "xstocks"
       ],
       "extensions": {
-        "coinGeckoId": "kraq-xstock",
         "crossChainAddresses": {
           "1": {
             "address": "0x0eBe5FAD0998765187FC695B75d4115c27C953A1"
@@ -31805,7 +31803,6 @@
         "xstocks"
       ],
       "extensions": {
-        "coinGeckoId": "planet-labs-xstock",
         "crossChainAddresses": {
           "1": {
             "address": "0x536825370F1159cBA953055f5c2F16DDc7B5a348"
@@ -38811,7 +38808,6 @@
         "xstocks"
       ],
       "extensions": {
-        "coinGeckoId": "strategy-pp-fixed-xstock",
         "crossChainAddresses": {
           "1": {
             "address": "0x38E0445308E7FcD5230F2DF6b52B36DD4FF313b6"
@@ -40361,7 +40357,6 @@
         "xstocks"
       ],
       "extensions": {
-        "coinGeckoId": "t-mobile-xstock",
         "crossChainAddresses": {
           "1": {
             "address": "0x68F3DDEE8BAE33691E7CD0372984fD857E842760"
@@ -43897,7 +43892,6 @@
         "xstocks"
       ],
       "extensions": {
-        "coinGeckoId": "warner-bros-discovery-xstock",
         "crossChainAddresses": {
           "1": {
             "address": "0xc435b3C41AE56d9Bc57b8525F4d522C978F168e8"
@@ -50611,6 +50605,36 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ANTOx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0xabec6AeAb037b77c09a2a99264F9C81a35B02649",
+      "name": "Wrapped Anthropic xStock",
+      "symbol": "wANTx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xabec6AeAb037b77c09a2a99264F9C81a35B02649"
+          },
+          "10": {
+            "address": "0xabec6AeAb037b77c09a2a99264F9C81a35B02649"
+          },
+          "56": {
+            "address": "0xabec6AeAb037b77c09a2a99264F9C81a35B02649"
+          },
+          "999": {
+            "address": "0xabec6AeAb037b77c09a2a99264F9C81a35B02649"
+          },
+          "42161": {
+            "address": "0xabec6AeAb037b77c09a2a99264F9C81a35B02649"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ANTx.png"
     },
     {
       "chainId": 143,
@@ -67109,33 +67133,6 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/IEMGx.png"
-    },
-    {
-      "chainId": 143,
-      "address": "0x0960E28F12BBcBeae6b4B31eC38ceA48592F2b4c",
-      "name": "Wrapped Icahn Enterprises xStock",
-      "symbol": "wIEPx",
-      "decimals": 18,
-      "tags": [
-        "xstocks"
-      ],
-      "extensions": {
-        "crossChainAddresses": {
-          "1": {
-            "address": "0x0960E28F12BBcBeae6b4B31eC38ceA48592F2b4c"
-          },
-          "10": {
-            "address": "0x0960E28F12BBcBeae6b4B31eC38ceA48592F2b4c"
-          },
-          "56": {
-            "address": "0x0960E28F12BBcBeae6b4B31eC38ceA48592F2b4c"
-          },
-          "42161": {
-            "address": "0x0960E28F12BBcBeae6b4B31eC38ceA48592F2b4c"
-          }
-        }
-      },
-      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/IEPx.png"
     },
     {
       "chainId": 143,

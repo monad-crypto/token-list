@@ -1,0 +1,25 @@
+{
+  "chainId": 143,
+  "address": "0x785175a1Ae5A8bcD3230e01178Ba375F5F2125fE",
+  "name": "Midas Fasanara Global Open",
+  "symbol": "mGLO",
+  "decimals": 18,
+  "extensions": {
+    "coinGeckoId": "midas-fasanara-global-open",
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0xA69BfCc664e808176484Fa427fB2BFcB096531eF"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0x1DD91a111606382B77A917633ED90feAf25E0F76"
+      },
+      "10": {
+        "address": "0x1Eaf7cceAA5DC6d605760718722fbcC58579b3Ff"
+      },
+      "8453": {
+        "address": "0xFCc9Cc1209651Ed8867332d6F664CF82743A2584"
+      }
+    }
+  }
+}

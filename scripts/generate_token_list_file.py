@@ -15,17 +15,18 @@ from pathlib import Path
 from typing import Any
 
 import json5
+from utils.token_list import (
+    create_token_list,
+    format_version,
+    load_existing_token_list,
+    resolve_next_version,
+    write_token_list,
+)
 
 DATA_DIR = "mainnet"
 OUTPUT_FILE = "tokenlist-mainnet.json"
 TOKEN_LIST_NAME = "Monad Mainnet"
-LOGO_URI = (
-    "https://raw.githubusercontent.com/monad-crypto/token-list/refs/heads/main/assets/monad.svg"
-)
 KEYWORDS = ["monad mainnet"]
-DEFAULT_VERSION_MAJOR = 1
-DEFAULT_VERSION_MINOR = 0
-DEFAULT_VERSION_PATCH = 0
 
 
 def get_data_directory() -> Path:
@@ -113,154 +114,6 @@ def load_all_tokens(token_dirs: list[Path]) -> list[dict[str, Any]]:
     return [load_token_data(dir_path) for dir_path in token_dirs]
 
 
-def load_existing_token_list(output_path: Path) -> dict[str, Any] | None:
-    """Load existing token list if it exists.
-
-    Args:
-        output_path: Path to the existing token list file.
-
-    Returns:
-        dict[str, Any] | None: Existing token list or None if file doesn't exist.
-    """
-    if not output_path.exists():
-        return None
-
-    try:
-        with output_path.open(mode="r", encoding="utf-8") as f:
-            return json5.load(f)
-    except (OSError, ValueError):
-        return None
-
-
-def compare_tokens(
-    old_tokens: list[dict[str, Any]], new_tokens: list[dict[str, Any]]
-) -> tuple[str | None, str | None]:
-    """Compare old and new token lists to determine change type.
-
-    Args:
-        old_tokens: List of tokens from existing token list.
-        new_tokens: List of tokens from newly generated token list.
-
-    Returns:
-        tuple[str, str]: (change_type, description) where change_type is one of:
-            - None: No changes
-            - "major": Tokens removed or addresses changed
-            - "minor": Tokens added
-            - "patch": Other changes (metadata, logoURI, etc.)
-    """
-    old_map = {t["symbol"]: t for t in old_tokens}
-    new_map = {t["symbol"]: t for t in new_tokens}
-
-    old_keys = set(old_map.keys())
-    new_keys = set(new_map.keys())
-
-    # Check for removed tokens
-    removed = old_keys - new_keys
-    if removed:
-        return ("major", f"Tokens removed: {', '.join(removed)}")
-
-    # Check for address changes in existing tokens
-    for key in old_keys & new_keys:
-        if old_map[key]["address"] != new_map[key]["address"]:
-            return ("major", f"Token address changed: {key}")
-
-    # Check for added tokens
-    added = new_keys - old_keys
-    if added:
-        return ("minor", f"Tokens added: {', '.join(added)}")
-
-    # Check for any other changes in existing tokens
-    for key in old_keys & new_keys:
-        old_token = old_map[key]
-        new_token = new_map[key]
-        # Compare all fields except address (already checked)
-        if old_token != new_token:
-            return ("patch", "Token metadata updated")
-
-    return (None, None)
-
-
-def increment_version(current_version: dict[str, int], change_type: str) -> dict[str, int]:
-    """Increment version based on change type.
-
-    Args:
-        current_version: Current version dict with major, minor, patch.
-        change_type: Type of change ("major", "minor", "patch", or None).
-
-    Returns:
-        dict: New version with appropriate increment.
-    """
-    major = current_version["major"]
-    minor = current_version["minor"]
-    patch = current_version["patch"]
-
-    if change_type == "major":
-        return {"major": major + 1, "minor": 0, "patch": 0}
-    if change_type == "minor":
-        return {"major": major, "minor": minor + 1, "patch": 0}
-    if change_type == "patch":
-        return {"major": major, "minor": minor, "patch": patch + 1}
-    return {"major": major, "minor": minor, "patch": patch}
-
-
-def create_token_list(
-    tokens: list[dict[str, Any]], version: dict[str, int], timestamp: str
-) -> dict[str, Any]:
-    """Create the token list structure.
-
-    Args:
-        tokens: List of token data dictionaries.
-        version: Version dict with major, minor, patch.
-        timestamp: ISO format timestamp string.
-
-    Returns:
-        dict: Complete token list structure.
-    """
-    return {
-        "name": TOKEN_LIST_NAME,
-        "logoURI": LOGO_URI,
-        "keywords": KEYWORDS,
-        "timestamp": timestamp,
-        "tokens": tokens,
-        "version": version,
-    }
-
-
-def write_token_list(token_list: dict[str, Any], output_path: Path) -> None:
-    """Write the token list to a JSON5 file.
-
-    Args:
-        token_list: The token list data structure.
-        output_path: Path where the file should be written.
-
-    Raises:
-        IOError: If the file cannot be written.
-    """
-    try:
-        with output_path.open(mode="w", encoding="utf-8") as f:
-            json5.dump(
-                token_list,
-                f,
-                indent=2,
-                quote_keys=True,
-                trailing_commas=False,
-            )
-    except OSError as e:
-        raise OSError(f"Cannot write to {output_path}: {e}") from e
-
-
-def format_version(version: dict[str, int]) -> str:
-    """Format the version number as a string.
-
-    Args:
-        version: Version dict with major, minor, patch.
-
-    Returns:
-        str: Formatted version string.
-    """
-    return f"{version['major']}.{version['minor']}.{version['patch']}"
-
-
 def main() -> int:
     """Main entry point for the token list generator.
 
@@ -281,35 +134,16 @@ def main() -> int:
         existing_token_list = load_existing_token_list(output_path)
         new_tokens = load_all_tokens(token_dirs)
 
-        if existing_token_list:
-            # Compare with existing token list
-            change_type, change_description = compare_tokens(
-                existing_token_list.get("tokens", []), new_tokens
-            )
-            old_version = existing_token_list["version"]
+        new_version, version_report = resolve_next_version(existing_token_list, new_tokens)
+        print("\n".join(version_report))
 
-            if change_type is None:
-                print("No changes detected. Token list remains unchanged.")
-                print(f"   - Current version: {format_version(old_version)}")
-                return 0
+        if new_version is None:
+            return 0
 
-            new_version = increment_version(existing_token_list["version"], change_type)
-            new_timestamp = datetime.now(timezone.utc).isoformat()
-
-            print(f"Changes detected: {change_description}")
-            print(f"   - Change type: {change_type}")
-            print(f"   - Version: {format_version(old_version)} -> {format_version(new_version)}")
-        else:
-            # First time generation
-            new_version = {
-                "major": DEFAULT_VERSION_MAJOR,
-                "minor": DEFAULT_VERSION_MINOR,
-                "patch": DEFAULT_VERSION_PATCH,
-            }
-            new_timestamp = datetime.now(timezone.utc).isoformat()
-            print("Generating token list for the first time...")
-
-        token_list = create_token_list(new_tokens, new_version, new_timestamp)
+        new_timestamp = datetime.now(timezone.utc).isoformat()
+        token_list = create_token_list(
+            TOKEN_LIST_NAME, KEYWORDS, new_tokens, new_version, new_timestamp
+        )
         write_token_list(token_list, output_path)
 
         print(f"Successfully created '{OUTPUT_FILE}'")

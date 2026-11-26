@@ -1,0 +1,94 @@
+name: Open signed PR
+description: >-
+  Commit files to a branch cut from main as a single verified commit, then open a PR
+  for it or update the PR already open from that branch.
+
+inputs:
+  branch:
+    description: Branch to (re)create from the current tip of main
+    required: true
+  commit-message:
+    description: Commit headline
+    required: true
+  title:
+    description: PR title
+    required: true
+  body-file:
+    description: Path of a file holding the PR body
+    required: true
+  files:
+    description: Newline-separated paths to commit, as they are in the working tree
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Create signed commit and open PR
+      shell: bash
+      env:
+        GH_TOKEN: ${{ github.token }}
+        REPO: ${{ github.repository }}
+        BRANCH: ${{ inputs.branch }}
+        COMMIT_MESSAGE: ${{ inputs.commit-message }}
+        TITLE: ${{ inputs.title }}
+        BODY_FILE: ${{ inputs.body-file }}
+        FILES: ${{ inputs.files }}
+      run: |
+        BASE_SHA=$(gh api "repos/${REPO}/git/refs/heads/main" --jq '.object.sha')
+
+        # PATCH instead of DELETE+create preserves any open PR and its review thread.
+        if gh api "repos/${REPO}/git/refs/heads/${BRANCH}" > /dev/null 2>&1; then
+          gh api "repos/${REPO}/git/refs/heads/${BRANCH}" -X PATCH \
+            -f sha="${BASE_SHA}" \
+            -F force=true
+        else
+          gh api "repos/${REPO}/git/refs" \
+            -f ref="refs/heads/${BRANCH}" \
+            -f sha="${BASE_SHA}"
+        fi
+
+        # File contents go through files, not --arg: Linux caps a single argument at
+        # 128 KiB and the encoded equities list is over 1 MiB.
+        CONTENTS_FILE="${RUNNER_TEMP}/file-contents.b64"
+        ADDITIONS_FILE="${RUNNER_TEMP}/file-additions.json"
+        : > "$ADDITIONS_FILE"
+        while IFS= read -r file_path; do
+          [ -n "$file_path" ] || continue
+          base64 -w0 "$file_path" > "$CONTENTS_FILE"
+          jq -n --arg path "$file_path" --rawfile contents "$CONTENTS_FILE" \
+            '{ path: $path, contents: $contents }' >> "$ADDITIONS_FILE"
+        done <<< "$FILES"
+
+        # GraphQL createCommitOnBranch produces a verified/signed commit, which a
+        # git push from the runner would not.
+        jq -n \
+          --arg repo "$REPO" \
+          --arg branch "$BRANCH" \
+          --arg headline "$COMMIT_MESSAGE" \
+          --arg expected_oid "$BASE_SHA" \
+          --slurpfile additions "$ADDITIONS_FILE" \
+          '{
+            query: "mutation($input: CreateCommitOnBranchInput!) { createCommitOnBranch(input: $input) { commit { oid } } }",
+            variables: {
+              input: {
+                branch: {
+                  repositoryNameWithOwner: $repo,
+                  branchName: $branch
+                },
+                message: { headline: $headline },
+                fileChanges: { additions: $additions },
+                expectedHeadOid: $expected_oid
+              }
+            }
+          }' | gh api graphql --input -
+
+        EXISTING_PR=$(gh pr list --base main --head "${BRANCH}" --state open --json number --jq '.[0].number // empty')
+        if [ -z "$EXISTING_PR" ]; then
+          gh pr create \
+            --title "$TITLE" \
+            --body-file "$BODY_FILE" \
+            --base main \
+            --head "${BRANCH}"
+        else
+          gh pr edit "$EXISTING_PR" --title "$TITLE" --body-file "$BODY_FILE"
+        fi

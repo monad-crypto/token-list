@@ -1,0 +1,22 @@
+{
+  "chainId": 143,
+  "address": "0x066D10E240999aea6798b2e2CA0bdac2923cbdFf",
+  "name": "Nest FalconX CLO",
+  "symbol": "nFXCF",
+  "decimals": 6,
+  "extensions": {
+    "coinGeckoId": "nest-falconx-clo",
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0x066D10E240999aea6798b2e2CA0bdac2923cbdFf"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0x066D10E240999aea6798b2e2CA0bdac2923cbdFf"
+      },
+      "56": {
+        "address": "0x066D10E240999aea6798b2e2CA0bdac2923cbdFf"
+      }
+    }
+  }
+}

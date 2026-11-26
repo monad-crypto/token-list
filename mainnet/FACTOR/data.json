@@ -1,0 +1,21 @@
+{
+  "chainId": 143,
+  "address": "0x1f37620a0E0660DB3CDBB8cdBf62d8099F959925",
+  "name": "Plume Factor Vault",
+  "symbol": "FACTOR",
+  "decimals": 6,
+  "extensions": {
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0x1f37620a0E0660DB3CDBB8cdBf62d8099F959925"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0x1f37620a0E0660DB3CDBB8cdBf62d8099F959925"
+      },
+      "8453": {
+        "address": "0x1f37620a0E0660DB3CDBB8cdBf62d8099F959925"
+      }
+    }
+  }
+}

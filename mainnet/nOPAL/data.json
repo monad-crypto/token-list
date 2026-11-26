@@ -1,0 +1,25 @@
+{
+  "chainId": 143,
+  "address": "0x119Dd7dAFf816f29D7eE47596ae5E4bdC4299165",
+  "name": "Nest BlackOpal LiquidStone II Vault",
+  "symbol": "nOPAL",
+  "decimals": 6,
+  "extensions": {
+    "coinGeckoId": "nest-blackopal-liquidstone-ii-vault",
+    "bridgeInfo": {
+      "protocol": "LayerZero OFT",
+      "bridgeAddress": "0x119Dd7dAFf816f29D7eE47596ae5E4bdC4299165"
+    },
+    "crossChainAddresses": {
+      "1": {
+        "address": "0x119Dd7dAFf816f29D7eE47596ae5E4bdC4299165"
+      },
+      "56": {
+        "address": "0x119Dd7dAFf816f29D7eE47596ae5E4bdC4299165"
+      },
+      "43114": {
+        "address": "0x119Dd7dAFf816f29D7eE47596ae5E4bdC4299165"
+      }
+    }
+  }
+}

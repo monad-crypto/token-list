@@ -17,7 +17,7 @@
       "description": "Tokenized stocks and ETFs issued by Anchored"
     }
   },
-  "timestamp": "2026-11-24T09:14:13.650304+00:00",
+  "timestamp": "2026-11-26T11:39:04.926685+00:00",
   "tokens": [
     {
       "chainId": 143,
@@ -10383,6 +10383,36 @@
     },
     {
       "chainId": 143,
+      "address": "0x0D855b5095A962AAbF99f7B405Ec394935aAe49f",
+      "name": "Critical Metals xStock",
+      "symbol": "CRMLx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x0D855b5095A962AAbF99f7B405Ec394935aAe49f"
+          },
+          "10": {
+            "address": "0x0D855b5095A962AAbF99f7B405Ec394935aAe49f"
+          },
+          "56": {
+            "address": "0x0D855b5095A962AAbF99f7B405Ec394935aAe49f"
+          },
+          "999": {
+            "address": "0x0D855b5095A962AAbF99f7B405Ec394935aAe49f"
+          },
+          "42161": {
+            "address": "0x0D855b5095A962AAbF99f7B405Ec394935aAe49f"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/CRMLx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x4A4073f2EAF299A1be22254DCD2C41727F6F54a2",
       "name": "Salesforce xStock",
       "symbol": "CRMx",
@@ -15819,37 +15849,6 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/FFIVx.png"
-    },
-    {
-      "chainId": 143,
-      "address": "0x3481a7c02A9B467630E77a7Cce91a25396414C6D",
-      "name": "Franklin Responsibly Sourced Gold ETF xStock",
-      "symbol": "FGDLx",
-      "decimals": 18,
-      "tags": [
-        "xstocks"
-      ],
-      "extensions": {
-        "coinGeckoId": "franklin-responsibly-sourced-gold-etf-xstock",
-        "crossChainAddresses": {
-          "1": {
-            "address": "0x3481a7c02A9B467630E77a7Cce91a25396414C6D"
-          },
-          "10": {
-            "address": "0x3481a7c02A9B467630E77a7Cce91a25396414C6D"
-          },
-          "56": {
-            "address": "0x3481a7c02A9B467630E77a7Cce91a25396414C6D"
-          },
-          "999": {
-            "address": "0x3481a7c02A9B467630E77a7Cce91a25396414C6D"
-          },
-          "42161": {
-            "address": "0x3481a7c02A9B467630E77a7Cce91a25396414C6D"
-          }
-        }
-      },
-      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/FGDLx.png"
     },
     {
       "chainId": 143,
@@ -26114,6 +26113,36 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/MEITx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0xEDb6700ADF61873A59507d0053EE773917DB69dc",
+      "name": "MercadoLibre xStock",
+      "symbol": "MELIx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xEDb6700ADF61873A59507d0053EE773917DB69dc"
+          },
+          "10": {
+            "address": "0xEDb6700ADF61873A59507d0053EE773917DB69dc"
+          },
+          "56": {
+            "address": "0xEDb6700ADF61873A59507d0053EE773917DB69dc"
+          },
+          "999": {
+            "address": "0xEDb6700ADF61873A59507d0053EE773917DB69dc"
+          },
+          "42161": {
+            "address": "0xEDb6700ADF61873A59507d0053EE773917DB69dc"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/MELIx.png"
     },
     {
       "chainId": 143,
@@ -42003,6 +42032,36 @@
     },
     {
       "chainId": 143,
+      "address": "0x72D35810c94B29d52DD57719f355f89Cc4f37daB",
+      "name": "United Microelectronics xStock",
+      "symbol": "UMCx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x72D35810c94B29d52DD57719f355f89Cc4f37daB"
+          },
+          "10": {
+            "address": "0x72D35810c94B29d52DD57719f355f89Cc4f37daB"
+          },
+          "56": {
+            "address": "0x72D35810c94B29d52DD57719f355f89Cc4f37daB"
+          },
+          "999": {
+            "address": "0x72D35810c94B29d52DD57719f355f89Cc4f37daB"
+          },
+          "42161": {
+            "address": "0x72D35810c94B29d52DD57719f355f89Cc4f37daB"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/UMCx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0xB8AbcAF48Aa1FE3D4653792614Db257AF8806310",
       "name": "Universal Music xStock",
       "symbol": "UMGx",
@@ -45467,6 +45526,36 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/XLEx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0xB0656332496a2AbB9De2091A1eD5B358Bd498068",
+      "name": "State Street Health Care Select Sector SPDR xStock",
+      "symbol": "XLVx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xB0656332496a2AbB9De2091A1eD5B358Bd498068"
+          },
+          "10": {
+            "address": "0xB0656332496a2AbB9De2091A1eD5B358Bd498068"
+          },
+          "56": {
+            "address": "0xB0656332496a2AbB9De2091A1eD5B358Bd498068"
+          },
+          "999": {
+            "address": "0xB0656332496a2AbB9De2091A1eD5B358Bd498068"
+          },
+          "42161": {
+            "address": "0xB0656332496a2AbB9De2091A1eD5B358Bd498068"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/XLVx.png"
     },
     {
       "chainId": 143,
@@ -57599,6 +57688,33 @@
     },
     {
       "chainId": 143,
+      "address": "0x3E14cde5F3E5B13Ab9B4E3dF988a58A00A9394d8",
+      "name": "Wrapped Critical Metals xStock",
+      "symbol": "wCRMLx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x3E14cde5F3E5B13Ab9B4E3dF988a58A00A9394d8"
+          },
+          "10": {
+            "address": "0x3E14cde5F3E5B13Ab9B4E3dF988a58A00A9394d8"
+          },
+          "56": {
+            "address": "0x3E14cde5F3E5B13Ab9B4E3dF988a58A00A9394d8"
+          },
+          "42161": {
+            "address": "0x3E14cde5F3E5B13Ab9B4E3dF988a58A00A9394d8"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/CRMLx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0xE0881D96bd6CD9343D2dAF3F4C6f3830620E2b41",
       "name": "Wrapped Salesforce xStock",
       "symbol": "wCRMx",
@@ -62501,33 +62617,6 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/FFIVx.png"
-    },
-    {
-      "chainId": 143,
-      "address": "0x9A59E81150913005931e4EDC0ba05795fd00834E",
-      "name": "Wrapped Franklin Responsibly Sourced Gold ETF xStock",
-      "symbol": "wFGDLx",
-      "decimals": 18,
-      "tags": [
-        "xstocks"
-      ],
-      "extensions": {
-        "crossChainAddresses": {
-          "1": {
-            "address": "0x9A59E81150913005931e4EDC0ba05795fd00834E"
-          },
-          "10": {
-            "address": "0x9A59E81150913005931e4EDC0ba05795fd00834E"
-          },
-          "56": {
-            "address": "0x9A59E81150913005931e4EDC0ba05795fd00834E"
-          },
-          "42161": {
-            "address": "0x9A59E81150913005931e4EDC0ba05795fd00834E"
-          }
-        }
-      },
-      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/FGDLx.png"
     },
     {
       "chainId": 143,
@@ -71789,6 +71878,33 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/MEITx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0xFc7ab447D2c7eb27fC1d252D90d7b0FaDcb56118",
+      "name": "Wrapped MercadoLibre xStock",
+      "symbol": "wMELIx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xFc7ab447D2c7eb27fC1d252D90d7b0FaDcb56118"
+          },
+          "10": {
+            "address": "0xFc7ab447D2c7eb27fC1d252D90d7b0FaDcb56118"
+          },
+          "56": {
+            "address": "0xFc7ab447D2c7eb27fC1d252D90d7b0FaDcb56118"
+          },
+          "42161": {
+            "address": "0xFc7ab447D2c7eb27fC1d252D90d7b0FaDcb56118"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/MELIx.png"
     },
     {
       "chainId": 143,
@@ -86156,6 +86272,33 @@
     },
     {
       "chainId": 143,
+      "address": "0xeD31Fd12771cCdF675C11d44aaafcE91c51B46E8",
+      "name": "Wrapped United Microelectronics xStock",
+      "symbol": "wUMCx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0xeD31Fd12771cCdF675C11d44aaafcE91c51B46E8"
+          },
+          "10": {
+            "address": "0xeD31Fd12771cCdF675C11d44aaafcE91c51B46E8"
+          },
+          "56": {
+            "address": "0xeD31Fd12771cCdF675C11d44aaafcE91c51B46E8"
+          },
+          "42161": {
+            "address": "0xeD31Fd12771cCdF675C11d44aaafcE91c51B46E8"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/UMCx.png"
+    },
+    {
+      "chainId": 143,
       "address": "0x61e751Ac5CAbD85F5d3847D2692a06B9Db9140F8",
       "name": "Wrapped Universal Music xStock",
       "symbol": "wUMGx",
@@ -89288,6 +89431,33 @@
         }
       },
       "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/XLEx.png"
+    },
+    {
+      "chainId": 143,
+      "address": "0x415A3bd455f754186fdf98CE6b8C4b23fD936388",
+      "name": "Wrapped State Street Health Care Select Sector SPDR xStock",
+      "symbol": "wXLVx",
+      "decimals": 18,
+      "tags": [
+        "xstocks"
+      ],
+      "extensions": {
+        "crossChainAddresses": {
+          "1": {
+            "address": "0x415A3bd455f754186fdf98CE6b8C4b23fD936388"
+          },
+          "10": {
+            "address": "0x415A3bd455f754186fdf98CE6b8C4b23fD936388"
+          },
+          "56": {
+            "address": "0x415A3bd455f754186fdf98CE6b8C4b23fD936388"
+          },
+          "42161": {
+            "address": "0x415A3bd455f754186fdf98CE6b8C4b23fD936388"
+          }
+        }
+      },
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/XLVx.png"
     },
     {
       "chainId": 143,
